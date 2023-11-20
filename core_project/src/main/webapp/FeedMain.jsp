@@ -42,7 +42,7 @@
 		<c:forEach var="b" items="${boards}" varStatus="s">
 			<tr>
 			 	 <td>${s.count}</td>
-                 <td><a href="BoardDetail.jsp?num=${b.num}">${b.title}</a></td>
+                 <td><a href="FeedDetail.jsp?num=${b.num}">${b.title}</a></td>
                  <td>${b.writer}</td>
                  <td>${b.b_date}</td>
                  <td>삭제</td>
