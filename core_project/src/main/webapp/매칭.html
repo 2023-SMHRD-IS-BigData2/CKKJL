@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>풋살팀 매칭</title>
+    <style>
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td:hover {
+            background-color: #e0e0e0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="logo2">
+    <a href="sns페이지.html">
+        <img src="핵심images/FUTSAL062-removebg-preview.PNG" alt="" width="180" height="30"></a>
+</div>
+    
+    <h1>풋살팀 매칭 일정</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>요일</th>
+                <th>날짜</th>
+                <th>시간</th>
+                <th>매칭 상태</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3">월요일</td>
+                <td>2023-11-20</td>
+                <td onclick="matchTeam(this)">18:00 - 20:00</td>
+                <td id="monday_2023-11-20_18:00-20:00">미매칭</td>
+            </tr>
+            <tr>
+                <td>2023-11-20</td>
+                <td onclick="matchTeam(this)">20:00 - 22:00</td>
+                <td id="monday_2023-11-20_20:00-22:00">미매칭</td>
+            </tr>
+            <!-- Add more rows as needed -->
+
+            <!-- Similar structure for other days -->
+
+        </tbody>
+        <tbody>
+            <tr>
+                <td rowspan="3">화요일</td>
+                <td>2023-11-20</td>
+                <td onclick="matchTeam(this)">18:00 - 20:00</td>
+                <td id="monday_2023-11-20_18:00-20:00">미매칭</td>
+            </tr>
+            <tr>
+                <td>2023-11-20</td>
+                <td onclick="matchTeam(this)">20:00 - 22:00</td>
+                <td id="monday_2023-11-20_20:00-22:00">미매칭</td>
+            </tr>
+            <!-- Add more rows as needed -->
+
+            <!-- Similar structure for other days -->
+            <tbody>
+                <tr>
+                    <td rowspan="3">수요일</td>
+                    <td>2023-11-20</td>
+                    <td onclick="matchTeam(this)">18:00 - 20:00</td>
+                    <td id="monday_2023-11-20_18:00-20:00">미매칭</td>
+                </tr>
+                <tr>
+                    <td>2023-11-20</td>
+                    <td onclick="matchTeam(this)">20:00 - 22:00</td>
+                    <td id="monday_2023-11-20_20:00-22:00">미매칭</td>
+                </tr>
+                <!-- Add more rows as needed -->
+    
+                <!-- Similar structure for other days -->
+                <tbody>
+                    <tr>
+                        <td rowspan="3">목요일</td>
+                        <td>2023-11-20</td>
+                        <td onclick="matchTeam(this)">18:00 - 20:00</td>
+                        <td id="monday_2023-11-20_18:00-20:00">미매칭</td>
+                    </tr>
+                    <tr>
+                        <td>2023-11-20</td>
+                        <td onclick="matchTeam(this)">20:00 - 22:00</td>
+                        <td id="monday_2023-11-20_20:00-22:00">미매칭</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+        
+                    <!-- Similar structure for other days -->
+                    <tbody>
+                        <tr>
+                            <td rowspan="3">금요일</td>
+                            <td>2023-11-20</td>
+                            <td onclick="matchTeam(this)">18:00 - 20:00</td>
+                            <td id="monday_2023-11-20_18:00-20:00">미매칭</td>
+                        </tr>
+                        <tr>
+                            <td>2023-11-20</td>
+                            <td onclick="matchTeam(this)">20:00 - 22:00</td>
+                            <td id="monday_2023-11-20_20:00-22:00">미매칭</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+            
+                        <!-- Similar structure for other days -->
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">토요일</td>
+                                <td>2023-11-20</td>
+                                <td onclick="matchTeam(this)">18:00 - 20:00</td>
+                                <td id="monday_2023-11-20_18:00-20:00">미매칭</td>
+                            </tr>
+                            <tr>
+                                <td>2023-11-20</td>
+                                <td onclick="matchTeam(this)">20:00 - 22:00</td>
+                                <td id="monday_2023-11-20_20:00-22:00">미매칭</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                
+                            <!-- Similar structure for other days -->
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3">일요일</td>
+                                    <td>2023-11-20</td>
+                                    <td onclick="matchTeam(this)">18:00 - 20:00</td>
+                                    <td id="monday_2023-11-20_18:00-20:00">미매칭</td>
+                                </tr>
+                                <tr>
+                                    <td>2023-11-20</td>
+                                    <td onclick="matchTeam(this)">20:00 - 22:00</td>
+                                    <td id="monday_2023-11-20_20:00-22:00">미매칭</td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                    
+                                <!-- Similar structure for other days -->
+                                
+    </table>
+
+    <script>
+        function matchTeam(cell) {
+            // Example function for handling team matching
+            var cellId = cell.id;
+            var currentStatus = document.getElementById(cellId).innerText;
+
+            if (currentStatus === "미매칭") {
+                document.getElementById(cellId).innerText = "매칭 완료";
+                // Additional logic for handling matching, e.g., send data to server
+            } else {
+                document.getElementById(cellId).innerText = "미매칭";
+                // Additional logic for handling unmatching, e.g., update server data
+            }
+        }
+    </script>
+
+</body>
+</html>
