@@ -23,7 +23,6 @@
 	<!-- Q17. 게시글 목록 조회 기능 -->
 	<%
 	List<Board> boards = new BoardDAO().allBoard();
-
 	System.out.print(boards.size());
 	pageContext.setAttribute("boards",boards);
 	%>

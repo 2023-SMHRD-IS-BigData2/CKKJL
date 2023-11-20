@@ -18,7 +18,6 @@
 <body>
 	<!-- Q19. 게시글 세부내용 조회 기능 -->
 	<%
-	
 	int num = Integer.parseInt(request.getParameter("num"));
 	Board board = new BoardDAO().detailBoard(num);
 	%>
@@ -33,9 +32,9 @@
 				<td><%=board.getWriter()%></td>
 			</tr>
 			<tr>
-				<td colspan="2">
-					<img alt=""src="./file/<%=board.getFilename()%>"><h3><%=board.getContent()%></h3> 
-				</td>
+				<td colspan="2"><img alt=""
+					src="./file/<%=board.getFilename()%>">
+				<h3><%=board.getContent()%></h3></td>
 			</tr>
 			<tr>
 				<td colspan="2"></td>
@@ -46,17 +45,11 @@
 				</span>
 					<button class="textBtn">댓글 쓰기</button> <span>댓글숫자0</span>
 					<button>채팅보내기</button>
-				
+
 				</td>
 			</tr>
 		</table>
 	</div>
-
-	<div>
-
-
-
-
 
 		<!-- 댓글 작성 
         function feedComCreate(feedNo,nick,id1,id2,id3,id4) {
@@ -127,8 +120,6 @@
 			});
 		};
     -->
-	</div>
-
 	<script>
         $(document).on('click', '.likeBtn',(e)=>{
         //   console.log(e);
