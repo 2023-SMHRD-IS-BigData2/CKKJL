@@ -1,10 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futsal Mercenary Board</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: ivory;
+            color: black;
+            text-align: center;
+            padding: 1em;
+        }
+        header img {
+            align-items: right;
+            width: 150px; /* 프로필 사진 크기 조절 */
+            border-radius: 50%; /* 프로필 사진을 원형으로 만들기 위해 추가 */
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+        }
+    </style>
 </head>
 <body>
+
+<header>
+    <a href="sns페이지.html" class="image featured"><img src="핵심images/FUTSAL062-removebg-preview.PNG" alt="" /></a>
+    <h1>용병 구인</h1>
+</header>
+
+<main>
+    
+    <section>
+        <h2>용병 선발</h2>
+        <form>
+            <label for="position">날짜</label>
+            <input type="date" id="date" name="date" required>
+            <label for="playerName">팀 이름</label>
+            <input type="text" id="playerName" name="playerName" required>
+
+            <label for="position">시간</label>
+            <select id="position" name="position" required>
+                <option value="forward">Forward</option>
+                <option value="midfielder">Midfielder</option>
+                <option value="defender">Defender</option>
+                <option value="goalkeeper">Goalkeeper</option>
+            </select>
+            <label for="position">시작 시간</label>
+            <input type="text" id="playerName" name="startTime" required>
+            <label for="position">진행시간 혹은 끝나는 시간</label>
+            <input type="text" id="playerName" name="playingTime" required>
+            <label for="position">인원수</label>
+            <input type="text" id="playerName" name="member" required>
+            <label for="position">수준</label>
+            <input type="text" id="playerName" name="level" required>
+            <label for="position">코멘트</label>
+            <input type="text" id="playerName" name="comment" required>
+
+            <button type="button" onclick="recruitMercenary()">Recruit</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>용병 목록</h2>
+        <ul id="mercenaryList"></ul>
+    </section>
+</main>
+
+
+
+<script>
+    function recruitMercenary() {
+        var playerName = document.getElementById('playerName').value;
+        var position = document.getElementById('position').value;
+
+        // Create a list item to display the recruited mercenary
+        var listItem = document.createElement('li');
+        listItem.textContent = playerName + ' - ' + position;
+
+        // Append the list item to the mercenary list
+        document.getElementById('mercenaryList').appendChild(listItem);
+
+        // Clear the form fields after recruiting
+        document.getElementById('playerName').value = '';
+        document.getElementById('position').value = '';
+    }
+</script>
 
 </body>
 </html>
