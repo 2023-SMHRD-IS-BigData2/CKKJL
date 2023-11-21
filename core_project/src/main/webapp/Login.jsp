@@ -47,12 +47,15 @@ form {
 							let properties = response.properties;
 							let id = response.id;
 							let profile = properties.profile_image;
-							let name = properties.nickname;
+							let nick = properties.nickname;
 							console.log(id);
 							console.log(profile);
 							console.log(name);
-							
-							
+						
+							document.token_value.id.value = id;
+							document.token_value.profile.value = profile;	
+							document.token_value.nick.value = nick;
+							document.token_value.submit();
 
 						},
 						fail : function(error) {
@@ -66,10 +69,11 @@ form {
 			})
 		}
 	</script>
-	<form action="Main.jsp">
-		<input type="text" value=${id}>
-		<input type="text" value=${profile}>
-		<input type="text" value=${name}>
+	
+	<form action="Main.jsp" name="token_value">
+		<input type="text" name="id" value="">
+		<input type="text" name="profile" value="">
+		<input type="text" name="nick" value="">
 	</form>
 
 
