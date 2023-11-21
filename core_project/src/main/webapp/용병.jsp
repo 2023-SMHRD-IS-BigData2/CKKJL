@@ -161,12 +161,8 @@ li {
 				</select> 
 				<label for="position"> 남기실 말</label> <input type="text" id="matching_comment" name="comment" required>
 
-<<<<<<< HEAD
-				<button type="button" onclick="recruitMercenary()">매치 게시글
-					등록하기</button>
-=======
 				<button type="button" onclick="matchingRegistration()">매치 게시글 등록하기</button>
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
+
 			</form>
 		</section>
 		<section>
@@ -232,8 +228,7 @@ li {
 					<option value="22:00">22:00</option>
 					<option value="23:00">23:00</option>
 
-<<<<<<< HEAD
-				</select> <label for="position"> 원하는 인원수 </label> <select id="M_peoplenum"
+					</select> <label for="position"> 원하는 인원수 </label> <select id="M_peoplenum"
 					name="peoplenum">
 					<option value="1명">1명</option>
 					<option value="2명">2명</option>
@@ -242,8 +237,14 @@ li {
 					<option value="5명">5명</option>
 					<option value="6명">6명</option>
 					<option value="그 외">그 외</option>
-				</select> <label for="position">수준</label> <select id="M_level" name="level">
-=======
+				</select>
+				<label for="position">수준</label> 
+				<select id="M_level" name="level">
+					<option value="하">하</option>
+					<option value="하상">하상</option>
+					<option value="중하">중하</option>
+					<option value="중상">중상</option>
+					<option value="상">상</option>
 				</select> 
 				<label for="position"> 원하는 인원수 </label> 
 				<select id="M_peoplenum" name="peoplenum">
@@ -255,15 +256,7 @@ li {
 					<option value="6명">6명 </option>
 					<option value="그 외">그 외 </option>
 				</select> 
-				<label for="position">수준</label> 
-				<select id="M_level" name="level">
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
-					<option value="하">하</option>
-					<option value="하상">하상</option>
-					<option value="중하">중하</option>
-					<option value="중상">중상</option>
-					<option value="상">상</option>
-				</select> 
+				
 				<label for="position"> 남기실 말</label> 
 				<input type="text" id="M_comment" name="comment" required>
 
@@ -290,19 +283,12 @@ li {
 
 			// Create a list item to display the recruited mercenary
 			var listItem = document.createElement('li');
-<<<<<<< HEAD
 
-			listItem.innerHTML = date + '(' + starttime + ' ~ ' + finishtime
-					+ ")" + peoplenum + '<' +level+'>' + "&nbsp;" + playerName
-					+ "<br>" + comment;
-
-=======
-			
-			listItem.innerHTML = "매칭" + "&nbsp;"+ date + '(' + starttime +' ~ ' + finishtime + ")"+ peoplenum + '<' +level+'>' + "&nbsp;" + playerName+ "<br>" 
+		
+			listItem.innerHTML = "매칭" + "&ensp;"+ date + '(' + starttime +' ~ ' + finishtime + ") "+ "&ensp;" + "인원수 : " + peoplenum + "&ensp;" + '수준 : ' +level+ "&ensp;" + "이름 : " + playerName+ "<br>" 
 			+ comment;
 			
 			// Append the list item to the mercenary list
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
 			document.getElementById('mercenaryList').appendChild(listItem)
 
 			// Clear the form fields after recruiting
@@ -314,6 +300,7 @@ li {
 			document.getElementById('matching_comment').value = '';
 			document.getElementById('matching_date').value = '';
 		}
+	
 		function recruitMercenary() {
 			var playerName = document.getElementById('M_playerName').value;
 			var starttime = document.getElementById('M_starttime').value;
@@ -326,7 +313,7 @@ li {
 			// Create a list item to display the recruited mercenary
 			var listItem = document.createElement('li');
 			
-			listItem.innerHTML = "용병" + "&nbsp;" + date + '(' + starttime +' ~ ' + finishtime + ")"+ peoplenum + '<' +level+'>' + "&nbsp;" + playerName+ "<br>" 
+			listItem.innerHTML = "용병" + "&ensp;"+ date + '(' + starttime +' ~ ' + finishtime + ")"+ "&ensp;" + "원하는 인원 수 : " + peoplenum + "&ensp;" + '수준 : ' +level+ "&ensp;" + "이름 : " + playerName+ "<br>" 
 			+ comment;
 			
 			// Append the list item to the mercenary list
