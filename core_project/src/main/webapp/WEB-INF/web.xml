@@ -30,8 +30,4 @@
   	<servlet-name>NickCheckService1</servlet-name>
   	<url-pattern>/NickCheckService1</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>Login_Service</servlet-name>
-  	<url-pattern>/Login_Service</url-pattern>
-  </servlet-mapping>
 </web-app>
