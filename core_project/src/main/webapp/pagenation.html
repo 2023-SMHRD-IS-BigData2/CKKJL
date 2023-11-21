@@ -59,7 +59,7 @@
 
 
     <div class="calendar-container">
-     <a href="sns페이지.html"><img src="핵심images/FUTSAL062-removebg-preview.png" alt="" ></a>
+     <a href="Matching.jsp"><img src="핵심images/FUTSAL062-removebg-preview.png" alt="" ></a>
         <h1> ⚽ 원하시는 날짜를 선택해주세요 ⚽</h1>
 
         <div class="pagination" id="pagination"></div>
@@ -111,7 +111,7 @@
                         } else if (dayCount <= daysInMonth) {
                             // Fill in the days
                             dayLink.textContent = dayCount;
-                            dayLink.href = `용병.jsp#${year}_${month}_${dayCount}`;
+                            dayLink.href = `Matching.jsp#${year}_${month}_${dayCount}`;
                             if (month === 11 && dayCount >= 19 && dayCount <= 30) {
                                 dayLink.classList.add("bold");
                             }

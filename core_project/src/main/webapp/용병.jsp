@@ -73,7 +73,7 @@ li {
 <body>
 
 	<header>
-		<a href="sns페이지.html">
+		<a href="Main.jsp">
 		<img src="핵심images/FUTSAL062-removebg-preview.PNG" alt="" /></a>
 		<h1>매치 용병 등록하기</h1>
 	</header>
@@ -269,6 +269,7 @@ li {
 			<h2>등록된 게시판 목록</h2>
 			<ul id="mercenaryList"></ul>
 		</section>
+		
 	</main>
 	<script>
 	// "&nbsp;" 1칸 뛰어쓰기 "&ensp;" 2칸 "&emsp;" 3칸

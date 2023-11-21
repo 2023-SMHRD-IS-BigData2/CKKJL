@@ -34,6 +34,7 @@ form {
 	</a>
 
 
+
 	<script>
 		function loginWithKakao() {
 
@@ -70,7 +71,7 @@ form {
 		}
 	</script>
 	
-	<form action="Main.jsp" name="token_value">
+	<form action="Login.jsp" name="token_value">
 		<input type="text" name="id" value="">
 		<input type="text" name="profile" value="">
 		<input type="text" name="nick" value="">
