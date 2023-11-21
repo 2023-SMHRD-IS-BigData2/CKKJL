@@ -5,8 +5,8 @@
   
 <mapper namespace="com.smhrd.database.BoardMapper">
 
-	<insert id="writeBoard" parameterType="Board">
-		insert into web_board values(num_board.nextval, #{title}, #{writer}, #{filename}, #{content}, sysdate)
+	<insert id="writeFeed" parameterType="Feed">
+		insert into TB_FEED values(FEED_INDEX.nextval, #{category}, #{user_index}, #{title}, #{content}, sysdate, #{file}, sysdate, #{like_cnt})
 	</insert>
 
 	<select id="allBoard" resultType="Board">
