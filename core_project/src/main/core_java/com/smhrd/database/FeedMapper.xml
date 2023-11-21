@@ -6,15 +6,17 @@
 <mapper namespace="com.smhrd.database.BoardMapper">
 
 	<insert id="writeFeed" parameterType="Feed">
-		insert into TB_FEED values(FEED_INDEX.nextval, #{category}, #{user_index}, #{title}, #{content}, sysdate, #{file}, sysdate, #{like_cnt})
+		insert into TB_FEED values(FEED_INDEX.nextval, 
+		#{category}, #{user_index}, #{title}, #{content}, 
+		sysdate, #{file}, sysdate, #{like_cnt})
 	</insert>
 
-	<select id="allBoard" resultType="Board">
-	select * from web_board 
+	<select id="allFeed" resultType="Feed">
+		select * from TB_FEED order by FEED_DATE
 	</select>
 	
-	<select id="detailBoard" resultType="Board">
-	select * from web_board where num=#{num}
+	<select id="detailFeed" resultType="Feed">
+		select * from TB_FEED where F_USER_INDEX=#{user_index}
 	</select>
 	
 
