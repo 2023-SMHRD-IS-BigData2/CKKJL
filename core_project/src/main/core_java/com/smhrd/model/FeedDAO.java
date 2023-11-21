@@ -5,11 +5,11 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.smhrd.database.SqlSessionManager;
+import com.smhrd.database.SqlSessionManager1;
 
 public class FeedDAO {
 
-	SqlSessionFactory sqlsessionFactory = SqlSessionManager.getSqlSession();
+	SqlSessionFactory sqlsessionFactory = SqlSessionManager1.getSqlSession();
 	SqlSession sqlSession = sqlsessionFactory.openSession(true);
 
 	// 게시글 작성

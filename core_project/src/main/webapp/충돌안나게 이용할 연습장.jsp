@@ -20,6 +20,9 @@
 </head>
 
 <body>
+<!-- 최현주 -->
+<!-- 캘린더에서 매치등록 날짜 업데이트하기 -->
+
 	<!-- 김명준  -->
 		<!-- 댓글 작성 
         function feedComCreate(feedNo,nick,id1,id2,id3,id4) {
