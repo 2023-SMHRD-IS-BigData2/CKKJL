@@ -5,11 +5,11 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.smhrd.database.SqlSessionManager;
+import com.smhrd.database.SqlSessionManager1;
 
 public class MessageDAO {
 
-	static SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
+	static SqlSessionFactory sqlSessionFactory = SqlSessionManager1.getSqlSession();
 
 
 	// 메시지 보내기 기능

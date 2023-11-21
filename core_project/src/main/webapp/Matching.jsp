@@ -84,7 +84,7 @@ li {
 			<h2 align="center">매치등록</h2>
 			<form>
 				<label for="position">날짜</label> 
-				<input type="date" id="matching_date" name="date"> 
+				<input type="date" id="matching_date" name="date" value=""> 
 				<label for="playerName">팀 이름</label> 
 				<input type="text" id="matching_playerName" name="playerName" required> 
 					<label for="position">시작 시간</label> 
