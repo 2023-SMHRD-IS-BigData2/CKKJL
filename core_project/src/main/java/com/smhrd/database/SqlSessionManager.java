@@ -6,7 +6,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class SqlSessionManager1 {
+public class SqlSessionManager {
 	
 	// 4. SqlSessionManager 만들기
 	//   SqlSessionFactory를 관리하는 class
