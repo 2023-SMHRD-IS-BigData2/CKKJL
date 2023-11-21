@@ -88,6 +88,7 @@ li {
 					type="text" id="playerName" name="playerName" required> <label
 					for="position">시작 시간</label> <select id="starttime"
 					name="starttime" required>
+					<option value="미정">미정</option>
 					<option value="00:00">00:00</option>
 					<option value="01:00">01:00</option>
 					<option value="02:00">02:00</option>
@@ -145,26 +146,28 @@ li {
 					<option value="5vs5">5:5</option>
 					<option value="6vs6">6:6</option>
 					<option value="7vs7">7:7</option>
+					<option value="그 외">그 외</option>
 				</select> <label for="position">수준</label> <select id="level" name="level">
-					<option value="low">하</option>
-					<option value="lowhigh">하상</option>
-					<option value="midlow">중하</option>
-					<option value="midhigh">중상</option>
-					<option value="high">상</option>
+					<option value="하">하</option>
+					<option value="하상">하상</option>
+					<option value="중하">중하</option>
+					<option value="중상">중상</option>
+					<option value="상">상</option>
 				</select> <label for="position"> 남기실 말</label> <input type="text"
 					id="comment" name="comment" required>
 
-				<button type="button" onclick="recruitMercenary()">게시글 등록하기</button>
+				<button type="button" onclick="recruitMercenary()">매치 게시글 등록하기</button>
 			</form>
 		</section>
 		<section>
 			<h2 align="center">용병 등록</h2>
 			<form>
 				<label for="position">날짜</label> <input type="date" id="date"
-					name="date"> <label for="playerName">팀 이름</label> <input
-					type="text" id="playerName" name="playerName" required> <label
-					for="position">시작 시간</label> <select id="starttime"
+					name="date"> <label for="playerName">이름</label> <input
+					type="text" id="M_playerName" name="playerName" required> <label
+					for="position">가능한 시작 시간 </label> <select id="M_starttime"
 					name="starttime" required>
+					<option value="미정">미정</option>
 					<option value="00:00">00:00</option>
 					<option value="01:00">01:00</option>
 					<option value="02:00">02:00</option>
@@ -189,7 +192,7 @@ li {
 					<option value="21:00">21:00</option>
 					<option value="22:00">22:00</option>
 					<option value="23:00">23:00</option>
-				</select> <label for="position"> 끝나는 시간</label> <select id="finishtime"
+				</select> <label for="position"> 가능한 끝 시간</label> <select id="M_finishtime"
 					name="finishtime">
 					<option value="미정">미정</option>
 					<option value="00:00">00:00</option>
@@ -217,31 +220,34 @@ li {
 					<option value="22:00">22:00</option>
 					<option value="23:00">23:00</option>
 
-				</select> <label for="position"> 인원수 </label> <select id="peoplenum"
+				</select> <label for="position"> 원하는 인원수 </label> <select id="M_peoplenum"
 					name="peoplenum">
-					<option value="5vs5">5:5</option>
-					<option value="6vs6">6:6</option>
-					<option value="7vs7">7:7</option>
-				</select> <label for="position">수준</label> <select id="level" name="level">
-					<option value="low">하</option>
-					<option value="lowhigh">하상</option>
-					<option value="midlow">중하</option>
-					<option value="midhigh">중상</option>
-					<option value="high">상</option>
+					<option value="1명">1명 </option>
+					<option value="2명">2명 </option>
+					<option value="3명">3명 </option>
+					<option value="4명">4명 </option>
+					<option value="5명">5명 </option>
+					<option value="6명">6명 </option>
+					<option value="그 외">그 외 </option>
+				</select> 
+				<label for="position">수준</label> <select id="M_level" name="level">
+					<option value="하">하</option>
+					<option value="하상">하상</option>
+					<option value="중하">중하</option>
+					<option value="중상">중상</option>
+					<option value="상">상</option>
 				</select> <label for="position"> 남기실 말</label> <input type="text"
-					id="comment" name="comment" required>
+					id="M_comment" name="comment" required>
 
-				<button type="button" onclick="recruitMercenary()">게시글 등록하기</button>
+				<button type="button" onclick="recruitMercenary()">용병 게시글 등록하기</button>
 			</form>
 		</section>
+		
 		<section>
-			<h2>용병 목록</h2>
+			<h2>등록된 게시판 목록</h2>
 			<ul id="mercenaryList"></ul>
 		</section>
 	</main>
-
-
-
 	<script>
 		function recruitMercenary() {
 			var playerName = document.getElementById('playerName').value;
@@ -263,7 +269,6 @@ li {
 			// Clear the form fields after recruiting
 			document.getElementById('playerName').value = '';
 			document.getElementById('position').value = '';
-
 		}
 	</script>
 
