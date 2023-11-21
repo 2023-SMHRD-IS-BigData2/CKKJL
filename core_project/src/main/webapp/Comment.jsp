@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<script type="text/javascript">
-		function checkE() {// 옆에 ()괄호에 feedNo,nick,id1,id2,id3,id4 이렇게 적었음
+	<script type="text/javascript">
+		function checkE() {
 			var inputComm = $('#inputComm').val();
 			console.log(inputComm)
 			$.ajax({
@@ -19,12 +19,10 @@
 					'inputComm' : inputComm, 'text' : text
 				},
 				// 요청방식
-				type : 'get',
+				type : 'post',
 				// 요청 성공시
 				success : function(data) {
-				// 키티퍼피는 아래처럼 적었음
-					//	feedComCount(feedNo,id2);
-				//	feedComLoad(feedNo,nick,id3,id4);
+				
 				},
 				// 요청 실패시 
 				error : function() {
@@ -32,17 +30,17 @@
 				}
 			})
 		}
-		
-		// 댓글 삭제(키티퍼피버전)
-		function feedComDelete(feedNo,fcNo,nick,id,id2,id3) {
+		// 댓글 삭제
+		function CommDel() {
 			$.ajax({
-				url: "FeedCommentDeleteCon.do",
+				url: "CommDelService",
 				type: "post",
-				data: {fcNo: fcNo},
-				dataType: 'json',
-				success: function(result) {
-					feedComCount(feedNo,id);
-					feedComLoad(feedNo,nick,id2,id3);
+				data: {
+					     : 
+					
+				},
+				success: function(data) {
+
 				},
 				error : function(){
 					console.log('err');
