@@ -279,8 +279,13 @@ li {
 			document.getElementById('mercenaryList').appendChild(listItem)
 
 			// Clear the form fields after recruiting
-			document.getElementById('playerName').value = '';
-			document.getElementById('position').value = '';
+			document.getElementById('matching_playerName').value = '';
+			document.getElementById('matching_starttime').value = '';
+			document.getElementById('matching_finishtime').value = '';
+			document.getElementById('matching_peoplenum').value = '';
+			document.getElementById('matching_level').value = '';
+			document.getElementById('matching_comment').value = '';
+			document.getElementById('matching_date').value = '';
 		}
 		function recruitMercenary() {
 			var playerName = document.getElementById('M_playerName').value;
@@ -301,8 +306,13 @@ li {
 			document.getElementById('mercenaryList').appendChild(listItem)
 
 			// Clear the form fields after recruiting
-			document.getElementById('playerName').value = '';
-			document.getElementById('position').value = '';
+			document.getElementById('M_playerName').value = '';
+			document.getElementById('M_starttime').value = '';
+			document.getElementById('M_finishtime').value = '';
+			document.getElementById('M_peoplenum').value = '';
+			document.getElementById('M_level').value = '';
+			document.getElementById('M_comment').value = '';
+			document.getElementById('M_date').value = '';
 		}
 	</script>
 
