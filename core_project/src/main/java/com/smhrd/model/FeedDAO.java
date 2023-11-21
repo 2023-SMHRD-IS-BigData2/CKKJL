@@ -5,18 +5,18 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.smhrd.database.SqlSessionManager1;
+import com.smhrd.database.SqlSessionManager;
 
-public class BoardDAO {
+public class FeedDAO {
 
-	SqlSessionFactory sqlsessionFactory = SqlSessionManager1.getSqlSession();
+	SqlSessionFactory sqlsessionFactory = SqlSessionManager.getSqlSession();
 	SqlSession sqlSession = sqlsessionFactory.openSession(true);
 
 	// 게시글 작성
-	public int writeBoard (Board vo) {
+	public int writeFeed (Feed vo) {
 		int cnt = 0;
 		try {
-			cnt = sqlSession.insert("com.smhrd.database.BoardMapper.writeBoard",vo);
+			cnt = sqlSession.insert("com.smhrd.database.FeedMapper.writeFeed",vo);
 		} catch (Exception e) {
 		} finally {
 			sqlSession.close();
@@ -24,28 +24,27 @@ public class BoardDAO {
 		return cnt; 
 	}
 	
-	public List<Board> allBoard() {
-		List<Board> boards = null;
+	public List<Feed> allFeed() {
+		List<Feed> boards = null;
 		try {
-		boards	= sqlSession.selectList("com.smhrd.database.BoardMapper.allBoard");
+		boards	= sqlSession.selectList("com.smhrd.database.FeedMapper.allFeed");
 		} catch (Exception e) {
 		}finally {
 			sqlSession.close();
 		}
 		return boards; 
-	} 
+	}
+	
 	// 게시글 상세 조회
-	public Board detailBoard(int num) {
-		Board board = null;
+	public Feed detailFeed(int num) {
+		Feed feed = null;
 		try {
-		board =	sqlSession.selectOne("com.smhrd.database.BoardMapper.detailBoard", num);
+			feed =	sqlSession.selectOne("com.smhrd.database.FeedMapper.detailFeed", num);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}finally {
 			sqlSession.close();
 		}
-		return board;
+		return feed;
 	}
-	
-
 }
