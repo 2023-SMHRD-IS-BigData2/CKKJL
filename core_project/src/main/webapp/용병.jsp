@@ -73,9 +73,12 @@ li {
 <body>
 
 	<header>
-		<a href="sns페이지.html">
-		<img src="핵심images/FUTSAL062-removebg-preview.PNG" alt="" /></a>
-		<h1>매치 용병 등록하기</h1>
+		<div>
+			<a href="sns페이지.html"> <img
+				src="핵심images/FUTSAL062-removebg-preview.PNG" alt="" width="200"
+				height="50" /></a>
+			<h1>매치 용병 등록하기</h1>
+		</div>
 	</header>
 
 	<main>
@@ -156,7 +159,8 @@ li {
 				</select> <label for="position"> 남기실 말</label> <input type="text"
 					id="comment" name="comment" required>
 
-				<button type="button" onclick="recruitMercenary()">매치 게시글 등록하기</button>
+				<button type="button" onclick="recruitMercenary()">매치 게시글
+					등록하기</button>
 			</form>
 		</section>
 		<section>
@@ -222,15 +226,14 @@ li {
 
 				</select> <label for="position"> 원하는 인원수 </label> <select id="M_peoplenum"
 					name="peoplenum">
-					<option value="1명">1명 </option>
-					<option value="2명">2명 </option>
-					<option value="3명">3명 </option>
-					<option value="4명">4명 </option>
-					<option value="5명">5명 </option>
-					<option value="6명">6명 </option>
-					<option value="그 외">그 외 </option>
-				</select> 
-				<label for="position">수준</label> <select id="M_level" name="level">
+					<option value="1명">1명</option>
+					<option value="2명">2명</option>
+					<option value="3명">3명</option>
+					<option value="4명">4명</option>
+					<option value="5명">5명</option>
+					<option value="6명">6명</option>
+					<option value="그 외">그 외</option>
+				</select> <label for="position">수준</label> <select id="M_level" name="level">
 					<option value="하">하</option>
 					<option value="하상">하상</option>
 					<option value="중하">중하</option>
@@ -239,10 +242,11 @@ li {
 				</select> <label for="position"> 남기실 말</label> <input type="text"
 					id="M_comment" name="comment" required>
 
-				<button type="button" onclick="recruitMercenary()">용병 게시글 등록하기</button>
+				<button type="button" onclick="recruitMercenary()">용병 게시글
+					등록하기</button>
 			</form>
 		</section>
-		
+
 		<section>
 			<h2>등록된 게시판 목록</h2>
 			<ul id="mercenaryList"></ul>
