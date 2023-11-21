@@ -73,7 +73,7 @@ li {
 <body>
 
 	<header>
-		<a href="sns페이지.html" class="image featured">
+		<a href="sns페이지.html">
 		<img src="핵심images/FUTSAL062-removebg-preview.PNG" alt="" /></a>
 		<h1>매치 용병 등록하기</h1>
 	</header>
