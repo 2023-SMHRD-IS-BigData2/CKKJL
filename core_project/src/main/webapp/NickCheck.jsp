@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<input type="button" value="닉네임중복체크" onclick="checkE()">
 	<script type="text/javascript">
 		function checkE() {
 			var inputNick = $('#inputNick').val();
@@ -34,10 +36,8 @@
 				error : function() {
 					alert("통신실패")
 				}
-
 			})
 		}
 	</script>
-
 </body>
 </html>
