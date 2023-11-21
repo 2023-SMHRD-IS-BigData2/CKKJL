@@ -35,15 +35,15 @@ public class FeedDAO {
 		return boards; 
 	} 
 	// 게시글 상세 조회
-	public Board detailBoard(int num) {
-		Board board = null;
+	public Feed detailFeed(int num) {
+		Feed feed = null;
 		try {
-		board =	sqlSession.selectOne("com.smhrd.database.FeedMapper.detailFeed", num);
+			feed =	sqlSession.selectOne("com.smhrd.database.FeedMapper.detailFeed", num);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}finally {
 			sqlSession.close();
 		}
-		return board;
+		return feed;
 	}
 }
