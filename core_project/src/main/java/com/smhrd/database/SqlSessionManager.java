@@ -40,11 +40,4 @@ public class SqlSessionManager {
 		return sqlSessionFactory;
 	}
 	
-	
-	
-	
-	
-	
-	
-
 }
