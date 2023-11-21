@@ -9,17 +9,17 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.frontcontroller.command;
 import com.smhrd.model.MemberDAO;
 
-public class EmailCheckService implements command {
+public class NickCheckService implements command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		String inputE = request.getParameter("inputE");
+		String inputNick = request.getParameter("inputNick");
 
-		System.out.println(inputE);
+		System.out.println(inputNick);
 
-		new MemberDAO().emailCheck(inputE);
+		new MemberDAO().NickCheck(inputNick);
 
-		boolean checkE = new MemberDAO().emailCheck(inputE);
+		boolean checkE = new MemberDAO().NickCheck(inputNick);
 		System.out.println(checkE);
 
 		PrintWriter out;
