@@ -13,7 +13,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Member {
-
 	@NonNull private String email;
 	@NonNull private String pw;
 	private String tel;

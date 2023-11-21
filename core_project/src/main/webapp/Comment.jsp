@@ -7,30 +7,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<input type="button" value="닉네임중복체크" onclick="checkE()">
 	<script type="text/javascript">
 		function checkE() {
-			var inputNick = $('#inputNick').val();
-			console.log(inputE)
-
+			var inputComm = $('#inputComm').val();
+			console.log(inputComm)
 			$.ajax({
 				// 어디로 요청할 것인지
-				url : 'NickCheckService',
+				url : 'CommentService',
 				// 요청 데이터(json)
 				data : {
-					'inputNick' : inputNick
+					'inputComm' : inputComm, 'text' : text
 				},
 				// 요청방식
-				type : 'get',
+				type : 'post',
 				// 요청 성공시
 				success : function(data) {
-
-					if (data == 'true') {
-						$('#NickCheck').text('사용할 수 없는 닉네임')
-					} else {
-						$('#NickCheck').text('사용할 수 있는 닉네임')
-					}
+				
 				},
 				// 요청 실패시 
 				error : function() {
@@ -38,6 +30,23 @@
 				}
 			})
 		}
+		// 댓글 삭제
+		function CommDel() {
+			$.ajax({
+				url: "CommDelService",
+				type: "post",
+				data: {
+					     : 
+					
+				},
+				success: function(data) {
+
+				},
+				error : function(){
+					console.log('err');
+				}
+			});
+		};
 	</script>
 </body>
 </html>

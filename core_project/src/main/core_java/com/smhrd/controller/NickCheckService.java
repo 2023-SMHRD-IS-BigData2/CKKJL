@@ -13,9 +13,12 @@ public class NickCheckService implements command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		String id = request.getParameter("id");
 		String inputNick = request.getParameter("inputNick");
 
 		System.out.println(inputNick);
+		System.out.println(id);
 
 		new MemberDAO().NickCheck(inputNick);
 
