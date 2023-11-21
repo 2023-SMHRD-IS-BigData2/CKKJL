@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="com.smhrd.database.BoardMapper">
+<mapper namespace="com.smhrd.database.FeedMapper">
 
 	<insert id="writeFeed" parameterType="Feed">
 		insert into TB_FEED values(FEED_INDEX.nextval, 
@@ -19,5 +19,8 @@
 		select * from TB_FEED where F_USER_INDEX=#{user_index}
 	</select>
 	
+	<select id="allFeed" resultType="Feed">
+		select * from TB_FEED order by FEED_DATE
+	</select>
 
 </mapper>
