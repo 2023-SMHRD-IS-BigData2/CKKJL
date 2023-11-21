@@ -15,7 +15,7 @@
 		select * from TB_FEED order by FEED_DATE
 	</select>
 	
-	<select id="detailFeed" resultType="Feed">
+	<select id="detailFeed" resultType="Feed" parameterType="int">
 		select * from TB_FEED where F_USER_INDEX=#{user_index}
 	</select>
 	

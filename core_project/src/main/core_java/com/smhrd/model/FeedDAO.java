@@ -27,7 +27,7 @@ public class FeedDAO {
 	public List<Feed> allFeed() {
 		List<Feed> boards = null;
 		try {
-		boards	= sqlSession.selectList("com.smhrd.database.BoardMapper.allBoard");
+		boards	= sqlSession.selectList("com.smhrd.database.FeedMapper.allFeed");
 		} catch (Exception e) {
 		}finally {
 			sqlSession.close();
@@ -38,7 +38,7 @@ public class FeedDAO {
 	public Board detailBoard(int num) {
 		Board board = null;
 		try {
-		board =	sqlSession.selectOne("com.smhrd.database.BoardMapper.detailBoard", num);
+		board =	sqlSession.selectOne("com.smhrd.database.FeedMapper.detailFeed", num);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}finally {
