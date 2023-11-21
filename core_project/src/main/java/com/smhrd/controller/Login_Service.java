@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Login_Service extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	String id = request.getAttribute("id");
+	
 	
 	
 	
