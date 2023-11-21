@@ -41,17 +41,17 @@ public class MemberDAO {
 		}
 		return loginMember;
 	}
-	// 중복확인 메소드
-	public boolean emailCheck(String inputE) {
-		boolean checkE = false;
+	// 닉네임 확인 메소드
+	public boolean NickCheck(String inputNick) {
+		boolean checkN = false;
 		try {
-			checkE = sqlSession.selectOne("com.smhrd.database.MemberMapper.emailCheck", inputE);
+			checkN = sqlSession.selectOne("com.smhrd.database.MemberMapper.NickCheck", inputNick);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}finally {
 			sqlSession.close();
 		}
-		return checkE ; //T or F
+		return checkN ; //T or F
 	}
 	// 업데이트 메소드
 	public int updateMember(Member updateMember) {
