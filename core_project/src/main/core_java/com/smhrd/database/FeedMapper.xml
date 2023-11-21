@@ -20,7 +20,7 @@
 	</select>
 	
 	<select id="allFeed" resultType="Feed">
-		select * from TB_FEED order by FEED_DATE
+		select * from TB_FEED order by FEED_DATE DESC
 	</select>
 
 </mapper>
