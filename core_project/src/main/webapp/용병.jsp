@@ -183,8 +183,7 @@ li {
 
 			// Create a list item to display the recruited mercenary
 			var listItem = document.createElement('li');
-			listItem.textContent = playerName + date + '(' + starttime + ' ~ ' + finishtime + ")"+ peoplenum + '<' +level+'>' + comment ;
-
+			listItem. innerHTML = date + '(' + starttime +' ~ ' + finishtime + ")"+ peoplenum + '<' +level+'>' + "&nbsp;" + playerName+ "<br>" + comment;
 			
 			// Append the list item to the mercenary list
 			document.getElementById('mercenaryList').appendChild(listItem)
