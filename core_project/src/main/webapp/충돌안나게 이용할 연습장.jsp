@@ -17,8 +17,8 @@
 <link rel="stylesheet" href="assetsBoard/css/board.css" />
 <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-
 </head>
+
 <body>
 	<!-- 김명준  -->
 		<!-- 댓글 작성 
@@ -73,6 +73,7 @@
 				}
 			});
 		};
+		
         // 대댓글 삭제
 		function feedCoComDelete(feedNo,coNo,nick,id,id2,id3) {
 			$.ajax({
@@ -90,7 +91,6 @@
 			});
 		};
     -->
-	
         $(document).on('click', '.likeBtn',(e)=>{
         //   console.log(e);
             $(e.target).text('♥');
@@ -99,7 +99,6 @@
             $(e.target).removeAttr('class');
             $(e.target).attr('class', 'dislikeBtn');
         })
-
         $(document).on('click','.dislikeBtn',(e)=>{
             $(e.target).text('♡');
             $('.dislikeBtn+span').text('0');
@@ -107,14 +106,6 @@
             $(e.target).removeClass('dislikeBtn');
             $(e.target).attr('class','likeBtn');
         })
-	
-	
-	
-	
-	
-	
-	
-	
 	
 </body>
 </html>
