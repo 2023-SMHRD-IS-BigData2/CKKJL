@@ -13,7 +13,7 @@ public class FeedDAO {
 	SqlSession sqlSession = sqlsessionFactory.openSession(true);
 
 	// 게시글 작성
-	public int writeFeed (Feed___0 vo) {
+	public int writeFeed (Feed vo) {
 		int cnt = 0;
 		try {
 			cnt = sqlSession.insert("com.smhrd.database.FeedMapper.writeFeed",vo);
@@ -24,8 +24,8 @@ public class FeedDAO {
 		return cnt; 
 	}
 	
-	public List<Feed___0> allFeed() {
-		List<Feed___0> boards = null;
+	public List<Feed> allFeed() {
+		List<Feed> boards = null;
 		try {
 		boards	= sqlSession.selectList("com.smhrd.database.FeedMapper.allFeed");
 		} catch (Exception e) {
@@ -36,8 +36,8 @@ public class FeedDAO {
 	}
 	
 	// 게시글 상세 조회
-	public Feed___0 detailFeed(int num) {
-		Feed___0 feed = null;
+	public Feed detailFeed(int num) {
+		Feed feed = null;
 		try {
 			feed =	sqlSession.selectOne("com.smhrd.database.FeedMapper.detailFeed", num);
 		} catch (Exception e) {
