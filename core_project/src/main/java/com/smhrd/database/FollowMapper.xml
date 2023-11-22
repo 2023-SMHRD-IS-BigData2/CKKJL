@@ -6,7 +6,7 @@
 <!-- 5. Mapper 만들기 -> SQL 쿼리문을 작성하는 파일 -->
 <!-- namespace : 현재 Mapper의 id를 그룹화 하는 속성 sql 태그의 id가 중복 될 수 있기 때문에 id를 잘 
 	찾아갈 수 있도록 그룹화 주로 현재 Mapper파일의 경로를 작성 -->
-<mapper namespace="com.smhrd.database.MemberMapper">
+<mapper namespace="com.smhrd.database.FollowMapper">
 
  	<!-- 닉네임 중복확인 -->
 	<select id="NickCheck" parameterType="String"
@@ -16,4 +16,24 @@
 		end result
 		from TB_USER_INFO where U_NICKNAME=#{inputNick}
 	</select>
+	
+	<!-- 팔로잉 추가 -->
+	<insert id="sendFollow" parameterType="">
+	insert into TB_FOLLOW values(FOLLOW,)
+	
+	</insert>
+	<!-- 팔로워 추가 -->
+	<insert id="receiveFollow" parameterType="">
+	insert into TB_FOLLOW values()
+	
+	<!--  팔로잉 검색 -->
+	</insert>
+	<select id="checkFollowing">
+	select * from TB_FOLLOW F_FOLLOWER 
+	</select>
+	<!--  팔로워 검색 -->
+	<select id="checkFollower">
+	select F_FOLLOWER
+	</select>
+	
 </mapper>
