@@ -96,15 +96,9 @@ section {
 
 <body>
 	<%
-
 		List<Feed> Feeds = new FeedDAO().totalFeed();
 		pageContext.setAttribute("Feeds", Feeds);
 	%>
-	<link rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-	<!-- Bootstrap의 button -->
-
-	<!-- Bulma의 button -->
 
 
 	<section class="hero is-primary is-bold is-medium">
@@ -112,7 +106,7 @@ section {
 
 		<div class="hero-body">
 
-			<img src="핵심images/FUTSAL062-removebg-preview.png"></a>
+			<img src="핵심images/FUTSAL062-removebg-preview.png">
 			<div class="container">
 
 				<h2 class="subtitle" style="color: green;">GWANGJU 2030 FUTSAL
