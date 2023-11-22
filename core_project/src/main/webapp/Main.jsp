@@ -7,7 +7,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,12 +94,11 @@ section {
 
 
 <body>
-	<%
+
+	<%-- <%
 		List<Feed> Feeds = new FeedDAO().totalFeed();
 		pageContext.setAttribute("Feeds", Feeds);
-	%>
-
-
+	%> --%>
 	<section class="hero is-primary is-bold is-medium">
 
 
@@ -132,7 +130,7 @@ section {
 			<a href="MyPage.html">
 				<button class="button is-primary is-outlined is-large"
 					style="background-color: white;">My Page</button>
-			</a> <a href="./BoardWrite.jsp">
+			</a> <a href="./FeedWrite.jsp">
 				<button class="button is-primary is-outlined is-large"
 					style="background-color: white;">피드 작성</button>
 			</a> <a href="pagenation.html">
@@ -160,22 +158,22 @@ section {
 		<div class="post-container"></div>
 		<div class="post-container"></div>
 	</a>
-	<%
+	<%-- <%
 	for (int i = 0; i < Feeds.size(); i++) {
-	%>
+	%> --%>
 	<div class="box">
 		<article class="media">
 			<div class="media-left">
 				<figure class="image is-64x64">
-					<img src="./file/<%=Feeds.get(i).getFilename()%>" alt="Image">
+					<%-- <img src="./file/<%=Feeds.get(i).getFilename()%>" alt="Image"> --%>
 				</figure>
 			</div>
 			<div class="media-content">
 				<div class="content">
-					<p>
+					<%--  <p>
 						<strong><%=Feeds.get(i).getWriter()%></strong><strong><%=Feeds.get(i).getB_date()%></strong>
 						<br>
-						<%=Feeds.get(i).getContent()%><br>
+						<%=Feeds.get(i).getContent()%><br> 
 						<tr>
 							<td colspan="2">
 								<button class="likeBtn">♡</button> <span>0 <!--int cnt = feedLike.size() -->
@@ -185,7 +183,7 @@ section {
 
 							</td>
 						</tr>
-					</p>
+					</p> --%>
 				</div>
 				<nav class="level is-mobile">
 					<div class="level-left">
@@ -208,9 +206,9 @@ section {
 		</article>
 	</div>
 
-	<%
+<%-- 	<%
 	}
-	%>
+	%> --%>
 </body>
 
 </html>
