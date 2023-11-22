@@ -338,7 +338,7 @@
                             <!-- Illustrations -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">발흥민</h6> <small>5분전</small>
+                                    <h6 class="m-0 font-weight-bold text-primary">팔로잉</h6> <small>3명</small>
                                 </div>
                                 <div class="card-body">
                                     <div class="text-center">
@@ -350,12 +350,12 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-6 mb-4">
+                            
 
                                 <!-- Illustrations -->
                                 <div class="card shadow mb-4">
                                     <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">박건성</h6> <small>5분전</small>
+                                        <h6 class="m-0 font-weight-bold text-primary">팔로우</h6> <small>3명</small>
                                     </div>
                                     <div class="card-body">
                                         <div class="text-center">
