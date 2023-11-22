@@ -12,7 +12,7 @@ public class MemberDAO {
 	// connection, close, sql문 실행...
 	SqlSession sqlSession = sqlSessionFactory.openSession(true); // 오토 커밋
 
-	// 게시글 작성
+
 	public int join(Member vo) {
 		int cnt = 0;
 		try {
