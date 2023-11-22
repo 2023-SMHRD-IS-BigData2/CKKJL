@@ -133,7 +133,7 @@ section {
 				<button class="button is-primary is-outlined is-large"
 					style="background-color: white;">매칭용병 잡기</button>
 			</a>
-			<a href="ViewMatch.jsp">
+			<a href="pagenation.html">
 				<button class="button is-primary is-outlined is-large"
 					style="background-color: white;">매칭용병 보기</button>
 			</a>
