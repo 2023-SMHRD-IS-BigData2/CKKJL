@@ -31,53 +31,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <!-- Sidebar -->
         
-
-            <!-- Divider -->
-            
-
-            <!-- Nav Item - Dashboard -->
-
-           
-
-
-            <!-- Divider -->
-            
-
-            <!-- Heading -->
-            
-            <!-- Nav Item - Pages Collapse Menu -->
-            
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            
-
-            <!-- Divider -->
-            
-
-            <!-- Heading -->
-            
-            <!-- Nav Item - Pages Collapse Menu -->
-            
-
-            <!-- Nav Item - Charts -->
-            
-
-            <!-- Nav Item - Tables -->
-           
-
-            <!-- Divider -->
-            
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            
-
-            <!-- Sidebar Message -->
-           
-
-        
-        <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -122,13 +76,13 @@
                         <span><button class="button is-primary is-outlined is-large">피드 작성</button></span>
                     </a>
                     
-                        <a class="nav-link collapsed" href="매칭용병 잡기.html" data-target="#collapseTwo"
+                        <a class="nav-link collapsed" href="RealPagenation.jsp" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
 
                         <span><button class="button is-primary is-outlined is-large">매칭용병 잡기</button></span>
                     </a>
                     
-                        <a class="nav-link collapsed" href="매칭용병 보기.html" data-target="#collapseTwo"
+                        <a class="nav-link collapsed" href="RealPagenation.jsp" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
 
                         <span><button class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
@@ -282,7 +236,7 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="진짜login.html" id="userDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="RealLogin.jsp" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">로그인해주세요</span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
@@ -290,7 +244,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="진짜login.html">
+                                <a class="dropdown-item" href="RealLogin.jsp">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     login
                                 </a>
