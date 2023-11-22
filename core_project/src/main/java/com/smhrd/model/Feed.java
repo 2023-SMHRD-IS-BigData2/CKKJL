@@ -21,7 +21,7 @@ public class Feed {
 	@NonNull private int user_index; // 유저고유번호
 	@NonNull private String title; // 피드제목
 	@NonNull private String content; // 피드글
+	private Date date; // 작성일시
 	private String file; // 파일주소
 	private int like_cnt; //좋아요 수
-	private Date date; // 작성일시
 }
