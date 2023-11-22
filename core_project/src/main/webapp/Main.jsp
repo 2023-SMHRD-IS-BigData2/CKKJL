@@ -33,14 +33,14 @@
 }
 
 .hero-body {
-	background-color: ivory;
-	width: 2000px;
+	background-color: #6ab04c;
+	width: 100%;
 	align-items: center;
 	margin-right: 200%;
 }
 
 section {
-	width: 600px;
+	width: 100%;
 	max-width: 100vw;
 	margin: auto;
 }
@@ -99,11 +99,12 @@ section {
 
 
 		<div class="hero-body">
-
-			<img src="핵심images/FUTSAL062-removebg-preview.png"></a>
+			<div style="background-color:white">
+			<img src="핵심images/FUTSAL062-removebg-preview.png">
+			</div>
 			<div class="container">
 
-				<h2 class="subtitle" style="color: green;">GWANGJU 2030 FUTSAL
+				<h2 class="subtitle" style="color: black;">GWANGJU 2030 FUTSAL
 					COMMUNITY</h2>
 			</div>
 		</div>
