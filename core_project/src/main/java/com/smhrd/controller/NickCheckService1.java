@@ -3,17 +3,17 @@ package com.smhrd.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smhrd.frontcontroller.command;
 import com.smhrd.model.MemberDAO;
 
-public class NickCheckService implements command {
+public class NickCheckService1 extends HttpServlet {
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		
 		String id = request.getParameter("id");
 		String inputNick = request.getParameter("inputNick");
 
@@ -32,7 +32,7 @@ public class NickCheckService implements command {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return;
 	}
 
 }

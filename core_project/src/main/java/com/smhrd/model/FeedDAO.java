@@ -33,7 +33,8 @@ public class FeedDAO {
 			sqlSession.close();
 		}
 		return boards; 
-	} 
+	}
+	
 	// 게시글 상세 조회
 	public Feed detailFeed(int num) {
 		Feed feed = null;
