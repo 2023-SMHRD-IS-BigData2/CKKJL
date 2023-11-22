@@ -87,7 +87,6 @@ li {
 					var date = window.location.hash;
 					document.write('날짜 : ' , date.slice(1, 11));
 				</script>
-
 				<label for="playerName">팀 이름</label> <input type="text"
 					id="matching_playerName" name="playerName" required> <label
 					for="position">시작 시간</label> <select id="matching_starttime"
@@ -165,8 +164,6 @@ li {
 					게시글 등록하기</button>
 
 			</form>
-		</section>
-		<section>
 			<h2 align="center">용병 등록</h2>
 			<form>
 				<script>
@@ -330,7 +327,7 @@ li {
 			document.getElementById('M_comment').value = '';
 			document.getElementById('M_date').value = '';
 		}
+	
 	</script>
-
 </body>
 </html>

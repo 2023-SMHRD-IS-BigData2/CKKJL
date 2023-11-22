@@ -10,7 +10,7 @@
 	<properties resource="com/smhrd/database/db.properties"> </properties>
 	<typeAliases>
 		<typeAlias type="com.smhrd.model.Member" alias="Member"/>
-		<typeAlias type="com.smhrd.model.Board" alias="Board"/>
+		<typeAlias type="com.smhrd.model.Feed" alias="Feed"/>
 		<typeAlias type="com.smhrd.model.Message" alias="Message"/>
 	</typeAliases>			
 					
@@ -27,7 +27,7 @@
   </environments>
   <mappers>
     <mapper resource="com/smhrd/database/MemberMapper.xml"/>
-    <mapper resource="com/smhrd/database/BoardMapper.xml"/>
+    <mapper resource="com/smhrd/database/FeedMapper.xml"/>
     <mapper resource="com/smhrd/database/MessageMapper.xml"/>
   </mappers>
 </configuration>

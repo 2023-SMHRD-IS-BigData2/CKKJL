@@ -9,42 +9,65 @@ import com.smhrd.database.SqlSessionManager;
 
 public class FeedDAO {
 
-	SqlSessionFactory sqlsessionFactory = SqlSessionManager.getSqlSession();
-	SqlSession sqlSession = sqlsessionFactory.openSession(true);
+	// 세션을 생성해 줄 수 있는 Factory 생성
+	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 
+	// connection, close, sql문 실행...
+	SqlSession sqlSession = sqlSessionFactory.openSession(true); // 오토 커밋
+
+	
 	// 게시글 작성
-	public int writeFeed (Feed vo) {
+	public int writeFeed(Feed vo) {
 		int cnt = 0;
 		try {
-			cnt = sqlSession.insert("com.smhrd.database.FeedMapper.writeFeed",vo);
+			cnt = sqlSession.insert("com.smhrd.database.FeedMapper.writeFeed", vo);
 		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			sqlSession.close();
 		}
-		return cnt; 
+		return cnt;
 	}
-	
-	public List<Feed> allFeed() {
-		List<Feed> boards = null;
+
+	public List<Feed> totalFeed() {
+
+		List<Feed> Feeds = null;
 		try {
-		boards	= sqlSession.selectList("com.smhrd.database.FeedMapper.allFeed");
+
+			Feeds = sqlSession.selectList("com.smhrd.database.FeedMapper.totalFeed");
+
 		} catch (Exception e) {
-		}finally {
+			e.printStackTrace();
+		} finally {
 			sqlSession.close();
 		}
-		return boards; 
+
+		return Feeds;
+
 	}
-	
-	// 게시글 상세 조회
-	public Feed detailFeed(int num) {
-		Feed feed = null;
+
+	public int deleteFeed(String num) {
+		int cnt = 0;
 		try {
-			feed =	sqlSession.selectOne("com.smhrd.database.FeedMapper.detailFeed", num);
+			cnt = sqlSession.delete("com.smhrd.database.FeedMapper.deleteFeed", num);
 		} catch (Exception e) {
-			// TODO: handle exception
-		}finally {
+			e.printStackTrace();
+		} finally {
 			sqlSession.close();
 		}
-		return feed;
+		return 0;
 	}
+
+	public Feed detailBoard(int num) {
+		Feed Feed = null;
+		try {
+			Feed = sqlSession.selectOne("com.smhrd.database.FeedMapper.detailFeed", num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return Feed;
+	}
+
 }

@@ -9,17 +9,17 @@ import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 @Getter
 @ToString
-public class Feed {
-
+@RequiredArgsConstructor
+public class Member {
 	
-	private int num;  // 인덱스
-	@NonNull private String writer;  // 작성자
-	@NonNull private String filename;  // 파일이름
-	@NonNull private String content;   // 내용
-    private String b_date;  // 업로드 시각
+	@NonNull private String id;
+	@NonNull private String nick;
+	@NonNull private String pic;
+	private String team;
+	private String intro;
+		
+	
 
 }
-

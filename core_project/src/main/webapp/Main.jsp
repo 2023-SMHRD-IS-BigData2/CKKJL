@@ -1,13 +1,20 @@
+<%@page import="com.smhrd.model.Feed"%>
+<%@page import="com.smhrd.model.FeedDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>sns페이지</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
 <style>
 .login-image {
 	order: 2;
@@ -33,14 +40,14 @@
 }
 
 .hero-body {
-	background-color: #6ab04c;
-	width: 100%;
+	background-color: ivory;
+	width: 2000px;
 	align-items: center;
 	margin-right: 200%;
 }
 
 section {
-	width: 100%;
+	width: 600px;
 	max-width: 100vw;
 	margin: auto;
 }
@@ -84,10 +91,15 @@ section {
 	margin: auto;
 }
 </style>
-
 </head>
 
+
 <body>
+	<%
+
+		List<Feed> Feeds = new FeedDAO().totalFeed();
+		pageContext.setAttribute("Feeds", Feeds);
+	%>
 	<link rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 	<!-- Bootstrap의 button -->
@@ -99,12 +111,11 @@ section {
 
 
 		<div class="hero-body">
-			<div style="background-color:white">
-			<img src="핵심images/FUTSAL062-removebg-preview.png">
-			</div>
+
+			<img src="핵심images/FUTSAL062-removebg-preview.png"></a>
 			<div class="container">
 
-				<h2 class="subtitle" style="color: black;">GWANGJU 2030 FUTSAL
+				<h2 class="subtitle" style="color: green;">GWANGJU 2030 FUTSAL
 					COMMUNITY</h2>
 			</div>
 		</div>
@@ -127,16 +138,12 @@ section {
 			<a href="MyPage.html">
 				<button class="button is-primary is-outlined is-large"
 					style="background-color: white;">My Page</button>
-			</a> <a href="./FeedWrite.html">
+			</a> <a href="./BoardWrite.jsp">
 				<button class="button is-primary is-outlined is-large"
 					style="background-color: white;">피드 작성</button>
 			</a> <a href="pagenation.html">
 				<button class="button is-primary is-outlined is-large"
 					style="background-color: white;">매칭용병 잡기</button>
-			</a>
-			<a href="pagenation.html">
-				<button class="button is-primary is-outlined is-large"
-					style="background-color: white;">매칭용병 보기</button>
 			</a>
 		</div>
 
@@ -146,7 +153,10 @@ section {
 	</section>
 	<section class="section">
 		<h1 class="title">피드</h1>
-		
+		<br>
+		<h2 class="subtitle">
+			내가 올리고싶은 이야기를 <b>자유롭게</b> 올려주세요
+		</h2>
 		</div>
 	</section>
 	<section>
@@ -156,54 +166,31 @@ section {
 		<div class="post-container"></div>
 		<div class="post-container"></div>
 	</a>
+	<%
+	for (int i = 0; i < Feeds.size(); i++) {
+	%>
 	<div class="box">
 		<article class="media">
 			<div class="media-left">
 				<figure class="image is-64x64">
-					<img src="핵심images/발흥민.jpg" alt="Image">
+					<img src="./file/<%=Feeds.get(i).getFilename()%>" alt="Image">
 				</figure>
 			</div>
 			<div class="media-content">
 				<div class="content">
 					<p>
-						<strong>발흥민</strong> <small>1시간전</small> <br> 저희팀과 비슷한 수준을 가진
-						팀과 풋살하고싶습니다~
-					</p>
+						<strong><%=Feeds.get(i).getWriter()%></strong><strong><%=Feeds.get(i).getB_date()%></strong>
+						<br>
+						<%=Feeds.get(i).getContent()%><br>
+						<tr>
+							<td colspan="2">
+								<button class="likeBtn">♡</button> <span>0 <!--int cnt = feedLike.size() -->
+							</span>
+								<button class="textBtn">댓글 쓰기</button> <span>댓글숫자0</span>
+								<button>채팅보내기</button>
 
-				</div>
-				<nav class="level is-mobile">
-					<div class="level-left">
-						<a class="level-item" aria-label="reply"> <span
-							class="icon is-small"> <i class="fas fa-reply"
-								aria-hidden="true"></i>
-						</span>
-						</a> <a class="level-item" aria-label="retweet"> <span
-							class="icon is-small"> <i class="fas fa-retweet"
-								aria-hidden="true"></i>
-						</span>
-						</a> <a class="level-item" aria-label="like"> <span
-							class="icon is-small"> <i class="fas fa-heart"
-								aria-hidden="true"></i>
-						</span>
-						</a>
-					</div>
-				</nav>
-			</div>
-		</article>
-	</div>
-	
-	<div class="box">
-		<article class="media">
-			<div class="media-left">
-				<figure class="image is-64x64">
-					<img src="핵심images/삼민아.jpg" alt="Image">
-				</figure>
-			</div>
-			<div class="media-content">
-				<div class="content">
-					<p>
-						<strong>삼민아</strong> <small>30분전</small> <br> 골때녀 보고 풋살 관심
-						생겼어요 같이해요~
+							</td>
+						</tr>
 					</p>
 				</div>
 				<nav class="level is-mobile">
@@ -226,117 +213,10 @@ section {
 			</div>
 		</article>
 	</div>
-	<table border="1" class="futsal-class">
-		<!--caption : 표의 제목-->
 
-		<body style="text-align: center;"></body>
-		<!--thead : Header에 들어가 Content를 모아놓은 태그-->
-		<thead>
-			<!--tr : table row 행을 의미하는 태그-->
-			<tr>
-				<!--th : table header 행의 제목을 의미하는 태그-->
-				<th><iframe width="200" height="400"
-						src="https://www.youtube.com/embed/LpDGDBiCas0"
-						title="1vs1 탈압박은 이렇게!🔥" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen></iframe></th>
-
-
-			</tr>
-		</thead>
-	</table>
-	<div class="box">
-		<article class="media">
-			<div class="media-left">
-				<figure class="image is-64x64">
-					<img src="핵심images/팔자철.jpg" alt="Image">
-				</figure>
-			</div>
-			<div class="media-content">
-				<div class="content">
-					<p>
-						<strong>팔자철</strong> <small>15분전</small> <br> 매너있는 팀만 연락주세요
-					</p>
-				</div>
-				<nav class="level is-mobile">
-					<div class="level-left">
-						<a class="level-item" aria-label="reply"> <span
-							class="icon is-small"> <i class="fas fa-reply"
-								aria-hidden="true"></i>
-						</span>
-						</a> <a class="level-item" aria-label="retweet"> <span
-							class="icon is-small"> <i class="fas fa-retweet"
-								aria-hidden="true"></i>
-						</span>
-						</a> <a class="level-item" aria-label="like"> <span
-							class="icon is-small"> <i class="fas fa-heart"
-								aria-hidden="true"></i>
-						</span>
-						</a>
-					</div>
-				</nav>
-			</div>
-		</article>
-	</div>
-	
-	<div class="box">
-		<article class="media">
-			<div class="media-left">
-				<figure class="image is-64x64">
-					<img src="핵심images/박건성.jpg" alt="Image">
-				</figure>
-			</div>
-			<div class="media-content">
-				<div class="content">
-					<p>
-						<strong>박건성</strong> <small>5분전</small> <br> 저랑 시간대가 맞는분과
-						풋살하고싶습니다
-					</p>
-				</div>
-
-				<nav class="level is-mobile">
-					<div class="level-left">
-						<a class="level-item" aria-label="reply"> <span
-							class="icon is-small"> <i class="fas fa-reply"
-								aria-hidden="true"></i>
-						</span>
-						</a> <a class="level-item" aria-label="retweet"> <span
-							class="icon is-small"> <i class="fas fa-retweet"
-								aria-hidden="true"></i>
-						</span>
-						</a> <a class="level-item" aria-label="like"> <span
-							class="icon is-small"> <i class="fas fa-heart"
-								aria-hidden="true"></i>
-						</span>
-						</a>
-					</div>
-				</nav>
-			</div>
-		</article>
-	</div>
-	<table border="1" class="futsal-class">
-		<!--caption : 표의 제목-->
-
-		<body style="text-align: center;"></body>
-		<!--thead : Header에 들어가 Content를 모아놓은 태그-->
-		<thead>
-			<!--tr : table row 행을 의미하는 태그-->
-			<tr>
-				<!--th : table header 행의 제목을 의미하는 태그-->
-				<th><iframe width="200" height="400"
-						src="https://www.youtube.com/embed/w_yeHm4UPs8"
-						title="풋살할때 이 기술 쓰는사람 조심하세요" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen></iframe></th>
-
-
-
-			</tr>
-		</thead>
-	</table>
-
+	<%
+	}
+	%>
 </body>
 
 </html>
-
-

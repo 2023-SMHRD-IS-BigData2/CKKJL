@@ -47,14 +47,15 @@ form {
 
 							let properties = response.properties;
 							let id = response.id;
-							let profile = properties.profile_image;
+							let pic = properties.profile_image;
 							let nick = properties.nickname;
+							
 							console.log(id);
-							console.log(profile);
-							console.log(name);
+							console.log(pic);
+							console.log(nick);
 						
 							document.token_value.id.value = id;
-							document.token_value.profile.value = profile;	
+							document.token_value.pic.value = pic;	
 							document.token_value.nick.value = nick;
 							document.token_value.submit();
 
@@ -71,9 +72,9 @@ form {
 		}
 	</script>
 	
-	<form action="Login_Service" name="token_value">
+	<form action="LoginService" name="token_value" method="post">
 		<input type="text" name="id" value="">
-		<input type="text" name="profile" value="">
+		<input type="text" name="pic" value="">
 		<input type="text" name="nick" value="">
 	</form>
 
