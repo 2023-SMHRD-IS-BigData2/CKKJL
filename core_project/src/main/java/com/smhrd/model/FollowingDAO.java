@@ -10,32 +10,33 @@ public class FollowingDAO {
 	SqlSession sqlSession = sqlsessionFactory.openSession(true);
 
 	// 팔로우
-	public String sendFollow () {
-		String cnt = null;
+	public int sendFollow(Follow follow) {
+		int cnt = 0;
 		try {
-			cnt = sqlSession.insert("com.smhrd.database.FollowMapper.sendFollow",);
+			cnt = sqlSession.insert("com.smhrd.database.FollowMapper.sendFollow", follow);
 		} catch (Exception e) {
-		  
+			e.printStackTrace();
 		} finally {
 			sqlSession.close();
 		}
 		return cnt;
 	}
-	
-	// 팔로잉
-	public String receiveFollow () {
-		String cnt = null;
+
+	// 팔로우 판별
+	public boolean selFollow(Follow follow) {
+		boolean sel = false;
+
+		Follow selfollow = null;
 		try {
-			cnt = sqlSession.insert("com.smhrd.database.FollowMapper.receiveFollow",);
+			selfollow = sqlSession.selectOne("com.smhrd.database.FollowMapper.selFollow", follow);
+			if (selfollow != null) {
+				sel = true;
+			}
 		} catch (Exception e) {
 		} finally {
 			sqlSession.close();
 		}
-		return cnt;
+		return sel;
 	}
-	
-	
-	
-	
-	
+
 }

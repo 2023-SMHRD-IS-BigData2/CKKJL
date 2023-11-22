@@ -12,7 +12,7 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Following {
+public class Follow {
 
 	private String following; // 팔로잉
 	private String follower;  // 팔로워
