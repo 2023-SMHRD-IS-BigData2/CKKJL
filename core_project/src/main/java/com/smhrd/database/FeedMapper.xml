@@ -5,16 +5,32 @@
   
 <mapper namespace="com.smhrd.database.FeedMapper">
 	<insert id="writeFeed" parameterType="Feed">
+<<<<<<< HEAD
 		insert into web_board1 values (num_board.nextval,#{writer},#{filename},#{content},sysdate)
+=======
+		insert into TB_FEED values(FEED_INDEX.nextval, 
+		#{category}, #{user_index}, #{title}, #{content}, 
+		sysdate, #{file}, #{like_cnt})
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
 	</insert>
 	<select id="totalFeed" resultType="Feed">
 		select * from web_board1 order by num
 	</select>
+<<<<<<< HEAD
 	<delete id="deleteFeed">
 		delete from web_board1 where num=#{num} 
 	</delete>
 	<select id="detailFeed" resultType="Feed">
 		select * from web_board1 where num=#{num}
+=======
+	
+	<select id="detailFeed" resultType="Feed">
+		select * from TB_FEED where F_USER_INDEX=#{user_index}
+	</select>
+	
+	<select id="allFeed" resultType="Feed">
+		select * from TB_FEED order by FEED_DATE DESC
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
 	</select>
 
 </mapper>
