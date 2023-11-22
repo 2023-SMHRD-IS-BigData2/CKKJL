@@ -53,7 +53,7 @@
                                         <h1 class="h4 text-gray-900 mb-4">Welcome!</h1>
                                     </div>
                                     
-                                        <a href="#" class="btn btn-google btn-user btn-block">
+                                        <a href="Login.jsp" class="btn btn-google btn-user btn-block">
                                             <img src="img/카카오톡 로그인.png" alt="KakaoTalk Logo" class="kakao-logo-img" width="30" height="30">
                                             Login with kakaotalk
                                         </a>
