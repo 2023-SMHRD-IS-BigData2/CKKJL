@@ -16,7 +16,10 @@ import lombok.ToString;
 @ToString
 @RequiredArgsConstructor
 public class mercenary_match_feed {
-	Boolean mm; // 용병/매치 구분코드 (매치 = True, 용병 = False)
+	
+	// 매칭, 용병 피드 추가시 모든 정보 입력!
+	
+	int mm; // 용병/매치 구분코드 (매치 = 0, 용병 = 1)
 	Date date; // 경기날짜
 	String teamName; // 팀네임(user에서 가져올 것)
 	int start_hour; // 시작시간 ex) 11:00 -> 11
