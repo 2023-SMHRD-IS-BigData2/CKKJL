@@ -45,17 +45,29 @@ public class FeedDAO {
 		return Feeds;
 
 	}
-	
-	// 게시글 상세 조회
-	public Feed detailFeed(int num) {
-		Feed feed = null;
+
+	public int deleteFeed(String num) {
+		int cnt = 0;
 		try {
-			feed =	sqlSession.selectOne("com.smhrd.database.FeedMapper.detailFeed", num);
+			cnt = sqlSession.delete("com.smhrd.database.FeedMapper.deleteFeed", num);
 		} catch (Exception e) {
-			// TODO: handle exception
-		}finally {
+			e.printStackTrace();
+		} finally {
 			sqlSession.close();
 		}
-		return feed;
+		return 0;
 	}
+
+	public Feed detailBoard(int num) {
+		Feed Feed = null;
+		try {
+			Feed = sqlSession.selectOne("com.smhrd.database.FeedMapper.detailFeed", num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return Feed;
+	}
+
 }
