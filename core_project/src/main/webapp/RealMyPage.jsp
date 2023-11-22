@@ -63,7 +63,7 @@ section {
 </head>
 <body>
 	<header>
-		<a href="sns페이지.html"><img
+		<a href="RealMain.jsp"><img
 			src="핵심images/FUTSAL062-removebg-preview.png" alt="Logo"></a>
 		<!-- 로고 삽입 -->
 		<img src="핵심images/박지성.jfif" alt="profile">

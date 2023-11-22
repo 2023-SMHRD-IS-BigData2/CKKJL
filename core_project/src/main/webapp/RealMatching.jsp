@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="utf-8">
@@ -25,11 +24,8 @@
 <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
 
-
 </head>
-
 <body id="page-top">
-
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 
@@ -69,7 +65,6 @@
 
 						</div>
 					</form>
-
 					<a class="nav-link collapsed" href="RealMyPage.jsp"
 						data-target="#collapseTwo" aria-expanded="true"
 						aria-controls="collapseTwo"> <span><button
@@ -264,12 +259,6 @@
 				<!-- End of Topbar -->
 				<section>
 					<div class="container button-container">
-						<!-- 고정시켜야됨 -->
-
-
-
-
-
 					</div>
 			</div>
 			</section>
@@ -283,13 +272,7 @@
 				<div class="row">
 
 
-
-
-
 					<!-- Earnings (Monthly) Card Example -->
-
-
-
 
 					<!-- Content Row -->
 
@@ -330,8 +313,7 @@
 						<!-- Illustrations -->
 						<div class="card shadow mb-4">
 							<div class="card-header py-3">
-								<h6 class="m-0 font-weight-bold text-primary">매치등록</h6>
-								<small>5분전</small>
+								<h6 class="m-0 font-weight-bold text-primary" align="center">매치등록</h6>
 							</div>
 							<div class="card-body">
 								<div class="text-center">
@@ -345,7 +327,8 @@
 											</script>
 											<br> <label for="playerName">팀 이름</label> <input
 												type="text" id="matching_playerName" name="playerName"
-												required> <label for="position"><br> 시작
+												required> <br>
+												<label for="position"><br>시작
 												시간</label> <select id="matching_starttime" name="starttime" required>
 												<option value="미정">미정</option>
 												<option value="00:00">00:00</option>
@@ -372,8 +355,8 @@
 												<option value="21:00">21:00</option>
 												<option value="22:00">22:00</option>
 												<option value="23:00">23:00</option>
-												<br>
-											</select> <label for="position"> 끝나는 시간</label> <select
+												<br></select> <br>
+												<label for="position"> 끝나는 시간</label> <select
 												id="matching_finishtime" name="finishtime">
 												<option value="미정">미정</option>
 												<option value="00:00">00:00</option>
@@ -402,28 +385,27 @@
 												<option value="23:00">23:00</option>
 												<br>
 
-											</select> <label for="position"> 인원수 </label> <select
+											</select><br> <label for="position"> 인원수 </label> <select
 												id="matching_peoplenum" name="peoplenum">
 												<option value="5vs5">5:5</option>
 												<option value="6vs6">6:6</option>
 												<option value="7vs7">7:7</option>
 												<option value="그 외">그 외</option>
-											</select> <label for="position">수준</label> <select id="matching_level"
+											</select><br> <label for="position">수준</label> <select id="matching_level"
 												name="matching_level">
 												<option value="하">하</option>
 												<option value="하상">하상</option>
 												<option value="중하">중하</option>
 												<option value="중상">중상</option>
 												<option value="상">상</option>
-											</select> <label for="position"> 남기실 말</label> <input type="text"
+											</select><br> <label for="position"> 남기실 말</label> <input type="text"
 												id="matching_comment" name="comment" required>
-
+												<br>
 											<button type="button" onclick="matchingRegistration()">매치
 												게시글 등록하기</button>
 										</form>
 									</section>
 								</div>
-								<p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
 
 							</div>
 						</div>
@@ -432,8 +414,7 @@
 							<!-- Illustrations -->
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-primary">용병 등록</h6>
-									<small>5분전</small>
+									<h6 class="m-0 font-weight-bold text-primary" align="center">용병 등록</h6>
 								</div>
 								<div class="card-body">
 									<div class="text-center">
@@ -444,7 +425,7 @@
 										</script>
 									</div>
 									<label for="playerName">팀 이름</label> <input type="text"
-               id="M_playerName" name="playerName" required> <label
+               id="M_playerName" name="playerName" required><br> <label
                for="position">가능한 시작 시간 </label> <select id="M_starttime"
                name="starttime" required>
                <option value="미정">미정</option>
@@ -472,7 +453,7 @@
                <option value="21:00">21:00</option>
                <option value="22:00">22:00</option>
                <option value="23:00">23:00</option>
-            </select> <label for="position"> 가능한 끝 시간</label> <select id="M_finishtime"
+            </select><br> <label for="position"> 가능한 끝 시간</label> <select id="M_finishtime"
                name="finishtime">
                <option value="미정">미정</option>
                <option value="00:00">00:00</option>
@@ -499,8 +480,7 @@
                <option value="21:00">21:00</option>
                <option value="22:00">22:00</option>
                <option value="23:00">23:00</option>
-
-            </select> <label for="position"> 원하는 인원수 </label> <select id="M_peoplenum"
+            </select><br> <label for="position"> 원하는 인원수 </label> <select id="M_peoplenum"
                name="peoplenum">
                <option value="1명">1명</option>
                <option value="2명">2명</option>
@@ -509,28 +489,19 @@
                <option value="5명">5명</option>
                <option value="6명">6명</option>
                <option value="그 외">그 외</option>
-            </select> <label for="position">수준</label> <select id="M_level" name="level">
+            </select><br> <label for="position">수준</label> <select id="M_level" name="level">
                <option value="하">하</option>
                <option value="하상">하상</option>
                <option value="중하">중하</option>
                <option value="중상">중상</option>
                <option value="상">상</option>
-            </select> <label for="position"> 남기실 말</label> <input type="text"
-               id="M_comment" name="comment" required>
-
+            </select><br> <label for="position"> 남기실 말</label> <input type="text"
+               id="M_comment" name="comment" required><br>
             <button type="button" onclick="recruitMercenary()">용병 게시글
                등록하기</button>
          </form>
-      
-
 								</div>
 							</div>
-
-
-							<!-- Approach -->
-
-
-
 						</div>
 					</div>
 
