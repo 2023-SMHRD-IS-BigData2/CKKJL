@@ -77,7 +77,6 @@
                         <span><button class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
                     </a>
                     
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -398,7 +397,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -411,11 +409,8 @@
 
         <!-- Page level plugins -->
         <script src="vendor/chart.js/Chart.min.js"></script>
-
         <!-- Page level custom scripts -->
         <script src="js/demo/chart-area-demo.js"></script>
         <script src="js/demo/chart-pie-demo.js"></script>
-
 </body>
-
 </html>

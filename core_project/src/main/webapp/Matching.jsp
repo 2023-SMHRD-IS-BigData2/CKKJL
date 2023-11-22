@@ -249,15 +249,6 @@ li {
 					<option value="중하">중하</option>
 					<option value="중상">중상</option>
 					<option value="상">상</option>
-				</select> <label for="position"> 원하는 인원수 </label> <select id="M_peoplenum"
-					name="peoplenum">
-					<option value="1명">1명</option>
-					<option value="2명">2명</option>
-					<option value="3명">3명</option>
-					<option value="4명">4명</option>
-					<option value="5명">5명</option>
-					<option value="6명">6명</option>
-					<option value="그 외">그 외</option>
 				</select> <label for="position"> 남기실 말</label> <input type="text"
 					id="M_comment" name="comment" required>
 
