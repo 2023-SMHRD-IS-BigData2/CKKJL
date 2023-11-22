@@ -71,7 +71,7 @@ form {
 		}
 	</script>
 	
-	<form action="Login_Service" name="token_value">
+	<form action="Login_Service" name="token_value" method="post">
 		<input type="text" name="id" value="">
 		<input type="text" name="pic" value="">
 		<input type="text" name="nick" value="">
