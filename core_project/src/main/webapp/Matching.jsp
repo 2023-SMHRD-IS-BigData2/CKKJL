@@ -73,8 +73,8 @@ li {
 <body>
 
 	<header>
-		<a href="Main.jsp">
-		<img src="핵심images/FUTSAL062-removebg-preview.PNG" alt="" /></a>
+		<a href="Main.jsp"> <img
+			src="핵심images/FUTSAL062-removebg-preview.PNG" alt="" /></a>
 		<h1>매치 용병 등록하기</h1>
 	</header>
 
@@ -83,12 +83,15 @@ li {
 		<section>
 			<h2 align="center">매치등록</h2>
 			<form>
-				<label for="position">날짜</label> 
-				<input type="date" id="matching_date" name="date" value=""> 
-				<label for="playerName">팀 이름</label> 
-				<input type="text" id="matching_playerName" name="playerName" required> 
-					<label for="position">시작 시간</label> 
-					<select id="matching_starttime" name="starttime" required>
+				<script>
+					var date = window.location.hash;
+					document.write('날짜 : ' , date.slice(1, 11));
+				</script>
+
+				<label for="playerName">팀 이름</label> <input type="text"
+					id="matching_playerName" name="playerName" required> <label
+					for="position">시작 시간</label> <select id="matching_starttime"
+					name="starttime" required>
 					<option value="미정">미정</option>
 					<option value="00:00">00:00</option>
 					<option value="01:00">01:00</option>
@@ -114,9 +117,8 @@ li {
 					<option value="21:00">21:00</option>
 					<option value="22:00">22:00</option>
 					<option value="23:00">23:00</option>
-				</select> 
-				<label for="position"> 끝나는 시간</label> 
-				<select id="matching_finishtime" name="finishtime">
+				</select> <label for="position"> 끝나는 시간</label> <select
+					id="matching_finishtime" name="finishtime">
 					<option value="미정">미정</option>
 					<option value="00:00">00:00</option>
 					<option value="01:00">01:00</option>
@@ -143,37 +145,39 @@ li {
 					<option value="22:00">22:00</option>
 					<option value="23:00">23:00</option>
 
-				</select> 
-				<label for="position"> 인원수 </label> 
-				<select id="matching_peoplenum" name="peoplenum">
+				</select> <label for="position"> 인원수 </label> <select id="matching_peoplenum"
+					name="peoplenum">
 					<option value="5vs5">5:5</option>
 					<option value="6vs6">6:6</option>
 					<option value="7vs7">7:7</option>
 					<option value="그 외">그 외</option>
-				</select> 
-				<label for="position">수준</label> 
-				<select id="matching_level" name="matching_level">
+				</select> <label for="position">수준</label> <select id="matching_level"
+					name="matching_level">
 					<option value="하">하</option>
 					<option value="하상">하상</option>
 					<option value="중하">중하</option>
 					<option value="중상">중상</option>
 					<option value="상">상</option>
-				</select> 
-				<label for="position"> 남기실 말</label> <input type="text" id="matching_comment" name="comment" required>
+				</select> <label for="position"> 남기실 말</label> <input type="text"
+					id="matching_comment" name="comment" required>
 
-				<button type="button" onclick="matchingRegistration()">매치 게시글 등록하기</button>
+				<button type="button" onclick="matchingRegistration()">매치
+					게시글 등록하기</button>
 
 			</form>
 		</section>
 		<section>
 			<h2 align="center">용병 등록</h2>
 			<form>
-				<label for="position">날짜</label> 
-				<input type="date" id="M_date" name="date"> 
-				<label for="playerName">이름</label> 
-				<input type="text" id="M_playerName" name="playerName" required> 
-				<label for="position">가능한 시작 시간 </label> 
-					<select id="M_starttime" name="starttime" required>
+				<script>
+					
+					var date = window.location.hash;
+					document.write('날짜 : ' , date.slice(1, 11));
+				</script>
+				<label for="playerName">팀 이름</label> <input type="text"
+					id="M_playerName" name="playerName" required> <label
+					for="position">가능한 시작 시간 </label> <select id="M_starttime"
+					name="starttime" required>
 					<option value="미정">미정</option>
 					<option value="00:00">00:00</option>
 					<option value="01:00">01:00</option>
@@ -199,9 +203,8 @@ li {
 					<option value="21:00">21:00</option>
 					<option value="22:00">22:00</option>
 					<option value="23:00">23:00</option>
-				</select> 
-				<label for="position"> 가능한 끝 시간</label> 
-				<select id="M_finishtime" name="finishtime">
+				</select> <label for="position"> 가능한 끝 시간</label> <select id="M_finishtime"
+					name="finishtime">
 					<option value="미정">미정</option>
 					<option value="00:00">00:00</option>
 					<option value="01:00">01:00</option>
@@ -228,7 +231,7 @@ li {
 					<option value="22:00">22:00</option>
 					<option value="23:00">23:00</option>
 
-					</select> <label for="position"> 원하는 인원수 </label> <select id="M_peoplenum"
+				</select> <label for="position"> 원하는 인원수 </label> <select id="M_peoplenum"
 					name="peoplenum">
 					<option value="1명">1명</option>
 					<option value="2명">2명</option>
@@ -237,28 +240,23 @@ li {
 					<option value="5명">5명</option>
 					<option value="6명">6명</option>
 					<option value="그 외">그 외</option>
-				</select>
-				<label for="position">수준</label> 
-				<select id="M_level" name="level">
+				</select> <label for="position">수준</label> <select id="M_level" name="level">
 					<option value="하">하</option>
 					<option value="하상">하상</option>
 					<option value="중하">중하</option>
 					<option value="중상">중상</option>
 					<option value="상">상</option>
-				</select> 
-				<label for="position"> 원하는 인원수 </label> 
-				<select id="M_peoplenum" name="peoplenum">
-					<option value="1명">1명 </option>
-					<option value="2명">2명 </option>
-					<option value="3명">3명 </option>
-					<option value="4명">4명 </option>
-					<option value="5명">5명 </option>
-					<option value="6명">6명 </option>
-					<option value="그 외">그 외 </option>
-				</select> 
-				
-				<label for="position"> 남기실 말</label> 
-				<input type="text" id="M_comment" name="comment" required>
+				</select> <label for="position"> 원하는 인원수 </label> <select id="M_peoplenum"
+					name="peoplenum">
+					<option value="1명">1명</option>
+					<option value="2명">2명</option>
+					<option value="3명">3명</option>
+					<option value="4명">4명</option>
+					<option value="5명">5명</option>
+					<option value="6명">6명</option>
+					<option value="그 외">그 외</option>
+				</select> <label for="position"> 남기실 말</label> <input type="text"
+					id="M_comment" name="comment" required>
 
 				<button type="button" onclick="recruitMercenary()">용병 게시글
 					등록하기</button>
@@ -269,10 +267,10 @@ li {
 			<h2>등록된 게시판 목록</h2>
 			<ul id="mercenaryList"></ul>
 		</section>
-		
+
 	</main>
 	<script>
-	// "&nbsp;" 1칸 뛰어쓰기 "&ensp;" 2칸 "&emsp;" 3칸
+		// "&nbsp;" 1칸 뛰어쓰기 "&ensp;" 2칸 "&emsp;" 3칸
 		function matchingRegistration() {
 			var playerName = document.getElementById('matching_playerName').value;
 			var starttime = document.getElementById('matching_starttime').value;
@@ -285,10 +283,11 @@ li {
 			// Create a list item to display the recruited mercenary
 			var listItem = document.createElement('li');
 
-		
-			listItem.innerHTML = "매칭" + "&ensp;"+ date + '(' + starttime +' ~ ' + finishtime + ") "+ "&ensp;" + "인원수 : " + peoplenum + "&ensp;" + '수준 : ' +level+ "&ensp;" + "이름 : " + playerName+ "<br>" 
-			+ comment;
-			
+			listItem.innerHTML = "매칭" + "&ensp;" + date + '(' + starttime
+					+ ' ~ ' + finishtime + ") " + "&ensp;" + "인원수 : "
+					+ peoplenum + "&ensp;" + '수준 : ' + level + "&ensp;"
+					+ "이름 : " + playerName + "<br>" + comment;
+
 			// Append the list item to the mercenary list
 			document.getElementById('mercenaryList').appendChild(listItem)
 
@@ -301,7 +300,7 @@ li {
 			document.getElementById('matching_comment').value = '';
 			document.getElementById('matching_date').value = '';
 		}
-	
+
 		function recruitMercenary() {
 			var playerName = document.getElementById('M_playerName').value;
 			var starttime = document.getElementById('M_starttime').value;
@@ -313,10 +312,12 @@ li {
 
 			// Create a list item to display the recruited mercenary
 			var listItem = document.createElement('li');
-			
-			listItem.innerHTML = "용병" + "&ensp;"+ date + '(' + starttime +' ~ ' + finishtime + ")"+ "&ensp;" + "원하는 인원 수 : " + peoplenum + "&ensp;" + '수준 : ' +level+ "&ensp;" + "이름 : " + playerName+ "<br>" 
-			+ comment;
-			
+
+			listItem.innerHTML = "용병" + "&ensp;" + date + '(' + starttime
+					+ ' ~ ' + finishtime + ")" + "&ensp;" + "원하는 인원 수 : "
+					+ peoplenum + "&ensp;" + '수준 : ' + level + "&ensp;"
+					+ "이름 : " + playerName + "<br>" + comment;
+
 			// Append the list item to the mercenary list
 			document.getElementById('mercenaryList').appendChild(listItem)
 
