@@ -335,9 +335,9 @@
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
 								<form action="./FeedService" method="post" enctype="multipart/form-data">
-									<p>작성자</p>
+									<p>타이틀</p>
 									<p>
-										<input type="text" name="writer">
+										<input type="text" name="title">
 									</p>
 								</div>
 								<div class="card-body">
