@@ -25,6 +25,7 @@
 
 </head>
 
+
 <body id="page-top">
 
 	<!-- Page Wrapper -->
@@ -273,9 +274,6 @@
 							<div class="row"></div>
 						</div>
 					</div>
-
-                        
-
                         <div class="col-lg-6 mb-4">
                             <h1 class="h3 mb-4 text-gray-800">My page</h1>
                             <section>
@@ -302,6 +300,8 @@
         <!-- 첫 번째 열 -->
         <div class="col-md-1"></div>
 
+                                </div>
+                            </div>
         <!-- 두 번째 열 -->
         <div class="col-md-3">
             <div class="card shadow mb-4">
@@ -388,20 +388,7 @@
     </div>
 </div>
 </section>
-                        
-                            
-
-                                <!-- Illustrations -->
-                                
-                                
-                                
-
-
-                                <!-- Approach -->
-
-
-
-                            
+                                                   
                         </div>
 
                     </div>
@@ -409,11 +396,6 @@
 
                 </div>
                 <!-- End of Main Content -->
-
-                
-
-						
-
 		</div>
 		<!-- End of Content Wrapper -->
 

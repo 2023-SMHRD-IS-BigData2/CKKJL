@@ -11,7 +11,6 @@
 	<typeAliases>
 		<typeAlias type="com.smhrd.model.Member" alias="Member"/>
 		<typeAlias type="com.smhrd.model.Feed" alias="Feed"/>
-		<typeAlias type="com.smhrd.model.Message" alias="Message"/>
 	</typeAliases>			
 					
   <environments default="development">
@@ -28,6 +27,5 @@
   <mappers>
     <mapper resource="com/smhrd/database/MemberMapper.xml"/>
     <mapper resource="com/smhrd/database/FeedMapper.xml"/>
-    <mapper resource="com/smhrd/database/MessageMapper.xml"/>
   </mappers>
 </configuration>
