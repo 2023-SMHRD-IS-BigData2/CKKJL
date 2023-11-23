@@ -12,7 +12,7 @@ public class MatchDAO {
 	// connection, close, sql문 실행...
 	SqlSession sqlSession = sqlSessionFactory.openSession(true); // 오토 커밋
 
-	public int join(vo) {
+	public int join(Match vo) {
 		int cnt = 0;
 		try {
 			cnt = sqlSession.insert("com.smhrd.database.MatchMapper.join", vo);
