@@ -334,7 +334,7 @@
 							<!-- Illustrations -->
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
-								<form action="./FeedService.do" method="post" enctype="multipart/form-data">
+								<form action="./FeedService" method="post" enctype="multipart/form-data">
 									<p>작성자</p>
 									<p>
 										<input type="text" name="writer">
@@ -352,7 +352,7 @@
 										<table>
 											<tr>
 												<td colspan="2">
-														<input type="file" id="input-file" className="btnOfinput"/>
+														<input type="file" id="input-file" className="btnOfinput" name="filename" />
 														<label for="input-file">업로드</label>
 													 
 													<input type="submit" value="작성하기"
