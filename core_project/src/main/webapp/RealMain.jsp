@@ -82,7 +82,7 @@
 						data-target="#collapseTwo" aria-expanded="true"
 						aria-controls="collapseTwo"> <span><button
 								class="button is-primary is-outlined is-large">매칭용병 잡기</button></span>
-					</a> <a class="nav-link collapsed" href="RealPagenation.jsp"
+					</a> <a class="nav-link collapsed" href="ViewPagenation.jsp"
 						data-target="#collapseTwo" aria-expanded="true"
 						aria-controls="collapseTwo"> <span><button
 								class="button is-primary is-outlined is-large">매칭용병 보기</button></span>

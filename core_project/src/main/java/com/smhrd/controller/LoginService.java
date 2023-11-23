@@ -24,13 +24,14 @@ public class LoginService extends HttpServlet {
 
 		System.out.println(id + pic + nick);
 
+		Member vo = new Member(id, nick, pic);
 		HttpSession session = request.getSession();
 		session.setAttribute("id", id);
 		session.setAttribute("pic", pic);
 		session.setAttribute("nick", nick);
-
-		Member vo = new Member(id, nick, pic);
 		session.setAttribute("vo", vo);
+
+
 		int cnt = new MemberDAO().join(vo);
 
 		if (cnt > 0) {
