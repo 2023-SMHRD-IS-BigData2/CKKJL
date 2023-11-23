@@ -20,7 +20,6 @@ public class MatchService extends HttpServlet {
 		HttpSession session = request.getSession();
 		Member vo = (Member)session.getAttribute("vo");
 		String nick = vo.getNick();
-		String team = vo.getTeam();
 		
 		String starttime = request.getParameter("starttime");
 		String finishtime = request.getParameter("finishtime");
@@ -36,11 +35,14 @@ public class MatchService extends HttpServlet {
 		session.setAttribute("level", level);
 		session.setAttribute("comment", comment);
 		
+		int cnt = new 
 		// MatchText vo = new MatchText(starttime, finishtime, people,)
+		
+		
+		
 		
 		response.sendRedirect("ViewMatch.jsp");
 	
 	
 	}
-
 }

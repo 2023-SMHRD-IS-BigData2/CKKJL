@@ -308,10 +308,9 @@
 									<form action="MatchService" method="post" name="matchForm">
 										<script>
 											var date = window.location.hash;
-											document.write('날짜 ', date.slice(	1, 11));
+											document.write('날짜 ', date.slice(1, 11));
 										</script>
 										<br>
-											
 										 <br> <label for="position">시작
 											시간</label> <select id="matching_starttime" name="starttime" required>
 											<option value="미정">미정</option>
@@ -410,11 +409,8 @@
 												var date = window.location.hash;
 												document.write('날짜  ', date.slice(1, 11));
 											</script>
-											<br>
-											<p>팀 이름 </p> 
-											<script>
-											Member.getNick();
-											</script> 
+											
+										 
 											<br>
 											<label for="position">가능한 시작 시간 </label> <select
 												id="M_starttime" name="starttime" required>
@@ -497,11 +493,10 @@
 							</div>
 
 
-							<h2>등록된 게시판 목록</h2>
+							<!-- <<h2>등록된 게시판 목록</h2>
 							<ul id="mercenaryList"></ul>
 							<ul id="matchingList"></ul>
-							
-
+							 -->
 						</div>
 					</div>
 				</div>
