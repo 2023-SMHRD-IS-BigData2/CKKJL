@@ -280,6 +280,7 @@
                             <h1 class="h3 mb-4 text-gray-800">Main page</h1>
 
                             <!-- Illustrations -->
+                            
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">발흥민</h6> <small>5분전</small>
@@ -298,6 +299,7 @@
                             
 
                                 <!-- Illustrations -->
+                                
                                 <div class="card shadow mb-4">
                                     <div class="card-header py-3">
                                         <h6 class="m-0 font-weight-bold text-primary">박건성</h6> <small>5분전</small>
@@ -312,6 +314,7 @@
 
                                     </div>
                                 </div>
+                                
 
 
                                 <!-- Approach -->
@@ -324,20 +327,11 @@
                     </div>
                     <!-- /.container-fluid -->
 
-                </div>
-                <!-- End of Main Content -->
+               
 
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2021</span>
-                        </div>
-                    </div>
-                </footer>
-                <!-- End of Footer -->
+						
 
-	    </div>
+		</div>
 		<!-- End of Content Wrapper -->
 
 	</div>
