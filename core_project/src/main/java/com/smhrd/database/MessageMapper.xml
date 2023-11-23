@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.database.MessageMapper">
+   <insert id="insertMessage" parameterType="Message"> insert into
+      TB_message values(num_message.nextval, #{sender}, #{recipient},
+      #{message}, sysdate)
+   </insert>
+   <select id="showMessage" resultType="Message"> select * from TB_message
+      where recipient=#{recipient} order by num desc
+   </select>
+   <delete id="deleteMessage"> delete from TB_message where num=#{num} </delete>
+   <delete id="deleteMessageAll" parameterType="String"> delete from
+      TB_message where recipient=#{email}
+   </delete>
+</mapper>

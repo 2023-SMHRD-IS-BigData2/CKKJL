@@ -13,6 +13,7 @@
 		<typeAlias type="com.smhrd.model.Feed" alias="Feed"/>
 		<typeAlias type="com.smhrd.model.FeedLike" alias="FeedLike"/>
 		<typeAlias type="com.smhrd.model.Follow" alias="Follow"/>
+		<typeAlias type="com.smhrd.model.Message" alias="Message"/>
 	</typeAliases>			
 					
   <environments default="development">
@@ -30,5 +31,6 @@
     <mapper resource="com/smhrd/database/MemberMapper.xml"/>
     <mapper resource="com/smhrd/database/FeedMapper.xml"/>
     <mapper resource="com/smhrd/database/FollowMapper.xml"/>
+    <mapper resource="com/smhrd/database/MessageMapper.xml"/>
   </mappers>
 </configuration>
