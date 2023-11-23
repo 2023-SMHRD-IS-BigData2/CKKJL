@@ -12,11 +12,11 @@ public class FeedAnCommentsDAO {
 	SqlSessionFactory sqlsessionFactory = SqlSessionManager.getSqlSession();
 	SqlSession sqlSession = sqlsessionFactory.openSession(true);
 
-	// 게시글 작성
-	public int writeFeed(FeedAnComments vo) {
+	// 댓글 및 대댓글 작성
+	public int writeFeedAnComments(FeedAnComments vo) {
 		int cnt = 0;
 		try {
-			cnt = sqlSession.insert("com.smhrd.database.FeedMapper.writeFeed", vo);
+			cnt = sqlSession.insert("com.smhrd.database.FeedAnCommentsMapper.writeFeedAnComments", vo);
 		} catch (Exception e) {
 		} finally {
 			sqlSession.close();
@@ -24,27 +24,15 @@ public class FeedAnCommentsDAO {
 		return cnt;
 	}
 
-	public List<Feed> allFeed() {
-		List<Feed> boards = null;
+	public List<FeedAnComments> allFeedAnComments() {
+		List<FeedAnComments> boards = null;
 		try {
-			boards = sqlSession.selectList("com.smhrd.database.FeedMapper.allFeed");
+			boards = sqlSession.selectList("com.smhrd.database.FeedAnCommentsMapper.allFeedAnComments");
 		} catch (Exception e) {
 		} finally {
 			sqlSession.close();
 		}
 		return boards;
 	}
-
-	// 게시글 상세 조회
-	public Feed detailFeed(int num) {
-		Feed feed = null;
-		try {
-			feed = sqlSession.selectOne("com.smhrd.database.FeedMapper.detailFeed", num);
-		} catch (Exception e) {
-			// TODO: handle exception
-		} finally {
-			sqlSession.close();
-		}
-		return feed;
-	}
+	
 }
