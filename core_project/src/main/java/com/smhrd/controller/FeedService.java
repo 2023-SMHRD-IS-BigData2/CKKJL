@@ -23,6 +23,7 @@ public class FeedService extends HttpServlet {
 	      // 2. 파일을 저장할 경로 (String)
 	      String savePath = request.getServletContext().getRealPath("./file");
 	      System.out.println(savePath);
+	      String id = (String)request.getAttribute("id");
 
 	      // 3. 파일 최대 크기 (int)
 	      int maxSize = 1024 * 1024 * 10;
@@ -40,7 +41,10 @@ public class FeedService extends HttpServlet {
 	         String writer = multi.getParameter("writer");
 	         String filename = multi.getFilesystemName("filename");
 	         String content = multi.getParameter("content");
-	         Feed vo = new Feed(writer, filename, content);
+	         Feed vo = new Feed(id, writer, content);
+	         if (filename != null) {
+				vo.setfile(filename);
+			}
 	         System.out.println(vo.toString());
 	         int cnt = new FeedDAO().writeFeed(vo);
 	         if (cnt > 0) {

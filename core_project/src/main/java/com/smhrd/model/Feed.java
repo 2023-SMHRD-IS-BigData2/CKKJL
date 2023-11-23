@@ -22,6 +22,10 @@ public class Feed {
     private String date;  // 업로드 시각
     private String file; // 파일 주소
     private int likecnt; // 좋아요 수
+    
+    public void setfile(String file) {
+		this.file = file;
+	}
 
 }
 
