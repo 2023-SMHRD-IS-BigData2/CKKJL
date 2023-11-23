@@ -1,10 +1,5 @@
 <%@page import="com.smhrd.model.Member"%>
-<<<<<<< HEAD
-<%@ page language="java" contentType="text/html; charset=UTF-8" isELIgnored="false"
-=======
-<%@ page language="java" contentType="text/html; charset=UTF-8" 
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
