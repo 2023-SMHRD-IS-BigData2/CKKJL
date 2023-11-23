@@ -33,7 +33,7 @@
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 
-		
+
 
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">
@@ -328,44 +328,47 @@
 						<h1 class="h3 mb-4 text-gray-800">피드 작성</h1>
 
 						<!-- Illustrations -->
-						
+
 						<div class="col-lg-6 mb-4">
 
 							<!-- Illustrations -->
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
 									<p>작성자</p>
-									<p><input  type="text" name="writer"></p>
+									<p>
+										<input type="text" name="writer">
+									</p>
 								</div>
 								<div class="card-body">
-									<div class="text-center">
-									
-										
-									</div>
+									<div class="text-center"></div>
 									<p colspan="2">내용</p>
 									<br>
 									<p colspan="2"></p>
-									<input  type="file" name="filename"style="float: right;">
-							<textarea  rows="10" name="content" style="resize: none;"></textarea>
-									<p colspan="2">
-									</p>
-									<div>
-								<table>
-									<tr>
-										<td colspan="2">
-											<input type="submit" value="작성하기">
-											<input type="reset" value="초기화">
-										</span>
-											
-											
 
-										</td>
-									</tr>
-								</table>
-							</div>
+									<textarea rows="10" name="content" style="resize: none;"></textarea>
+									<p colspan="2"></p>
+									<div>
+										<table>
+											<tr>
+												<td colspan="2">
+														<input type="file" id="input-file" className="btnOfinput"/>
+														<label for="input-file">업로드</label>
+													 
+													<input type="submit" value="작성하기"
+													style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold">
+													<input type="reset" value="초기화"
+													style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold">
+													</span>
+
+
+
+												</td>
+											</tr>
+										</table>
+									</div>
 
 								</div>
-								
+
 							</div>
 
 

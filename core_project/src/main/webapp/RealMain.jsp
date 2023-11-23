@@ -274,59 +274,70 @@
 						</div>
 					</div>
 
-					<div class="col-lg-6 mb-4">
-						<h1 class="h3 mb-4 text-gray-800">Main page</h1>
+                        
 
-						<!-- Illustrations -->
-						<div class="card shadow mb-4">
-							<div class="card-header py-3">
-								<h6 class="m-0 font-weight-bold text-primary">발흥민</h6>
-								<small>5분전</small>
-							</div>
-							<div class="card-body">
-								<div class="text-center">
-									<img class="img-fluid px-3 px-sm-4 mt-3 mb-4"
-										style="width: 25rem;" src="img/undraw_posting_photo.svg"
-										alt="...">
-								</div>
-								<p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
+                        <div class="col-lg-6 mb-4">
+                            <h1 class="h3 mb-4 text-gray-800">Main page</h1>
 
-							</div>
-						</div>
-						<div class="col-lg-6 mb-4">
+                            <!-- Illustrations -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">발흥민</h6> <small>5분전</small>
+                                </div>
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                            src="img/undraw_posting_photo.svg" alt="...">
+                                    </div>
+                                    <p> 저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~
+                                    </p>
 
-							<!-- Illustrations -->
-							<div class="card shadow mb-4">
-								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-primary">박건성</h6>
-									<small>5분전</small>
-								</div>
-								<div class="card-body">
-									<div class="text-center">
-										<img class="img-fluid px-3 px-sm-4 mt-3 mb-4"
-											style="width: 25rem;" src="img/오풋완.png" alt="...">
-									</div>
-									<p>오풋완</p>
+                                </div>
+                            </div>
+                            
+                            
 
-								</div>
-							</div>
+                                <!-- Illustrations -->
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">박건성</h6> <small>5분전</small>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                                src="img/오풋완.png" alt="...">
+                                        </div>
+                                        <p> 오풋완
+                                        </p>
 
-							<!-- Approach -->
-						</div>
-					</div>
+                                    </div>
+                                </div>
 
-				</div>
-			</div>
 
-			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Your Website 2021</span>
-					</div>
-				</div>
-			</footer>
-			<!-- End of Footer -->
+                                <!-- Approach -->
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.container-fluid -->
+
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2021</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+
+						
 
 		</div>
 		<!-- End of Content Wrapper -->
