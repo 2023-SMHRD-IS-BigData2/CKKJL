@@ -5,7 +5,7 @@
   
 <mapper namespace="com.smhrd.database.FeedMapper">
 	<insert id="writeFeed" parameterType="Feed">
-		insert into TB_FEED values (FEED_INDEX.nextval,#{writer},#{title},#{content}, sysdate, file, 0)
+		insert into TB_FEED values (FEED_INDEX.nextval,#{writer},#{title},#{content}, sysdate, #{file}, 0)
 	</insert>
 	<select id="totalFeed" resultType="Feed">
 		select * from TB_FEED order by FEED_index desc

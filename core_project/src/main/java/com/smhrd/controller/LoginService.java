@@ -31,7 +31,12 @@ public class LoginService extends HttpServlet {
 		session.setAttribute("nick", nick);
 		session.setAttribute("vo", vo);
 
+<<<<<<< HEAD
 		
+=======
+		Member vo = new Member(id, nick, pic);
+		session.setAttribute("vo", vo);
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
 		int cnt = new MemberDAO().join(vo);
 
 		if (cnt > 0) {

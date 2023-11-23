@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,6 +27,13 @@
 </head>
 
 <body id="page-top">
+	<%
+	Member vo = (Member) session.getAttribute("vo");
+
+	if (vo != null) {
+		System.out.print(vo.getId());
+	}
+	%>
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -211,7 +219,7 @@
 										<div class="small text-gray-500">Chicken the Dog · 2w</div>
 									</div>
 								</a> <a class="dropdown-item text-center small text-gray-500"
-									href="#">Read More Messages</a>
+									href="RealMessage.jsp">Read More Messages</a>
 							</div></li>
 						<div class="topbar-divider d-none d-sm-block"></div>
 
@@ -219,10 +227,19 @@
 						<li class="nav-item dropdown no-arrow"><a
 							class="nav-link dropdown-toggle" href="RealLogin.jsp"
 							id="userDropdown" role="button" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> <span
-								class="mr-2 d-none d-lg-inline text-gray-600 small">로그인해주세요</span>
+							aria-haspopup="true" aria-expanded="false"> <%
+ if (vo == null) {
+ %>
+								<span class="mr-2 d-none d-lg-inline text-gray-600 small">로그인해주세요</span>
 								<img class="img-profile rounded-circle"
-								src="img/undraw_profile.svg">
+								src="img/undraw_profile.svg"> <%
+ } else {
+ %> <span
+								class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
+								<img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
+								<%
+								}
+								%>
 						</a> <!-- Dropdown - User Information -->
 							<div
 								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -274,62 +291,63 @@
 						</div>
 					</div>
 
-                        
-
-                        <div class="col-lg-6 mb-4">
-                            <h1 class="h3 mb-4 text-gray-800">Main page</h1>
-
-                            <!-- Illustrations -->
-                            
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">발흥민</h6> <small>5분전</small>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="img/undraw_posting_photo.svg" alt="...">
-                                    </div>
-                                    <p> 저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~
-                                    </p>
-
-                                </div>
-                            </div>
-                            
-                            
-
-                                <!-- Illustrations -->
-                                
-                                <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">박건성</h6> <small>5분전</small>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="text-center">
-                                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                                src="img/오풋완.png" alt="...">
-                                        </div>
-                                        <p> 오풋완
-                                        </p>
-
-                                    </div>
-                                </div>
-                                
 
 
-                                <!-- Approach -->
+					<div class="col-lg-6 mb-4">
+						<h1 class="h3 mb-4 text-gray-800">Main page</h1>
+
+						<!-- Illustrations -->
+
+						<div class="card shadow mb-4">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">발흥민</h6>
+								<small>5분전</small>
+							</div>
+							<div class="card-body">
+								<div class="text-center">
+									<img class="img-fluid px-3 px-sm-4 mt-3 mb-4"
+										style="width: 25rem;" src="img/undraw_posting_photo.svg"
+										alt="...">
+								</div>
+								<p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
+
+							</div>
+						</div>
 
 
 
-                            </div>
-                        </div>
+						<!-- Illustrations -->
 
-                    </div>
-                    <!-- /.container-fluid -->
+						<div class="card shadow mb-4">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">박건성</h6>
+								<small>5분전</small>
+							</div>
+							<div class="card-body">
+								<div class="text-center">
+									<img class="img-fluid px-3 px-sm-4 mt-3 mb-4"
+										style="width: 25rem;" src="img/오풋완.png" alt="...">
+								</div>
+								<p>오풋완</p>
 
-               
+							</div>
+						</div>
 
-						
+
+
+						<!-- Approach -->
+
+
+
+					</div>
+				</div>
+
+			</div>
+			<!-- /.container-fluid -->
+
+
+
+
 
 		</div>
 		<!-- End of Content Wrapper -->
@@ -359,7 +377,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
+					<a class="btn btn-primary" href="RealLogin.jsp">Logout</a>
 				</div>
 			</div>
 		</div>
