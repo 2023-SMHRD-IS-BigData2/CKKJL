@@ -31,7 +31,7 @@
 	Member vo = (Member) session.getAttribute("vo");
 
 	if (vo != null) {
-		System.out.print(vo.getId());
+		
 	}
 	%>
 
@@ -236,7 +236,7 @@
  } else {
  %> <span
 								class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
-								<img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
+								<img class="img-profile rounded-circle" src="<%vo.getPic();%>">
 								<%
 								}
 								%>

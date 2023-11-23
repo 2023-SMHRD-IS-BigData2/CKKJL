@@ -19,3 +19,7 @@ btnOfinput{
 	display:none;
 	
 }
+body {
+  max-width: 8px;
+  margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
+}
