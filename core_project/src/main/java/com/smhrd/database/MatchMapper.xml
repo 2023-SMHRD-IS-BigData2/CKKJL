@@ -5,8 +5,9 @@
   
 <mapper namespace="com.smhrd.database.MatchMapper">
 
-	<insert id="" parameterType="">
-	INSERT INTO TB_MATCH(,START_HOUR,LAST_HOUR,PEOPLE_NUM,F_LEVEL,WRITING) VALUES (#{},#{},#{},#{},#{},#{})
+	<insert id="join" parameterType="Match">
+	INSERT INTO TB_MATCH(START_HOUR,LAST_HOUR,PEOPLE_NUM,F_LEVEL,TEXT) VALUES (#{starttime},#{finishtime},
+						#{peoplenum},#{level},#{comment})
 	</insert>
 
 
