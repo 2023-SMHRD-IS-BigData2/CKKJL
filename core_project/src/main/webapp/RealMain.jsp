@@ -1,5 +1,5 @@
 <%@page import="com.smhrd.model.Member"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8" isELIgnored="false"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,11 +28,8 @@
 
 <body id="page-top">
 	<%
-	Member vo = (Member) session.getAttribute("vo");
+		Member vo = (Member)session.getAttribute("vo");
 
-	if (vo != null) {
-		
-	}
 	%>
 
 	<!-- Page Wrapper -->
@@ -236,7 +233,7 @@
  } else {
  %> <span
 								class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
-								<img class="img-profile rounded-circle" src="<%vo.getPic();%>">
+								<img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
 								<%
 								}
 								%>

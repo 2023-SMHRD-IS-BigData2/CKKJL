@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.MemberDTO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
@@ -27,6 +28,7 @@
 
 </head>
 <body id="page-top">
+
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 
@@ -78,7 +80,7 @@
 						data-target="#collapseTwo" aria-expanded="true"
 						aria-controls="collapseTwo"> <span><button
 								class="button is-primary is-outlined is-large">매칭용병 잡기</button></span>
-					</a> <a class="nav-link collapsed" href="RealPagenation.jsp"
+					</a> <a class="nav-link collapsed" href="ViewPagenation.jsp"
 						data-target="#collapseTwo" aria-expanded="true"
 						aria-controls="collapseTwo"> <span><button
 								class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
@@ -111,7 +113,6 @@
 									</div>
 								</form>
 							</div></li>
-
 
 						<!-- Nav Item - Alerts -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
@@ -304,15 +305,13 @@
 							</div>
 							<div class="card-body">
 								<div class="text-center">
-									<form>
-																		
+									<form action="MatchService" method="post" name="matchForm">
 										<script>
 											var date = window.location.hash;
-											document.write('날짜 ', date.slice(	1, 11));
+											document.write('날짜 ', date.slice(1, 11));
 										</script>
-										<br> <label for="playerName">팀 이름</label> <input
-											type="text" id="matching_playerName" name="playerName"
-											required> <br> <label for="position">시작
+										<br>
+										 <br> <label for="position">시작
 											시간</label> <select id="matching_starttime" name="starttime" required>
 											<option value="미정">미정</option>
 											<option value="00:00">00:00</option>
@@ -385,6 +384,7 @@
 										</select><br> <label for="position"> 남기실 말</label> <input
 											type="text" id="matching_comment" name="comment" required>
 										<br>
+										<input type="submit" value="매치 게시글 등록하기" onclick="matchingRegistration()">
 										<button type="button" onclick="matchingRegistration()">매치
 											게시글 등록하기</button>
 									</form>
@@ -404,14 +404,14 @@
 
 								<div class="card-body">
 									<div class="text-center">
-										<form>
+										<form action="MatchService" method="post" name="matchForm">
 											<script>
 												var date = window.location.hash;
 												document.write('날짜  ', date.slice(1, 11));
 											</script>
+											
+										 
 											<br>
-											<label for="playerName">팀 이름</label> <input type="text"
-												id="M_playerName" name="playerName" required><br>
 											<label for="position">가능한 시작 시간 </label> <select
 												id="M_starttime" name="starttime" required>
 												<option value="미정">미정</option>
@@ -484,19 +484,19 @@
 												<option value="상">상</option>
 											</select><br> <label for="position"> 남기실 말</label> <input
 												type="text" id="M_comment" name="comment" required><br>
-											<button type="button" onclick="recruitMercenary()">용병
-												게시글 등록하기</button>
+											<input type="submit" value="용병 게시글 등록하기">
+											<button type="button" onclick="recruitMercenary()">
+											용병 게시글 등록하기</button>
 										</form>
 									</div>
 								</div>
 							</div>
 
 
-							<h2>등록된 게시판 목록</h2>
+							<!-- <<h2>등록된 게시판 목록</h2>
 							<ul id="mercenaryList"></ul>
 							<ul id="matchingList"></ul>
-							
-
+							 -->
 						</div>
 					</div>
 				</div>
