@@ -30,6 +30,7 @@ public class LoginService extends HttpServlet {
 		session.setAttribute("nick", nick);
 
 		Member vo = new Member(id, nick, pic);
+		session.setAttribute("vo", vo);
 		int cnt = new MemberDAO().join(vo);
 
 		if (cnt > 0) {
