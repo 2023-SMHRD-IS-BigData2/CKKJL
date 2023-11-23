@@ -3,7 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,13 +16,12 @@
 <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 </head>
-
 <body>
-<!-- 최현주 -->
-<!-- 캘린더에서 매치등록 날짜 업데이트하기 -->
+	<!-- 최현주 -->
+	<!-- 캘린더에서 매치등록 날짜 업데이트하기 -->
 
 	<!-- 김명준  -->
-		<!-- 댓글 작성 
+	<!-- 댓글 작성 
         function feedComCreate(feedNo,nick,id1,id2,id3,id4) {
 			var text = $(id1).val();
 			$.ajax({
@@ -92,7 +91,7 @@
 			});
 		};
     -->
-        $(document).on('click', '.likeBtn',(e)=>{
+	<!--   $(document).on('click', '.likeBtn',(e)=>{
         //   console.log(e);
             $(e.target).text('♥');
             $('.likeBtn+span').text('1');
@@ -107,6 +106,7 @@
             $(e.target).removeClass('dislikeBtn');
             $(e.target).attr('class','likeBtn');
         })
+	 -->
 	
 </body>
 </html>

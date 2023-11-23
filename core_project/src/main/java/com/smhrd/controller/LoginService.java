@@ -30,12 +30,13 @@ public class LoginService extends HttpServlet {
 		session.setAttribute("nick", nick);
 
 		Member vo = new Member(id, nick, pic);
+		session.setAttribute("vo", vo);
 		int cnt = new MemberDAO().join(vo);
 
 		if (cnt > 0) {
-			System.out.println("회원가입 성공");
+			System.out.println("신규회원");
 		} else {
-			System.out.println("회원가입 실패");
+			System.out.println("기존회원");
 		}
 
 		response.sendRedirect("./RealMain.jsp");

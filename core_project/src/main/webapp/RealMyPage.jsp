@@ -31,6 +31,7 @@
 
 </head>
 
+
 <body id="page-top">
 
 	<!-- Page Wrapper -->
@@ -279,9 +280,6 @@
 							<div class="row"></div>
 						</div>
 					</div>
-
-                        
-
                         <div class="col-lg-6 mb-4">
                             <h1 class="h3 mb-4 text-gray-800">My page</h1>
                             <section>
@@ -310,8 +308,15 @@
                            
     <div class="row">
         <!-- 첫 번째 열 -->
+<<<<<<< HEAD
         <div class="col-md-10"></div>
 
+=======
+        <div class="col-md-1"></div>
+
+                                </div>
+                            </div>
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
         <!-- 두 번째 열 -->
         <div class="col-md-2">
             <div class="card shadow mb-2">
@@ -397,6 +402,7 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 </div>
 
                         
@@ -413,6 +419,10 @@
 
 
                             
+=======
+</section>
+                                                   
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
                         </div>
 
                     </div>
@@ -420,11 +430,6 @@
 
                 </div>
                 <!-- End of Main Content -->
-
-                
-
-						
-
 		</div>
 		<!-- End of Content Wrapper -->
 

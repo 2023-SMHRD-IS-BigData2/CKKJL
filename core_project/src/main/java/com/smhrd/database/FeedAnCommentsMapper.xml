@@ -15,12 +15,14 @@
 		select * from TB_COMMENTS
 	</select>
 	
-	<select id="detailFeedAnComments" resultType="FeedAnComments">
-		select * from TB_FEED where F_USER_INDEX=#{user_index}
+	<select id="allFeedReply" resultType="FeedAnComments" parameterType="int">
+		select * from TB_REPLY where C_INDEX=#{second_index}
 	</select>
 	
-	<select id="allFeedAnComments" resultType="Feed">
-		select * from TB_FEED order by FEED_DATE DESC
-	</select>
+	<insert id="writeFeedReply" parameterType="FeedAnComments">
+		insert into TB_REPLY values(REPLY_INDEX.nextval, 
+		#{second_index}, #{user_index}, #{content}, 
+		sysdate)
+	</insert>
 
 </mapper>
