@@ -58,7 +58,7 @@ public class FeedDAO {
 		return 0;
 	}
 
-	public Feed detailBoard(int num) {
+	public Feed detailFeed(int num) {
 		Feed Feed = null;
 		try {
 			Feed = sqlSession.selectOne("com.smhrd.database.FeedMapper.detailFeed", num);

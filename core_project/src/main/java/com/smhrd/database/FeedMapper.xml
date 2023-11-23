@@ -5,16 +5,22 @@
   
 <mapper namespace="com.smhrd.database.FeedMapper">
 	<insert id="writeFeed" parameterType="Feed">
-		insert into web_board1 values (num_board.nextval,#{writer},#{filename},#{content},sysdate)
+		insert into TB_FEED values (FEED_INDEX.nextval,#{writer},#{title},#{content}, sysdate, file, 0)
 	</insert>
 	<select id="totalFeed" resultType="Feed">
-		select * from web_board1 order by num
+		select * from TB_FEED order by FEED_index desc;
 	</select>
 	<delete id="deleteFeed">
-		delete from web_board1 where num=#{num} 
+		delete from TB_FEED where FEED_INDEX=#{index} 
 	</delete>
 	<select id="detailFeed" resultType="Feed">
-		select * from web_board1 where num=#{num}
+		select * from TB_FEED where FEED_INDEX=#{index}
 	</select>
+	<update id="updatelikeup" parameterType="Feed">
+		UPDATE TB_FEED SET F_LIKECNT=(F_LIKECNT+1) WHERE FEED_INDEX=#{index};
+	</update>
 
+	<update id="updatelikedown" parameterType="Feed">
+		UPDATE TB_FEED SET F_LIKECNT=(F_LIKECNT-1) WHERE FEED_INDEX=#{index};
+	</update>
 </mapper>
