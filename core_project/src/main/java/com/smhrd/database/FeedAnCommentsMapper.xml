@@ -5,17 +5,17 @@
   
 <mapper namespace="com.smhrd.database.FeedAnCommentsMapper">
 
-	<insert id="writeFeedAnComments" parameterType="FeedAnComments">
-		insert into TB_FEED values(FEED_INDEX.nextval, 
-		#{category}, #{user_index}, #{title}, #{content}, 
-		sysdate, #{file}, sysdate, #{like_cnt})
+	<insert id="writeFeedComments" parameterType="FeedAnComments">
+		insert into TB_COMMENTS values(COMMENTS_INDEX.nextval, 
+		#{first_index}, #{second_index}, #{user_index}, #{content}, 
+		sysdate)
 	</insert>
 
-	<select id="allFeedAnComments" resultType="FeedAnComments">
-		select * from TB_FEED order by FEED_DATE
+	<select id="allFeedComments" resultType="FeedAnComments">
+		select * from TB_COMMENTS
 	</select>
 	
-	<select id="detailFeedAnComments" resultType="FeedAnComments" parameterType="int">
+	<select id="detailFeedAnComments" resultType="FeedAnComments">
 		select * from TB_FEED where F_USER_INDEX=#{user_index}
 	</select>
 	
