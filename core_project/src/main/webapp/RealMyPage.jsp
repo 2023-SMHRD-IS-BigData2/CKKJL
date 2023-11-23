@@ -278,6 +278,22 @@
 
                         <div class="col-lg-6 mb-4">
                             <h1 class="h3 mb-4 text-gray-800">My page</h1>
+                            <section>
+                            <div class="col-md-10">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">My Profile</h6> <small>5분전</small>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                            src="img/undraw_posting_photo.svg" alt="...">
+                    </div>
+                    <p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
+                </div>
+            </div>
+        </div>
+                            </section>
 
                             <!-- Illustrations -->
                            <div class="container-fluid">
@@ -300,7 +316,7 @@
                 </div>
             </div>
         </div>
-
+<section class="col-lg-20 mb-4">
         <!-- 세 번째 열 -->
         <div class="col-md-3">
             <!-- 다른 카드나 콘텐츠 추가 -->
@@ -370,6 +386,7 @@
         </div>
     </div>
 </div>
+</section>
                         
                             
 

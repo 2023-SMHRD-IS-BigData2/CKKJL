@@ -38,7 +38,7 @@ public class LoginService extends HttpServlet {
 			System.out.println("회원가입 실패");
 		}
 
-		response.sendRedirect("./Main.jsp");
+		response.sendRedirect("./RealMain.jsp");
 
 	}
 
