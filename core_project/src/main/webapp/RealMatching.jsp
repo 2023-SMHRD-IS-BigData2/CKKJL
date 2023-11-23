@@ -223,7 +223,7 @@
 										<div class="small text-gray-500">Chicken the Dog · 2w</div>
 									</div>
 								</a> <a class="dropdown-item text-center small text-gray-500"
-									href="#">Read More Messages</a>
+									href="RealMessage.jsp">Read More Messages</a>
 							</div></li>
 
 
@@ -578,7 +578,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
+					<a class="btn btn-primary" href="RealLogin.jsp">Logout</a>
 				</div>
 			</div>
 		</div>

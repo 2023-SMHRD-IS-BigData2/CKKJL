@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="utf-8">
@@ -13,7 +12,6 @@
 <meta name="author" content="">
 
 <title>연습1</title>
-
 <!-- Custom fonts for this template-->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
 	type="text/css">
@@ -25,14 +23,12 @@
 <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
 
-
 </head>
 
 <body id="page-top">
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
-
 
 
 		<!-- Content Wrapper -->
@@ -51,10 +47,7 @@
 							width="200" height="40"></a>
 					</div>
 
-
 					</button>
-
-					<!-- Topbar Search -->
 					<form
 						class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 						<div class="input-group">
@@ -66,15 +59,14 @@
 							<input type="text" class="form-control bg-light border-0 small"
 								placeholder="Search for..." aria-label="Search"
 								aria-describedby="basic-addon2">
-
 						</div>
 					</form>
 
-					<a class="nav-link collapsed" href="RealMyPage.jsp"
+					<a class="nav-link collapsed" href="./RealMyPage.jsp"
 						data-target="#collapseTwo" aria-expanded="true"
 						aria-controls="collapseTwo"> <span><button
 								class="button is-primary is-outlined is-large">My Page</button></span>
-					</a> <a class="nav-link collapsed" href="RealFeedWrite.jsp"
+					</a> <a class="nav-link collapsed" href="./RealFeedWrite.jsp"
 						data-target="#collapseTwo" aria-expanded="true"
 						aria-controls="collapseTwo"> <span><button
 								class="button is-primary is-outlined is-large">피드 작성</button></span>
@@ -87,8 +79,6 @@
 						aria-controls="collapseTwo"> <span><button
 								class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
 					</a>
-
-
 					<!-- Topbar Navbar -->
 					<ul class="navbar-nav ml-auto">
 
@@ -115,7 +105,6 @@
 									</div>
 								</form>
 							</div></li>
-
 
 						<!-- Nav Item - Alerts -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
@@ -163,7 +152,6 @@
 								</a> <a class="dropdown-item text-center small text-gray-500"
 									href="#">Show All Alerts</a>
 							</div></li>
-
 						<!-- Nav Item - Messages -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
@@ -223,15 +211,13 @@
 										<div class="small text-gray-500">Chicken the Dog · 2w</div>
 									</div>
 								</a> <a class="dropdown-item text-center small text-gray-500"
-									href="RealMessage.jsp">Read More Messages</a>
+									href="#">Read More Messages</a>
 							</div></li>
-
-
 						<div class="topbar-divider d-none d-sm-block"></div>
 
 						<!-- Nav Item - User Information -->
 						<li class="nav-item dropdown no-arrow"><a
-							class="nav-link dropdown-toggle" href="login.html"
+							class="nav-link dropdown-toggle" href="RealLogin.jsp"
 							id="userDropdown" role="button" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"> <span
 								class="mr-2 d-none d-lg-inline text-gray-600 small">로그인해주세요</span>
@@ -257,136 +243,93 @@
 									Logout
 								</a>
 							</div></li>
-
 					</ul>
-
 				</nav>
-				<!-- End of Topbar -->
 				<section>
 					<div class="container button-container">
 						<!-- 고정시켜야됨 -->
-
-
-
-
-
 					</div>
 			</div>
 			</section>
-
-			<!-- Begin Page Content -->
 			<div class="container-fluid">
-
-				<!-- Page Heading -->
-
-				<!-- Content Row -->
 				<div class="row">
-
-
-
-
-
-					<!-- Earnings (Monthly) Card Example -->
-
-
-
-
-					<!-- Content Row -->
-
 					<div class="row">
 
 						<!-- Area Chart -->
 						<div class="col-xl-8 col-lg-7">
 							<div class="card shadow mb-4">
 								<!-- Card Header - Dropdown -->
-
 							</div>
-
 						</div>
 					</div>
-
 					<!-- Pie Chart -->
 					<div class="col-xl-4 col-lg-5"></div>
-
-
 					<!-- Content Row -->
 					<div class="row">
-
 						<!-- Content Column -->
 						<div class="col-lg-6 mb-4">
-
 							<!-- Project Card Example -->
-
-
 							<!-- Color System -->
 							<div class="row"></div>
 						</div>
-
 					</div>
 
-					<div class="col-lg-6 mb-4">
-						<h1 class="h3 mb-4 text-gray-800">피드 작성</h1>
+                        
 
-						<!-- Illustrations -->
+                        <div class="col-lg-6 mb-4">
+                            <h1 class="h3 mb-4 text-gray-800">Message Page</h1>
 
-						<div class="col-lg-6 mb-4">
+                            <!-- Illustrations -->
+                            
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">발흥민</h6> <small>5분전</small>
+                                </div>
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                            src="img/undraw_posting_photo.svg" alt="...">
+                                    </div>
+                                    <p> 저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~
+                                    </p>
 
-							<!-- Illustrations -->
-							<div class="card shadow mb-4">
-								<div class="card-header py-3">
-								<form action="./FeedService.do" method="post" enctype="multipart/form-data">
-									<p>작성자</p>
-									<p>
-										<input type="text" name="writer">
-									</p>
-								</div>
-								<div class="card-body">
-									<div class="text-center"></div>
-									<p colspan="2">내용</p>
-									<br>
-									<p colspan="2"></p>
+                                </div>
+                            </div>
+                            
+                            
 
-									<textarea rows="10" name="content" style="resize: none;"></textarea>
-									<p colspan="2"></p>
-									<div>
-										<table>
-											<tr>
-												<td colspan="2">
-														<input type="file" id="input-file" className="btnOfinput"/>
-														<label for="input-file">업로드</label>
-													 
-													<input type="submit" value="작성하기"
-													style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold">
-													<input type="reset" value="초기화"
-													style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold">
-													</span>
+                                <!-- Illustrations -->
+                                
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">박건성</h6> <small>5분전</small>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                                src="img/오풋완.png" alt="...">
+                                        </div>
+                                        <p> 오풋완
+                                        </p>
 
-
-
-												</td>
-											</tr>
-										</table>
-									</div>
-
-								</div>
-
-							</div>
+                                    </div>
+                                </div>
+                                
 
 
-							<!-- Approach -->
+                                <!-- Approach -->
 
 
 
-						</div>
-					</div>
+                            </div>
+                        </div>
 
-				</div>
-				<!-- /.container-fluid -->
+                    </div>
+                    <!-- /.container-fluid -->
 
-			</div>
-			<!-- End of Main Content -->
+               
 
-			
+						
 
 		</div>
 		<!-- End of Content Wrapper -->
@@ -421,24 +364,17 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- Bootstrap core JavaScript-->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 	<!-- Core plugin JavaScript-->
 	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
 	<!-- Custom scripts for all pages-->
 	<script src="js/sb-admin-2.min.js"></script>
-
 	<!-- Page level plugins -->
 	<script src="vendor/chart.js/Chart.min.js"></script>
-
 	<!-- Page level custom scripts -->
 	<script src="js/demo/chart-area-demo.js"></script>
 	<script src="js/demo/chart-pie-demo.js"></script>
-
 </body>
-
 </html>
