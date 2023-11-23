@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>연습1</title>
+<title>캘린더 페이지</title>
 
 <!-- Custom fonts for this template-->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
@@ -25,30 +26,31 @@
 <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
 <style>
- .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
 
-        .pagination a {
-            color: black;
-            padding: 8px 16px;
-            text-decoration: none;
-            transition: background-color .3s;
-        }
+.pagination a {
+	color: black;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
+}
 
-        .pagination a:hover {
-            background-color: #ddd;
-        }
+.pagination a:hover {
+	background-color: #ddd;
+}
 
-        .active {
-            background-color: #4CAF50;
-            color: white;
-        }
-        .bold {
-            font-weight: bold;
-        }
+.active {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.bold {
+	font-weight: bold;
+}
 </style>
 
 
@@ -59,7 +61,7 @@
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 
-		
+
 
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">
@@ -318,8 +320,10 @@
 
 
 					<!-- Content Row -->
+					
 
 					<div class="row">
+					
 
 						<!-- Area Chart -->
 						<div class="col-xl-8 col-lg-7">
@@ -354,27 +358,30 @@
 						<h1 class="h3 mb-4 text-gray-800">⚽ 원하시는 날짜를 선택해주세요 ⚽</h1>
 
 						<!-- Illustrations -->
-						
-						 <div class="pagination" id="pagination"></div>
 
-        <table id="calendar-table">
-            <thead>
-                <tr>
-                    <th>Sun</th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
-                </tr>
-            </thead>
-            <tbody id="calendar-body"></tbody>
-            
-        </table>
-    </div>
+						<div class="pagination" id="pagination"></div>
 
-    <script>
+						<table id="calendar-table">
+							<thead>
+								<tr>
+									<th>Sun</th>
+									<th>Mon</th>
+									<th>Tue</th>
+									<th>Wed</th>
+									<th>Thu</th>
+									<th>Fri</th>
+									<th>Sat</th>
+								</tr>
+
+
+							</thead>
+							<tbody id="calendar-body"></tbody>
+							
+
+						</table>
+					</div>
+
+					<script>
         document.addEventListener("DOMContentLoaded", function () {
             const calendarContainer = document.querySelector(".calendar-container");
             const calendarBody = document.getElementById("calendar-body");
@@ -404,7 +411,7 @@
                         } else if (dayCount <= daysInMonth) {
                             // Fill in the days
                             dayLink.textContent = dayCount;
-                            dayLink.href = `RealMatching.jsp#${year}_${month}_${dayCount}`;
+                            dayLink.href = `RealMatching.jsp#${year}-${month}-${dayCount}`;
                             if (month === 11 && dayCount >= 19 && dayCount <= 30) {
                                 dayLink.classList.add("bold");
                             }
@@ -458,35 +465,35 @@
         });
     </script>
 
-								
-							</div>
-
-
-							<!-- Approach -->
-
-
-
-						</div>
-					</div>
 
 				</div>
-				<!-- /.container-fluid -->
+
+
+				<!-- Approach -->
+
+
 
 			</div>
-			<!-- End of Main Content -->
-
-			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Your Website 2021</span>
-					</div>
-				</div>
-			</footer>
-			<!-- End of Footer -->
-
 		</div>
-		<!-- End of Content Wrapper -->
+
+	</div>
+	<!-- /.container-fluid -->
+
+	</div>
+	<!-- End of Main Content -->
+
+	<!-- Footer -->
+	<footer class="sticky-footer bg-white">
+		<div class="container my-auto">
+			<div class="copyright text-center my-auto">
+				<span>Copyright &copy; Your Website 2021</span>
+			</div>
+		</div>
+	</footer>
+	<!-- End of Footer -->
+
+	</div>
+	<!-- End of Content Wrapper -->
 
 	</div>
 	<!-- End of Page Wrapper -->
