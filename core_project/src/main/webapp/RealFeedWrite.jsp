@@ -334,6 +334,7 @@
 							<!-- Illustrations -->
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
+								<form action="./FeedService.do" method="post" enctype="multipart/form-data">
 									<p>작성자</p>
 									<p>
 										<input type="text" name="writer">
@@ -385,15 +386,7 @@
 			</div>
 			<!-- End of Main Content -->
 
-			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Your Website 2021</span>
-					</div>
-				</div>
-			</footer>
-			<!-- End of Footer -->
+			
 
 		</div>
 		<!-- End of Content Wrapper -->

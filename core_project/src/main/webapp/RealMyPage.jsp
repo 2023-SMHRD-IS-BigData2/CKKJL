@@ -24,33 +24,7 @@
 <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
-<<<<<<< HEAD
-<body>
-	<header>
-		<a href="RealMain.jsp"><img
-			src="핵심images/FUTSAL062-removebg-preview.png" alt="Logo"></a>
-		<!-- 로고 삽입 -->
-		<img src="핵심images/박지성.jfif" alt="profile">
-		
-		<h1>My Page</h1> <br><br>
-		<h2 align=right> 채팅하기 </h2>
-	</header>
-	<main>
-		<section>
-			<h2>팔로잉</h2>
-			<h3>0</h3>
-			<p>Name: 박건성</p>
-			<p>Email: gunseongPark@example.com</p>
-		</section>
-		
-		<section>
-			<h2>팔로우</h2>
-			<h3>0</h3>
-			<p>건성fc</p>
-			<p>흥민fc</p>
-		</section>
-=======
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
+
 
 <body id="page-top">
 
@@ -300,50 +274,120 @@
 							<div class="row"></div>
 						</div>
 					</div>
-
-                        
-
                         <div class="col-lg-6 mb-4">
                             <h1 class="h3 mb-4 text-gray-800">My page</h1>
+                            <section>
+                            <div class="col-md-10">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">My Profile</h6> <small>5분전</small>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                            src="img/undraw_posting_photo.svg" alt="...">
+                    </div>
+                    <p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
+                </div>
+            </div>
+        </div>
+                            </section>
 
                             <!-- Illustrations -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">발흥민</h6> <small>5분전</small>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="img/undraw_posting_photo.svg" alt="...">
-                                    </div>
-                                    <p> 저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~
-                                    </p>
+                           <div class="container-fluid">
+    <div class="row">
+        <!-- 첫 번째 열 -->
+        <div class="col-md-1"></div>
 
                                 </div>
                             </div>
+        <!-- 두 번째 열 -->
+        <div class="col-md-3">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">팔로잉</h6> <small>5분전</small>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                            src="img/undraw_posting_photo.svg" alt="...">
+                    </div>
+                    <p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
+                </div>
+            </div>
+        </div>
+<section class="col-lg-20 mb-4">
+        <!-- 세 번째 열 -->
+        <div class="col-md-3">
+            <!-- 다른 카드나 콘텐츠 추가 -->
+             <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">팔로우</h6> <small>5분전</small>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                            src="img/undraw_posting_photo.svg" alt="...">
+                    </div>
+                    <p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
+                </div>
+            </div>
+        </div>
 
-                                <!-- Illustrations -->
-                                <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">박건성</h6> <small>5분전</small>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="text-center">
-                                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                                src="img/오풋완.png" alt="...">
-                                        </div>
-                                        <p> 오풋완
-                                        </p>
+        <!-- 네 번째 열 -->
+        <div class="col-md-3">
+            <!-- 다른 카드나 콘텐츠 추가 -->
+             <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">게시글 목록</h6> <small>5분전</small>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                            src="img/undraw_posting_photo.svg" alt="...">
+                    </div>
+                    <p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
+                </div>
+            </div>
+        </div>
 
-                                    </div>
-                                </div>
+        <!-- 다섯 번째 열 -->
+        <div class="col-md-3">
+            <!-- 다른 카드나 콘텐츠 추가 -->
+             <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">팀 소개문구</h6> <small>5분전</small>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                            src="img/undraw_posting_photo.svg" alt="...">
+                    </div>
+                    <p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
+                </div>
+            </div>
+        </div>
 
-
-                                <!-- Approach -->
-
-
-
-                            </div>
+        <!-- 여섯 번째 열 -->
+        <div class="col-md-3">
+            <!-- 다른 카드나 콘텐츠 추가 -->
+             <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">팔로우 신청 취소</h6> <small>5분전</small>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                            src="img/undraw_posting_photo.svg" alt="...">
+                    </div>
+                    <p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+                                                   
                         </div>
 
                     </div>
@@ -351,19 +395,6 @@
 
                 </div>
                 <!-- End of Main Content -->
-
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2021</span>
-                        </div>
-                    </div>
-                </footer>
-                <!-- End of Footer -->
-
-						
-
 		</div>
 		<!-- End of Content Wrapper -->
 
