@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>RealLogin</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -57,7 +57,7 @@
                             
                             <div class="col-lg-6">
                                 <div class="text-center"><br><br>
-                                <div><a href="RealMain.jsp"><img src="img/FUTSAL062.png" alt="" width="200" height="40"></div></a>
+                                <div><a href="RealMain.jsp"><img src="img/futsal062.png" alt="" width="200" height="40"></div></a>
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome!</h1>

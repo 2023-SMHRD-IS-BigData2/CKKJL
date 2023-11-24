@@ -558,7 +558,10 @@ pre code {
 	display: flex;
 	flex-wrap: wrap;
 	margin-right: -.75rem;
-	margin-left: -.75rem
+	margin-left: -.75rem;
+	align-content:stretch;
+	justify-content:center;
+	align-items:center
 }
 
 .no-gutters {
@@ -9431,9 +9434,6 @@ a:focus {
 	outline: 0
 }
 
-#wrapper {
-	display: flex
-}
 
 #wrapper #content-wrapper {
 	background-color: #f8f9fc;
