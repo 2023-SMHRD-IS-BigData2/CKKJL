@@ -26,7 +26,7 @@ public class Mercenary_MatchDAO {
 	public List<Mercenary_Match> allMEMA_date(String date) {
 		List<Mercenary_Match> mercenary_matchs = null;
 		try {
-			mercenary_matchs = sqlSession.selectList("com.smhrd.database.MatchMapper.allMEMA_date", date)
+			mercenary_matchs = sqlSession.selectList("com.smhrd.database.MatchMapper.allMEMA_date", date);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}finally {
