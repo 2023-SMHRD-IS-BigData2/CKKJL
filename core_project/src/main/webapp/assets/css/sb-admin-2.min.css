@@ -558,7 +558,10 @@ pre code {
 	display: flex;
 	flex-wrap: wrap;
 	margin-right: -.75rem;
-	margin-left: -.75rem
+	margin-left: -.75rem;
+	align-content:stretch;
+	justify-content:center;
+	align-items:center
 }
 
 .no-gutters {

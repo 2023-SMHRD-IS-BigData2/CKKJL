@@ -26,6 +26,9 @@
 <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
 <style>
+.row{
+height:50rem;
+}
 .pagination {
 	display: flex;
 	justify-content: center;
@@ -75,7 +78,7 @@
 
 					<!-- Sidebar Toggle (Topbar) -->
 					<div>
-						<a href="RealMain.jsp"><img src="img/FUTSAL062.png" alt=""
+						<a href="RealMain.jsp"><img src="img/futsal062.png" alt=""
 							width="200" height="40"></a>
 					</div>
 
@@ -482,15 +485,7 @@
 	</div>
 	<!-- End of Main Content -->
 
-	<!-- Footer -->
-	<footer class="sticky-footer bg-white">
-		<div class="container my-auto">
-			<div class="copyright text-center my-auto">
-				<span>Copyright &copy; Your Website 2021</span>
-			</div>
-		</div>
-	</footer>
-	<!-- End of Footer -->
+	
 
 	</div>
 	<!-- End of Content Wrapper -->

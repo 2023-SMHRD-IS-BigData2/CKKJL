@@ -52,7 +52,7 @@
 
         
 					<!-- Topbar Navbar -->
-					<ul class="navbar-nav ml-auto">
+					
             <!-- Nav Item - Charts -->
             
 
@@ -312,11 +312,11 @@
                             </div>
                         </li>
 
-                    </ul>
+                   
 
                 </nav>
                 <!-- End of Topbar -->
-                <section>
+                
                     <div class="container button-container">
                         <!-- 고정시켜야됨 -->
                         
@@ -327,7 +327,7 @@
                         </div>
 
                     </div>
-                </section>
+                
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -433,14 +433,7 @@
                 </div>
                 <!-- End of Main Content -->
 
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2021</span>
-                        </div>
-                    </div>
-                </footer>
+               
                 <!-- End of Footer -->
 
             </div>

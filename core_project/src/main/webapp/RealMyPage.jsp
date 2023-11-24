@@ -271,34 +271,41 @@
 							</div></li>
 					</ul>
 				</nav>
-				<section>
-					<div class="container button-container">
-						<!-- 고정시켜야됨 -->
-					</div>
+				
+					
 			</div>
-			</section>
+			
 			<div class="container-fluid">
 				<div class="row">
 					<div class="row">
 
-						<!-- Area Chart -->
-						<div class="col-xl-8 col-lg-7">
+						
+						
 							<div class="card shadow mb-4">
 								<!-- Card Header - Dropdown -->
 							</div>
-						</div>
+						
 					</div>
 					<!-- Pie Chart -->
 					<div class="col-xl-1 col-lg-5"></div>
-					<!-- Content Row -->
-					<div class="row">
+					
+					
 						<!-- Content Column -->
 						<div class="col-lg-6 mb-4" align="center">
 							<!-- Project Card Example -->
 							<!-- Color System -->
-							<div class="row"></div>
+							
 						</div>
 					</div>
+                        <!-- my page -->
+                        
+						<!-- Content Column -->
+						<div class="col-lg-6 mb-4" align="center">
+							<!-- Project Card Example -->
+							<!-- Color System -->
+							
+						</div>
+					
                         <div class="col-lg-6 mb-4">
                             <h1 class="h3 mb-4 text-gray-800">My page</h1>
                             <section>
@@ -311,6 +318,8 @@
                     <div class="text-center">
                         
                     </div>
+                    <!-- 친구, 친구 삭제, 게시글 목록, 팀 만들기 -->
+                    <!-- 친구 -->
                     <div class="row">
                     <div class="col-md-4 mb-4 card-container">
             <div class="card shadow mb-4">
@@ -325,13 +334,9 @@
                     <p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
                 </div>
             </div>
-        </div>
-        <div>
-        <!-- 친구삭제 -->
-       
-        <!-- 게시글 목록 -->
-        <div class="row">
-         <div class="col-md-4 mb-4 card-container">
+        
+        <!-- 친구 삭제 -->
+        <div class="col-md-4 mb-4 card-container">
             <!-- 다른 카드나 콘텐츠 추가 -->
              <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -346,10 +351,7 @@
                 </div>
             </div>
         </div>
-        </div>
-        <div>
-        <!-- 팀 소개 문구 -->
-        <div class="row">
+        <!-- 게시글 목록 -->
         <div class="col-md-4 mb-4 card-container">
             <!-- 다른 카드나 콘텐츠 추가 -->
              <div class="card shadow mb-4">
@@ -365,9 +367,8 @@
                 </div>
             </div>
         </div>
-        </div>
-        <div class="row">
-         <div class="col-md-4 mb-4 card-container">
+        <!-- 팀 만들기 -->
+        <div class="col-md-4 mb-4 card-container">
             <!-- 다른 카드나 콘텐츠 추가 -->
              <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -383,76 +384,14 @@
             </div>
         </div>
         </div>
-
-                </div>
-            </div>
         </div>
-                            
-                            
-
-                            <!-- Illustrations -->
-                          <div class="container-fluid custom-my-page-container">
-                          <section>
-                           <div class="container-fluid custom-container-fluid">
-                           
-                           
-                           
-    <div class="row">
-        <!-- 첫 번째 열 -->
-        
-
-        <!-- 두 번째 열 -->
-        
-        
-
-        <!-- 세 번째 열 -->
-       
-
-        <!-- 네 번째 열 -->
-        
-
-        <!-- 다섯 번째 열 -->
-       
-
-        <!-- 여섯 번째 열 -->
-        
-        </div>
-    </div>
-</div>
-
-</div>
-</section>
-</div>
-
-                        
-                            
-
-                                <!-- Illustrations -->
-                                
-                                
-                                
-
-
-                                <!-- Approach -->
-
-
-
-                            
-
-</section>
-                                                   
-
-                        </div>
-
-                    </div>
-                    <!-- /.container-fluid -->
 
                 </div>
                 <!-- End of Main Content -->
 		</div>
 		<!-- End of Content Wrapper -->
 
-	</div>
+	
 	<!-- End of Page Wrapper -->
 
 	<!-- Scroll to Top Button-->
