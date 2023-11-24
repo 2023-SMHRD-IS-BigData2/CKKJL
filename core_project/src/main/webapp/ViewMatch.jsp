@@ -119,7 +119,7 @@
 							<li class="nav-item dropdown no-arrow mx-1"><a
 								class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
 								role="button" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false"> <i class="fas fa-bell fa-fw"></i> <!-- Counter - Alerts -->
+								aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
 									<span class="badge badge-danger badge-counter">3+</span>
 							</a> <!-- Dropdown - Alerts -->
 								<div
@@ -281,6 +281,7 @@
 						</ul>
 
 					</nav>
+<<<<<<< HEAD
 	<ul>
 		<%
 		String date = request.getParameter("matchDay");
@@ -298,6 +299,15 @@
 	
 
 
+=======
+					<!-- 여기부터 복사해요 -->
+					
+	<!-- 일자별로 매치와 용병으로 나눠서 보여주기 -->
+	<!-- 배열 받기 -->
+	<!-- > -->
+		
+		
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
 
 
 </body>
