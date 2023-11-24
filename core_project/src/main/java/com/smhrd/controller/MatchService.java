@@ -19,9 +19,9 @@ public class MatchService extends HttpServlet {
 
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
-		Member vo = (Member)session.getAttribute("member");
-		String nick = vo.getNick();
 		
+		Member vo = (Member)session.getAttribute("vo");
+
 		String starttime = request.getParameter("starttime");
 		int start = Integer.valueOf(starttime.split(":")[0]);
 		String finishtime = request.getParameter("finishtime");
@@ -29,11 +29,12 @@ public class MatchService extends HttpServlet {
 		String peoplenum = request.getParameter("peoplenum");
 		String level = request.getParameter("level");
 		String comment = request.getParameter("comment");
-	
-		System.out.println(starttime + finishtime + peoplenum + level + comment + nick);
+		String matchDay = request.getParameter("matchDay");
+				
+		System.out.println(matchDay + starttime + finishtime + peoplenum + level + comment );
 	
 		Mercenary_Match mercenary_match = null;
-		mercenary_match = new Mercenary_Match(0, date, start, finish, peoplenum, level, vo.getTeam());
+		mercenary_match = new Mercenary_Match(0, matchDay, start, finish, peoplenum, level, vo.getTeam());
 		if (comment != null) {
 			mercenary_match.setWriting(comment);
 		}

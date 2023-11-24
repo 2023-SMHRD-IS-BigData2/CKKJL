@@ -26,8 +26,8 @@ public class LoginService extends HttpServlet {
 
 		Member vo = new Member(id, nick, pic);
 		HttpSession session = request.getSession();
-		session.setAttribute("member", vo);
-
+		session.setAttribute("vo", vo);
+		//member로 바꿔놓음
 
 		int cnt = new MemberDAO().join(vo);
 
