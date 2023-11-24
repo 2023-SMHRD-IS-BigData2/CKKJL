@@ -538,7 +538,6 @@
 					document.getElementById('matching_peoplenum').value = '';
 					document.getElementById('matching_level').value = '';
 					document.getElementById('matching_comment').value = '';
-					document.getElementById('matching_date').value = '';
 				}
 
 				function recruitMercenary() {
@@ -566,7 +565,6 @@
 					document.getElementById('M_peoplenum').value = '';
 					document.getElementById('M_level').value = '';
 					document.getElementById('M_comment').value = '';
-					document.getElementById('M_date').value = '';
 				}
 			</script>
 
