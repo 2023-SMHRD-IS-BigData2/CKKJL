@@ -23,16 +23,35 @@
 <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
 <style>
-.custom-container-fluid {
-        width: 8%; /* 필요한 만큼 백분율을 조정하세요 */
-        margin: 0 auto; /* 이는 컨테이너를 가운데 정렬합니다 */
+  /* 양쪽 너비를 조절하기 위한 사용자 정의 스타일 추가 */
+  body {
+    margin: ; /* 기본 여백 제거 */
+    padding: ; /* 기본 패딩 제거 */
+  }
+
+  #wrapper {
+    padding-left:0; /* 왼쪽 패딩 조절 */
+    padding-right: 0; /* 오른쪽 패딩 조절 */
+  }
+
+  #content-wrapper {
+    margin-left: 0; /* 왼쪽 여백 조절 */
+    margin-right: 0; /* 오른쪽 여백 조절 */
+  }
+
+  #content {
+    padding: 1px; /* 필요한 경우 내용 영역에 패딩 추가 */
+  }
+  .card-container {
+      display: inline-block;
+      margin-right: 10px;
     }
 </style>
 
 </head>
 
 
-<body id="page-top">
+<body id="page-top" align="center">
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -50,7 +69,7 @@
 
 					<!-- Sidebar Toggle (Topbar) -->
 					<div>
-						<a href="RealMain.jsp"><img src="img/FUTSAL062.png" alt=""
+						<a href="RealMain.jsp"><img src="img/futsal062.png" alt=""
 							width="200" height="40"></a>
 					</div>
 
@@ -270,11 +289,11 @@
 						</div>
 					</div>
 					<!-- Pie Chart -->
-					<div class="col-xl-4 col-lg-5"></div>
+					<div class="col-xl-1 col-lg-5"></div>
 					<!-- Content Row -->
 					<div class="row">
 						<!-- Content Column -->
-						<div class="col-lg-6 mb-4">
+						<div class="col-lg-6 mb-4" align="center">
 							<!-- Project Card Example -->
 							<!-- Color System -->
 							<div class="row"></div>
@@ -283,7 +302,7 @@
                         <div class="col-lg-6 mb-4">
                             <h1 class="h3 mb-4 text-gray-800">My page</h1>
                             <section>
-                            <div class="col-md-10">
+                            <div class="col-md-10" style="max-width: 800px;">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">My Profile</h6> <small>5분전</small>
@@ -292,36 +311,11 @@
                     <div class="text-center">
                         
                     </div>
-                    <p>안녕하세요? 반갑습니다!</p>
-                </div>
-            </div>
-        </div>
-                            
-                            
-
-                            <!-- Illustrations -->
-                            
-                          <div class="container-fluid custom-container-fluid">
-                           <div class="container-fluid custom-container-fluid">
-                           <div class="col-lg-1 mb-4">
-                           
-                           
-    <div class="row">
-        <!-- 첫 번째 열 -->
-<<<<<<< HEAD
-        <div class="col-md-10"></div>
-
-=======
-        <div class="col-md-1"></div>
-
-                                </div>
-                            </div>
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
-        <!-- 두 번째 열 -->
-        <div class="col-md-2">
-            <div class="card shadow mb-2">
+                    <div class="row">
+                    <div class="col-md-4 mb-4 card-container">
+            <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">팔로잉</h6> <small>5분전</small>
+                    <h6 class="m-0 font-weight-bold text-primary">친구</h6> <small>5분전</small>
                 </div>
                 <div class="card-body">
                     <div class="text-center">
@@ -332,13 +326,16 @@
                 </div>
             </div>
         </div>
-
-        <!-- 세 번째 열 -->
-        <div class="col-md-2">
+        <div>
+        <!-- 친구삭제 -->
+       
+        <!-- 게시글 목록 -->
+        <div class="row">
+         <div class="col-md-4 mb-4 card-container">
             <!-- 다른 카드나 콘텐츠 추가 -->
              <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">팔로우</h6> <small>5분전</small>
+                    <h6 class="m-0 font-weight-bold text-primary">친구 삭제</h6> <small>5분전</small>
                 </div>
                 <div class="card-body">
                     <div class="text-center">
@@ -349,9 +346,11 @@
                 </div>
             </div>
         </div>
-
-        <!-- 네 번째 열 -->
-        <div class="col-md-2">
+        </div>
+        <div>
+        <!-- 팀 소개 문구 -->
+        <div class="row">
+        <div class="col-md-4 mb-4 card-container">
             <!-- 다른 카드나 콘텐츠 추가 -->
              <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -366,9 +365,9 @@
                 </div>
             </div>
         </div>
-
-        <!-- 다섯 번째 열 -->
-        <div class="col-md-2">
+        </div>
+        <div class="row">
+         <div class="col-md-4 mb-4 card-container">
             <!-- 다른 카드나 콘텐츠 추가 -->
              <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -383,26 +382,46 @@
                 </div>
             </div>
         </div>
+        </div>
 
-        <!-- 여섯 번째 열 -->
-        <div class="col-md-2">
-            <!-- 다른 카드나 콘텐츠 추가 -->
-             <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">팔로우 신청ㆍ취소</h6> <small>5분전</small>
-                </div>
-                <div class="card-body">
-                    <div class="text-center">
-                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                            src="img/undraw_posting_photo.svg" alt="...">
-                    </div>
-                    <p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
                 </div>
             </div>
         </div>
+                            
+                            
+
+                            <!-- Illustrations -->
+                          <div class="container-fluid custom-my-page-container">
+                          <section>
+                           <div class="container-fluid custom-container-fluid">
+                           
+                           
+                           
+    <div class="row">
+        <!-- 첫 번째 열 -->
+        
+
+        <!-- 두 번째 열 -->
+        
+        
+
+        <!-- 세 번째 열 -->
+       
+
+        <!-- 네 번째 열 -->
+        
+
+        <!-- 다섯 번째 열 -->
+       
+
+        <!-- 여섯 번째 열 -->
+        
+        </div>
     </div>
 </div>
-<<<<<<< HEAD
+
+</div>
+</section>
 </div>
 
                         
@@ -419,10 +438,10 @@
 
 
                             
-=======
+
 </section>
                                                    
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
+
                         </div>
 
                     </div>

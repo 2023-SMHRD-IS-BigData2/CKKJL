@@ -21,7 +21,7 @@ public class Member {
 	private int team;
 	private String intro;
 	@NonNull private String pic;
+
 		
 	
-
 }

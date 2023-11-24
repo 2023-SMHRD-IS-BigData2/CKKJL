@@ -19,3 +19,6 @@ btnOfinput{
 	display:none;
 	
 }
+body {
+    margin-left: 1px; /* 원하는 여백 값으로 조절하세요 */
+}
