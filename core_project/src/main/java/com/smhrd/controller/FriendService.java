@@ -22,6 +22,7 @@ public class FriendService extends HttpServlet {
 		HttpSession session = request.getSession();
 		Member vo = (Member)session.getAttribute("vo");
 		String id = vo.getId();
+
 		
 		Friend user = new Friend(id,friend);
 		
