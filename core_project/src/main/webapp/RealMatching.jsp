@@ -399,7 +399,7 @@
 											<option value="7vs7">7:7</option>
 											<option value="그 외">그 외</option>
 										</select><br> <label for="position">수준</label> <select
-											id="matching_level" name="matching_level">
+											id="matching_level" name="level">
 											<option value="하">하</option>
 											<option value="하상">하상</option>
 											<option value="중하">중하</option>
@@ -409,8 +409,6 @@
 											type="text" id="matching_comment" name="comment" required>
 										<br> <input type="submit" value="매치 게시글 등록하기"
 											onclick="matchingRegistration()">
-										<button type="button" onclick="matchingRegistration()">매치
-											게시글 등록하기</button>
 									</form>
 
 								</div>
@@ -428,12 +426,11 @@
 
 								<div class="card-body">
 									<div class="text-center">
-										<form action="MatchService" method="post" name="matchForm">
+										<form action="MatchService" method="post" name="matchForm1">
 											<input type="hidden" name="matchDay" value="">
 											<script>
-												var matchDay = window.location.hash
-														.slice(1, 11);
-												document.matchForm.matchDay.value = matchDay;
+												var matchDay = window.location.hash.slice(1, 11);
+												document.matchForm1.matchDay.value = matchDay;
 												document.write('날짜 ',	matchDay);
 											</script>
 
@@ -511,8 +508,6 @@
 											</select><br> <label for="position"> 남기실 말</label> <input
 												type="text" id="M_comment" name="comment" required><br>
 											<input type="submit" value="용병 게시글 등록하기">
-											<button type="button" onclick="recruitMercenary()">
-												용병 게시글 등록하기</button>
 										</form>
 									</div>
 								</div>
@@ -533,14 +528,11 @@
 			<script>
 				// "&nbsp;" 1칸 뛰어쓰기 "&ensp;" 2칸 "&emsp;" 3칸
 				function matchingRegistration() {
-					var playerName = document
-							.getElementById('matching_playerName').value;
-					var starttime = document
-							.getElementById('matching_starttime').value;
-					var finishtime = document
-							.getElementById('matching_finishtime').value;
-					var peoplenum = document
-							.getElementById('matching_peoplenum').value;
+					<% session.setAttribute("mm", "0"); %>
+					var playerName = document.getElementById('matching_playerName').value;
+					var starttime = document.getElementById('matching_starttime').value;
+					var finishtime = document.getElementById('matching_finishtime').value;
+					var peoplenum = document.getElementById('matching_peoplenum').value;
 					var level = document.getElementById('matching_level').value;
 					var comment = document.getElementById('matching_comment').value;
 
@@ -566,6 +558,7 @@
 				}
 
 				function recruitMercenary() {
+					<% session.setAttribute("mm", "1"); %>
 					var playerName = document.getElementById('M_playerName').value;
 					var starttime = document.getElementById('M_starttime').value;
 					var finishtime = document.getElementById('M_finishtime').value;

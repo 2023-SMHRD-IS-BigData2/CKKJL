@@ -24,5 +24,9 @@ public class MemberDAO {
 		}
 		return cnt;
 	}
+	
+	public Member login() {
+		
+	}
 
 }

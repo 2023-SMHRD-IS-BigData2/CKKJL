@@ -22,7 +22,9 @@ public class MatchService extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		Member vo = (Member)session.getAttribute("vo");
+		System.out.println(vo.toString());
 
+		int mm = Integer.valueOf((String) session.getAttribute("mm"));
 		String starttime = request.getParameter("starttime");
 		String start = starttime.split(":")[0];
 		String finishtime = request.getParameter("finishtime");
@@ -31,16 +33,20 @@ public class MatchService extends HttpServlet {
 		String level = request.getParameter("level");
 		String comment = request.getParameter("comment");
 		String matchDay = request.getParameter("matchDay");
-				
-		System.out.println(matchDay + starttime + finishtime + peoplenum + level + comment );
+		System.out.println(mm + matchDay + starttime + finishtime + peoplenum + level + comment );
 	
 		Mercenary_Match mercenary_match = null;
-		mercenary_match = new Mercenary_Match(0, matchDay, start, finish, peoplenum, level, vo.getTeam());
+		mercenary_match = new Mercenary_Match(mm, matchDay, start, finish, peoplenum, level, vo.getTeam());
 		if (comment != null) {
 			mercenary_match.setWriting(comment);
 		}
-		new Mercenary_MatchDAO().makeMEMA(mercenary_match);
-		
+		System.out.println("hi"+ mercenary_match.toString());
+		int ck = new Mercenary_MatchDAO().makeMEMA(mercenary_match);
+		if (ck != 0) {
+			System.out.println("성공");
+		}else {
+			System.out.println("실패!");
+		}
 		
 		
 		response.sendRedirect("ViewMatch.jsp");
