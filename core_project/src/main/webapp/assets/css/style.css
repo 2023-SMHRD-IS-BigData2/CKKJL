@@ -8,17 +8,15 @@ button{
     font-weight:bold;
     border-radius: 10px;
 }
-input-file-button{
+
+#input-file{
   padding: 6px 25px;
-  background-color:#FF6600;
+  background-color:#FF6600 !important;
   border-radius: 4px;
   color: white;
   cursor: pointer;
 }
-btnOfinput{
-	display:none;
-	
-}
+
 body {
     margin-left: 1px; /* 원하는 여백 값으로 조절하세요 */
 }
