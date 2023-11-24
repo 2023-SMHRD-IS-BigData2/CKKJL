@@ -35,10 +35,6 @@ public class MatchService extends HttpServlet {
 		session.setAttribute("level", level);
 		session.setAttribute("comment", comment);
 		
-		//int cnt = new ;
-		// MatchText vo = new MatchText(starttime, finishtime, people,)
-		
-		
 		
 		
 		response.sendRedirect("ViewMatch.jsp");

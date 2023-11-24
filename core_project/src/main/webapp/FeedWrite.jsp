@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,11 +57,11 @@ p {
 	<main>
 		<article>
 			<div id="board">
-		<form action="./FeedService.do" method="post" enctype="multipart/form-data">
+		<form action="./FeedService" method="post" enctype="multipart/form-data">
 				<table id="list">
 					<tr>
-						<td>작성자</td>
-						<td><input  type="text" name="writer"> </td>
+						<td> 작성자 </td>
+						<td>${vo.getNick()}<input  type="hidden" name="writer" value="${vo.getId()}"> </td>
 					</tr>
 					<tr>
 						<td colspan="2">내용</td>

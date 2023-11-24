@@ -15,7 +15,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class mercenary_match_feed {
+public class Mercenary_Match {
 	
 	// 매칭, 용병 피드 추가시 모든 정보 입력!
 	

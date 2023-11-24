@@ -10895,15 +10895,15 @@ form.user .btn-user {
 }
 
 .btn-google {
-  color: #fff;
+  color: #fada0a;
   background-color: #ea4335;
-  border-color: #fff;
+  border-color: #fada0a;
 }
 
 .btn-google:hover {
-  color: #fff;
-  background-color: #e12717;
-  border-color: #e6e6e6;
+  color: #fad800;
+  background-color: #fad800;
+  border-color: #fad800;
 }
 
 .btn-google:focus, .btn-google.focus {

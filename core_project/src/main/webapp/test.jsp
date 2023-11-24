@@ -28,18 +28,11 @@
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="path/to/styles.css">
-    <style>
-        body {
-            margin-left: 10px; /* 원하는 여백 값으로 조절하세요 */
-        }
-    </style>
 
 
 </head>
 
 <body id="page-top">
-
    <%
       Member vo = (Member)session.getAttribute("vo");
    
@@ -47,12 +40,40 @@
          System.out.print(vo.getId());
       }
    %>
+
     <!-- Page Wrapper -->
     <div id="wrapper">
 
+        <!-- Sidebar -->
         
-					<!-- Topbar Navbar -->
-					<ul class="navbar-nav ml-auto">
+
+            <!-- Divider -->
+            
+
+            <!-- Nav Item - Dashboard -->
+
+           
+
+
+            <!-- Divider -->
+            
+
+            <!-- Heading -->
+            
+            <!-- Nav Item - Pages Collapse Menu -->
+            
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            
+
+            <!-- Divider -->
+            
+
+            <!-- Heading -->
+            
+            <!-- Nav Item - Pages Collapse Menu -->
+            
+
             <!-- Nav Item - Charts -->
             
 
@@ -81,7 +102,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <div><a href="RealMain.jsp"><img src="img/futsal062.png" alt="" width="200" height="40"></a></div>
+                    <div><a href="RealMain.jsp"><img src="img/FUTSAL062.png" alt="" width="200" height="40"></a></div>
                     
                         
                     </button>
@@ -114,13 +135,13 @@
                         <span><button class="button is-primary is-outlined is-large">피드 작성</button></span>
                     </a>
                     
-                        <a class="nav-link collapsed" href="RealPagenation.jsp" data-target="#collapseTwo"
+                        <a class="nav-link collapsed" href="매칭용병 잡기.html" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
 
                         <span><button class="button is-primary is-outlined is-large">매칭용병 잡기</button></span>
                     </a>
                     
-                        <a class="nav-link collapsed" href="ViewPagenation.jsp" data-target="#collapseTwo"
+                        <a class="nav-link collapsed" href="매칭용병 보기.html" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
 
                         <span><button class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
@@ -279,7 +300,7 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="RealLogin.jsp" id="userDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="진짜login.html" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <%if(vo == null){ %>
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">로그인해주세요</span>

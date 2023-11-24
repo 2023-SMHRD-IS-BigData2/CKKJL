@@ -29,13 +29,14 @@
         form{
         display:none;
         }
-    </style>
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    </style>    
+</script>
+<!-- Kakao SDK -->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
 	Kakao.init('eefca775da363abc546f57a131ec1863'); //발급받은 키 중 javascript키를 사용해준다.
 	console.log(Kakao.isInitialized()); // sdk초기화여부판단
 </script>
-
 </head>
 
 <body class="bg-gradient-primary">

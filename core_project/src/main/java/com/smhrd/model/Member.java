@@ -18,10 +18,10 @@ public class Member {
 	
 	@NonNull private String id;
 	@NonNull private String nick;
-	@NonNull private String pic;
-	private String team;
+	private int team;
 	private String intro;
+	@NonNull private String pic;
+
 		
 	
-
 }
