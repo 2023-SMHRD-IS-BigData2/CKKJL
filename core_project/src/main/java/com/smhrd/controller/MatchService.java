@@ -21,8 +21,8 @@ public class MatchService extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		
-		Member vo = (Member)session.getAttribute("vo");
-		System.out.println(vo.toString());
+
+		Member vo = (Member)session.getAttribute("member_vo");
 
 		int mm = Integer.valueOf((String) session.getAttribute("mm"));
 		String starttime = request.getParameter("starttime");
