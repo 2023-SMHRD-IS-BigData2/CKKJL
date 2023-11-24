@@ -289,7 +289,7 @@
 					<div class="row">
 						<div class="row">
 
-<<<<<<< HEAD
+
 						<!-- Area Chart -->
 						<div class="col-xl-8 col-lg-7">
 							<div class="card shadow mb-4">
@@ -302,7 +302,6 @@
 
 					<!-- Pie Chart -->
 					<div class="col-xl-4 col-lg-5"></div>
-
 					<!-- Content Row -->
 					<div class="row">
 
@@ -314,114 +313,7 @@
 						</div>
 					</div>
 
-					<!-- 여기서부터 -->
-
-					<div class="col-lg-6 mb-4">
-						<h1 class="h3 mb-4 text-gray-800">매치용병 등록하기</h1>
-
-						<!-- Illustrations -->
-						<div class="card shadow mb-4">
-							<div class="card-header py-3">
-								<h6 class="m-0 font-weight-bold text-primary" align="center">매치등록</h6>
-							</div>
-							<div class="card-body">
-								<div class="text-center">
-									<form action="MatchService" method="post" name="matchForm">
-										<input type="hidden" name="matchDay" value="">
-										<script>
-											var matchDay = window.location.hash
-													.slice(1, 11);
-											document.matchForm.matchDay.value = matchDay;
-											document.write('날짜 ', matchDay);
-										</script>
-										<br> <label for="position">시작 시간</label> <select
-											id="matching_starttime" name="starttime" required>
-											<option value="미정">미정</option>
-											<option value="00:00">00:00</option>
-											<option value="01:00">01:00</option>
-											<option value="02:00">02:00</option>
-											<option value="03:00">03:00</option>
-											<option value="04:00">04:00</option>
-											<option value="05:00">05:00</option>
-											<option value="06:00">06:00</option>
-											<option value="07:00">07:00</option>
-											<option value="08:00">08:00</option>
-											<option value="09:00">09:00</option>
-											<option value="10:00">10:00</option>
-											<option value="11:00">11:00</option>
-											<option value="12:00">12:00</option>
-											<option value="13:00">13:00</option>
-											<option value="14:00">14:00</option>
-											<option value="15:00">15:00</option>
-											<option value="16:00">16:00</option>
-											<option value="17:00">17:00</option>
-											<option value="18:00">18:00</option>
-											<option value="19:00">19:00</option>
-											<option value="20:00">20:00</option>
-											<option value="21:00">21:00</option>
-											<option value="22:00">22:00</option>
-											<option value="23:00">23:00</option>
-											<br>
-										</select> <br> <label for="position"> 끝나는 시간</label> <select
-											id="matching_finishtime" name="finishtime">
-											<option value="미정">미정</option>
-											<option value="00:00">00:00</option>
-											<option value="01:00">01:00</option>
-											<option value="02:00">02:00</option>
-											<option value="03:00">03:00</option>
-											<option value="04:00">04:00</option>
-											<option value="05:00">05:00</option>
-											<option value="06:00">06:00</option>
-											<option value="07:00">07:00</option>
-											<option value="08:00">08:00</option>
-											<option value="09:00">09:00</option>
-											<option value="10:00">10:00</option>
-											<option value="11:00">11:00</option>
-											<option value="12:00">12:00</option>
-											<option value="13:00">13:00</option>
-											<option value="14:00">14:00</option>
-											<option value="15:00">15:00</option>
-											<option value="16:00">16:00</option>
-											<option value="17:00">17:00</option>
-											<option value="18:00">18:00</option>
-											<option value="19:00">19:00</option>
-											<option value="20:00">20:00</option>
-											<option value="21:00">21:00</option>
-											<option value="22:00">22:00</option>
-											<option value="23:00">23:00</option>
-											<br>
-
-										</select><br> <label for="position"> 인원수 </label> <select
-											id="matching_peoplenum" name="peoplenum">
-											<option value="5vs5">5:5</option>
-											<option value="6vs6">6:6</option>
-											<option value="7vs7">7:7</option>
-											<option value="그 외">그 외</option>
-										</select><br> <label for="position">수준</label> <select
-											id="matching_level" name="level">
-											<option value="하">하</option>
-											<option value="하상">하상</option>
-											<option value="중하">중하</option>
-											<option value="중상">중상</option>
-											<option value="상">상</option>
-										</select><br> <label for="position"> 남기실 말</label> <input
-											type="text" id="matching_comment" name="comment" required>
-										<br> <input type="submit" value="매치 게시글 등록하기"
-											onclick="matchingRegistration()">
-										<button type="button" onclick="matchingRegistration()">매치
-											게시글 등록하기</button>
-									</form>
-=======
-							<!-- Area Chart -->
-							<div class="col-xl-8 col-lg-7">
-								<div class="card shadow mb-4">
-									<!-- Card Header - Dropdown -->
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
-
-								</div>
-
-							</div>
-						</div>
+					
 
 						<!-- Pie Chart -->
 						<div class="col-xl-4 col-lg-5"></div>
@@ -440,7 +332,7 @@
 						<!-- 여기서부터 -->
 
 						<div class="col-lg-6 mb-4">
-							<h1 class="h3 mb-4 text-gray-800">매치용병 등록하기</h1>
+							<h1 class="h3 mb-4 text-gray-800" align="center">매치용병 등록하기</h1>
 
 							<!-- Illustrations -->
 							<div class="card shadow mb-4">
@@ -531,8 +423,6 @@
 												type="text" id="matching_comment" name="comment" required>
 											<br> <input type="submit" value="매치 게시글 등록하기"
 												onclick="matchingRegistration()">
-											<button type="button" onclick="matchingRegistration()">매치
-												게시글 등록하기</button>
 										</form>
 
 									</div>
@@ -540,7 +430,7 @@
 								</div>
 							</div>
 
-							<div class="col-lg-6 mb-4">
+							
 								<!-- Illustrations -->
 								<div class="card shadow mb-4">
 									<div class="card-header py-3">
@@ -630,18 +520,12 @@
 												</select><br> <label for="position"> 남기실 말</label> <input
 													type="text" id="M_comment" name="comment" required><br>
 												<input type="submit" value="용병 게시글 등록하기">
-												<button type="button" onclick="recruitMercenary()">
-													용병 게시글 등록하기</button>
+												
 											</form>
 										</div>
 									</div>
 								</div>
 
-
-								<!-- <<h2>등록된 게시판 목록</h2>
-							<ul id="mercenaryList"></ul>
-							<ul id="matchingList"></ul>
-							 -->
 							</div>
 						</div>
 					</div>
@@ -728,9 +612,7 @@
 
 			</div>
 			<!-- End of Content Wrapper -->
-	</div>
-	<!-- End of Page Wrapper -->
-
+	
 	<!-- Scroll to Top Button-->
 	<a class="scroll-to-top rounded" href="#page-top"> <i
 		class="fas fa-angle-up"></i>

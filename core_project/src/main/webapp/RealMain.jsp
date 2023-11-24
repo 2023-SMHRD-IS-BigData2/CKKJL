@@ -331,15 +331,15 @@ body {
 
 						<div class="row">
 
-<<<<<<< HEAD
+
 							<!-- Area Chart -->
 							<div class="col-xl-8 col-lg-7">
 								<div class="card shadow mb-4">
 									<!-- Card Header - Dropdown -->
-=======
+
                
                 <!-- End of Footer -->
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
+
 
 								</div>
 
