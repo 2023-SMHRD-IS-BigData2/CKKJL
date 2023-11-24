@@ -306,11 +306,12 @@
 							<div class="card-body">
 								<div class="text-center">
 									<form action="MatchService" method="post" name="matchForm">
+										<input type="hidden" name="matchDay" value="">
 										<script>
-											var date = window.location.hash;
-											document.write('날짜 ', date.slice(1, 11));
+											var matchDay = window.location.hash.slice(1, 11);
+											document.matchForm.matchDay.value = matchDay;
+											document.write('날짜 : ', matchDay);
 										</script>
-										<br>
 										 <br> <label for="position">시작
 											시간</label> <select id="matching_starttime" name="starttime" required>
 											<option value="미정">미정</option>

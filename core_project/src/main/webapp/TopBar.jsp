@@ -1,45 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.model.Message"%>
 <%@page import="com.smhrd.model.MessageDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>fds</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="path/to/styles.css">
-    <style>
-        body {
-            margin-left: 10px; /* 원하는 여백 값으로 조절하세요 */
-        }
-    </style>
-
-
+<!-- Custom styles for this template-->
+<link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
 </head>
-
 <body id="page-top">
-
 
 	<%
 	Member vo = (Member) session.getAttribute("vo");
@@ -297,182 +280,7 @@
 
 					</nav>
 					<!-- 여기부터 복사해요 -->
-                <!-- End of Topbar -->
-                <section>
-                    <div class="container button-container">
-                        <!-- 고정시켜야됨 -->
-                        
-
-
-
-                            
-                        </div>
-
-                    </div>
-                </section>
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-
-
-
-
-                        <!-- Earnings (Monthly) Card Example -->
-
-
-
-
-                        <!-- Content Row -->
-
-                        <div class="row">
-
-                            <!-- Area Chart -->
-                            <div class="col-xl-8 col-lg-7">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-
-                        </div>
-
-
-                        <!-- Content Row -->
-                        <div class="row">
-
-                            <!-- Content Column -->
-                            <div class="col-lg-6 mb-4">
-
-                                <!-- Project Card Example -->
-
-
-                                <!-- Color System -->
-                                <div class="row">
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-lg-6 mb-4">
-                            <h1 class="h3 mb-4 text-gray-800">Main page</h1>
-
-                            <!-- Illustrations -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">발흥민</h6> <small>5분전</small>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="img/undraw_posting_photo.svg" alt="...">
-                                    </div>
-                                    <p> 저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~
-                                    </p>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-4">
-
-                                <!-- Illustrations -->
-                                <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">박건성</h6> <small>5분전</small>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="text-center">
-                                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                                src="img/오풋완.png" alt="...">
-                                        </div>
-                                        <p> 오풋완
-                                        </p>
-
-                                    </div>
-                                </div>
-
-
-                                <!-- Approach -->
-
-
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- /.container-fluid -->
-
-                </div>
-                <!-- End of Main Content -->
-
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2021</span>
-                        </div>
-                    </div>
-                </footer>
-                <!-- End of Footer -->
-
-            </div>
-            <!-- End of Content Wrapper -->
-
-        </div>
-        <!-- End of Page Wrapper -->
-
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-        <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin-2.min.js"></script>
-
-        <!-- Page level plugins -->
-        <script src="vendor/chart.js/Chart.min.js"></script>
-
-        <!-- Page level custom scripts -->
-        <script src="js/demo/chart-area-demo.js"></script>
-        <script src="js/demo/chart-pie-demo.js"></script>
-
 </body>
-
+</html>
+</body>
 </html>

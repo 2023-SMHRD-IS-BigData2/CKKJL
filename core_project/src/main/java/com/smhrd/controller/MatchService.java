@@ -18,16 +18,17 @@ public class MatchService extends HttpServlet {
 
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
-		Member vo = (Member)session.getAttribute("vo");
-		String nick = vo.getNick();
+	//	Member vo = (Member)session.getAttribute("vo");
+	//	String nick = vo.getNick();
 		
 		String starttime = request.getParameter("starttime");
 		String finishtime = request.getParameter("finishtime");
 		String peoplenum = request.getParameter("peoplenum");
 		String level = request.getParameter("level");
 		String comment = request.getParameter("comment");
-	
-		System.out.println(starttime + finishtime + peoplenum + level + comment + nick);
+		String matchDay = request.getParameter("matchDay");
+				
+		System.out.println(matchDay + starttime + finishtime + peoplenum + level + comment );
 	
 		session.setAttribute("starttime", starttime);
 		session.setAttribute("finishtime", finishtime);
