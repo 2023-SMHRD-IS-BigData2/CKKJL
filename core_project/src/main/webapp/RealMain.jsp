@@ -279,7 +279,7 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="진짜login.html" id="userDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="RealLogin.jsp" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <%if(vo == null){ %>
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">로그인해주세요</span>
