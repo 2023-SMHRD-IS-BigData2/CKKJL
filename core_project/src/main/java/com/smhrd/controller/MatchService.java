@@ -35,14 +35,6 @@ public class MatchService extends HttpServlet {
 		session.setAttribute("level", level);
 		session.setAttribute("comment", comment);
 		
-<<<<<<< HEAD
-		// int cnt = new 
-=======
-		//int cnt = new ;
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
-		// MatchText vo = new MatchText(starttime, finishtime, people,)
-		
-		
 		
 		
 		response.sendRedirect("ViewMatch.jsp");

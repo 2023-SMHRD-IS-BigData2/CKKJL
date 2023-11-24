@@ -20,6 +20,5 @@ btnOfinput{
 	
 }
 body {
-  max-width: 8px;
-  margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
+    margin-left: 1px; /* 원하는 여백 값으로 조절하세요 */
 }
