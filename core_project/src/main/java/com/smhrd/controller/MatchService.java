@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.Member;
 import com.smhrd.model.Mercenary_Match;
+import com.smhrd.model.Mercenary_MatchDAO;
 
 @WebServlet("/MatchService")
 public class MatchService extends HttpServlet {
@@ -23,9 +24,9 @@ public class MatchService extends HttpServlet {
 		Member vo = (Member)session.getAttribute("vo");
 
 		String starttime = request.getParameter("starttime");
-		int start = Integer.valueOf(starttime.split(":")[0]);
+		String start = starttime.split(":")[0];
 		String finishtime = request.getParameter("finishtime");
-		int finish = Integer.valueOf(finishtime.split(":")[0]);
+		String finish = finishtime.split(":")[0];
 		String peoplenum = request.getParameter("peoplenum");
 		String level = request.getParameter("level");
 		String comment = request.getParameter("comment");
@@ -38,7 +39,7 @@ public class MatchService extends HttpServlet {
 		if (comment != null) {
 			mercenary_match.setWriting(comment);
 		}
-		session.setAttribute("Mercenary_match", mercenary_match);
+		new Mercenary_MatchDAO().makeMEMA(mercenary_match);
 		
 		
 		
@@ -46,4 +47,5 @@ public class MatchService extends HttpServlet {
 	
 	
 	}
+	
 }
