@@ -22,7 +22,7 @@ public class MatchService extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 
-		Member vo = (Member)session.getAttribute("member");
+		Member vo = (Member)session.getAttribute("member_vo");
 
 		int mm = Integer.valueOf((String) session.getAttribute("mm"));
 		String starttime = request.getParameter("starttime");
