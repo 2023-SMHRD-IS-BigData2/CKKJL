@@ -25,5 +25,16 @@ public class MemberDAO {
 		return cnt;
 	}
 	
+	public Member login(Member vo) {
+		Member member = null;
+		try {
+			member = sqlSession.selectOne("com.smhrd.database.MemberMapper.login", vo);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			sqlSession.close();
+		}return member;
+	}
+	
 
 }

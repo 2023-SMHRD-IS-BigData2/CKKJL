@@ -413,7 +413,7 @@
                                     <option value="7vs7">7:7</option>
                                     <option value="그 외">그 외</option>
                                  </select><br> <label for="position">수준</label> <select
-                                    id="matching_level" name="matching_level">
+                                    id="matching_level" name="level">
                                     <option value="하">하</option>
                                     <option value="하상">하상</option>
                                     <option value="중하">중하</option>
@@ -558,8 +558,7 @@
                         + playerName + "<br>" + comment;
 
                   // Append the list item to the mercenary list
-                  document.getElementById('matchingList').appendChild(
-                        listItem);
+                  document.getElementById('matchingList').appendChild(listItem);
                   // Clear the form fields after recruiting
                   document.getElementById('matching_playerName').value = '';
                   document.getElementById('matching_starttime').value = '';
