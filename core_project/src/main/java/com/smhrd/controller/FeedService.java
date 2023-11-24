@@ -12,6 +12,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.model.Feed;
 import com.smhrd.model.FeedDAO;
+import com.smhrd.model.Member;
 
 @WebServlet("/FeedService")
 public class FeedService extends HttpServlet {
@@ -25,8 +26,9 @@ public class FeedService extends HttpServlet {
 		HttpSession session = request.getSession();
 		String savePath = request.getServletContext().getRealPath("./file");
 		System.out.println(savePath);
-		String writer = (String) session.getAttribute("id");
-		System.out.println("writer");
+		Member member_vo = (Member)session.getAttribute("member");
+		String writer = member_vo.getId();
+		System.out.println(writer);
 
 		// 3. 파일 최대 크기 (int)
 		int maxSize = 1024 * 1024 * 10;
@@ -45,12 +47,12 @@ public class FeedService extends HttpServlet {
 			String filename = multi.getFilesystemName("filename");
 			String content = multi.getParameter("content");
 
-			Feed vo = new Feed(writer, title, content);
+			Feed feed_vo = new Feed(writer, title, content);
 			if (filename != null) {
-				vo.setfile(filename);
+				feed_vo.setfile(filename);
 			}
-			System.out.println(vo.toString());
-			int cnt = new FeedDAO().writeFeed(vo);
+			System.out.println(feed_vo.toString());
+			int cnt = new FeedDAO().writeFeed(feed_vo);
 			if (cnt > 0) {
 				System.out.println("게시글 작성 성공");
 			} else {
