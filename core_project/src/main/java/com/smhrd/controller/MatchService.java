@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.Member;
+import com.smhrd.model.Mercenary_Match;
 
 @WebServlet("/MatchService")
 public class MatchService extends HttpServlet {
@@ -18,22 +19,26 @@ public class MatchService extends HttpServlet {
 
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
-		Member vo = (Member)session.getAttribute("vo");
-		String nick = vo.getNick();
 		
+		Member vo = (Member)session.getAttribute("vo");
+
 		String starttime = request.getParameter("starttime");
+		int start = Integer.valueOf(starttime.split(":")[0]);
 		String finishtime = request.getParameter("finishtime");
+		int finish = Integer.valueOf(finishtime.split(":")[0]);
 		String peoplenum = request.getParameter("peoplenum");
 		String level = request.getParameter("level");
 		String comment = request.getParameter("comment");
+		String matchDay = request.getParameter("matchDay");
+				
+		System.out.println(matchDay + starttime + finishtime + peoplenum + level + comment );
 	
-		System.out.println(starttime + finishtime + peoplenum + level + comment + nick);
-	
-		session.setAttribute("starttime", starttime);
-		session.setAttribute("finishtime", finishtime);
-		session.setAttribute("peoplenum", peoplenum);
-		session.setAttribute("level", level);
-		session.setAttribute("comment", comment);
+		Mercenary_Match mercenary_match = null;
+		mercenary_match = new Mercenary_Match(0, matchDay, start, finish, peoplenum, level, vo.getTeam());
+		if (comment != null) {
+			mercenary_match.setWriting(comment);
+		}
+		session.setAttribute("Mercenary_match", mercenary_match);
 		
 		
 		
