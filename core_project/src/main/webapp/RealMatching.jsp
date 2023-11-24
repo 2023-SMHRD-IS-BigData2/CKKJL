@@ -117,7 +117,7 @@
 							<li class="nav-item dropdown no-arrow mx-1"><a
 								class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
 								role="button" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false"> <i class="fas fa-bell fa-fw"></i> <!-- Counter - Alerts -->
+								aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
 									<span class="badge badge-danger badge-counter">3+</span>
 							</a> <!-- Dropdown - Alerts -->
 								<div
@@ -426,11 +426,11 @@
 
 									<div class="card-body">
 										<div class="text-center">
-											<form action="MatchService" method="post" name="matchForm">
+											<form action="MatchService" method="post" name="matchForm2">
 												<input type="hidden" name="matchDay" value="">
 												<script>
-													var matchDay = window.location.hash.slice(1, 11);
-													document.matchForm.matchDay.value = matchDay;
+													
+													document.matchForm2.matchDay.value = matchDay;
 													document.write('날짜 ', matchDay);
 												</script>
 												<br> <label for="position">가능한 시작 시간 </label> <select
