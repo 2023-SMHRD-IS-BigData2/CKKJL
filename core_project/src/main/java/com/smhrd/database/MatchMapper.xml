@@ -12,7 +12,7 @@
 	</insert>
 	
 	<select id="allMEMA_date" resultType="Mercenary_Match">
-	SELECT * FROM VW_MM_FEED;
+		SELECT * FROM VW_MM_FEED WHERE M_DATE in #{date};
 	</select>
 
 

@@ -27,6 +27,7 @@ public class Mercenary_Match {
 	private String writing; // 남기실 말
 	@NonNull private int team_index; // 팀 고유번호
 	
+	// 리스트 생성시 필요한 거(뷰참고)
 	public Mercenary_Match(int m_index, int mm, String date, String teamName,
 			int start_hour, int last_hour, String people_num, String level,
 			String writing) {

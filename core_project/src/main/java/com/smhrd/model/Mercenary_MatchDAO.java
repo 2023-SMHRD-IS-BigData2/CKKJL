@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -19,5 +21,17 @@ public class Mercenary_MatchDAO {
 			sqlSession.close();
 		}
 		return cnt;
+	}
+	
+	public List<Mercenary_Match> allMEMA_date(String date) {
+		List<Mercenary_Match> mercenary_matchs = null;
+		try {
+			mercenary_matchs = sqlSession.selectList("com.smhrd.database.MatchMapper.allMEMA_date", date);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			sqlSession.close();
+		}
+		return mercenary_matchs;
 	}
 }
