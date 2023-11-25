@@ -13,12 +13,12 @@ import com.smhrd.model.FriendDAO;
 import com.smhrd.model.Member;
 
 
-@WebServlet("/FriendService")
-public class FriendService extends HttpServlet {
+@WebServlet("/FriendService2")
+public class FriendService2 extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		// 친구 추가
+		
+		// 친구 수락
 		String friend = request.getParameter("friend");
 		HttpSession session = request.getSession();
 		Member vo = (Member)session.getAttribute("vo");
@@ -27,7 +27,7 @@ public class FriendService extends HttpServlet {
 		
 		Friend user = new Friend(id,friend);
 		
-		int row = new FriendDAO().apply(user);
+		int cnt = new FriendDAO().accept(user);
 		
 	}
 
