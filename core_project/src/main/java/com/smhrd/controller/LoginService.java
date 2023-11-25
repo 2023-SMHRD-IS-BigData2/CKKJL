@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.smhrd.model.FeedDAO;
 import com.smhrd.model.Member;
 import com.smhrd.model.MemberDAO;
 
