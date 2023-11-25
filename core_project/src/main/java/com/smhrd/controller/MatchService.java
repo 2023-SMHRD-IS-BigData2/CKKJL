@@ -24,7 +24,7 @@ public class MatchService extends HttpServlet {
 
 		Member vo = (Member)session.getAttribute("member_vo");
 
-		int mm = (int) request.getAttribute("mm");
+		int mm = (int) session.getAttribute("mm");
 		String starttime = request.getParameter("starttime");
 		String start = starttime.split(":")[0];
 		String finishtime = request.getParameter("finishtime");
