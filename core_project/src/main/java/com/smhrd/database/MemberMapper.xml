@@ -9,8 +9,8 @@
 		INSERT INTO TB_USER_INFO (U_TOKEN,U_NICKNAME,U_PIC) VALUES (#{id},#{nick},#{pic})
 	</insert>
 	
+	
 	<select id="Login" resultType="Member" parameterType="String">
 		SELECT * FROM TB_USER_INFO WHERE U_TOKEN=#{id}
 	</select>
-
 </mapper>

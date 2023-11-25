@@ -25,6 +25,8 @@ public class MemberDAO {
 		return cnt;
 	}
 	
+	
+	
 	public Member login(String id) {
 		Member member = null;
 		try {
