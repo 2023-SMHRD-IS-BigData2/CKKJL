@@ -17,7 +17,7 @@ public class Mercenary_Match {
 	
 	// 매칭, 용병 피드 추가시 모든 정보 입력!
 	private int m_index;
-	@NonNull private int mm; // 용병/매치 구분코드 (매치 = 0, 용병 = 1)
+	@NonNull private int mm; // 경기 성사 구분코드 (미성사 = 0, 성사 = 1)
 	@NonNull private String date; // 경기날짜
 	private String teamName; // 팀네임(user에서 가져올 것)
 	@NonNull private String start_hour; // 시작시간 ex) 11:00 -> 11

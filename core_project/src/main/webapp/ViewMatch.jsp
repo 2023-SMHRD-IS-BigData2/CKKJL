@@ -281,16 +281,15 @@
 						</ul>
 
 					</nav>
-<<<<<<< HEAD
 	<ul>
 		<%
-		String date = request.getParameter("matchDay");
-		List<Mercenary_Match> mm = new Mercenary_MatchDAO().allMEMA_date(date);%>
+		String matchDay = request.getParameter("matchDay");
+		List<Mercenary_Match> mm = new Mercenary_MatchDAO().allMEMA_date(matchDay);%>
 		<%for(Mercenary_Match i : mm){ %>
 			<%if(i.getMm() == 0){ %>
-				<li> 매칭
+				<li> 성사목록
 			<%}else { %>
-				<li> 용병
+				<li> 미성사
 			<%} %>
 				</li>
 		<%} %>
@@ -299,15 +298,7 @@
 	
 
 
-=======
-					<!-- 여기부터 복사해요 -->
-					
-	<!-- 일자별로 매치와 용병으로 나눠서 보여주기 -->
-	<!-- 배열 받기 -->
-	<!-- > -->
-		
-		
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
+
 
 
 </body>
