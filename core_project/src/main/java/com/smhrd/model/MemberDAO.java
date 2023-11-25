@@ -24,5 +24,22 @@ public class MemberDAO {
 		}
 		return cnt;
 	}
+	
+	public Member login(String id) {
+		Member member = null;
+		try {
+			member = sqlSession.selectOne("com.smhrd.database.MemberMapper.Login", id);
+			if (member != null) {
+				System.out.println("성공");
+			}else {
+				System.out.println("실패!");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			sqlSession.close();
+		}return member;
+	}
+	
 
 }

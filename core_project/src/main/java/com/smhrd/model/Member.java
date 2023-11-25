@@ -21,7 +21,14 @@ public class Member {
 	private int team;
 	private String intro;
 	@NonNull private String pic;
-
-		
+	
+	public Member(String id, String nick, int team, String pic) {
+		this.id = id;
+		this.nick = nick;
+		this.team = team;
+		this.pic = pic;
+	}
+	
+	
 	
 }

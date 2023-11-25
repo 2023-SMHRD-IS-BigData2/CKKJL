@@ -42,4 +42,6 @@ public class Mercenary_Match {
 		this.writing = writing;
 	}
 	
+	
+	
 }

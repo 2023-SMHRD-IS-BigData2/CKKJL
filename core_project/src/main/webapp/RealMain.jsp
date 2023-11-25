@@ -292,7 +292,85 @@
 
 
 
-                        <!-- Content Row -->
+
+						<!-- Content Row -->
+
+						<div class="row">
+
+
+							<!-- Area Chart -->
+							<div class="col-xl-8 col-lg-7">
+								<div class="card shadow mb-4">
+									<!-- Card Header - Dropdown -->
+
+               
+                <!-- End of Footer -->
+
+
+								</div>
+
+							</div>
+						</div>
+
+						<!-- Pie Chart -->
+						<div class="col-xl-4 col-lg-5"></div>
+
+
+						<!-- Content Row -->
+						<div class="row">
+
+							<!-- Content Column -->
+							<div class="col-lg-6 mb-4">
+
+								<!-- Project Card Example -->
+
+
+								<!-- Color System -->
+								<div class="row"></div>
+							</div>
+
+						</div>
+
+						<div class="col-lg-6 mb-4">
+							<h1 class="h3 mb-4 text-gray-800">Main page</h1>
+
+							<!-- Illustrations -->
+							<div class="card shadow mb-4">
+								<div class="card-header py-3">
+									<h6 class="m-0 font-weight-bold text-primary">발흥민</h6>
+									<small>5분전</small>
+								</div>
+								<div class="card-body">
+									<div class="text-center">
+										<img class="img-fluid px-3 px-sm-4 mt-3 mb-4"
+											style="width: 25rem;" src="img/undraw_posting_photo.svg"
+											alt="...">
+									</div>
+									<p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
+
+								</div>
+							</div>
+							<div class="col-lg-6 mb-4">
+
+								<!-- Illustrations -->
+								<div class="card shadow mb-4">
+									<div class="card-header py-3">
+										<h6 class="m-0 font-weight-bold text-primary">박건성</h6>
+										<small>5분전</small>
+									</div>
+									<div class="card-body">
+										<div class="text-center">
+											<img class="img-fluid px-3 px-sm-4 mt-3 mb-4"
+												style="width: 25rem;" src="img/오풋완.png" alt="...">
+										</div>
+										<p>오풋완</p>
+
+									</div>
+								</div>
+
+
+								<!-- Approach -->
+
 
 
 
