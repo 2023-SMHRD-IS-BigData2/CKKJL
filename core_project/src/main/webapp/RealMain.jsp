@@ -348,7 +348,9 @@
                                                 <%String index = i.getF_user_index(); %>
                                                 <%Member member = new MemberDAO().login(index); %>
                                                 <%= member.getNick() %>
-                                                <i class="fas fa-user fa-fw float-right"></i> 
+                                                <a href="FriendService?friend=<%=member.getId()%>">
+                                                <i class="fas fa-user fa-fw float-right"></i>
+                                                </a> 
                                             </h6>
                                         </div>
                                         <div class="card-body">
