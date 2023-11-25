@@ -18,17 +18,8 @@ public class Member {
 	
 	@NonNull private String id;
 	@NonNull private String nick;
-	private int team;
+	private int team_index;
 	private String intro;
 	@NonNull private String pic;
-	
-	public Member(String id, String nick, int team, String pic) {
-		this.id = id;
-		this.nick = nick;
-		this.team = team;
-		this.pic = pic;
-	}
-	
-	
 	
 }

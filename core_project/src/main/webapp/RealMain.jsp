@@ -345,14 +345,16 @@
                                     <div class="card shadow mb-4">
                                         <div class="card-header py-3">
                                             <h6 class="m-0 font-weight-bold text-primary">
-                                                <%=i.getF_user_index() %>
+                                                <%String index = i.getF_user_index(); %>
+                                                <%Member member = new MemberDAO().login(index); %>
+                                                <%= member.getNick() %>
                                                 <i class="fas fa-user fa-fw float-right"></i> 
                                             </h6>
                                         </div>
                                         <div class="card-body">
                                             <div class="container-fluid">
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered" id="dataTable <%=i.getF_user_index() %>" style="width:700px;" cellspacing="0">
+                                                    <table class="table table-bordered" id="dataTable" style="width:700px;" cellspacing="0">
                                                         <thead>
                                                             <tr>
                                                                 <th class="text-center">피드</th>

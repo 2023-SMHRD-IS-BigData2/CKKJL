@@ -6,11 +6,11 @@
 <mapper namespace="com.smhrd.database.MemberMapper">
 
 	<insert id="Join" parameterType="Member">
-		INSERT INTO TB_USER_INFO (U_TOKEN,U_NICKNAME,U_PIC) VALUES (#{id},#{nick},#{pic})
+		INSERT INTO TB_USER_INFO (id,nick,pic) VALUES (#{id},#{nick},#{pic})
 	</insert>
 	
 	<select id="Login" resultType="Member" parameterType="String">
-		SELECT * FROM TB_USER_INFO WHERE U_TOKEN=#{id}
+		SELECT * FROM TB_USER_INFO WHERE id=#{id}
 	</select>
 
 </mapper>
