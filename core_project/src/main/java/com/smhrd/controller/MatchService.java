@@ -36,7 +36,7 @@ public class MatchService extends HttpServlet {
 		System.out.println(mm + matchDay + starttime + finishtime + peoplenum + level + comment );
 	
 		Mercenary_Match mercenary_match = null;
-		mercenary_match = new Mercenary_Match(mm, matchDay, start, finish, peoplenum, level, vo.getTeam());
+		mercenary_match = new Mercenary_Match(mm, matchDay, start, finish, peoplenum, level, vo.getTeam_index());
 		if (comment != null) {
 			mercenary_match.setWriting(comment);
 		}
