@@ -20,10 +20,10 @@
 	
 	<!-- 친구 수락 -->
 	<update id="Accept1">
-		UPDATE FRIEND SET MATCH = 1 WHERE ACCEPTOR = #{acceptor}
+		UPDATE FRIEND SET MATCH = 1 WHERE ACCEPTOR = #{applicant}
 	</update>
 	<insert id="Accept2">
-		INSERT INTO FRIEND VALUES (#{},#{},1)
+		INSERT INTO FRIEND VALUES (#{applicant},#{acceptor},1)
 	</insert>
 	
 	

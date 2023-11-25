@@ -18,6 +18,7 @@ public class FriendService extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		// 친구 추가
 		String friend = request.getParameter("friend");
 		HttpSession session = request.getSession();
 		Member vo = (Member)session.getAttribute("vo");
