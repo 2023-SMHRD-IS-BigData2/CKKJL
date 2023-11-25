@@ -8,7 +8,7 @@
 		insert into TB_FEED values (FEED_INDEX.nextval,#{writer},#{title},#{content}, sysdate, #{file}, 0)
 	</insert>
 	<select id="totalFeed" resultType="Feed">
-		select * from TB_FEED order by FEED_index desc
+		select * from TB_FEED
 	</select>
 	<delete id="deleteFeed">
 		delete from TB_FEED where FEED_INDEX=#{index} 
