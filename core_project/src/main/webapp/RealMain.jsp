@@ -123,7 +123,7 @@
 
                             <!-- Nav Item - Alerts -->
                             <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
-                                    
+
                                 </a> <!-- Dropdown - Alerts -->
                                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                     <h6 class="dropdown-header">Alerts Center</h6>
@@ -166,7 +166,7 @@
                             <!-- Nav Item - Messages -->
 
                             <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i>
-                                    
+
                                 </a> <!-- Dropdown - Messages -->
                                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                                     <h6 class="dropdown-header">
@@ -295,111 +295,115 @@
 
 
 
-						<!-- Content Row -->
+                        <!-- Content Row -->
 
-						<div class="row">
-
-
-							<!-- Area Chart -->
-							
-								<div class="card shadow mb-4">
-									<!-- Card Header - Dropdown -->
-
-               
-                <!-- End of Footer -->
-
-
-								</div>
-
-							
-						</div>
-
-						<!-- Pie Chart -->
-						<div class="col-xl-4 col-lg-5"></div>
-
-
-						<!-- Content Row -->
-						<div class="row">
-
-							<!-- Content Column -->
-							<div class="col-lg-6 mb-4">
-
-								<!-- Project Card Example -->
-
-
-								
-							</div>
-
-						</div>
-
-						
                         <div class="row">
-                            <div class="col-lg-20 mb-4">
-                                <h1 class="h3 mb-4 text-gray-800">Main page</h1>
 
-                                <!-- Illustrations -->
+
+                            <!-- Area Chart -->
+                            <div class="col-xl-8 col-lg-7">
                                 <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">발흥민</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="container-fluid">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered" id="dataTable" style="width:700px;" cellspacing="0">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>댓글</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td rowspan="2"><img alt="" src="img/오풋완.png" width="300" height="300" object-fit: cover><br><br>오풋완</td>
-                                                            <td>
-                                                                <ul class="comment-list">
-                                                                    <li><strong>김명준</strong> <br> 수고하셨습니다</li>
-                                                                    <li><strong>이재환</strong> <br>다음에 또 같이 풋살해요~</li>
-                                                                    <li><strong>최현주</strong> <br>오늘 풋살 즐거웠습니다</li>
-                                                                    <li><strong>강지민</strong> <br>다들 조심히 들어가세요</li>
-                                                                    <li><strong>정호준</strong> <br>다음엔 어디서 할까요?</li>
-                                                                </ul>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            
-                                                            <td>
-                                                                <div class="comment-form">
-                                                                    <form id="commentForm">
-                                                                        <label for="comment">댓글 입력:</label>
-                                                                        <textarea id="comment" name="comment" rows="4" cols="50" required></textarea>
-                                                                        <br>
-                                                                        <button type="button" onclick="submitComment()">댓글 전송</button>
-                                                                    </form>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                    <!-- Card Header - Dropdown -->
+
+
+                                    <!-- End of Footer -->
+
+
+                                </div>
+
+
+                            </div>
+
+                            <!-- Pie Chart -->
+                            <div class="col-xl-4 col-lg-5"></div>
+
+
+                            <!-- Content Row -->
+                            <div class="row">
+
+                                <!-- Content Column -->
+                                <div class="col-lg-6 mb-4">
+
+                                    <!-- Project Card Example -->
+
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-lg-20 mb-4">
+                                    <h1 class="h3 mb-4 text-gray-800">Main page</h1>
+
+                                    <!-- Illustrations -->
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary">
+                                                발흥민
+                                                <i class="fas fa-user fa-fw float-right"></i> 
+                                            </h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="container-fluid">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered" id="dataTable" style="width:700px;" cellspacing="0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center">피드</th>
+                                                                <th class="text-center">댓글</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td rowspan="2"><img alt="" src="img/오풋완.png" width="300" height="300" object-fit: cover><br><br>오풋완</td>
+                                                                <td>
+                                                                    <ul class="comment-list">
+                                                                        <li><strong>김명준</strong> <br> 수고하셨습니다</li>
+                                                                        <li><strong>이재환</strong> <br>다음에 또 같이 풋살해요~</li>
+                                                                        <li><strong>최현주</strong> <br>오늘 풋살 즐거웠습니다</li>
+                                                                        <li><strong>강지민</strong> <br>다들 조심히 들어가세요</li>
+                                                                        <li><strong>정호준</strong> <br>다음엔 어디서 할까요?</li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+
+                                                                <td>
+                                                                    <div class="comment-form">
+                                                                        <form id="commentForm">
+                                                                            <label for="comment">댓글 입력:</label>
+                                                                            <textarea id="comment" name="comment" rows="4" cols="50" required></textarea>
+                                                                            <br>
+                                                                            <button type="button" onclick="submitComment()">댓글 전송</button>
+                                                                        </form>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+
+
+
                         </div>
-
-
-
-
                     </div>
+
                 </div>
+                <!-- /.container-fluid -->
 
             </div>
-            <!-- /.container-fluid -->
-
-    </div>
-    <!-- End of Main Content -->
+            <!-- End of Main Content -->
 
 
-    <!-- End of Footer -->
+            <!-- End of Footer -->
 
     </div>
 
@@ -417,7 +421,6 @@
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
-                    </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready
                     to end your current session.</div>

@@ -10,8 +10,8 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public class Friend {
 	
-	@NonNull private String user1;
-	@NonNull private String user2;
+	@NonNull private String applicant;
+	@NonNull private String acceptor;
 	private int match;
 
 }
