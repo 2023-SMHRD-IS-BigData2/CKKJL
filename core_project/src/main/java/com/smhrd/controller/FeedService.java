@@ -26,7 +26,7 @@ public class FeedService extends HttpServlet {
 		HttpSession session = request.getSession();
 		String savePath = request.getServletContext().getRealPath("./file");
 		System.out.println(savePath);
-		Member member_vo = (Member)session.getAttribute("member");
+		Member member_vo = (Member)session.getAttribute("vo");
 		String writer = member_vo.getId();
 		System.out.println(writer);
 

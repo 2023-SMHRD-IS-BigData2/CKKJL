@@ -7,12 +7,12 @@
 	
 	<insert id="makeMEMA" parameterType="Mercenary_Match">
 		INSERT INTO TB_MATCH VALUES(MATCH_INDEX.nextval,#{mm},
-		#{date},#{team_index},#{start_hour},#{last_hour},
+		#{matchDate},#{team_index},#{start_hour},#{last_hour},
 		#{people_num},#{level},#{writing})
 	</insert>
 	
 	<select id="allMEMA_date" resultType="Mercenary_Match">
-		SELECT * FROM VW_MM_FEED WHERE M_DATE in #{date};
+		SELECT * FROM TB_MATCH WHERE M_DATE = #{matchDate}
 	</select>
 
 

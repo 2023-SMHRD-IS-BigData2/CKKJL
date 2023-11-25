@@ -119,8 +119,7 @@
 							<li class="nav-item dropdown no-arrow mx-1"><a
 								class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
 								role="button" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
-									<span class="badge badge-danger badge-counter">3+</span>
+								aria-expanded="false"> <i class="fas fa-user fa-fw"></i>
 							</a> <!-- Dropdown - Alerts -->
 								<div
 									class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -168,8 +167,6 @@
 								class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 								role="button" data-toggle="dropdown" aria-haspopup="true"
 								aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i>
-									<!-- Counter - Messages --> <span
-									class="badge badge-danger badge-counter">7</span>
 							</a> <!-- Dropdown - Messages -->
 								<div
 									class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -284,16 +281,15 @@
 	
 	<div>
 	<ul>
-		<%
+		<% 
 		String matchDay = request.getParameter("matchDay");
 		List<Mercenary_Match> mm = new Mercenary_MatchDAO().allMEMA_date(matchDay);%>
-		<%for(Mercenary_Match i : mm){ %>
-			<%if(i.getMm() == 0){ %>
+		<% for(Mercenary_Match i : mm){ %>
+			<%if(i.getMm() == 1){ %>
 				<li> 성사목록
 			<%}else { %>
 				<li> 미성사
 			<%} %>
-				</li>
 		<%} %>
 	</ul>
 

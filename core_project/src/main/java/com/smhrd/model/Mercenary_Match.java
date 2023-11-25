@@ -18,7 +18,7 @@ public class Mercenary_Match {
 	// 매칭, 용병 피드 추가시 모든 정보 입력!
 	private int m_index;
 	@NonNull private int mm; // 경기 성사 구분코드 (미성사 = 0, 성사 = 1)
-	@NonNull private String date; // 경기날짜
+	@NonNull private String matchDate; // 경기날짜
 	private String teamName; // 팀네임(user에서 가져올 것)
 	@NonNull private String start_hour; // 시작시간 ex) 11:00 -> 11
 	@NonNull private String last_hour; // 끝시간 ex) 20:00 -> 20
@@ -28,12 +28,12 @@ public class Mercenary_Match {
 	@NonNull private int team_index; // 팀 고유번호
 	
 	// 리스트 생성시 필요한 거(뷰참고)
-	public Mercenary_Match(int m_index, int mm, String date, String teamName,
+	public Mercenary_Match(int m_index, int mm, String matchDate, String teamName,
 			String start_hour, String last_hour, String people_num, String level,
 			String writing) {
 		this.m_index = m_index;
 		this.mm = mm;
-		this.date = date;
+		this.matchDate = matchDate;
 		this.teamName = teamName;
 		this.start_hour = start_hour;
 		this.last_hour = last_hour;
