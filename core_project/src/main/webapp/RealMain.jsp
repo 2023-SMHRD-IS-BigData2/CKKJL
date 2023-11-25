@@ -292,7 +292,7 @@ body {
 										Logout
 									</a>
 								</div></li>
-
+	
 						</ul>
 
 					</nav>

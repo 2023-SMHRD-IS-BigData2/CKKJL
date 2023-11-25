@@ -281,6 +281,8 @@
 						</ul>
 
 					</nav>
+	
+	<div>
 	<ul>
 		<%
 		String matchDay = request.getParameter("matchDay");
@@ -295,6 +297,7 @@
 		<%} %>
 	</ul>
 
+	</div>
 	
 
 
