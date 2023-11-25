@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.smhrd.model.FeedDAO;
 import com.smhrd.model.Member;
 import com.smhrd.model.MemberDAO;
 
@@ -26,7 +27,6 @@ public class LoginService extends HttpServlet {
 
 		Member vo = new Member(id, nick, pic);
 		HttpSession session = request.getSession();
-		Member member = new MemberDAO().login(id);
 		session.setAttribute("vo", vo);
 		//member로 바꿔놓음
 
