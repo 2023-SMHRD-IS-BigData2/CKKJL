@@ -388,31 +388,26 @@ body {
 
 						<div class="col-lg-6 mb-4">
 							<h1 class="h3 mb-4 text-gray-800">Main page</h1>
-							<%
-							List<Feed> feeds = new FeedDAO().totalFeed();
-							for (int i = 0; i < feeds.size(); i++) {
-							%>
+							
 
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
 									<h6 class="m-0 font-weight-bold text-primary"></h6>
-									<small> <%=feeds.get(i).getDate()%>
+									<small>
 									</small>
 								</div>
 								<div class="card-body">
 									<div class="text-center">
 										<img class="img-fluid px-3 px-sm-4 mt-3 mb-4"
-											style="width: 25rem;" src="<%=feeds.get(i).getFile()%>"
+											style="width: 25rem;" src="<%-- <%=feeds.get(i).getFile()%> --%>"
 											alt="...">
 									</div>
-									<p><%=feeds.get(i).getContent()%></p>
+									<p><%-- <%=feeds.get(i).getContent()%> --%></p>
 
 								</div>
 							</div>
-							<%
-							}
-							%>
-							<%-- 	<div class="col-lg-6 mb-4">
+							
+							<div class="col-lg-6 mb-4">
 
 								Illustrations
 								<div class="card shadow mb-4">
@@ -439,16 +434,16 @@ body {
                         <div class="row">
                             <div class="col-lg-20 mb-4">
                                 <h1 class="h3 mb-4 text-gray-800">Main page</h1>
-						<%
+						<%-- <%
 							List<Feed> Feeds = new FeedDAO().totalFeed();
 							for (int i = 0; i < Feeds.size(); i++) {
 							
-						%>
+						%> --%>
 
                                 <!-- Illustrations -->
                                 <div class="card shadow mb-4">
                                     <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary"><%=Feeds.get(i).getWriter() %></h6>
+                                        <h6 class="m-0 font-weight-bold text-primary"><%-- <%=Feeds.get(i).getWriter() %> --%></h6>
                                     </div>
                                     <div class="card-body">
                                         <div class="container-fluid">
@@ -461,7 +456,7 @@ body {
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td rowspan="2"><img alt="" src="<%=Feeds.get(i).getFile() %>" width="300" height="300" object-fit: cover><br><br><%=Feeds.get(i).getContent() %></td>
+                                                            <td rowspan="2"><img alt="" src="<%-- <%=Feeds.get(i).getFile() %> --%>" width="300" height="300" object-fit: cover><br><br><%-- <%=Feeds.get(i).getContent() %> --%></td>
                                                             <td>
                                                                 <ul class="comment-list">
                                                                     <li><strong>김명준</strong> <br> 수고하셨습니다</li>
@@ -491,7 +486,7 @@ body {
                                         </div>
                                     </div>
                                 </div>
-                        <%
+                        <%-- <%
 							}
                         %> --%>
 						</div>
