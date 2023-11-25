@@ -536,6 +536,7 @@
             <script>
                // "&nbsp;" 1칸 뛰어쓰기 "&ensp;" 2칸 "&emsp;" 3칸
                function matchingRegistration() {
+            	   <% request.setAttribute("mm", "0"); %>
                   var playerName = document
                         .getElementById('matching_playerName').value;
                   var starttime = document
@@ -570,6 +571,7 @@
                }
 
                function recruitMercenary() {
+            	   <% request.setAttribute("mm", "1"); %>
                   var playerName = document
                         .getElementById('M_playerName').value;
                   var starttime = document.getElementById('M_starttime').value;
