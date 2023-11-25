@@ -5,35 +5,35 @@
   
 <mapper namespace="com.smhrd.database.FeedMapper">
 	<insert id="writeFeed" parameterType="Feed">
-		insert into TB_FEED values (FEED_INDEX.nextval,#{writer},#{title},#{content}, sysdate, #{file}, 0)
+		insert into TB_FEED values (FEED_INDEX.nextval,#{f_user_index},#{feed_title},#{feed_content}, sysdate, #{feed_file}, 0)
 	</insert>
 	<select id="totalFeed" resultType="Feed">
 		select * from TB_FEED
 	</select>
 	<delete id="deleteFeed">
-		delete from TB_FEED where FEED_INDEX=#{index} 
+		delete from TB_FEED where FEED_INDEX=#{feed_index} 
 	</delete>
 	<select id="detailFeed" resultType="Feed">
-		select * from TB_FEED where FEED_INDEX=#{index}
+		select * from TB_FEED where FEED_INDEX=#{feed_index}
 	</select>
 	
 	<insert id="sendFeedlike" parameterType="FeedLike">
-		insert into TB_FEED_LIKE values (#{feed_index}, #{user_index})
+		insert into TB_FEED_LIKE values (#{feed_index}, #{f_user_index})
 	</insert>
 	
 	<update id="updatelikeup">
-		UPDATE TB_FEED SET F_LIKECNT=(F_LIKECNT+1) WHERE FEED_INDEX=#{index}
+		UPDATE TB_FEED SET F_LIKECNT=(F_LIKECNT+1) WHERE FEED_INDEX=#{feed_index}
 	</update>
 
 	<update id="updatelikedown">
-		UPDATE TB_FEED SET F_LIKECNT=(F_LIKECNT-1) WHERE FEED_INDEX=#{index}
+		UPDATE TB_FEED SET F_LIKECNT=(F_LIKECNT-1) WHERE FEED_INDEX=#{feed_index}
 	</update>
 	
 	<select id="selFeedlike" resultType="FeedLike">
-		select * from TB_FEED_LIKE WHERE FEED_INDEX=#{feed_index} AND USER_INDEX=#{user_index}
+		select * from TB_FEED_LIKE WHERE FEED_INDEX=#{feed_index} AND USER_INDEX=#{f_user_index}
 	</select>
 	
 	<delete id="delFeedlike" parameterType="FeedLike">
-		DELETE FROM TB_FEED_LIKE WHERE FEED_index=#{feed_index} and USER_INDEX = #{user_index}
+		DELETE FROM TB_FEED_LIKE WHERE FEED_index=#{feed_index} and USER_INDEX = #{f_user_index}
 	</delete>
 </mapper>

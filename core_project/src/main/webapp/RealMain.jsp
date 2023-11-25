@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.FeedDAO"%>
+<%@page import="com.smhrd.model.Feed"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.model.Message"%>
 <%@page import="com.smhrd.model.MessageDAO"%>
@@ -338,17 +340,19 @@
                                     <h1 class="h3 mb-4 text-gray-800">Main page</h1>
 
                                     <!-- Illustrations -->
+                                    <% List<Feed> feeds = new FeedDAO().totalFeed(); %>
+                                    <% for(Feed i : feeds){ %>
                                     <div class="card shadow mb-4">
                                         <div class="card-header py-3">
                                             <h6 class="m-0 font-weight-bold text-primary">
-                                                발흥민
+                                                <%=i.getF_user_index() %>
                                                 <i class="fas fa-user fa-fw float-right"></i> 
                                             </h6>
                                         </div>
                                         <div class="card-body">
                                             <div class="container-fluid">
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered" id="dataTable" style="width:700px;" cellspacing="0">
+                                                    <table class="table table-bordered" id="dataTable <%=i.getF_user_index() %>" style="width:700px;" cellspacing="0">
                                                         <thead>
                                                             <tr>
                                                                 <th class="text-center">피드</th>
@@ -357,7 +361,7 @@
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td rowspan="2"><img alt="" src="img/오풋완.png" width="300" height="300" object-fit: cover><br><br>오풋완</td>
+                                                                <td rowspan="2"><img alt="" src="img/<%=i.getFeed_file() %>" width="300" height="300" object-fit: cover><br><br><%=i.getFeed_content() %></td>
                                                                 <td>
                                                                     <ul class="comment-list">
                                                                         <li><strong>김명준</strong> <br> 수고하셨습니다</li>
@@ -387,6 +391,10 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- //Illustrations -->
+                                    <%} %>
+                                    
+                                    
                                 </div>
                             </div>
 

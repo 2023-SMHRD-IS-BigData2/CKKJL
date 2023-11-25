@@ -32,18 +32,23 @@ public class FeedDAO {
 	// 피드 전체 조회
 	public List<Feed> totalFeed() {
 
-		List<Feed> Feeds = null;
+		List<Feed> feeds = null;
 		try {
 
-			Feeds = sqlSession.selectList("com.smhrd.database.FeedMapper.totalFeed");
+			feeds = sqlSession.selectList("com.smhrd.database.FeedMapper.totalFeed");
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			sqlSession.close();
+			for (Feed i : feeds) {
+				if (i == null) {
+					System.out.println("실패");
+				}
+			}
 		}
 
-		return Feeds;
+		return feeds;
 
 	}
 
