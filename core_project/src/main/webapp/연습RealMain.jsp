@@ -123,7 +123,7 @@
 
                             <!-- Nav Item - Alerts -->
                             <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
-                                    
+                                    <span class="badge badge-danger badge-counter">3+</span>
                                 </a> <!-- Dropdown - Alerts -->
                                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                     <h6 class="dropdown-header">Alerts Center</h6>
@@ -313,12 +313,13 @@
                                                 <table class="table table-bordered" id="dataTable" style="width:700px;" cellspacing="0">
                                                     <thead>
                                                         <tr>
+                                                            <th>게시글</th>
                                                             <th>댓글</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td rowspan="2"><img alt="" src="img/오풋완.png" width="300" height="300" object-fit: cover><br><br>오풋완</td>
+                                                            <td><img alt="" src="img/오풋완.png" width="200" height="200" object-fit: cover></td>
                                                             <td>
                                                                 <ul class="comment-list">
                                                                     <li><strong>김명준</strong> <br> 수고하셨습니다</li>
@@ -330,7 +331,7 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            
+                                                            <td>오풋완</td>
                                                             <td>
                                                                 <div class="comment-form">
                                                                     <form id="commentForm">

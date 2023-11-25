@@ -117,7 +117,7 @@
                      <li class="nav-item dropdown no-arrow mx-1"><a
                         class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
                         role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
+                        aria-expanded="false"> <i class="fas fa-bell fa-fw"></i> <!-- Counter - Alerts -->
                            <span class="badge badge-danger badge-counter">3+</span>
                      </a> <!-- Dropdown - Alerts -->
                         <div
@@ -314,86 +314,56 @@
                             <div class="col-md-10" style="max-width: 800px;">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">My Profile</h6> <small>5분전</small>
-                </div>
-                <div class="card-body">
-                    <div class="text-center">
-                        
-                    </div>
-                    <div class="row">
-                    <div class="col-md-4 mb-4 card-container">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">친구</h6> <small>5분전</small>
-                </div>
-                <div class="card-body">
-                    <div class="text-center">
-                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                            src="img/undraw_posting_photo.svg" alt="...">
-                    </div>
-                    <p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
-                </div>
-            </div>
+                 <div class="row align-items-center">
+        <div class="col-auto d-flex">
+            <!-- 여기에 프로필 사진 추가 -->
+            <img class="rounded-circle mr-3" src="img/로그인 풋살사진.jpg" alt="프로필 사진" width="50" height="50">
         </div>
-        <div>
-        <!-- 친구삭제 -->
-       
-        <!-- 게시글 목록 -->
-        <div class="row">
-         <div class="col-md-4 mb-4 card-container">
-            <!-- 다른 카드나 콘텐츠 추가 -->
-             <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">친구 삭제</h6> <small>5분전</small>
-                </div>
-                <div class="card-body">
-                    <div class="text-center">
-                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                            src="img/undraw_posting_photo.svg" alt="...">
-                    </div>
-                    <p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
-                </div>
-            </div>
+        <div class="col">
+            <h6 class="m-0 font-weight-bold text-primary">My Profile</h6>
+            <small>광주 풋살 대장 발흥민</small>
         </div>
-        </div>
-        <div>
-        <!-- 팀 소개 문구 -->
-        <div class="row">
-        <div class="col-md-4 mb-4 card-container">
-            <!-- 다른 카드나 콘텐츠 추가 -->
-             <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">게시글 목록</h6> <small>5분전</small>
-                </div>
-                <div class="card-body">
-                    <div class="text-center">
-                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                            src="img/undraw_posting_photo.svg" alt="...">
-                    </div>
-                    <p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="row">
-         <div class="col-md-4 mb-4 card-container">
-            <!-- 다른 카드나 콘텐츠 추가 -->
-             <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">팀 소개문구</h6> <small>5분전</small>
-                </div>
-                <div class="card-body">
-                    <div class="text-center">
-                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                            src="img/undraw_posting_photo.svg" alt="...">
-                    </div>
-                    <p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
-                </div>
-            </div>
-        </div>
-        </div>
+    </div>
+</div>
+                <!-- ... (your existing code) ... -->
 
-                </div>
+<!-- ... (your existing code) ... -->
+
+<div class="card-body">
+    <!-- Your existing content goes here -->
+
+    <!-- Add the table -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="border">친구</th>
+            <th class="border">친구삭제</th>
+            <th class="border">게시글 목록</th>
+            <th class="border">팀 소개문구</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="border">삼민아</td>
+            <td class="border">삼민아</td>
+            <td class="border">오풋완</td>
+            <td class="border" rowspan="2">광주풋살끝판왕</td>
+            </tr>
+            <tr>
+                <td class="border">팔자철</td>
+            <td class="border">팔자철</td>
+                <td class="border">풋살 챌린지 영상</td>
+            </tr>
+            <!-- Add more rows if needed -->
+        </tbody>
+    </table>
+</div>
+
+<!-- ... (your existing code) ... -->
+
+
+<!-- ... (your existing code) ... -->
+                
             </div>
         </div>
                             
