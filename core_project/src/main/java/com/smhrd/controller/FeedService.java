@@ -24,7 +24,7 @@ public class FeedService extends HttpServlet {
 		// 1. request 객체
 		// 2. 파일을 저장할 경로 (String)
 		HttpSession session = request.getSession();
-		String savePath = request.getServletContext().getRealPath("./file");
+		String savePath = request.getServletContext().getRealPath("./img");
 		System.out.println(savePath);
 		Member vo = (Member)session.getAttribute("vo");
 		String writer = vo.getId();
