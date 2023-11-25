@@ -123,7 +123,7 @@
 
                             <!-- Nav Item - Alerts -->
                             <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
-                                    
+                                    <span class="badge badge-danger badge-counter">3+</span>
                                 </a> <!-- Dropdown - Alerts -->
                                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                     <h6 class="dropdown-header">Alerts Center</h6>
@@ -292,85 +292,7 @@
 
 
 
-
-						<!-- Content Row -->
-
-						<div class="row">
-
-
-							<!-- Area Chart -->
-							<div class="col-xl-8 col-lg-7">
-								<div class="card shadow mb-4">
-									<!-- Card Header - Dropdown -->
-
-               
-                <!-- End of Footer -->
-
-
-								</div>
-
-							</div>
-						</div>
-
-						<!-- Pie Chart -->
-						<div class="col-xl-4 col-lg-5"></div>
-
-
-						<!-- Content Row -->
-						<div class="row">
-
-							<!-- Content Column -->
-							<div class="col-lg-6 mb-4">
-
-								<!-- Project Card Example -->
-
-
-								<!-- Color System -->
-								<div class="row"></div>
-							</div>
-
-						</div>
-
-						<div class="col-lg-6 mb-4">
-							<h1 class="h3 mb-4 text-gray-800">Main page</h1>
-
-							<!-- Illustrations -->
-							<div class="card shadow mb-4">
-								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-primary">발흥민</h6>
-									<small>5분전</small>
-								</div>
-								<div class="card-body">
-									<div class="text-center">
-										<img class="img-fluid px-3 px-sm-4 mt-3 mb-4"
-											style="width: 25rem;" src="img/undraw_posting_photo.svg"
-											alt="...">
-									</div>
-									<p>저희팀과 비슷한 수준을 가진 팀과 풋살하고싶습니다~~</p>
-
-								</div>
-							</div>
-							<div class="col-lg-6 mb-4">
-
-								<!-- Illustrations -->
-								<div class="card shadow mb-4">
-									<div class="card-header py-3">
-										<h6 class="m-0 font-weight-bold text-primary">박건성</h6>
-										<small>5분전</small>
-									</div>
-									<div class="card-body">
-										<div class="text-center">
-											<img class="img-fluid px-3 px-sm-4 mt-3 mb-4"
-												style="width: 25rem;" src="img/오풋완.png" alt="...">
-										</div>
-										<p>오풋완</p>
-
-									</div>
-								</div>
-
-
-								<!-- Approach -->
-
+                        <!-- Content Row -->
 
 
 
@@ -391,12 +313,13 @@
                                                 <table class="table table-bordered" id="dataTable" style="width:700px;" cellspacing="0">
                                                     <thead>
                                                         <tr>
+                                                            <th>게시글</th>
                                                             <th>댓글</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td rowspan="2"><img alt="" src="img/오풋완.png" width="300" height="300" object-fit: cover><br><br>오풋완</td>
+                                                            <td><img alt="" src="img/오풋완.png" width="200" height="200" object-fit: cover></td>
                                                             <td>
                                                                 <ul class="comment-list">
                                                                     <li><strong>김명준</strong> <br> 수고하셨습니다</li>
@@ -408,7 +331,7 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            
+                                                            <td>오풋완</td>
                                                             <td>
                                                                 <div class="comment-form">
                                                                     <form id="commentForm">
