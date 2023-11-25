@@ -41,11 +41,6 @@ public class FeedDAO {
 			e.printStackTrace();
 		} finally {
 			sqlSession.close();
-			for (Feed i : feeds) {
-				if (i == null) {
-					System.out.println("실패");
-				}
-			}
 		}
 
 		return feeds;
