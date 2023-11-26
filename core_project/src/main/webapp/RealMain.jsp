@@ -248,8 +248,8 @@
 
 									}
 									%>
-                           }
-                           %>
+                           
+                           
 
 
                                </a> <!-- Dropdown - User Information -->
@@ -375,7 +375,12 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
-
+																 <%
+                           										if (vo == null) {
+                           											
+                           										}else{
+                           												%>
+                           										
                                                                 <td>
                                                                     <div class="comment-form">
                                                                         <form id="commentForm" action="CommentService">
@@ -388,6 +393,7 @@
                                                                         </form>
                                                                     </div>
                                                                 </td>
+                                                                <%} %>
                                                             </tr>
                                                         </tbody>
                                                     </table>
