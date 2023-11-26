@@ -354,6 +354,7 @@
                                                 if (month === 11 && dayCount >= 19 && dayCount <= 30) {
                                                     dayLink.classList.add("bold");
                                                 }
+                                                
                                                 dayCount++;
                                             }
 
@@ -365,6 +366,7 @@
                                         calendarBody.appendChild(row);
                                     }
                                 }
+                                
 
                                 function displayPagination() {
                                     paginationContainer.innerHTML = "";
@@ -403,6 +405,9 @@
 
                             });
                         </script>
+                        <form action="ViewMatch.jsp">
+                        	<input type="hidden" name="date" value="${year}.${month}.${dayCount}">
+                        </form>
 
 
                     </div>
