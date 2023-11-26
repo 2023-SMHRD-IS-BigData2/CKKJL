@@ -230,33 +230,21 @@
 
                         </ul>
 
-                    </nav>
-                    <ul>
-                        <%
-                        String date = request.getParameter("date");
-                        System.out.print(date);
-						List<Mercenary_Match> mm = new Mercenary_MatchDAO().allMEMA_date(date);%>
-                        <%for(Mercenary_Match i : mm){ %>
-                        <%if(i.getMm() == 0){ %>
-                        <li> 매칭
-                            <%}else { %>
-                        <li> 용병
-                            <%} %>
-                        </li>
-                        <%} %>
-        			</ul>
-
-
-
-
-        <!-- 여기부터 복사해요 -->
-
-        <!-- 일자별로 매치와 용병으로 나눠서 보여주기 -->
-        <!-- 배열 받기 -->
-        <!-- > -->
-
-
-
+					</nav>
+	<div>
+	<ul>
+		<% 
+		String matchDay = request.getParameter("matchDay");
+		List<Mercenary_Match> mm = new Mercenary_MatchDAO().allMEMA_date(matchDay);%>
+		<% for(Mercenary_Match i : mm){ %>
+			<%if(i.getMm() == 1){ %>
+				<li> 성사목록
+			<%}else { %>
+				<li> 미성사
+			<%} %>
+		<%} %>
+	</ul>
+	</div>
 </body>
 
 </html>

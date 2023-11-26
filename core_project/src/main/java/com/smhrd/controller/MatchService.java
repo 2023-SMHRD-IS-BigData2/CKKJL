@@ -23,8 +23,11 @@ public class MatchService extends HttpServlet {
 		
 
 		Member vo = (Member)session.getAttribute("vo");
-
-		int mm = Integer.valueOf(request.getParameter("mm"));
+		String aaa = (String)request.getAttribute("mm");
+		int mm = 0;
+		if(aaa != null){
+			mm = Integer.parseInt(aaa); }
+		//int mm = Integer.valueOf(request.getParameter("mm"));
 		String starttime = request.getParameter("starttime");
 		String start = starttime.split(":")[0];
 		String finishtime = request.getParameter("finishtime");
@@ -36,6 +39,7 @@ public class MatchService extends HttpServlet {
 		System.out.println(mm + matchDay + starttime + finishtime + peoplenum + level + comment );
 	
 		Mercenary_Match mercenary_match = null;
+		// 아래부분 개수부족
 		mercenary_match = new Mercenary_Match(mm, matchDay, vo.getTeam_index(), start, finish, peoplenum, level);
 		if (comment != null) {
 			mercenary_match.setWriting(comment);
