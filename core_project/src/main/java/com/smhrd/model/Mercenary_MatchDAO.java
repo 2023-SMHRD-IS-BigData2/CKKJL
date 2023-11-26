@@ -25,10 +25,8 @@ public class Mercenary_MatchDAO {
 	
 	public List<Mercenary_Match> allMEMAdate(String date) {
 		List<Mercenary_Match> memas = null;
-		date = "2023-11-24";
 		try {
 			memas = sqlSession.selectList("com.smhrd.database.MatchMapper.allMEMAdate", date);
-			System.out.println("hi"+memas.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {

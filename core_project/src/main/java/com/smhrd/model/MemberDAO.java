@@ -27,10 +27,10 @@ public class MemberDAO {
 	
 	
 	
-	public Member login(String id) {
+	public Member login(String u_id) {
 		Member member = null;
 		try {
-			member = sqlSession.selectOne("com.smhrd.database.MemberMapper.Login", id);
+			member = sqlSession.selectOne("com.smhrd.database.MemberMapper.Login", u_id);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}finally {

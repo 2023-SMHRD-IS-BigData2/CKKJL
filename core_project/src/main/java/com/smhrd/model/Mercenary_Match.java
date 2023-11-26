@@ -10,6 +10,7 @@ import lombok.ToString;
 
 @AllArgsConstructor
 @Getter
+@NoArgsConstructor
 @ToString
 @RequiredArgsConstructor
 public class Mercenary_Match {
@@ -49,6 +50,24 @@ public class Mercenary_Match {
 			break;
 		}
 	}
+
+	public String getStart_hour() {
+		if (this.start_hour.equals("미정")) {
+			return this.start_hour;
+		}else {
+			return this.start_hour+":00";
+		}
+	}
+	
+	public String getLast_hour() {
+		if (this.last_hour.equals("미정")) {
+			return this.last_hour;
+		}else {
+			return this.last_hour+":00";
+		}
+	}
+	
+	
 	
 	
 

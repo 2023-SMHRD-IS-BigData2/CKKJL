@@ -10,7 +10,7 @@
 		#{people_num},#{f_level},#{writing})
 	</insert>
 	
-	<select id="allMEMAdate" resultType="Mercenary_Match" parameterType="String">
+	<select id="allMEMAdate" resultType="Mercenary_Match">
 		SELECT * FROM TB_MATCH WHERE m_date in #{date}
 	</select>
 	

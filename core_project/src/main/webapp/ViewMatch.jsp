@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.sql.Array"%>
 <%@page import="com.smhrd.model.Mercenary_MatchDAO"%>
 <%@page import="com.smhrd.model.Mercenary_Match"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -228,18 +230,66 @@
 
 					</nav>
 	<div>
-	<ul>
 		<% 
 		String date = request.getParameter("date");%>
 		<% System.out.print(date); %>
-		<% List<Mercenary_Match> mema = null; %>
+		<% List<Mercenary_Match> mema = new ArrayList<Mercenary_Match>(); %>
+		<% List<Mercenary_Match> ma1 = new ArrayList<Mercenary_Match>(); %>
+		<% List<Mercenary_Match> ma2 = new ArrayList<Mercenary_Match>(); %>
+		<% List<Mercenary_Match> me1 = new ArrayList<Mercenary_Match>(); %>
+		<% List<Mercenary_Match> me2 = new ArrayList<Mercenary_Match>(); %>
 		<% mema = new Mercenary_MatchDAO().allMEMAdate(date);%>
 		<% for(Mercenary_Match i : mema){ %>
-			<% System.out.println(i.toString()); %>
-			<%if(i.getMm() == 1){ %>
-				<li> 성사목록
-			<%}else { %>
-				<li> 미성사
+			<%switch (i.getMm()) {
+				case 1:
+					ma1.add(i);
+					break;
+				case 2:
+					me1.add(i);
+					break;
+				case 3:
+					ma2.add(i);
+					break;
+				case 4:
+					me2.add(i);
+					break;
+	
+				default:
+					System.out.println("mm에러");
+					break;
+			} %>
+		<%} %>
+	<ul>
+		<li>매칭 미성사 목록</li>
+		<%if(ma1.size()==0){ %>
+			<li>미성사된 매칭 정보가 없습니다.</li>
+		<%}else{ %>
+			<%for(Mercenary_Match i : ma1){ %>
+			<li><%=new MemberDAO().login(i.getUser_index()).getNick() %> <br> <%=i.getStart_hour() %> ~ <%=i.getLast_hour() %> <%=i.getF_level() %> <%=i.getPeople_num() %> <br> <%=i.getWriting() %>  </li>
+			<%} %>
+		<%} %>
+		<li>매칭 성사된 목록</li>
+		<%if(ma2.size()==0){ %>
+			<li>성사된 매칭 정보가 없습니다.</li>
+		<%}else{ %>
+			<%for(Mercenary_Match i : ma2){ %>
+			<li><%=new MemberDAO().login(i.getUser_index()).getNick() %> <br> <%=i.getStart_hour() %> ~ <%=i.getLast_hour() %> <%=i.getF_level() %> <%=i.getPeople_num() %> <br> <%=i.getWriting() %>  </li>
+			<%} %>
+		<%} %>
+		<li>용병 모집 미성사 목록</li>
+		<%if(me1.size()==0){ %>
+			<li>미성사된 용병 정보가 없습니다.</li>
+		<%}else{ %>
+			<%for(Mercenary_Match i : me1){ %>
+			<li><%=new MemberDAO().login(i.getUser_index()).getNick() %> <br> <%=i.getStart_hour() %> ~ <%=i.getLast_hour() %> <%=i.getF_level() %> <%=i.getPeople_num() %> <br> <%=i.getWriting() %>  </li>
+			<%} %>
+		<%} %>
+		<li>용병 모집 성사 목록</li>
+		<%if(me2.size()==0){ %>
+			<li>성사된 용병 정보가 없습니다.</li>
+		<%}else{ %>
+			<%for(Mercenary_Match i : me2){ %>
+			<li><%=new MemberDAO().login(i.getUser_index()).getNick() %> <br> <%=i.getStart_hour() %> ~ <%=i.getLast_hour() %> <%=i.getF_level() %> <%=i.getPeople_num() %> <br> <%=i.getWriting() %>  </li>
 			<%} %>
 		<%} %>
 	</ul>
