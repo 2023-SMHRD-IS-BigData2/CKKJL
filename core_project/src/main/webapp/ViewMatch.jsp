@@ -2,7 +2,6 @@
 <%@page import="com.smhrd.model.Mercenary_Match"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.model.Message"%>
 <%@page import="com.smhrd.model.MessageDAO"%>
 <%@page import="java.util.List"%>
@@ -24,14 +23,11 @@
 </head>
 
 <body id="page-top">
-	<script type="text/javascript">
-		var matchDay = window.location.hash.slice(1, 11);
-	</script>
     <%
 	Member vo = (Member) session.getAttribute("vo");
 
 	if (vo != null) {
-		System.out.print(vo.getId());
+		System.out.print(vo.getU_id());
 	}
 	%>
 
@@ -230,33 +226,24 @@
 
                         </ul>
 
-                    </nav>
-                    <ul>
-                        <%
-                        String date = request.getParameter("date");
-                        List<Mercenary_Match> mm = new Mercenary_MatchDAO().allMEMA_date(date);
-                        %>
-                        <%for(Mercenary_Match i : mm){ %>
-                        <%if(i.getMm() == 0){ %>
-                        <li> 매칭 <%=i.getM_date() %>
-                            <%}else { %>
-                        <li> 용병 <%=i.getM_date() %>
-                            <%} %>
-                        </li>
-                        <%} %>
-        			</ul>
-
-
-
-
-        <!-- 여기부터 복사해요 -->
-
-        <!-- 일자별로 매치와 용병으로 나눠서 보여주기 -->
-        <!-- 배열 받기 -->
-        <!-- > -->
-
-
-
+					</nav>
+	<div>
+	<ul>
+		<% 
+		String date = request.getParameter("date");%>
+		<% System.out.print(date); %>
+		<% List<Mercenary_Match> mema = null; %>
+		<% mema = new Mercenary_MatchDAO().allMEMAdate(date);%>
+		<% for(Mercenary_Match i : mema){ %>
+			<% System.out.println(i.toString()); %>
+			<%if(i.getMm() == 1){ %>
+				<li> 성사목록
+			<%}else { %>
+				<li> 미성사
+			<%} %>
+		<%} %>
+	</ul>
+	</div>
 </body>
 
 </html>

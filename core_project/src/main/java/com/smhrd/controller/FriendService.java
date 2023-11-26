@@ -22,13 +22,21 @@ public class FriendService extends HttpServlet {
 		String friend = request.getParameter("friend");
 		HttpSession session = request.getSession();
 		Member vo = (Member)session.getAttribute("vo");
-		String id = vo.getId();
+		String id = vo.getU_id();
 
 		
 		Friend user = new Friend(id,friend);
 		
 		int row = new FriendDAO().apply(user);
 		
+		if (row>0) {
+			
+			System.out.println("친구 추가 전송");
+		} else {
+			System.out.println("친구 추가 실패");
+		}
+		
+		response.sendRedirect("RealMain.jsp");
 	}
 
 }

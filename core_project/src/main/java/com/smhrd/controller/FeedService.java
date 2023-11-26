@@ -27,7 +27,7 @@ public class FeedService extends HttpServlet {
 		String savePath = request.getServletContext().getRealPath("./img");
 		System.out.println(savePath);
 		Member vo = (Member)session.getAttribute("vo");
-		String writer = vo.getId();
+		String writer = vo.getU_id();
 		System.out.println(writer);
 
 		// 3. 파일 최대 크기 (int)

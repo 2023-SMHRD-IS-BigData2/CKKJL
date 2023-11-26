@@ -22,7 +22,7 @@ public class FriendService2 extends HttpServlet {
 		String friend = request.getParameter("friend");
 		HttpSession session = request.getSession();
 		Member vo = (Member)session.getAttribute("vo");
-		String id = vo.getId();
+		String id = vo.getU_id();
 
 		
 		Friend user = new Friend(id,friend);
