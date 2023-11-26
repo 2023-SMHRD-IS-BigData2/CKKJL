@@ -60,7 +60,7 @@
 <body id="page-top">
 
 
-    <%
+<%
    Member vo = (Member) session.getAttribute("vo");
 
    if (vo != null) {
@@ -361,13 +361,13 @@
                                                             <tr>
                                                                 <td rowspan="2"><img alt="" src="img/<%=i.getFeed_file() %>" width="300" height="300" object-fit: cover><br><br><%=i.getFeed_content() %></td>
                                                                 <% List<Comment> Comments = new CommentDAO().showComment(i.getFeed_index()); %>
-                                                                <% for(Comment x : Comments){ %>
                                                                 <td>
+                                                                <% for(int j =0;j<Comments.size();j++){ %>
                                                                     <ul class="comment-list">
-                                                                        <li><strong><%=x.getC_NAME() %></strong> <br><%=x.getC_COMMENT() %></li>
+                                                                        <li><strong><%=Comments.get(j).getC_NAME() %></strong> <br><%=Comments.get(j).getC_COMMENT() %></li>
                                                                     </ul>
-                                                                </td>
                                                                 <%} %>
+                                                                </td>
                                                             </tr>
                                                             <tr>
 
@@ -375,7 +375,7 @@
                                                                     <div class="comment-form">
                                                                         <form id="commentForm" action="CommentService">
                                                                         	<input type="hidden" name="F_INDEX" value="<%= i.getFeed_index() %>">
-                                                                        	<input type="hidden" name="C_NAME" value="<%= member.getNick() %>">
+                                                                        	<input type="hidden" name="C_NAME" value="<%= vo.getNick() %>">
                                                                             <label for="comment">댓글 입력:</label>
                                                                             <textarea id="comment" name="C_COMMENT" rows="4" cols="50" required></textarea>
                                                                             <br>
