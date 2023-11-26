@@ -234,13 +234,13 @@
                     <ul>
                         <%
                         String date = request.getParameter("date");
-                        System.out.print(date);
-						List<Mercenary_Match> mm = new Mercenary_MatchDAO().allMEMA_date(date);%>
+                        List<Mercenary_Match> mm = new Mercenary_MatchDAO().allMEMA_date(date);
+                        %>
                         <%for(Mercenary_Match i : mm){ %>
                         <%if(i.getMm() == 0){ %>
-                        <li> 매칭
+                        <li> 매칭 <%=i.getM_date() %>
                             <%}else { %>
-                        <li> 용병
+                        <li> 용병 <%=i.getM_date() %>
                             <%} %>
                         </li>
                         <%} %>
