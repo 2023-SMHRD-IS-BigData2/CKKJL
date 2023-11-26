@@ -26,9 +26,6 @@ public class LoginService extends HttpServlet {
 		System.out.println(id + pic + nick);
 
 		Member vo = new Member(id, nick, pic);
-		HttpSession session = request.getSession();
-		session.setAttribute("vo", vo);
-		//member로 바꿔놓음
 
 		int cnt = new MemberDAO().join(vo);
 
@@ -36,8 +33,12 @@ public class LoginService extends HttpServlet {
 			System.out.println("신규회원");
 		} else {
 			System.out.println("기존회원");
+			vo = new MemberDAO().login(vo.getId());
 		}
 
+		HttpSession session = request.getSession();
+		session.setAttribute("vo", vo);
+		//member로 바꿔놓음
 		response.sendRedirect("./RealMain.jsp");
 
 	}

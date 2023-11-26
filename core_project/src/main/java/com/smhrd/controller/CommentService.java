@@ -27,14 +27,11 @@ public class CommentService extends HttpServlet {
 	      String C_NAME = request.getParameter("C_NAME");
 	      String C_COMMENT = request.getParameter("C_COMMENT");
 	      
-	      HttpSession session = request.getSession();
-	      session.setAttribute("F_INDEX", F_INDEX);
-	      session.setAttribute("C_NAME", C_NAME);
-	      session.setAttribute("C_COMMENT", C_COMMENT);
+	      
 	      System.out.println(F_INDEX +"+"+C_NAME +"+"+ C_COMMENT);
 	      
 	      Comment vo = new Comment(F_INDEX, C_NAME, C_COMMENT);
-	      session.setAttribute("vo", vo);
+	      
 	      int row = new CommentDAO().writeComment(vo);
 	      
 	      
