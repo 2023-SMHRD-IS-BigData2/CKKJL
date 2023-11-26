@@ -11,7 +11,9 @@ import lombok.RequiredArgsConstructor;
 public class Friend {
 	
 	@NonNull private String applicant;
+	
 	@NonNull private String acceptor;
+	
 	private int match;
 
 }
