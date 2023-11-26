@@ -5,7 +5,7 @@
 <%@page import="com.smhrd.model.Member"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,12 +57,12 @@
 
 
     <%
-	Member vo = (Member) session.getAttribute("vo");
+   Member vo = (Member) session.getAttribute("vo");
 
-	if (vo != null) {
-		System.out.print(vo.getId());
-	}
-	%>
+   if (vo != null) {
+      System.out.print(vo.getId());
+   }
+   %>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -174,8 +174,8 @@
                                         <!-- 문자 찾기 -->
                                     </h6>
                                     <%
-									if (vo == null) {
-									%>
+                           if (vo == null) {
+                           %>
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="dropdown-list-image mr-3">
                                             <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
@@ -198,16 +198,16 @@
                                         </div>
                                     </a>
                                     <%
-									} else {
-									List<Message> messages = new MessageDAO().showMessage(vo.getNick());
-									if (messages.size() < 3) {
-										for (int i = 0; i < messages.size(); i++) {
-											System.out.println(messages.get(i).getSender());
-										}
-									} else {
-										for (int i = 0; i < 3; i++) {
-											System.out.println(messages.get(i).getSender());
-									%>
+                           } else {
+                           List<Message> messages = new MessageDAO().showMessage(vo.getNick());
+                           if (messages.size() < 3) {
+                              for (int i = 0; i < messages.size(); i++) {
+                                 System.out.println(messages.get(i).getSender());
+                              }
+                           } else {
+                              for (int i = 0; i < 3; i++) {
+                                 System.out.println(messages.get(i).getSender());
+                           %>
 
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="dropdown-list-image mr-3">
@@ -223,10 +223,10 @@
                                     </a>
 
                                     <%
-									}
-									}
-									}
-									%>
+                           }
+                           }
+                           }
+                           %>
                                     <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                                 </div>
                             </li>
@@ -241,9 +241,15 @@
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
                                     <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
                                     <%
+<<<<<<< HEAD
 									}
 									%>
 
+=======
+                           }
+                           %>
+
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
                                </a> <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                     <a class="dropdown-item" href="RealLogin.jsp"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> login
@@ -260,6 +266,7 @@
                             </li>
 
                         </ul>
+
 
 
                     </nav>
