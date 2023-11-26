@@ -293,11 +293,11 @@
                                         <form action="MatchService" method="post" name="matchForm">
                                             <input type="hidden" name="matchDay" value="">
                                             <script>
-                                                var matchDay = window.location.hash
-                                                    .slice(1, 11);
+                                                var matchDay = window.location.hash.slice(1, 11);
                                                 document.matchForm.matchDay.value = matchDay;
                                                 document.write('날짜 ', matchDay);
                                             </script>
+                                            <input type="hidden"  name="mm" value="0">
                                             <br> <label for="position">시작 시간</label> <select id="matching_starttime" name="starttime" required>
                                                 <option value="미정">미정</option>
                                                 <option value="00:00">00:00</option>
@@ -358,7 +358,7 @@
                                                 <option value="6vs6">6:6</option>
                                                 <option value="7vs7">7:7</option>
                                                 <option value="그 외">그 외</option>
-                                            </select><br> <label for="position">수준</label> <select id="matching_level" name="matching_level">
+                                            </select><br> <label for="position">수준</label> <select id="matching_level" name="level">
                                                 <option value="하">하</option>
                                                 <option value="하상">하상</option>
                                                 <option value="중하">중하</option>
@@ -377,7 +377,7 @@
                             <!-- Illustrations -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary" align="center">용병
+                                    <h6 class="m-0 font-weight-bold text-primary" align="center" >용병
                                         등록</h6>
                                 </div>
 
@@ -389,6 +389,7 @@
                                                 document.matchForm2.matchDay.value = matchDay;
                                                 document.write('날짜 ', matchDay);
                                             </script>
+                                            <input type="hidden"  name="mm" value="1">
                                             <br> <label for="position">가능한 시작 시간 </label> <select id="M_starttime" name="starttime" required>
                                                 <option value="미정">미정</option>
                                                 <option value="00:00">00:00</option>
@@ -473,8 +474,7 @@
             <script>
                 // "&nbsp;" 1칸 뛰어쓰기 "&ensp;" 2칸 "&emsp;" 3칸
                 function matchingRegistration() {
-                    <
-                    % request.setAttribute("mm", "0"); % >
+                    <% request.setAttribute("mm", 0); %>
                     var playerName = document
                         .getElementById('matching_playerName').value;
                     var starttime = document
@@ -509,8 +509,7 @@
                 }
 
                 function recruitMercenary() {
-                    <
-                    % request.setAttribute("mm", "1"); % >
+                    <% request.setAttribute("mm", 1); %>
                     var playerName = document
                         .getElementById('M_playerName').value;
                     var starttime = document.getElementById('M_starttime').value;
@@ -545,7 +544,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; FUTSAL062</span>
                     </div>
                 </div>
             </footer>

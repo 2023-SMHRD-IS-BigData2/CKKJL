@@ -285,7 +285,6 @@
                                                 <thead>
                                                     <tr>
                                                         <th class="border">친구</th>
-                                                        <th class="border">친구삭제</th>
                                                         <th class="border">게시글 목록</th>
                                                         <th class="border">팀 소개문구</th>
                                                     </tr>
@@ -293,12 +292,10 @@
                                                 <tbody>
                                                     <tr>
                                                         <td class="border">삼민아</td>
-                                                        <td class="border">삼민아</td>
                                                         <td class="border">오풋완</td>
                                                         <td class="border" rowspan="2">광주풋살끝판왕</td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="border">팔자철</td>
                                                         <td class="border">팔자철</td>
                                                         <td class="border">풋살 챌린지 영상</td>
                                                     </tr>

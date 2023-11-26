@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.sql.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,17 +17,19 @@ import lombok.ToString;
 public class Feed {
 
 	
-	private int index;  // 인덱스
-	@NonNull private String writer;  // 작성자
-	@NonNull private String title;  // 피드제목
-	@NonNull private String content;   // 내용
-    private String date;  // 업로드 시각
-    private String file; // 파일 주소
-    private int likecnt; // 좋아요 수
+	private int feed_index;  // 인덱스
+	@NonNull private String f_user_index;  // 작성자
+	@NonNull private String feed_title;  // 피드제목
+	@NonNull private String feed_content;   // 내용
+    private Date feed_date;  // 업로드 시각
+    private String feed_file; // 파일 주소
+    private int f_likecnt; // 좋아요 수
     
-    public void setfile(String file) {
-		this.file = file;
+    public void setfile(String feed_file) {
+		this.feed_file = feed_file;
 	}
+    
+    
 
 }
 

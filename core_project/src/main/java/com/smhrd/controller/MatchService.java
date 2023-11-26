@@ -23,12 +23,17 @@ public class MatchService extends HttpServlet {
 		
 
 		Member vo = (Member)session.getAttribute("vo");
+<<<<<<< HEAD
 		String aaa = (String)request.getAttribute("mm");
 		int mm = 0;
 		if(aaa != null){
 			mm = Integer.parseInt(aaa); }
 		
 		//int mm = (int) request.getAttribute("mm");
+=======
+
+		int mm = Integer.valueOf(request.getParameter("mm"));
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
 		String starttime = request.getParameter("starttime");
 		String start = starttime.split(":")[0];
 		String finishtime = request.getParameter("finishtime");
@@ -40,7 +45,7 @@ public class MatchService extends HttpServlet {
 		System.out.println(mm + matchDay + starttime + finishtime + peoplenum + level + comment );
 	
 		Mercenary_Match mercenary_match = null;
-		mercenary_match = new Mercenary_Match(mm, matchDay, start, finish, peoplenum, level, vo.getTeam());
+		mercenary_match = new Mercenary_Match(mm, matchDay, vo.getTeam_index(), start, finish, peoplenum, level);
 		if (comment != null) {
 			mercenary_match.setWriting(comment);
 		}

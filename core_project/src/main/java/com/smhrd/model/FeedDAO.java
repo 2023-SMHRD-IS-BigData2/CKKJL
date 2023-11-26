@@ -32,10 +32,10 @@ public class FeedDAO {
 	// 피드 전체 조회
 	public List<Feed> totalFeed() {
 
-		List<Feed> Feeds = null;
+		List<Feed> feeds = null;
 		try {
 
-			Feeds = sqlSession.selectList("com.smhrd.database.FeedMapper.totalFeed");
+			feeds = sqlSession.selectList("com.smhrd.database.FeedMapper.totalFeed");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -43,7 +43,7 @@ public class FeedDAO {
 			sqlSession.close();
 		}
 
-		return Feeds;
+		return feeds;
 
 	}
 
