@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.CommentDAO"%>
+<%@page import="com.smhrd.model.Comment"%>
 <%@page import="com.smhrd.model.FeedDAO"%>
 <%@page import="com.smhrd.model.Feed"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
@@ -298,12 +300,6 @@
 
                         <!-- Earnings (Monthly) Card Example -->
 
-
-
-
-
-                        <!-- Content Row -->
-
                         <div class="row">
 
 
@@ -369,25 +365,26 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td rowspan="2"><img alt="" src="img/<%=i.getFeed_file() %>" width="300" height="300" object-fit: cover><br><br><%=i.getFeed_content() %></td>
+                                                                <% List<Comment> Comments = new CommentDAO().showComment(i.getFeed_index()); %>
+                                                                <% for(Comment x : Comments){ %>
                                                                 <td>
                                                                     <ul class="comment-list">
-                                                                        <li><strong>김명준</strong> <br> 수고하셨습니다</li>
-                                                                        <li><strong>이재환</strong> <br>다음에 또 같이 풋살해요~</li>
-                                                                        <li><strong>최현주</strong> <br>오늘 풋살 즐거웠습니다</li>
-                                                                        <li><strong>강지민</strong> <br>다들 조심히 들어가세요</li>
-                                                                        <li><strong>정호준</strong> <br>다음엔 어디서 할까요?</li>
+                                                                        <li><strong><%=x.getC_NAME() %></strong> <br><%=x.getC_COMMENT() %></li>
                                                                     </ul>
                                                                 </td>
+                                                                <%} %>
                                                             </tr>
                                                             <tr>
 
                                                                 <td>
                                                                     <div class="comment-form">
-                                                                        <form id="commentForm">
+                                                                        <form id="commentForm" action="CommentService">
+                                                                        	<input type="hidden" name="F_INDEX" value="<%= i.getFeed_index() %>">
+                                                                        	<input type="hidden" name="C_NAME" value="<%= member.getNick() %>">
                                                                             <label for="comment">댓글 입력:</label>
-                                                                            <textarea id="comment" name="comment" rows="4" cols="50" required></textarea>
+                                                                            <textarea id="comment" name="C_COMMENT" rows="4" cols="50" required></textarea>
                                                                             <br>
-                                                                            <button type="button" onclick="submitComment()">댓글 전송</button>
+                                                                            <input type="submit" value="댓글 전송">
                                                                         </form>
                                                                     </div>
                                                                 </td>
