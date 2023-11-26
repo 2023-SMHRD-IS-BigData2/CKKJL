@@ -243,15 +243,13 @@
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
                                     <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
                                     <%
-<<<<<<< HEAD
+
 									}
 									%>
-
-=======
                            }
                            %>
 
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
+
                                </a> <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                     <a class="dropdown-item" href="RealLogin.jsp"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> login

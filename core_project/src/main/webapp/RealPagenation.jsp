@@ -399,11 +399,7 @@
                         } else if (dayCount <= daysInMonth) {
                             // Fill in the days
                             dayLink.textContent = dayCount;
-<<<<<<< HEAD
-                            dayLink.href = `RealMatching.jsp#${year}-${month}-${dayCount}`;
-=======
                             dayLink.href = `RealMatching.jsp#${year}.${month}.${dayCount}`;
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
                             if (month === 11 && dayCount >= 19 && dayCount <= 30) {
                                 dayLink.classList.add("bold");
                             }

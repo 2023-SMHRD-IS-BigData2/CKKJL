@@ -6,14 +6,8 @@
 <mapper namespace="com.smhrd.database.MatchMapper">
 	
 	<insert id="makeMEMA" parameterType="Mercenary_Match">
-		INSERT INTO TB_MATCH VALUES(MATCH_INDEX.nextval,#{mm},
-<<<<<<< HEAD
-		#{matchDate},#{team_index},#{start_hour},#{last_hour},
-		#{people_num},#{level},#{writing})
-=======
-		#{m_date},#{t_index},#{start_hour},#{last_hour},
+		INSERT INTO TB_MATCH VALUES(MATCH_INDEX.nextval,#{mm}, #{m_date},#{t_index},#{start_hour},#{last_hour},
 		#{people_num},#{f_level},#{writing})
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
 	</insert>
 	
 	<select id="allMEMA_date" resultType="Mercenary_Match">
