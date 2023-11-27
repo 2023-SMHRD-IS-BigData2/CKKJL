@@ -12,31 +12,40 @@ import com.smhrd.model.Friend;
 import com.smhrd.model.FriendDAO;
 import com.smhrd.model.Member;
 
-
 @WebServlet("/FriendService")
 public class FriendService extends HttpServlet {
-	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		// 친구 추가
-		String friend = request.getParameter("friend");
+		String acceptor = request.getParameter("acceptor");
+		String acc_nick = request.getParameter("nick");
 		HttpSession session = request.getSession();
-		Member vo = (Member)session.getAttribute("vo");
+		Member vo = (Member) session.getAttribute("vo");
 		String id = vo.getU_id();
+		String nick = vo.getNick();
 
-		
-		Friend user = new Friend(id,friend);
-		
-		int row = new FriendDAO().apply(user);
-		
-		if (row>0) {
-			
-			System.out.println("친구 추가 전송");
+		if (id.equals(acceptor)) {
+			response.sendRedirect("RealMain.jsp");
+
 		} else {
-			System.out.println("친구 추가 실패");
+			Friend user = new Friend(id, nick, acceptor, acc_nick);
+
+			int row = new FriendDAO().set(user);
+			
+			if (row ==0) {
+				row = new FriendDAO().apply(user);
+			}
+			if (row > 0) {
+				System.out.println("친구 추가 전송");
+			} else {
+				System.out.println("친구 추가 실패");
+			}
+
+			response.sendRedirect("RealMain.jsp");
 		}
-		
-		response.sendRedirect("RealMain.jsp");
+
 	}
 
 }

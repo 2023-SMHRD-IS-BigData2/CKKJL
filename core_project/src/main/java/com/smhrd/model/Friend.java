@@ -12,7 +12,11 @@ public class Friend {
 	
 	@NonNull private String applicant;
 	
+	@NonNull private String app_nick;
+	
 	@NonNull private String acceptor;
+	
+	@NonNull private String acc_nick;
 	
 	private int match;
 
