@@ -357,7 +357,9 @@
                                     <% List<Feed> feeds = new FeedDAO().totalFeed();%>
                                     <% FeedLike fl = null; %>
                                     <% for(Feed i : feeds){ %>
+                                    <% if(vo!=null){ %>
                                     <% fl = new FeedLike(i.getFeed_index(), vo.getU_id()); %>
+                                    <%} %>
 
                                     <div class="card shadow mb-4">
                                         <div class="card-header py-3">
