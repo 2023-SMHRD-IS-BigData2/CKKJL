@@ -1,3 +1,4 @@
+<%@page import="java.util.Random"%>
 <%@page import="com.smhrd.model.FeedLike"%>
 <%@page import="com.smhrd.model.Friend"%>
 <%@page import="com.smhrd.model.FriendDAO"%>
@@ -334,7 +335,7 @@
 
                             <!-- Content Row -->
                             <div class="row">
-
+						
                                 <!-- Content Column -->
                                 <div class="col-lg-6 mb-4">
 
