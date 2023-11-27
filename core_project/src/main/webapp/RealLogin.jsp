@@ -57,7 +57,7 @@
                             
                             <div class="col-lg-6">
                                 <div class="text-center"><br><br>
-                                <div><a href="RealMain.jsp"><img src="img/futsal062.png" alt="" width="200" height="40"></div></a>
+                                <div><a href="./RealMain.jsp"><img src="img/futsal062.png" alt="" width="200" height="40"></a></div>
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome!</h1>

@@ -72,23 +72,11 @@
 									aria-describedby="basic-addon2">
 							</div>
 						</form>
-						<a class="nav-link collapsed" href="RealMyPage.jsp"
-							data-target="#collapseTwo" aria-expanded="true"
-							aria-controls="collapseTwo"> <span><button
-									class="button is-primary is-outlined is-large">My Page</button></span>
-						</a> <a class="nav-link collapsed" href="RealFeedWrite.jsp"
-							data-target="#collapseTwo" aria-expanded="true"
-							aria-controls="collapseTwo"> <span><button
-									class="button is-primary is-outlined is-large">피드 작성</button></span>
-						</a> <a class="nav-link collapsed" href="RealPagenation.jsp"
-							data-target="#collapseTwo" aria-expanded="true"
-							aria-controls="collapseTwo"> <span><button
-									class="button is-primary is-outlined is-large">매칭용병 등록</button></span>
-						</a> <a class="nav-link collapsed" href="ViewPagenation.jsp"
-							data-target="#collapseTwo" aria-expanded="true"
-							aria-controls="collapseTwo"> <span><button
-									class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
-						</a>
+						<a class="nav-link collapsed" href=<%if (vo != null) {%>"RealMyPage.jsp"<%} else{%>"RealLogin.jsp"<% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">My Page</button></span>
+                        </a> <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealFeedWrite.jsp"<%} else {%> "RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">피드 작성</button></span>
+                        </a> <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealPagenation.jsp"<%} else {%>"RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">매칭용병 등록</button></span>
+                        </a> <a class="nav-link collapsed" href="ViewPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
+                        </a>
 						<!-- Topbar Navbar -->
 						<ul class="navbar-nav ml-auto">
 
