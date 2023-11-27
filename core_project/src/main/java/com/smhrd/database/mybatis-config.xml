@@ -17,7 +17,7 @@
 		<typeAlias type="com.smhrd.model.Mercenary_Match" alias="Mercenary_Match"/>
 		<typeAlias type="com.smhrd.model.Friend" alias="Friend"/>
 		<typeAlias type="com.smhrd.model.FeedAnComments" alias="FeedAnComments"/>
-		<typeAlias type="com.smhrd.model.Comment" alias="Comment"/>
+		<typeAlias type="com.smhrd.model.Comment" alias="Comment"/>		
 	</typeAliases>			
 					
   <environments default="development">
@@ -40,5 +40,6 @@
     <mapper resource="com/smhrd/database/MatchMapper.xml"/>
     <mapper resource="com/smhrd/database/FeedAnCommentsMapper.xml"/>
     <mapper resource="com/smhrd/database/CommentMapper.xml"/>
+    <mapper resource="com/smhrd/database/IframeMapper.xml"/>
   </mappers>
 </configuration>

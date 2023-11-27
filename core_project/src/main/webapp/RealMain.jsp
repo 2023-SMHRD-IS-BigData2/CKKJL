@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.IframeDAO"%>
 <%@page import="java.util.Random"%>
 <%@page import="com.smhrd.model.FeedLike"%>
 <%@page import="com.smhrd.model.Friend"%>
@@ -336,6 +337,31 @@
 
                             <!-- Content Row -->
                             <div class="row">
+                            <table class="futsal-class"> <h1 class="h3 mb-4 text-gray-800"> 풋살 강좌</h1>
+        <!--caption : 표의 제목-->
+        
+        <!--thead : Header에 들어가 Content를 모아놓은 태그-->
+        <thead>
+           <!--tr : table row 행을 의미하는 태그-->
+           <tr align="center">
+              <!--th : table header 행의 제목을 의미하는 태그-->
+              
+             
+                    
+						<% Random random = new Random(); 
+						for (int i=0; i<3;i++){							
+							int j = random.nextInt(99);
+							String address = new IframeDAO().Load(j);%>
+							<th width="300" height="400"><%=address %></th>
+						
+						<% 	
+						}
+						%>
+                       
+                          
+           </tr>
+        </thead>
+     </table>
 						
                                 <!-- Content Column -->
                                 <div class="col-lg-6 mb-4">
