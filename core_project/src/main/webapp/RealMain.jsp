@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.FeedLike"%>
 <%@page import="com.smhrd.model.CommentDAO"%>
 <%@page import="com.smhrd.model.Comment"%>
 <%@page import="com.smhrd.model.FeedDAO"%>
@@ -341,8 +342,10 @@
                                     <h1 class="h3 mb-4 text-gray-800">Main page</h1>
 
                                     <!-- Illustrations -->
-                                    <% List<Feed> feeds = new FeedDAO().totalFeed(); %>
+                                    <% List<Feed> feeds = new FeedDAO().totalFeed();%>
+                                    <% FeedLike fl = null; %>
                                     <% for(Feed i : feeds){ %>
+                                    <% fl = new FeedLike(i.getFeed_index(), vo.getU_id()); %>
                                     <div class="card shadow mb-4">
                                         <div class="card-header py-3">
                                             <h6 class="m-0 font-weight-bold text-primary">
@@ -364,8 +367,9 @@
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td rowspan="2"><img alt="" src="img/<%=i.getFeed_file() %>" width="300" height="300" object-fit: cover><br><br><%=i.getFeed_content() %></td>
+                                                                <td rowspan="2"><img alt="" src="img/<%=i.getFeed_file() %>" width="300" height="300" object-fit: cover><br><br><%=i.getFeed_content() %><h3 name = >♡<%= %></h3></td>
                                                                 <% List<Comment> Comments = new CommentDAO().showComment(i.getFeed_index()); %>
+                                                                
                                                                 <td>
                                                                 <% for(int j =0;j<Comments.size();j++){ %>
                                                                     <ul class="comment-list">
