@@ -194,8 +194,8 @@ body {
 												친구 요청을 했습니다.
 											</div>
 											<span class="font-weight-bold"> 
-											<a href="FriendService2?id=<%=friends.get(i).getApplicant()%>
-											&nick=<%=friends.get(i).getAcc_nick()%>&pic=<%=friends.get(i).getAcc_pic()%>">
+											<a href="FriendService2?id2=<%=friends.get(i).getApplicant()%>
+											&nick2=<%=friends.get(i).getApp_nick()%>&pic2=<%=friends.get(i).getApp_pic()%>">
 											<input id="acc1" type="button" value="수락"></a> 
 											<input id="acc2"
 												type="button" value="거절">

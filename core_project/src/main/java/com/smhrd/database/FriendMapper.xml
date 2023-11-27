@@ -15,7 +15,7 @@
 	
 	<!-- 중복확인 -->
 	<update id="Set" parameterType="Friend" >
-		UPDATE FROM TB_FRIEND applicant = #{applicant} AND acceptor = #{acceptor} WHERE applicant = #{applicant} AND acceptor = #{acceptor}
+		UPDATE TB_FRIEND SET APPLICANT = #{applicant} , ACCEPTOR = #{acceptor} WHERE APPLICANT = #{applicant} AND ACCEPTOR = #{acceptor}
 	</update>
 	
 	<!-- 친구 요청 확인 -->

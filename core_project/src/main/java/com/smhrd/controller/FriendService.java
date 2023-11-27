@@ -38,14 +38,16 @@ public class FriendService extends HttpServlet {
 
 			int row = new FriendDAO().set(user);
 			
-			if (row ==0) {
+			if (row == 0) {
 				row = new FriendDAO().apply(user);
+				if (row > 0) {
+					System.out.println("친구 추가 전송");
+				} else {
+					System.out.println("친구 추가 실패");
+				}
 			}
-			if (row > 0) {
-				System.out.println("친구 추가 전송");
-			} else {
-				System.out.println("친구 추가 실패");
-			}
+				
+			
 
 			response.sendRedirect("RealMain.jsp");
 		}
