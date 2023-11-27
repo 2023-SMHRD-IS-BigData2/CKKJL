@@ -4,15 +4,18 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.smhrd.database.MatchMapper">
-	
-	<insert id="makeMEMA" parameterType="Mercenary_Match">
-		INSERT INTO TB_MATCH VALUES(MATCH_INDEX.nextval,#{mm}, #{m_date},#{t_index},#{start_hour},#{last_hour},
-		#{people_num},#{f_level},#{writing})
-	</insert>
-	
-	<select id="allMEMA_date" resultType="Mercenary_Match">
-		SELECT * FROM TB_MATCH WHERE M_DATE = #{matchDate}
-	</select>
-
+   
+   <insert id="makeMEMA" parameterType="Mercenary_Match">
+      INSERT INTO TB_MATCH VALUES(MATCH_INDEX.nextval,#{mm}, #{m_date},#{user_index},#{start_hour},#{last_hour},
+      #{people_num},#{f_level},#{writing})
+   </insert>
+   
+   <select id="allMEMAdate" resultType="Mercenary_Match">
+      SELECT * FROM TB_MATCH WHERE m_date in #{date}
+   </select>
+   
+   <update id="updateMEMA" parameterType="Mercenary_Match">
+      UPDATE TB_MATCH set MM = #{mm} where F_INDEX = #{f_index};
+   </update>
 
 </mapper>

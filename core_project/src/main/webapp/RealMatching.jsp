@@ -27,7 +27,7 @@
    Member vo = (Member) session.getAttribute("vo");
 
    if (vo != null) {
-      System.out.print(vo.getId());
+      System.out.print(vo.getU_id());
    }
    %>
 
@@ -292,6 +292,7 @@
                                     <div class="text-center">
                                         <form action="MatchService" method="post" name="matchForm">
                                             <input type="hidden" name="matchDay" value="">
+                                            <input type="hidden" name="mm" value="1">
                                             <script>
                                                 var matchDay = window.location.hash.slice(1, 11);
                                                 document.matchForm.matchDay.value = matchDay;
@@ -385,6 +386,7 @@
                                     <div class="text-center">
                                         <form action="MatchService" method="post" name="matchForm2">
                                             <input type="hidden" name="matchDay" value="">
+                                            <input type="hidden" name="mm" value="2">
                                             <script>
                                                 document.matchForm2.matchDay.value = matchDay;
                                                 document.write('날짜 ', matchDay);

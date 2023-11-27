@@ -1,8 +1,9 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.sql.Array"%>
 <%@page import="com.smhrd.model.Mercenary_MatchDAO"%>
 <%@page import="com.smhrd.model.Mercenary_Match"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+   pageEncoding="UTF-8"%>
 <%@page import="com.smhrd.model.Message"%>
 <%@page import="com.smhrd.model.MessageDAO"%>
 <%@page import="java.util.List"%>
@@ -24,16 +25,13 @@
 </head>
 
 <body id="page-top">
-	<script type="text/javascript">
-		var matchDay = window.location.hash.slice(1, 11);
-	</script>
     <%
-	Member vo = (Member) session.getAttribute("vo");
+   Member vo = (Member) session.getAttribute("vo");
 
-	if (vo != null) {
-		System.out.print(vo.getId());
-	}
-	%>
+   if (vo != null) {
+      System.out.print(vo.getU_id());
+   }
+   %>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -143,8 +141,8 @@
                                         <!-- 문자 찾기 -->
                                     </h6>
                                     <%
-									if (vo == null) {
-									%>
+                           if (vo == null) {
+                           %>
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="dropdown-list-image mr-3">
                                             <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
@@ -167,16 +165,16 @@
                                         </div>
                                     </a>
                                     <%
-									} else {
-									List<Message> messages = new MessageDAO().showMessage(vo.getNick());
-									if (messages.size() < 3) {
-										for (int i = 0; i < messages.size(); i++) {
-											System.out.println(messages.get(i).getSender());
-										}
-									} else {
-										for (int i = 0; i < 3; i++) {
-											System.out.println(messages.get(i).getSender());
-									%>
+                           } else {
+                           List<Message> messages = new MessageDAO().showMessage(vo.getNick());
+                           if (messages.size() < 3) {
+                              for (int i = 0; i < messages.size(); i++) {
+                                 System.out.println(messages.get(i).getSender());
+                              }
+                           } else {
+                              for (int i = 0; i < 3; i++) {
+                                 System.out.println(messages.get(i).getSender());
+                           %>
 
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="dropdown-list-image mr-3">
@@ -192,10 +190,10 @@
                                     </a>
 
                                     <%
-									}
-									}
-									}
-									%>
+                           }
+                           }
+                           }
+                           %>
                                     <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                                 </div>
                             </li>
@@ -211,8 +209,8 @@
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
                                     <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
                                     <%
-									}
-									%>
+                           }
+                           %>
                                 </a> <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                     <a class="dropdown-item" href="RealLogin.jsp"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> login
@@ -230,21 +228,72 @@
 
                         </ul>
 
-					</nav>
-	<div>
-	<ul>
-		<% 
-		String matchDay = request.getParameter("matchDay");
-		List<Mercenary_Match> mm = new Mercenary_MatchDAO().allMEMA_date(matchDay);%>
-		<% for(Mercenary_Match i : mm){ %>
-			<%if(i.getMm() == 1){ %>
-				<li> 성사목록
-			<%}else { %>
-				<li> 미성사
-			<%} %>
-		<%} %>
-	</ul>
-	</div>
+               </nav>
+   <div>
+      <% 
+      String date = request.getParameter("date");%>
+      <% System.out.print(date); %>
+      <% List<Mercenary_Match> mema = new ArrayList<Mercenary_Match>(); %>
+      <% List<Mercenary_Match> ma1 = new ArrayList<Mercenary_Match>(); %>
+      <% List<Mercenary_Match> ma2 = new ArrayList<Mercenary_Match>(); %>
+      <% List<Mercenary_Match> me1 = new ArrayList<Mercenary_Match>(); %>
+      <% List<Mercenary_Match> me2 = new ArrayList<Mercenary_Match>(); %>
+      <% mema = new Mercenary_MatchDAO().allMEMAdate(date);%>
+      <% for(Mercenary_Match i : mema){ %>
+         <%switch (i.getMm()) {
+            case 1:
+               ma1.add(i);
+               break;
+            case 2:
+               me1.add(i);
+               break;
+            case 3:
+               ma2.add(i);
+               break;
+            case 4:
+               me2.add(i);
+               break;
+   
+            default:
+               System.out.println("mm에러");
+               break;
+         } %>
+      <%} %>
+   <ul>
+      <li>매칭 미성사 목록</li>
+      <%if(ma1.size()==0){ %>
+         <li>미성사된 매칭 정보가 없습니다.</li>
+      <%}else{ %>
+         <%for(Mercenary_Match i : ma1){ %>
+         <li><%=new MemberDAO().login(i.getUser_index()).getNick() %> <br> <%=i.getStart_hour() %> ~ <%=i.getLast_hour() %> <%=i.getF_level() %> <%=i.getPeople_num() %> <br> <%=i.getWriting() %>  </li>
+         <%} %>
+      <%} %>
+      <li>매칭 성사된 목록</li>
+      <%if(ma2.size()==0){ %>
+         <li>성사된 매칭 정보가 없습니다.</li>
+      <%}else{ %>
+         <%for(Mercenary_Match i : ma2){ %>
+         <li><%=new MemberDAO().login(i.getUser_index()).getNick() %> <br> <%=i.getStart_hour() %> ~ <%=i.getLast_hour() %> <%=i.getF_level() %> <%=i.getPeople_num() %> <br> <%=i.getWriting() %>  </li>
+         <%} %>
+      <%} %>
+      <li>용병 모집 미성사 목록</li>
+      <%if(me1.size()==0){ %>
+         <li>미성사된 용병 정보가 없습니다.</li>
+      <%}else{ %>
+         <%for(Mercenary_Match i : me1){ %>
+         <li><%=new MemberDAO().login(i.getUser_index()).getNick() %> <br> <%=i.getStart_hour() %> ~ <%=i.getLast_hour() %> <%=i.getF_level() %> <%=i.getPeople_num() %> <br> <%=i.getWriting() %>  </li>
+         <%} %>
+      <%} %>
+      <li>용병 모집 성사 목록</li>
+      <%if(me2.size()==0){ %>
+         <li>성사된 용병 정보가 없습니다.</li>
+      <%}else{ %>
+         <%for(Mercenary_Match i : me2){ %>
+         <li><%=new MemberDAO().login(i.getUser_index()).getNick() %> <br> <%=i.getStart_hour() %> ~ <%=i.getLast_hour() %> <%=i.getF_level() %> <%=i.getPeople_num() %> <br> <%=i.getWriting() %>  </li>
+         <%} %>
+      <%} %>
+   </ul>
+   </div>
 </body>
 
 </html>

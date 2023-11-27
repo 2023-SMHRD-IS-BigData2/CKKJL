@@ -16,46 +16,42 @@ import com.smhrd.model.Mercenary_MatchDAO;
 @WebServlet("/MatchService")
 public class MatchService extends HttpServlet {
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+   protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setCharacterEncoding("utf-8");
-		HttpSession session = request.getSession();
-		
+      request.setCharacterEncoding("utf-8");
+      HttpSession session = request.getSession();
+      
 
-		Member vo = (Member)session.getAttribute("vo");
-		String aaa = (String)request.getAttribute("mm");
-		int mm = 0;
-		if(aaa != null){
-			mm = Integer.parseInt(aaa); }
-		//int mm = Integer.valueOf(request.getParameter("mm"));
-		String starttime = request.getParameter("starttime");
-		String start = starttime.split(":")[0];
-		String finishtime = request.getParameter("finishtime");
-		String finish = finishtime.split(":")[0];
-		String peoplenum = request.getParameter("peoplenum");
-		String level = request.getParameter("level");
-		String comment = request.getParameter("comment");
-		String matchDay = request.getParameter("matchDay");
-		System.out.println(mm + matchDay + starttime + finishtime + peoplenum + level + comment );
-	
-		Mercenary_Match mercenary_match = null;
-		// 아래부분 개수부족
-		mercenary_match = new Mercenary_Match(mm, matchDay, vo.getU_id(), start, finish, peoplenum, level);
-		if (comment != null) {
-			mercenary_match.setWriting(comment);
-		}
-		System.out.println("hi"+ mercenary_match.toString());
-		int ck = new Mercenary_MatchDAO().makeMEMA(mercenary_match);
-		if (ck != 0) {
-			System.out.println("성공");
-		}else {
-			System.out.println("실패!");
-		}
-		
-		
-		response.sendRedirect("ViewMatch.jsp");
-	
-	
-	}
-	
+      Member vo = (Member)session.getAttribute("vo");
+      int mm = Integer.valueOf(request.getParameter("mm"));
+      String starttime = request.getParameter("starttime");
+      String start = starttime.split(":")[0];
+      String finishtime = request.getParameter("finishtime");
+      String finish = finishtime.split(":")[0];
+      String peoplenum = request.getParameter("peoplenum");
+      String level = request.getParameter("level");
+      String comment = request.getParameter("comment");
+      String matchDay = request.getParameter("matchDay");
+      System.out.println(vo.getU_id() + mm + matchDay + starttime + finishtime + peoplenum + level + comment );
+   
+      Mercenary_Match mercenary_match = null;
+      // 아래부분 개수부족
+      mercenary_match = new Mercenary_Match(mm, matchDay, vo.getU_id(), start, finish, peoplenum, level);
+      if (comment != null) {
+         mercenary_match.setWriting(comment);
+      }
+      int ck = new Mercenary_MatchDAO().makeMEMA(mercenary_match);
+      if (ck != 0) {
+         System.out.println("성공");
+      }else {
+         System.out.println("실패!");
+      }
+      
+      
+      response.sendRedirect("ViewMatch.jsp");
+   
+   
+   }
+   
+
 }

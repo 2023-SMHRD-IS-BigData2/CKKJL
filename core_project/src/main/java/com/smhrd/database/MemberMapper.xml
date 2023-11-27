@@ -5,12 +5,12 @@
   
 <mapper namespace="com.smhrd.database.MemberMapper">
 
-	<insert id="Join" parameterType="Member">
-		INSERT INTO TB_USER_INFO (id,nick,pic) VALUES (#{id},#{nick},#{pic})
-	</insert>
-	
-	
-	<select id="Login" resultType="Member" parameterType="String">
-		SELECT * FROM TB_USER_INFO WHERE id=#{id}
-	</select>
+   <insert id="Join" parameterType="Member">
+      INSERT INTO TB_USER_INFO (u_id,nick,pic) VALUES (#{u_id},#{nick},#{pic})
+   </insert>
+   
+   
+   <select id="Login" resultType="Member" parameterType="String">
+      SELECT * FROM TB_USER_INFO WHERE u_id=#{u_id}
+   </select>
 </mapper>

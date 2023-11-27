@@ -27,7 +27,7 @@
    Member vo = (Member) session.getAttribute("vo");
 
    if (vo != null) {
-      System.out.print(vo.getId());
+      System.out.print(vo.getU_id());
    }
    %>
 
@@ -350,11 +350,7 @@
                                             } else if (dayCount <= daysInMonth) {
                                                 // Fill in the days
                                                 dayLink.textContent = dayCount;
-<<<<<<< HEAD
-                                                dayLink.href = `ViewMatch.jsp#${year}.${month}.${dayCount}`;
-=======
                                                 dayLink.href = `ViewMatch.jsp?date=${year}.${month}.${dayCount}`;
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
                                                 if (month === 11 && dayCount >= 19 && dayCount <= 30) {
                                                     dayLink.classList.add("bold");
                                                 }
