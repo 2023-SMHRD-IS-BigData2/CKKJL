@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.FeedLike"%>
 <%@page import="com.smhrd.model.Friend"%>
 <%@page import="com.smhrd.model.FriendDAO"%>
 <%@page import="com.smhrd.model.CommentDAO"%>
@@ -108,9 +109,10 @@
                                 <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                             </div>
                         </form>
-                        <a class="nav-link collapsed" href="RealMyPage.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">My Page</button></span>
-                        </a> <a class="nav-link collapsed" href="RealFeedWrite.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">피드 작성</button></span>
-                        </a> <a class="nav-link collapsed" href="RealPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">매칭용병 등록</button></span>
+                                               
+						<a class="nav-link collapsed" href=<%if (vo != null) {%>"RealMyPage.jsp"<%} else{%>"RealLogin.jsp"<% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">My Page</button></span>
+                        </a> <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealFeedWrite.jsp"<%} else {%> "RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">피드 작성</button></span>
+                        </a> <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealPagenation.jsp"<%} else {%>"RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">매칭용병 등록</button></span>
                         </a> <a class="nav-link collapsed" href="ViewPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
                         </a>
                         <!-- Topbar Navbar -->
@@ -259,28 +261,23 @@
                                     <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
                                     <%
 									}
-									%>
-
-
-
-
-                                </a> <!-- Dropdown - User Information -->
+									%></a>
+									 <!-- Dropdown - User Information -->
+									 
+									
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                 <% if(vo == null) { %>
                                     <a class="dropdown-item" href="RealLogin.jsp"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> login
-                                    </a> <a class="dropdown-item" href="#"> <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                   </a> <% } else { %>
+                                     <a class="dropdown-item" href="#"> <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Settings
-                                    </a> <a class="dropdown-item" href="#"> <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Activity Log
-                                    </a>
-                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Logout
-                                    </a>
-                                </div>
+                                        Logout 
+                                    </a> <%} %> 
+                                </div> 
                             </li>
-
-                        </ul>
-
+									
+                        </ul> 
 
 
                     </nav>
@@ -353,12 +350,13 @@
                                     <h1 class="h3 mb-4 text-gray-800">Main page</h1>
 
                                     <!-- Illustrations -->
-                                    <%
-									List<Feed> feeds = new FeedDAO().totalFeed();
-									%>
-                                    <%
-									for (Feed i : feeds) {
-									%>
+                                    <% List<Feed> feeds = new FeedDAO().totalFeed();%>
+                                    <% FeedLike fl = null; %>
+                                    <% for(Feed i : feeds){ %>
+                                    <% if(vo!=null){ %>
+                                    <% fl = new FeedLike(i.getFeed_index(), vo.getU_id()); %>
+                                    <%} %>
+
                                     <div class="card shadow mb-4">
                                         <div class="card-header py-3">
                                             <h6 class="m-0 font-weight-bold text-primary">
@@ -415,9 +413,14 @@
                                                                 <td>
                                                                     <div class="comment-form">
                                                                         <form id="commentForm" action="CommentService">
-                                                                            <input type="hidden" name="F_INDEX" value="<%=i.getFeed_index()%>"> <input type="hidden" name="C_NAME" value="<%=vo.getNick()%>"> <label for="comment">댓글 입력:</label>
+                                                                            <input type="hidden" name="F_INDEX" value="<%=i.getFeed_index()%>"> <input type="hidden" name="C_NAME" value="<%=vo.getNick()%>"> 
+                                                                            <%if(vo!=null){ %>
+                                                                            <label for="comment">댓글 입력</label>
                                                                             <textarea id="comment" name="C_COMMENT" rows="4" cols="50" required></textarea>
                                                                             <br> <input type="submit" value="댓글 전송">
+                                                                            <%} else{ %>
+                                                                            <p>로그인 후에 이용할 수 있습니다.</p>
+                                                                            <% }%>
                                                                         </form>
                                                                     </div>
                                                                 </td>

@@ -80,98 +80,89 @@
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary" type="button">
                                                     <i class="fas fa-search fa-sm"></i>
-                                                    >>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
                                                 </button>
                                             </div>
-                                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                         </div>
                                     </form>
-                                    <a class="nav-link collapsed" href="RealMyPage.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large" style="margin-right: 10px;">My Page</button></span>
-                                    </a> <a class="nav-link collapsed" href="RealFeedWrite.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large" style="margin-right: 10px;">피드 작성</button></span>
-                                    </a> <a class="nav-link collapsed" href="RealPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large" style="margin-right: 10px;">매칭용병 등록</button></span>
-                                    </a> <a class="nav-link collapsed" href="ViewPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large" style="margin-right: 10px;">매칭용병 보기</button></span>
-                                    </a>
-                                    <!-- Topbar Navbar -->
-                                    <ul class="navbar-nav ml-auto">
+                                </div>
+                            </li>
 
 
-
-
-                                        <!-- Nav Item - Alerts -->
-                                        <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user fa-fw"></i>
-                                            </a> <!-- Dropdown - Alerts -->
-                                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                                                <h6 class="dropdown-header">Alerts Center</h6>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <div class="mr-3">
-                                                        <div class="icon-circle bg-primary">
-                                                            <i class="fas fa-file-alt text-white"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <div class="small text-gray-500">December 12, 2019</div>
-                                                        <span class="font-weight-bold">A new monthly report is
-                                                            ready to download!</span>
-                                                    </div>
-                                                </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <div class="mr-3">
-                                                        <div class="icon-circle bg-success">
-                                                            <i class="fas fa-donate text-white"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <div class="small text-gray-500">December 7, 2019</div>
-                                                        $290.29 has been deposited into your account!
-                                                    </div>
-                                                </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <div class="mr-3">
-                                                        <div class="icon-circle bg-warning">
-                                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <div class="small text-gray-500">December 2, 2019</div>
-                                                        Spending Alert: We've noticed unusually high spending for
-                                                        your account.
-                                                    </div>
-                                                </a> <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            <!-- Nav Item - Alerts -->
+                            <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user fa-fw"></i>
+                                </a> <!-- Dropdown - Alerts -->
+                                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                                    <h6 class="dropdown-header">Alerts Center</h6>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="mr-3">
+                                            <div class="icon-circle bg-primary">
+                                                <i class="fas fa-file-alt text-white"></i>
                                             </div>
-                                        </li>
+                                        </div>
+                                        <div>
+                                            <div class="small text-gray-500">December 12, 2019</div>
+                                            <span class="font-weight-bold">A new monthly report is
+                                                ready to download!</span>
+                                        </div>
+                                    </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="mr-3">
+                                            <div class="icon-circle bg-success">
+                                                <i class="fas fa-donate text-white"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="small text-gray-500">December 7, 2019</div>
+                                            $290.29 has been deposited into your account!
+                                        </div>
+                                    </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="mr-3">
+                                            <div class="icon-circle bg-warning">
+                                                <i class="fas fa-exclamation-triangle text-white"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="small text-gray-500">December 2, 2019</div>
+                                            Spending Alert: We've noticed unusually high spending for
+                                            your account.
+                                        </div>
+                                    </a> <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                </div>
+                            </li>
 
-                                        <!-- Nav Item - Messages -->
+                            <!-- Nav Item - Messages -->
 
-                                        <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i>
-                                            </a> <!-- Dropdown - Messages -->
-                                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                                                <h6 class="dropdown-header">
-                                                    Message Center
-                                                    <!-- 문자 찾기 -->
-                                                </h6>
-                                                <%
+                            <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i>
+                                </a> <!-- Dropdown - Messages -->
+                                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                                    <h6 class="dropdown-header">
+                                        Message Center
+                                        <!-- 문자 찾기 -->
+                                    </h6>
+                                    <%
                            if (vo == null) {
                            %>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <div class="dropdown-list-image mr-3">
-                                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
-                                                        <div class="status-indicator bg-success"></div>
-                                                    </div>
-                                                    <div class="font-weight-bold">
-                                                        <div class="text-truncate">Hi there! I am wondering if
-                                                            you can help me with a problem I've been having.</div>
-                                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
-                                                    </div>
-                                                </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <div class="dropdown-list-image mr-3">
-                                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
-                                                        <div class="status-indicator"></div>
-                                                    </div>
-                                                    <div>
-                                                        <div class="text-truncate">I have the photos that you
-                                                            ordered last month, how would you like them sent to you?</div>
-                                                        <div class="small text-gray-500">Jae Chun · 1d</div>
-                                                    </div>
-                                                </a>
-                                                <%
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="dropdown-list-image mr-3">
+                                            <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                            <div class="status-indicator bg-success"></div>
+                                        </div>
+                                        <div class="font-weight-bold">
+                                            <div class="text-truncate">Hi there! I am wondering if
+                                                you can help me with a problem I've been having.</div>
+                                            <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                        </div>
+                                    </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="dropdown-list-image mr-3">
+                                            <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                                            <div class="status-indicator"></div>
+                                        </div>
+                                        <div>
+                                            <div class="text-truncate">I have the photos that you
+                                                ordered last month, how would you like them sent to you?</div>
+                                            <div class="small text-gray-500">Jae Chun · 1d</div>
+                                        </div>
+                                    </a>
+                                    <%
                            } else {
                            List<Message> messages = new MessageDAO().showMessage(vo.getNick());
                            if (messages.size() < 3) {
@@ -183,57 +174,57 @@
                                  System.out.println(messages.get(i).getSender());
                            %>
 
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <div class="dropdown-list-image mr-3">
-                                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
-                                                        <div class="status-indicator bg-success"></div>
-                                                    </div>
-                                                    <div class="font-weight-bold">
-                                                        <div class="text-truncate"><%=messages.get(i).getMessage()%></div>
-                                                        <div class="small text-gray-500"><%=messages.get(i).getSender()%>
-                                                            ·
-                                                            <%=messages.get(i).getM_date()%></div>
-                                                    </div>
-                                                </a>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="dropdown-list-image mr-3">
+                                            <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                            <div class="status-indicator bg-success"></div>
+                                        </div>
+                                        <div class="font-weight-bold">
+                                            <div class="text-truncate"><%=messages.get(i).getMessage()%></div>
+                                            <div class="small text-gray-500"><%=messages.get(i).getSender()%>
+                                                ·
+                                                <%=messages.get(i).getM_date()%></div>
+                                        </div>
+                                    </a>
 
-                                                <%
+                                    <%
                            }
                            }
                            }
                            %>
-                                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-                                            </div>
-                                        </li>
-                                        <div class="topbar-divider d-none d-sm-block"></div>
+                                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                                </div>
+                            </li>
+                            <div class="topbar-divider d-none d-sm-block"></div>
 
-                                        <!-- Nav Item - User Information -->
-                                        <li class="nav-item dropdown no-arrow"><a class="nav-link dropdown-toggle" href="RealLogin.jsp" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow"><a class="nav-link dropdown-toggle" href="RealLogin.jsp" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%
  if (vo == null) {
  %>
-                                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">로그인해주세요</span>
-                                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg"> <%
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">로그인해주세요</span>
+                                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg"> <%
  } else {
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
-                                                <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
-                                                <%
+                                    <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
+                                    <%
                            }
                            %>
-                                            </a> <!-- Dropdown - User Information -->
-                                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                                <a class="dropdown-item" href="RealLogin.jsp"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> login
-                                                </a> <a class="dropdown-item" href="#"> <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                    Settings
-                                                </a> <a class="dropdown-item" href="#"> <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                    Activity Log
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                    Logout
-                                                </a>
-                                            </div>
-                                        </li>
+                                </a> <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="RealLogin.jsp"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> login
+                                    </a> <a class="dropdown-item" href="#"> <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a> <a class="dropdown-item" href="#"> <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Activity Log
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
 
-                                    </ul>
+                        </ul>
 
                     </nav>
                     <!-- 여기부터 복사해요 -->
@@ -247,162 +238,206 @@
 
 
                         </div>
+                </div>
+                </section>
 
-                    </section>
-
-
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
 
                     <!-- Page Heading -->
 
                     <!-- Content Row -->
+                    <div class="row">
 
 
 
 
 
-
-                    <!-- Earnings (Monthly) Card Example -->
-
-
-
-
-                    <!-- Content Row -->
+                        <!-- Earnings (Monthly) Card Example -->
 
 
 
 
+                        <!-- Content Row -->
 
 
+                        <div class="row">
 
 
-                    <div class="calendar-container">
-                        <h1 class="h3 mb-4 text-gray-800">⚽ 원하시는 날짜를 선택해주세요 ⚽</h1>
+                            <!-- Area Chart -->
+                            <div class="col-xl-8 col-lg-7">
+                                <div class="card shadow mb-4">
+                                    <!-- Card Header - Dropdown -->
 
-                        <!-- Illustrations -->
+                                </div>
 
-                        <div class="pagination" id="pagination"></div>
+                            </div>
+                        </div>
 
-                        <table id="calendar-table">
-                            <thead>
-                                <tr>
-                                    <th>Sun</th>
-                                    <th>Mon</th>
-                                    <th>Tue</th>
-                                    <th>Wed</th>
-                                    <th>Thu</th>
-                                    <th>Fri</th>
-                                    <th>Sat</th>
-                                </tr>
+                        <!-- Pie Chart -->
+                        <div class="col-xl-4 col-lg-5"></div>
 
 
-                            </thead>
-                            <tbody id="calendar-body"></tbody>
+                        <!-- Content Row -->
+                        <div class="row">
+
+                            <!-- Content Column -->
+                            <div class="col-lg-6 mb-4">
+
+                                <!-- Project Card Example -->
 
 
-                        </table>
-                    </div>
+                                <!-- Color System -->
+                                <div class="row"></div>
+                            </div>
 
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            const calendarContainer = document.querySelector(".calendar-container");
-                            const calendarBody = document.getElementById("calendar-body");
-                            const paginationContainer = document.getElementById("pagination");
+                        </div>
 
-                            let currentMonth = new Date().getMonth() + 1; // Current month (1-12)
-                            let currentYear = new Date().getFullYear();
+                        <div class="calendar-container">
+                            <h1 class="h3 mb-4 text-gray-800">⚽ 원하시는 날짜를 선택해주세요 ⚽</h1>
 
-                            function generateCalendar(month, year) {
-                                calendarBody.innerHTML = "";
+                            <!-- Illustrations -->
 
-                                const firstDay = new Date(year, month - 1, 1).getDay();
-                                const daysInMonth = new Date(year, month, 0).getDate();
+                            <div class="pagination" id="pagination"></div>
 
-                                let dayCount = 1;
+                            <table id="calendar-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sun</th>
+                                        <th>Mon</th>
+                                        <th>Tue</th>
+                                        <th>Wed</th>
+                                        <th>Thu</th>
+                                        <th>Fri</th>
+                                        <th>Sat</th>
+                                    </tr>
 
-                                for (let i = 0; i < 5; i++) {
-                                    const row = document.createElement("tr");
 
-                                    for (let j = 0; j < 7; j++) {
-                                        const cell = document.createElement("td");
-                                        const dayLink = document.createElement("a");
+                                </thead>
+                                <tbody id="calendar-body"></tbody>
 
-                                        if (i === 0 && j < firstDay) {
-                                            // Empty cells before the first day
-                                            dayLink.textContent = "";
-                                        } else if (dayCount <= daysInMonth) {
-                                            // Fill in the days
-                                            dayLink.textContent = dayCount;
-                                            dayLink.href = `RealMatching.jsp#${year}.${month}.${dayCount}`;
-                                            if (month === 11 && dayCount >= 19 && dayCount <= 30) {
-                                                dayLink.classList.add("bold");
+
+                            </table>
+                        </div>
+
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function() {
+                                const calendarContainer = document.querySelector(".calendar-container");
+                                const calendarBody = document.getElementById("calendar-body");
+                                const paginationContainer = document.getElementById("pagination");
+
+                                let currentMonth = new Date().getMonth() + 1; // Current month (1-12)
+                                let currentYear = new Date().getFullYear();
+
+                                function generateCalendar(month, year) {
+                                    calendarBody.innerHTML = "";
+
+                                    const firstDay = new Date(year, month - 1, 1).getDay();
+                                    const daysInMonth = new Date(year, month, 0).getDate();
+
+                                    let dayCount = 1;
+
+                                    for (let i = 0; i < 5; i++) {
+                                        const row = document.createElement("tr");
+
+                                        for (let j = 0; j < 7; j++) {
+                                            const cell = document.createElement("td");
+                                            const dayLink = document.createElement("a");
+
+                                            if (i === 0 && j < firstDay) {
+                                                // Empty cells before the first day
+                                                dayLink.textContent = "";
+                                            } else if (dayCount <= daysInMonth) {
+                                                // Fill in the days
+                                                dayLink.textContent = dayCount;
+                                                dayLink.href = `RealMatching.jsp?date=${year}.${month}.${dayCount}`;
+                                                if (month === 11 && dayCount >= 19 && dayCount <= 30) {
+                                                    dayLink.classList.add("bold");
+                                                }
+                                                
+                                                dayCount++;
                                             }
-                                            dayCount++;
+
+
+                                            cell.appendChild(dayLink);
+                                            row.appendChild(cell);
                                         }
 
+                                        calendarBody.appendChild(row);
+                                    }
+                                }
+                                
 
-                                        cell.appendChild(dayLink);
-                                        row.appendChild(cell);
+                                function displayPagination() {
+                                    paginationContainer.innerHTML = "";
+
+                                    for (let i = 1; i <= 12; i++) {
+                                        const pageLink = document.createElement("a");
+                                        pageLink.href = "#";
+                                        pageLink.textContent = i;
+
+                                        pageLink.addEventListener("click", function() {
+                                            currentMonth = i;
+                                            generateCalendar(currentMonth, currentYear);
+                                            highlightActivePage(i);
+                                        });
+
+                                        paginationContainer.appendChild(pageLink);
                                     }
 
-                                    calendarBody.appendChild(row);
-                                }
-                            }
-
-                            function displayPagination() {
-                                paginationContainer.innerHTML = "";
-
-                                for (let i = 1; i <= 12; i++) {
-                                    const pageLink = document.createElement("a");
-                                    pageLink.href = "#";
-                                    pageLink.textContent = i;
-
-                                    pageLink.addEventListener("click", function() {
-                                        currentMonth = i;
-                                        generateCalendar(currentMonth, currentYear);
-                                        highlightActivePage(i);
-                                    });
-
-                                    paginationContainer.appendChild(pageLink);
+                                    // Highlight the current month initially
+                                    highlightActivePage(currentMonth);
                                 }
 
-                                // Highlight the current month initially
-                                highlightActivePage(currentMonth);
-                            }
+                                function highlightActivePage(month) {
+                                    const paginationLinks = document.querySelectorAll(".pagination a");
+                                    paginationLinks.forEach(link => link.classList.remove("active"));
 
-                            function highlightActivePage(month) {
-                                const paginationLinks = document.querySelectorAll(".pagination a");
-                                paginationLinks.forEach(link => link.classList.remove("active"));
-
-                                const activeLink = document.querySelector(`.pagination a:nth-child(${month})`);
-                                if (activeLink) {
-                                    activeLink.classList.add("active");
+                                    const activeLink = document.querySelector(`.pagination a:nth-child(${month})`);
+                                    if (activeLink) {
+                                        activeLink.classList.add("active");
+                                    }
                                 }
-                            }
 
-                            // Initial display
-                            generateCalendar(currentMonth, currentYear);
-                            displayPagination();
+                                // Initial display
+                                generateCalendar(currentMonth, currentYear);
+                                displayPagination();
 
-                        });
-                    </script>
+                            });
+                        </script>
+                        <form action="ViewMatch.jsp">
+                        	<input type="hidden" name="date" value="${year}.${month}.${dayCount}">
+                        </form>
 
 
-
+                    </div>
 
 
                     <!-- Approach -->
 
 
 
-
-
-
-
                 </div>
-                <!-- End of Main Content -->
-
             </div>
-            <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; FUTSAL062</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -425,7 +460,7 @@
                     to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="RealLogin.jsp">Logout</a>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
         </div>
