@@ -167,9 +167,11 @@
 											<span class="font-weight-bold"> 
 											<a href="FriendService2?id2=<%=friends.get(i).getApplicant()%>
 											&nick2=<%=friends.get(i).getApp_nick()%>&pic2=<%=friends.get(i).getApp_pic()%>">
-											<input id="acc1" type="button" value="수락"></a> 
-											<input id="acc2"
-												type="button" value="거절">
+											<input id="acc2" type="button" value="수락"></a> 
+											<a href="FriendService3?id3=<%=friends.get(i).getApplicant()%>
+											&nick3=<%=friends.get(i).getApp_nick()%>&pic3=<%=friends.get(i).getApp_pic()%>">
+											<input id="acc3"
+												type="button" value="거절"></a>
 											</span>
 										</div></a> <%
 
