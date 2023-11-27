@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.FeedLike"%>
 <%@page import="com.smhrd.model.Friend"%>
 <%@page import="com.smhrd.model.FriendDAO"%>
 <%@page import="com.smhrd.model.CommentDAO"%>
@@ -349,12 +350,13 @@
                                     <h1 class="h3 mb-4 text-gray-800">Main page</h1>
 
                                     <!-- Illustrations -->
-                                    <%
-									List<Feed> feeds = new FeedDAO().totalFeed();
-									%>
-                                    <%
-									for (Feed i : feeds) {
-									%>
+                                    <% List<Feed> feeds = new FeedDAO().totalFeed();%>
+                                    <% FeedLike fl = null; %>
+                                    <% for(Feed i : feeds){ %>
+                                    <% if(vo!=null){ %>
+                                    <% fl = new FeedLike(i.getFeed_index(), vo.getU_id()); %>
+                                    <%} %>
+
                                     <div class="card shadow mb-4">
                                         <div class="card-header py-3">
                                             <h6 class="m-0 font-weight-bold text-primary">
