@@ -388,6 +388,7 @@
                                                             <tr>
                                                                 <td rowspan="2"><img alt="" src="img/<%=i.getFeed_file()%>" width="300" height="300" object-fit: cover><br>
                                                                     <br><%=i.getFeed_content()%></td>
+                                                                    
                                                                 <%
 																List<Comment> Comments = new CommentDAO().showComment(i.getFeed_index());
 																%>
@@ -398,6 +399,7 @@
                                                                     <ul class="comment-list">
                                                                         <li><strong><%=Comments.get(j).getC_NAME()%></strong>
                                                                             <br><%=Comments.get(j).getC_COMMENT()%></li>
+                                                                            
                                                                     </ul> <%
  }
  %>
