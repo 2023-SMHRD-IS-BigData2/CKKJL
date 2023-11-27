@@ -23,9 +23,7 @@ public class MemberDAO {
 		}
 		return cnt;
 	}
-	
-	
-	
+
 	public int join(Member vo) {
 		int cnt = 0;
 		try {
@@ -37,19 +35,29 @@ public class MemberDAO {
 		}
 		return cnt;
 	}
-	
-	
-	
+
 	public Member login(String id) {
 		Member member = null;
 		try {
 			member = sqlSession.selectOne("com.smhrd.database.MemberMapper.Login", id);
 		} catch (Exception e) {
 			// TODO: handle exception
-		}finally {
+		} finally {
 			sqlSession.close();
-		}return member;
+		}
+		return member;
 	}
-	
+
+	public int updateMember(Member updateMember) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.update("com.smhrd.database.MemberMapper.updateMember", updateMember);
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
 
 }

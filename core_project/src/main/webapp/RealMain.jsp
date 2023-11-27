@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.IframeDAO"%>
+<%@page import="java.util.Random"%>
 <%@page import="com.smhrd.model.FeedLike"%>
 <%@page import="com.smhrd.model.Friend"%>
 <%@page import="com.smhrd.model.FriendDAO"%>
@@ -24,7 +26,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>fds</title>
+    <title>FUTSAL 062</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -109,9 +111,10 @@
                                 <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                             </div>
                         </form>
-                        <a class="nav-link collapsed" href="RealMyPage.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">My Page</button></span>
-                        </a> <a class="nav-link collapsed" href="RealFeedWrite.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">피드 작성</button></span>
-                        </a> <a class="nav-link collapsed" href="RealPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">매칭용병 등록</button></span>
+                                               
+						<a class="nav-link collapsed" href=<%if (vo != null) {%>"RealMyPage.jsp"<%} else{%>"RealLogin.jsp"<% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">My Page</button></span>
+                        </a> <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealFeedWrite.jsp"<%} else {%> "RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">피드 작성</button></span>
+                        </a> <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealPagenation.jsp"<%} else {%>"RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">매칭용병 등록</button></span>
                         </a> <a class="nav-link collapsed" href="ViewPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
                         </a>
                         <!-- Topbar Navbar -->
@@ -166,9 +169,11 @@
 											<span class="font-weight-bold"> 
 											<a href="FriendService2?id2=<%=friends.get(i).getApplicant()%>
 											&nick2=<%=friends.get(i).getApp_nick()%>&pic2=<%=friends.get(i).getApp_pic()%>">
-											<input id="acc1" type="button" value="수락"></a> 
-											<input id="acc2"
-												type="button" value="거절">
+											<input id="acc2" type="button" value="수락"></a> 
+											<a href="FriendService3?id3=<%=friends.get(i).getApplicant()%>
+											&nick3=<%=friends.get(i).getApp_nick()%>&pic3=<%=friends.get(i).getApp_pic()%>">
+											<input id="acc3"
+												type="button" value="거절"></a>
 											</span>
 										</div></a> <%
 
@@ -194,27 +199,6 @@
                                     <%
 									if (vo == null) {
 									%>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="dropdown-list-image mr-3">
-                                            <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
-                                            <div class="status-indicator bg-success"></div>
-                                        </div>
-                                        <div class="font-weight-bold">
-                                            <div class="text-truncate">Hi there! I am wondering if
-                                                you can help me with a problem I've been having.</div>
-                                            <div class="small text-gray-500">Emily Fowler · 58m</div>
-                                        </div>
-                                    </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="dropdown-list-image mr-3">
-                                            <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
-                                            <div class="status-indicator"></div>
-                                        </div>
-                                        <div>
-                                            <div class="text-truncate">I have the photos that you
-                                                ordered last month, how would you like them sent to you?</div>
-                                            <div class="small text-gray-500">Jae Chun · 1d</div>
-                                        </div>
-                                    </a>
                                     <%
 									} else {
 									List<Message> messages = new MessageDAO().showMessage(vo.getNick());
@@ -260,32 +244,28 @@
                                     <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
                                     <%
 									}
-									%>
-
-
-
-
-                                </a> <!-- Dropdown - User Information -->
+									%></a>
+									 <!-- Dropdown - User Information -->
+									 
+									
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="RealLogin.jsp"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> login
-                                    </a> <a class="dropdown-item" href="#"> <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Settings
-                                    </a> <a class="dropdown-item" href="#"> <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Activity Log
-                                    </a>
-                                    <div class="dropdown-divider"></div>
+                                 <% if(vo == null) { %>
+                                    <a class="dropdown-item" href="RealLogin.jsp"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> 로그인
+                                   </a> <% } else { %>
+                                     <a class="dropdown-item" href="UpdateUser.jsp"> <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        정보변경
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Logout
-                                    </a>
-                                </div>
+                                        로그아웃 
+                                    </a> <%} %> 
+                                </div> 
                             </li>
-
-                        </ul>
-
+									
+                        </ul> 
 
 
                     </nav>
                     <!-- 여기부터 복사해요 -->
+
                     <!-- End of Topbar -->
                     <section>
                         <div class="container button-container">
@@ -336,7 +316,32 @@
 
                             <!-- Content Row -->
                             <div class="row">
-
+                            <table class="futsal-class"> <h1 class="h3 mb-4 text-gray-800"> 풋살 강좌</h1>
+        <!--caption : 표의 제목-->
+        
+        <!--thead : Header에 들어가 Content를 모아놓은 태그-->
+        <thead>
+           <!--tr : table row 행을 의미하는 태그-->
+           <tr align="center">
+              <!--th : table header 행의 제목을 의미하는 태그-->
+              
+             
+                    
+						<% Random random = new Random(); 
+						for (int i=0; i<3;i++){							
+							int j = random.nextInt(99);
+							String address = new IframeDAO().Load(j);%>
+							<th width="300" height="400"><%=address %></th>
+						
+						<% 	
+						}
+						%>
+                       
+                          
+           </tr>
+        </thead>
+     </table>
+						
                                 <!-- Content Column -->
                                 <div class="col-lg-6 mb-4">
 
@@ -411,6 +416,7 @@
                                                                     <ul class="comment-list">
                                                                         <li><strong><%=Comments.get(j).getC_NAME()%></strong>
                                                                             <br><%=Comments.get(j).getC_COMMENT()%></li>
+                                                                            
                                                                     </ul> <%
  }
  %>
@@ -426,9 +432,14 @@
                                                                 <td>
                                                                     <div class="comment-form">
                                                                         <form id="commentForm" action="CommentService">
-                                                                            <input type="hidden" name="F_INDEX" value="<%=i.getFeed_index()%>"> <input type="hidden" name="C_NAME" value="<%=vo.getNick()%>"> <label for="comment">댓글 입력:</label>
+                                                                            <input type="hidden" name="F_INDEX" value="<%=i.getFeed_index()%>"> <input type="hidden" name="C_NAME" value="<%=vo.getNick()%>"> 
+                                                                            <%if(vo!=null){ %>
+                                                                            <label for="comment">댓글 입력</label>
                                                                             <textarea id="comment" name="C_COMMENT" rows="4" cols="50" required></textarea>
                                                                             <br> <input type="submit" value="댓글 전송">
+                                                                            <%} else{ %>
+                                                                            <p>로그인 후에 이용할 수 있습니다.</p>
+                                                                            <% }%>
                                                                         </form>
                                                                     </div>
                                                                 </td>
@@ -478,15 +489,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">나가시겠습니까?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready
-                    to end your current session.</div>
+                <div class="modal-body">로그인 버튼을 누르시면 로그아웃 됩니다.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="LogoutService">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
+                    <a class="btn btn-primary" href="LogoutService">로그아웃</a>
                 </div>
             </div>
         </div>

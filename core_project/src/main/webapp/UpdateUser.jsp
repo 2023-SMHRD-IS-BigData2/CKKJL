@@ -1,3 +1,10 @@
+<%@page import="com.smhrd.model.FeedLike"%>
+<%@page import="com.smhrd.model.Friend"%>
+<%@page import="com.smhrd.model.FriendDAO"%>
+<%@page import="com.smhrd.model.CommentDAO"%>
+<%@page import="com.smhrd.model.Comment"%>
+<%@page import="com.smhrd.model.FeedDAO"%>
+<%@page import="com.smhrd.model.Feed"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.model.Message"%>
 <%@page import="com.smhrd.model.MessageDAO"%>
@@ -17,7 +24,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>fds</title>
+    <title>FUTSAL 062</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,7 +54,16 @@
             max-height: 200px;
             /* 최대 높이를 지정합니다. */
             overflow-y: auto;
-            /* 세로 스크롤을 활성화합니다. */
+        }
+
+        /* 세로 스크롤을 활성화합니다. */
+
+        .profileimg {
+            border-radius: 40%;
+            object-fit: cover;
+            width: 60px;
+            height: 60px;
+        }
     </style>
 
 
@@ -58,11 +74,9 @@
 
     <%
 	Member vo = (Member) session.getAttribute("vo");
-
-	if (vo != null) {
-		System.out.print(vo.getU_id());
-	}
 	%>
+
+
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -81,7 +95,7 @@
 
                         <!-- Sidebar Toggle (Topbar) -->
                         <div>
-                            <a href="RealMain.jsp"><img src="img/futsal062.PNG" alt="" width="200" height="40"></a>
+                            <a href="RealMain.jsp"><img src="img/futsal062.png" alt="" width="200" height="40"></a>
                         </div>
                         </button>
                         <!-- Topbar Search -->
@@ -95,9 +109,10 @@
                                 <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                             </div>
                         </form>
-                        <a class="nav-link collapsed" href="RealMyPage.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">My Page</button></span>
-                        </a> <a class="nav-link collapsed" href="RealFeedWrite.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">피드 작성</button></span>
-                        </a> <a class="nav-link collapsed" href="RealPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">매칭용병 등록</button></span>
+                                               
+						<a class="nav-link collapsed" href=<%if (vo != null) {%>"RealMyPage.jsp"<%} else{%>"RealLogin.jsp"<% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">My Page</button></span>
+                        </a> <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealFeedWrite.jsp"<%} else {%> "RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">피드 작성</button></span>
+                        </a> <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealPagenation.jsp"<%} else {%>"RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">매칭용병 등록</button></span>
                         </a> <a class="nav-link collapsed" href="ViewPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
                         </a>
                         <!-- Topbar Navbar -->
@@ -123,50 +138,56 @@
 
                             <!-- Nav Item - Alerts -->
                             <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
-                                    <span class="badge badge-danger badge-counter">3+</span>
+
+
+
                                 </a> <!-- Dropdown - Alerts -->
                                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                     <h6 class="dropdown-header">Alerts Center</h6>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="mr-3">
-                                            <div class="icon-circle bg-primary">
-                                                <i class="fas fa-file-alt text-white"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="small text-gray-500">December 12, 2019</div>
-                                            <span class="font-weight-bold">A new monthly report is
-                                                ready to download!</span>
-                                        </div>
-                                    </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="mr-3">
-                                            <div class="icon-circle bg-success">
-                                                <i class="fas fa-donate text-white"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="small text-gray-500">December 7, 2019</div>
-                                            $290.29 has been deposited into your account!
-                                        </div>
-                                    </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="mr-3">
-                                            <div class="icon-circle bg-warning">
-                                                <i class="fas fa-exclamation-triangle text-white"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="small text-gray-500">December 2, 2019</div>
-                                            Spending Alert: We've noticed unusually high spending for
-                                            your account.
-                                        </div>
-                                    </a> <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+
+                                    <%
+										if (vo != null) {
+											System.out.println(vo.getU_id());
+											List<Friend> friends = new FriendDAO().check(vo.getU_id());
+											if (friends != null) {
+												for (int i = 0; i<friends.size();i++) {
+													
+										%>
+
+										<a class="dropdown-item d-flex align-items-center" href="#">
+										<div class="mr-3">
+											<div class="icon-circle bg-primary">
+												<img class="profileimg" src="<%=friends.get(i).getApp_pic()%>">
+											</div>
+										</div>
+										<div>
+											<div class="small text-gray-500"><%=friends.get(i).getApp_nick()%>님이
+												친구 요청을 했습니다.
+											</div>
+											<span class="font-weight-bold"> 
+											<a href="FriendService2?id2=<%=friends.get(i).getApplicant()%>
+											&nick2=<%=friends.get(i).getApp_nick()%>&pic2=<%=friends.get(i).getApp_pic()%>">
+											<input id="acc2" type="button" value="수락"></a> 
+											<a href="FriendService3?id3=<%=friends.get(i).getApplicant()%>
+											&nick3=<%=friends.get(i).getApp_nick()%>&pic3=<%=friends.get(i).getApp_pic()%>">
+											<input id="acc3"
+												type="button" value="거절"></a>
+											</span>
+										</div></a> <%
+
+ }
+ }
+ }
+ %>
+
+                                    <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                                 </div>
                             </li>
 
                             <!-- Nav Item - Messages -->
 
                             <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i>
-                                    <!-- Counter - Messages --> <span class="badge badge-danger badge-counter">7</span>
+
                                 </a> <!-- Dropdown - Messages -->
                                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                                     <h6 class="dropdown-header">
@@ -242,182 +263,202 @@
                                     <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
                                     <%
 									}
-									%>
-                                </a> <!-- Dropdown - User Information -->
+									%></a>
+									 <!-- Dropdown - User Information -->
+									 
+									
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="RealLogin.jsp"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> login
-                                    </a> <a class="dropdown-item" href="#"> <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Settings
-                                    </a> <a class="dropdown-item" href="#"> <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Activity Log
-                                    </a>
-                                    <div class="dropdown-divider"></div>
+                                 <% if(vo == null) { %>
+                                    <a class="dropdown-item" href="RealLogin.jsp"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> 로그인
+                                   </a> <% } else { %>
+                                     <a class="dropdown-item" href="UpdateUser.jsp"> <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        정보변경
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Logout
-                                    </a>
-                                </div>
+                                        로그아웃 
+                                    </a> <%} %> 
+                                </div> 
                             </li>
+									
+                        </ul> 
 
-                        </ul>
 
                     </nav>
                     <!-- 여기부터 복사해요 -->
-                    <!-- End of Topbar -->
-                    <section>
-                        <div class="container button-container">
-                            <!-- 고정시켜야됨 -->
+
+
+               <!-- End of Topbar -->
+               <section>
+                  <div class="container button-container">
+                     <!-- 고정시켜야됨 -->
 
 
 
 
+
+                  </div>
+            </div>
+            </section>
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+               <!-- Page Heading -->
+
+               <!-- Content Row -->
+               <div class="row">
+
+
+
+
+
+                  <!-- Earnings (Monthly) Card Example -->
+
+
+
+
+                  <!-- Content Row -->
+
+                  <div class="row">
+
+                     <!-- Area Chart -->
+                     <div class="col-xl-8 col-lg-7">
+                        <div class="card shadow mb-4">
+                           <!-- Card Header - Dropdown -->
 
                         </div>
-                </div>
-                </section>
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+                     </div>
+                  </div>
 
-                    <!-- Page Heading -->
-
-                    <!-- Content Row -->
-                    <div class="row">
+                  <!-- Pie Chart -->
+                  <div class="col-xl-4 col-lg-5"></div>
 
 
+                  <!-- Content Row -->
+                  <div class="row">
+
+                     <!-- Content Column -->
+                     <div class="col-lg-6 mb-4">
+
+                        <!-- Project Card Example -->
 
 
+                        <!-- Color System -->
+                        <div class="row"></div>
+                     </div>
 
-                        <!-- Earnings (Monthly) Card Example -->
+                  </div>
+
+                  <div class="col-lg-6 mb-4">
+                     <h1 class="h3 mb-4 text-gray-800">계정 정보 변경</h1>
+
+                     <!-- Illustrations -->
+
+                     <div class="col-lg-6 mb-4">
+
+                        <!-- Illustrations -->
+
+                        <form action="./UpdateService" method="post">
+                           <div class="card shadow mb-4">
+                              <div class="card-header py-3">
+                                 <input type="hidden" name="u_id" value="<%=vo.getU_id()%>">
+                                 <p>닉네임</p>
+                                 <p>
+                                    <input type="text" name="nick" value="<%=vo.getNick()%>">
+                                 </p>
+
+                              </div>
+                              <div class="card-header py-3">
+                                 <p>자기소개</p>
+                                 <p>
+                                    <input type="text" name="intro" value="<%=vo.getIntro()%>">
+                                 </p>
+                              </div>
+                              <div class="card-header py-3">
+
+                                 <p>프로필 사진</p>
+                                 <p>
+                                    <input type="file" id="input-file" className="btnOfinput"
+                                       name="pic"> <img src="<%=vo.getPic()%>" alt="사진"
+                                       width="60" height="60"> <label for="input-file"
+                                       style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold; font-size: 20px; padding: 3px 5px;">업로드</label>
+
+                                 </p>
+                              </div>
+                              <div class="card-body">
+                                 <table>
+                                    <tr>
+                                       <td colspan="2"><input type="submit" value="변경하기"
+                                          style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold">
+                                          <input type="reset" value="초기화"
+                                          style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold">
+                                          </span></td>
+                                    </tr>
+                                 </table>
+                              </div>
+
+                           </div>
+                        </form>
+                     </div>
 
 
-
-
-                        <!-- Content Row -->
-
-
-
-
-
-                        <div class="row">
-                            <div class="col-lg-20 mb-4">
-                                <h1 class="h3 mb-4 text-gray-800">Main page</h1>
-
-                                <!-- Illustrations -->
-                                <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">발흥민</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="container-fluid">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered" id="dataTable" style="width:700px;" cellspacing="0">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>게시글</th>
-                                                            <th>댓글</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td><img alt="" src="img/오풋완.png" width="200" height="200" object-fit: cover></td>
-                                                            <td>
-                                                                <ul class="comment-list">
-                                                                    <li><strong>김명준</strong> <br> 수고하셨습니다</li>
-                                                                    <li><strong>이재환</strong> <br>다음에 또 같이 풋살해요~</li>
-                                                                    <li><strong>최현주</strong> <br>오늘 풋살 즐거웠습니다</li>
-                                                                    <li><strong>강지민</strong> <br>다들 조심히 들어가세요</li>
-                                                                    <li><strong>정호준</strong> <br>다음엔 어디서 할까요?</li>
-                                                                </ul>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>오풋완</td>
-                                                            <td>
-                                                                <div class="comment-form">
-                                                                    <form id="commentForm">
-                                                                        <label for="comment">댓글 입력:</label>
-                                                                        <textarea id="comment" name="comment" rows="4" cols="50" required></textarea>
-                                                                        <br>
-                                                                        <button type="button" onclick="submitComment()">댓글 전송</button>
-                                                                    </form>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                     <!-- Approach -->
 
 
 
-
-                    </div>
-                </div>
+                  </div>
+               </div>
 
             </div>
             <!-- /.container-fluid -->
 
-    </div>
-    <!-- End of Main Content -->
+         </div>
+         <!-- End of Main Content -->
+   </div>
+   <!-- End of Content Wrapper -->
 
+   </div>
+   <!-- End of Page Wrapper -->
 
-    <!-- End of Footer -->
+   <!-- Scroll to Top Button-->
+   <a class="scroll-to-top rounded" href="#page-top"> <i
+      class="fas fa-angle-up"></i>
+   </a>
 
-    </div>
-
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top"> <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
+   <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">나가시겠습니까?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
-                    </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready
-                    to end your current session.</div>
+                <div class="modal-body">로그인 버튼을 누르시면 로그아웃 됩니다.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="LogoutService">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
+                    <a class="btn btn-primary" href="LogoutService">로그아웃</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <!-- Bootstrap core JavaScript-->
+   <script src="vendor/jquery/jquery.min.js"></script>
+   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+   <!-- Core plugin JavaScript-->
+   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+   <!-- Custom scripts for all pages-->
+   <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+   <!-- Page level plugins -->
+   <script src="vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-
-    <!-- Kakao SDK -->
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script>
-        Kakao.init('eefca775da363abc546f57a131ec1863'); //발급받은 키 중 javascript키를 사용해준다.
-        console.log(Kakao.isInitialized()); // sdk초기화여부판단
-    </script>
+   <!-- Page level custom scripts -->
+   <script src="js/demo/chart-area-demo.js"></script>
+   <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 
