@@ -352,7 +352,7 @@
 
                         <!-- Illustrations -->
 
-                        <form action="./UPMemberService" method="post">
+                        <form action="./UpdateService" method="post">
                            <div class="card shadow mb-4">
                               <div class="card-header py-3">
                                  <input type="hidden" name="u_id" value="<%=vo.getU_id()%>">
