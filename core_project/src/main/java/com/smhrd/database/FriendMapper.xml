@@ -14,9 +14,9 @@
 	</insert>
 	
 	<!-- 중복확인 -->
-	<select id="Set" parameterType="Friend">
-		SELECT * FROM TB_FRIEND WHERE applicant = #{applicant} AND acceptor = #{acceptor}
-	</select>
+	<update id="Set" parameterType="Friend" >
+		UPDATE FROM TB_FRIEND applicant = #{applicant} AND acceptor = #{acceptor} WHERE applicant = #{applicant} AND acceptor = #{acceptor}
+	</update>
 	
 	<!-- 친구 요청 확인 -->
 	<select id="Check" parameterType="String" resultType="Friend" >
