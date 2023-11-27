@@ -180,7 +180,6 @@ body {
 											System.out.println(vo.getU_id());
 											List<Friend> friends = new FriendDAO().check(vo.getU_id());
 											if (friends != null) {
-												System.out.println("하이");
 												for (int i = 0; i<friends.size();i++) {
 													
 										%>
@@ -195,9 +194,9 @@ body {
 												친구 요청을 했습니다.
 											</div>
 											<span class="font-weight-bold"> 
-											<input id="acc1" type="button" value="수락" 
-											href="FriendService2?id=<%=friends.get(i).getApplicant()%>&nick=<%=friends.get(i).getApp_nick()%>
-											&pic=<%=friends.get(i).getApp_pic()%>"> 
+											<a href="FriendService2?id=<%=friends.get(i).getApplicant()%>
+											&nick=<%=friends.get(i).getAcc_nick()%>&pic=<%=friends.get(i).getAcc_pic()%>">
+											<input id="acc1" type="button" value="수락"></a> 
 											<input id="acc2"
 												type="button" value="거절">
 											</span>
