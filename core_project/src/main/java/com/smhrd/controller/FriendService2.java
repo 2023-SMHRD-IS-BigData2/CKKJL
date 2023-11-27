@@ -20,9 +20,9 @@ public class FriendService2 extends HttpServlet {
 		
 		System.out.println("여기까지 왔다");
 		// 친구 수락
-		String acceptor = request.getParameter("id");
-		String acc_nick = request.getParameter("nick");
-		String acc_pic = request.getParameter("pic");
+		String acceptor = request.getParameter("id2");
+		String acc_nick = request.getParameter("nick2");
+		String acc_pic = request.getParameter("pic2");
 		
 		HttpSession session = request.getSession();
 		Member vo = (Member)session.getAttribute("vo");

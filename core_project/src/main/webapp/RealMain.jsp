@@ -151,24 +151,26 @@
 												for (int i = 0; i<friends.size();i++) {
 													
 										%>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="mr-3">
-                                            <div class="icon-circle bg-primary">
-                                                <img class="profileimg" src="<%=friends.get(i).getApp_pic()%>">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="small text-gray-500"><%=friends.get(i).getApp_nick()%>님이
-                                                친구 요청을 했습니다.
-                                            </div>
-                                            <span class="font-weight-bold">
-                                                <a href="FriendService2?id=<%=friends.get(i).getApplicant()%>
-											&nick=<%=friends.get(i).getAcc_nick()%>&pic=<%=friends.get(i).getAcc_pic()%>">
-                                                    <input id="acc1" type="button" value="수락"></a>
-                                                <input id="acc2" type="button" value="거절">
-                                            </span>
-                                        </div>
-                                    </a> <%
+
+										<a class="dropdown-item d-flex align-items-center" href="#">
+										<div class="mr-3">
+											<div class="icon-circle bg-primary">
+												<img class="profileimg" src="<%=friends.get(i).getApp_pic()%>">
+											</div>
+										</div>
+										<div>
+											<div class="small text-gray-500"><%=friends.get(i).getApp_nick()%>님이
+												친구 요청을 했습니다.
+											</div>
+											<span class="font-weight-bold"> 
+											<a href="FriendService2?id2=<%=friends.get(i).getApplicant()%>
+											&nick2=<%=friends.get(i).getApp_nick()%>&pic2=<%=friends.get(i).getApp_pic()%>">
+											<input id="acc1" type="button" value="수락"></a> 
+											<input id="acc2"
+												type="button" value="거절">
+											</span>
+										</div></a> <%
+
  }
  }
  }

@@ -6,7 +6,7 @@
 <mapper namespace="com.smhrd.database.MemberMapper">
 
 	<update id="Check" parameterType="Member">
-		UPDATE TB_USER_INFO SET NICK=#{nick} AND PIC=#{pic} WHERE ID = #{id}
+		UPDATE TB_USER_INFO SET NICK=#{nick}, PIC=#{pic} WHERE U_ID = #{u_id}
 	</update>
 
    <insert id="Join" parameterType="Member">
