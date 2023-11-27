@@ -1,4 +1,6 @@
 <%@page import="com.smhrd.model.FeedLike"%>
+<%@page import="com.smhrd.model.Friend"%>
+<%@page import="com.smhrd.model.FriendDAO"%>
 <%@page import="com.smhrd.model.CommentDAO"%>
 <%@page import="com.smhrd.model.Comment"%>
 <%@page import="com.smhrd.model.FeedDAO"%>
@@ -10,7 +12,7 @@
 <%@page import="com.smhrd.model.Member"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +54,16 @@
             max-height: 200px;
             /* 최대 높이를 지정합니다. */
             overflow-y: auto;
-            /* 세로 스크롤을 활성화합니다. */
+        }
+
+        /* 세로 스크롤을 활성화합니다. */
+
+        .profileimg {
+            border-radius: 40%;
+            object-fit: cover;
+            width: 60px;
+            height: 60px;
+        }
     </style>
 
 
@@ -61,13 +72,11 @@
 <body id="page-top">
 
 
-<%
-   Member vo = (Member) session.getAttribute("vo");
+    <%
+	Member vo = (Member) session.getAttribute("vo");
+	%>
 
-   if (vo != null) {
-      System.out.print(vo.getU_id());
-   }
-   %>
+
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -86,7 +95,7 @@
 
                         <!-- Sidebar Toggle (Topbar) -->
                         <div>
-                            <a href="RealMain.jsp"><img src="img/futsal062.PNG" alt="" width="200" height="40"></a>
+                            <a href="RealMain.jsp"><img src="img/futsal062.png" alt="" width="200" height="40"></a>
                         </div>
                         </button>
                         <!-- Topbar Search -->
@@ -129,42 +138,46 @@
                             <!-- Nav Item - Alerts -->
                             <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
 
+
+
                                 </a> <!-- Dropdown - Alerts -->
                                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                     <h6 class="dropdown-header">Alerts Center</h6>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="mr-3">
-                                            <div class="icon-circle bg-primary">
-                                                <i class="fas fa-file-alt text-white"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="small text-gray-500">December 12, 2019</div>
-                                            <span class="font-weight-bold">A new monthly report is
-                                                ready to download!</span>
-                                        </div>
-                                    </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="mr-3">
-                                            <div class="icon-circle bg-success">
-                                                <i class="fas fa-donate text-white"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="small text-gray-500">December 7, 2019</div>
-                                            $290.29 has been deposited into your account!
-                                        </div>
-                                    </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="mr-3">
-                                            <div class="icon-circle bg-warning">
-                                                <i class="fas fa-exclamation-triangle text-white"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="small text-gray-500">December 2, 2019</div>
-                                            Spending Alert: We've noticed unusually high spending for
-                                            your account.
-                                        </div>
-                                    </a> <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+
+                                    <%
+										if (vo != null) {
+											System.out.println(vo.getU_id());
+											List<Friend> friends = new FriendDAO().check(vo.getU_id());
+											if (friends != null) {
+												for (int i = 0; i<friends.size();i++) {
+													
+										%>
+
+										<a class="dropdown-item d-flex align-items-center" href="#">
+										<div class="mr-3">
+											<div class="icon-circle bg-primary">
+												<img class="profileimg" src="<%=friends.get(i).getApp_pic()%>">
+											</div>
+										</div>
+										<div>
+											<div class="small text-gray-500"><%=friends.get(i).getApp_nick()%>님이
+												친구 요청을 했습니다.
+											</div>
+											<span class="font-weight-bold"> 
+											<a href="FriendService2?id2=<%=friends.get(i).getApplicant()%>
+											&nick2=<%=friends.get(i).getApp_nick()%>&pic2=<%=friends.get(i).getApp_pic()%>">
+											<input id="acc1" type="button" value="수락"></a> 
+											<input id="acc2"
+												type="button" value="거절">
+											</span>
+										</div></a> <%
+
+ }
+ }
+ }
+ %>
+
+                                    <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                                 </div>
                             </li>
 
@@ -179,8 +192,8 @@
                                         <!-- 문자 찾기 -->
                                     </h6>
                                     <%
-                           if (vo == null) {
-                           %>
+									if (vo == null) {
+									%>
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="dropdown-list-image mr-3">
                                             <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
@@ -203,16 +216,16 @@
                                         </div>
                                     </a>
                                     <%
-                           } else {
-                           List<Message> messages = new MessageDAO().showMessage(vo.getNick());
-                           if (messages.size() < 3) {
-                              for (int i = 0; i < messages.size(); i++) {
-                                 System.out.println(messages.get(i).getSender());
-                              }
-                           } else {
-                              for (int i = 0; i < 3; i++) {
-                                 System.out.println(messages.get(i).getSender());
-                           %>
+									} else {
+									List<Message> messages = new MessageDAO().showMessage(vo.getNick());
+									if (messages.size() < 3) {
+										for (int i = 0; i < messages.size(); i++) {
+											System.out.println(messages.get(i).getSender());
+										}
+									} else {
+										for (int i = 0; i < 3; i++) {
+											System.out.println(messages.get(i).getSender());
+									%>
 
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="dropdown-list-image mr-3">
@@ -228,10 +241,10 @@
                                     </a>
 
                                     <%
-                           }
-                           }
-                           }
-                           %>
+									}
+									}
+									}
+									%>
                                     <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                                 </div>
                             </li>
@@ -246,14 +259,13 @@
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
                                     <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
                                     <%
-
 									}
 									%>
-                           
-                           
 
 
-                               </a> <!-- Dropdown - User Information -->
+
+
+                                </a> <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                     <a class="dropdown-item" href="RealLogin.jsp"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> login
                                     </a> <a class="dropdown-item" href="#"> <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -305,7 +317,7 @@
 
 
                             <!-- Area Chart -->
-                            <div class="col-xl-8 col-lg-7">
+                            
                                 <div class="card shadow mb-4">
                                     <!-- Card Header - Dropdown -->
 
@@ -316,7 +328,7 @@
                                 </div>
 
 
-                            </div>
+                            
 
                             <!-- Pie Chart -->
                             <div class="col-xl-4 col-lg-5"></div>
@@ -346,19 +358,26 @@
                                     <% FeedLike fl = null; %>
                                     <% for(Feed i : feeds){ %>
                                     <% fl = new FeedLike(i.getFeed_index(), vo.getU_id()); %>
+
                                     <div class="card shadow mb-4">
                                         <div class="card-header py-3">
                                             <h6 class="m-0 font-weight-bold text-primary">
-                                                <%String index = i.getF_user_index(); %>
-                                                <%Member member = new MemberDAO().login(index); %>
-                                                <%= member.getNick() %>
-                                                <i class="fas fa-user fa-fw float-right"></i> 
+                                                <%
+												String index = i.getF_user_index();
+												%>
+                                                <%
+												Member member = new MemberDAO().login(index);
+												%>
+                                                <%=member.getNick()%>
+                                                <a href="FriendService?id=<%=member.getU_id()%>&nick=<%=member.getNick()%>&pic=<%=member.getPic()%>">
+                                                    <i class="fas fa-user fa-fw float-right" style="color:#62ac2e"></i>
+                                                </a>
                                             </h6>
                                         </div>
                                         <div class="card-body">
                                             <div class="container-fluid">
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered" id="dataTable" style="width:700px;" cellspacing="0">
+                                                    <table class="table table-bordered" id="dataTable" style="width: 700px;" cellspacing="0">
                                                         <thead>
                                                             <tr>
                                                                 <th class="text-center">피드</th>
@@ -367,37 +386,42 @@
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td rowspan="2"><img alt="" src="img/<%=i.getFeed_file() %>" width="300" height="300" object-fit: cover><br><br><%=i.getFeed_content() %><h3 name = >♡<%= %></h3></td>
-                                                                <% List<Comment> Comments = new CommentDAO().showComment(i.getFeed_index()); %>
-                                                                
+                                                                <td rowspan="2"><img alt="" src="img/<%=i.getFeed_file()%>" width="300" height="300" object-fit: cover><br>
+                                                                    <br><%=i.getFeed_content()%></td>
+                                                                <%
+																List<Comment> Comments = new CommentDAO().showComment(i.getFeed_index());
+																%>
                                                                 <td>
-                                                                <% for(int j =0;j<Comments.size();j++){ %>
+                                                                    <%
+																	for (int j = 0; j < Comments.size(); j++) {
+																	%>
                                                                     <ul class="comment-list">
-                                                                        <li><strong><%=Comments.get(j).getC_NAME() %></strong> <br><%=Comments.get(j).getC_COMMENT() %></li>
-                                                                    </ul>
-                                                                <%} %>
+                                                                        <li><strong><%=Comments.get(j).getC_NAME()%></strong>
+                                                                            <br><%=Comments.get(j).getC_COMMENT()%></li>
+                                                                    </ul> <%
+ }
+ %>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-																 <%
-                           										if (vo == null) {
-                           											
-                           										}else{
-                           												%>
-                           										
+                                                                <%
+																if (vo == null) {
+
+																} else {
+																%>
+
                                                                 <td>
                                                                     <div class="comment-form">
                                                                         <form id="commentForm" action="CommentService">
-                                                                        	<input type="hidden" name="F_INDEX" value="<%= i.getFeed_index() %>">
-                                                                        	<input type="hidden" name="C_NAME" value="<%= vo.getNick() %>">
-                                                                            <label for="comment">댓글 입력:</label>
+                                                                            <input type="hidden" name="F_INDEX" value="<%=i.getFeed_index()%>"> <input type="hidden" name="C_NAME" value="<%=vo.getNick()%>"> <label for="comment">댓글 입력:</label>
                                                                             <textarea id="comment" name="C_COMMENT" rows="4" cols="50" required></textarea>
-                                                                            <br>
-                                                                            <input type="submit" value="댓글 전송">
+                                                                            <br> <input type="submit" value="댓글 전송">
                                                                         </form>
                                                                     </div>
                                                                 </td>
-                                                                <%} %>
+                                                                <%
+																}
+																%>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -406,9 +430,11 @@
                                         </div>
                                     </div>
                                     <!-- //Illustrations -->
-                                    <%} %>
-                                    
-                                    
+                                    <%
+									}
+									%>
+
+
                                 </div>
                             </div>
 
@@ -426,7 +452,6 @@
 
 
             <!-- End of Footer -->
-
     </div>
 
     <!-- End of Page Wrapper -->

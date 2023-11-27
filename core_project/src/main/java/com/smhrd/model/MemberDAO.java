@@ -12,7 +12,20 @@ public class MemberDAO {
 	// connection, close, sql문 실행...
 	SqlSession sqlSession = sqlSessionFactory.openSession(true); // 오토 커밋
 
-
+	public int check(Member vo) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.insert("com.smhrd.database.MemberMapper.Check", vo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
+	
+	
+	
 	public int join(Member vo) {
 		int cnt = 0;
 		try {

@@ -36,8 +36,8 @@ public class FriendDAO {
 		return cnt;
 	}
 	
-	public List<String> check(String id) {
-		List<String> friend =null;
+	public List<Friend> check(String id) {
+		List<Friend> friend =null;
 		try {
 			 friend = sqlSession.selectList("com.smhrd.database.FriendMapper.Check", id);
 		} catch (Exception e) {
@@ -45,6 +45,7 @@ public class FriendDAO {
 		} finally {
 			sqlSession.close();
 		}
+		
 		return friend;
 	}
 	
