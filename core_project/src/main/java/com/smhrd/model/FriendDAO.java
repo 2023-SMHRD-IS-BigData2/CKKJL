@@ -75,5 +75,17 @@ public class FriendDAO {
 		return cnt;
 		
 	}
+	public List<String> All(String ACCEPTOR){
+	      List<String> friends =null;
+	         try {
+	             friends = sqlSession.selectList("com.smhrd.database.FriendMapper.All", ACCEPTOR);
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         } finally {
+	            sqlSession.close();
+	         }
+	         
+	         return friends;
+	      }
 
 }

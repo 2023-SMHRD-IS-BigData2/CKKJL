@@ -36,4 +36,8 @@
 		DELETE FROM TB_FRIEND WHERE APPLICANT = #{applicant} AND ACCEPTOR = #{acceptor}
 	</delete>
 	
+	<select id="All" resultType="String" parameterType="String">
+         select APP_NICK from TB_FRIEND where ACCEPTOR = #{ACCEPTOR} and match='O';
+   </select>
+	
 </mapper>
