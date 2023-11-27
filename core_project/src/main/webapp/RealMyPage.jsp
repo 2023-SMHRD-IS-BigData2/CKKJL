@@ -258,7 +258,6 @@
                         </div>
                         <div class="col-lg-6 mb-4">
                             <h1 class="h3 mb-4 text-gray-800">My page</h1>
-                            <section>
                                 <div class="col-md-10" style="max-width: 800px;">
                                     <div class="card shadow mb-4">
                                         <div class="card-header py-3">
@@ -282,26 +281,29 @@
 
                                             <!-- Add the table -->
                                             <table class="table">
-                                                <thead>
                                                     <tr>
-                                                        <th class="border">친구</th>
-                                                        <th class="border">게시글 목록</th>
-                                                        <th class="border">팀 소개문구</th>
+                                                        <td class="border">친구 목록</td>
                                                     </tr>
-                                                </thead>
-                                                <tbody>
                                                     <tr>
-                                                        <td class="border">삼민아</td>
-                                                        <td class="border">오풋완</td>
-                                                        <td class="border" rowspan="2">광주풋살끝판왕</td>
+                                                    	<td> getFriend();</td>
                                                     </tr>
+                                            </table> 
+                                            <table>
+                                                    <tr>
+                                                        <td class="border">친구1</td>
+                                                        <td class="border">친구2</td>
+                                                        <td class="border">광주풋살끝판왕</td>
+                                                    </tr>
+                                            </table>       
+			                                <table>
                                                     <tr>
                                                         <td class="border">팔자철</td>
                                                         <td class="border">풋살 챌린지 영상</td>
                                                     </tr>
+			                                </table>                
                                                     <!-- Add more rows if needed -->
-                                                </tbody>
-                                            </table>
+                                               
+                                           
                                         </div>
 
                                         <!-- ... (your existing code) ... -->
