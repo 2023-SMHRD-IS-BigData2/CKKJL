@@ -40,7 +40,7 @@ public class MatchService extends HttpServlet {
 	
 		Mercenary_Match mercenary_match = null;
 		// 아래부분 개수부족
-		mercenary_match = new Mercenary_Match(mm, matchDay, vo.getTeam_index(), start, finish, peoplenum, level);
+		mercenary_match = new Mercenary_Match(mm, matchDay, vo.getU_id(), start, finish, peoplenum, level);
 		if (comment != null) {
 			mercenary_match.setWriting(comment);
 		}
