@@ -33,7 +33,7 @@ public class LoginService extends HttpServlet {
 			System.out.println("신규회원");
 		} else {
 			System.out.println("기존회원");
-			vo = new MemberDAO().login(vo.getU_id());
+			vo = new MemberDAO().login(vo.getId());
 		}
 
 		HttpSession session = request.getSession();

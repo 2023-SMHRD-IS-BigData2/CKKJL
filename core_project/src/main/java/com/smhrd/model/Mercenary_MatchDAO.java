@@ -23,27 +23,15 @@ public class Mercenary_MatchDAO {
 		return cnt;
 	}
 	
-	public List<Mercenary_Match> allMEMAdate(String date) {
-		List<Mercenary_Match> memas = null;
+	public List<Mercenary_Match> allMEMA_date(String date) {
+		List<Mercenary_Match> mercenary_matchs = null;
 		try {
-			memas = sqlSession.selectList("com.smhrd.database.MatchMapper.allMEMAdate", date);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			sqlSession.close();
-		}
-		return memas;
-	}
-	
-	public int updateMEMA(Mercenary_Match vo) {
-		int cnt = 0;
-		try {
-			cnt = sqlSession.update("com.smhrd.database.MatchMapper.updateMEMA", vo);
+			mercenary_matchs = sqlSession.selectList("com.smhrd.database.MatchMapper.allMEMA_date", date);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}finally {
 			sqlSession.close();
 		}
-		return cnt;
+		return mercenary_matchs;
 	}
 }

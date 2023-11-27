@@ -23,11 +23,13 @@ public class FriendService extends HttpServlet {
 		String acc_nick = request.getParameter("nick");
 		HttpSession session = request.getSession();
 		Member vo = (Member) session.getAttribute("vo");
+		
 		String id = vo.getU_id();
 		String nick = vo.getNick();
 
 		if (id.equals(acceptor)) {
 			response.sendRedirect("RealMain.jsp");
+
 
 		} else {
 			Friend user = new Friend(id, nick, acceptor, acc_nick);

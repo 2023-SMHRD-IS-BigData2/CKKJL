@@ -28,7 +28,7 @@
    Member vo = (Member) session.getAttribute("vo");
 
    if (vo != null) {
-      System.out.print(vo.getU_id());
+      System.out.print(vo.getId());
    }
    %>
 

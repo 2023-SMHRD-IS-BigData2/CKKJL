@@ -27,6 +27,7 @@ public class FriendService2 extends HttpServlet {
 		String applicant = vo.getU_id();
 		String app_nick = vo.getNick();
 
+
 		
 		Friend user = new Friend(applicant, app_nick, acceptor,acc_nick);
 		
