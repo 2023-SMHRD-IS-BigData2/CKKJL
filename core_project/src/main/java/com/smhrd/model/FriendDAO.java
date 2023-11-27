@@ -24,6 +24,18 @@ public class FriendDAO {
 		return cnt;
 	}
 	
+	public int set(Friend user) {
+		int cnt = 0;
+		try {
+			 cnt = sqlSession.selectOne("com.smhrd.database.FriendMapper.Set", user);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
+	
 	public List<String> check(String id) {
 		List<String> friend =null;
 		try {
@@ -46,10 +58,7 @@ public class FriendDAO {
 		} finally {
 			sqlSession.close();
 		}
-		return cnt;
-		
-		
-		
+		return cnt;	
 		
 	}
 

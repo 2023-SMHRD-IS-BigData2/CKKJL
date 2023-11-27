@@ -19,13 +19,17 @@ public class FriendService2 extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// 친구 수락
-		String friend = request.getParameter("friend");
+		String acceptor = request.getParameter("friend");
+		String acc_nick = request.getParameter("nick");
 		HttpSession session = request.getSession();
 		Member vo = (Member)session.getAttribute("vo");
-		String id = vo.getU_id();
+
+		String applicant = vo.getU_id();
+		String app_nick = vo.getNick();
+
 
 		
-		Friend user = new Friend(id,friend);
+		Friend user = new Friend(applicant, app_nick, acceptor,acc_nick);
 		
 		int cnt = new FriendDAO().accept(user);
 		

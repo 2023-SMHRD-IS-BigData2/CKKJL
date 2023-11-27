@@ -292,12 +292,13 @@
                                     <div class="text-center">
                                         <form action="MatchService" method="post" name="matchForm">
                                             <input type="hidden" name="matchDay" value="">
+                                            <input type="hidden" name="mm" value="1">
                                             <script>
                                                 var matchDay = window.location.hash.slice(1, 11);
                                                 document.matchForm.matchDay.value = matchDay;
                                                 document.write('날짜 ', matchDay);
                                             </script>
-                                            <input type="hidden"  name="mm" value="1">
+                                            <input type="hidden"  name="mm" value="0">
                                             <br> <label for="position">시작 시간</label> <select id="matching_starttime" name="starttime" required>
                                                 <option value="미정">미정</option>
                                                 <option value="00:00">00:00</option>
@@ -385,11 +386,12 @@
                                     <div class="text-center">
                                         <form action="MatchService" method="post" name="matchForm2">
                                             <input type="hidden" name="matchDay" value="">
+                                            <input type="hidden" name="mm" value="2">
                                             <script>
                                                 document.matchForm2.matchDay.value = matchDay;
                                                 document.write('날짜 ', matchDay);
                                             </script>
-                                            <input type="hidden"  name="mm" value="2">
+                                            <input type="hidden"  name="mm" value="1">
                                             <br> <label for="position">가능한 시작 시간 </label> <select id="M_starttime" name="starttime" required>
                                                 <option value="미정">미정</option>
                                                 <option value="00:00">00:00</option>

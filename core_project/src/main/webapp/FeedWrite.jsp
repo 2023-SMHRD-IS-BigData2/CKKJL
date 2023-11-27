@@ -61,7 +61,7 @@ p {
 				<table id="list">
 					<tr>
 						<td> 작성자 </td>
-						<td>${vo.getNick()}<input  type="hidden" name="writer" value="${vo.getU_id()}"> </td>
+						<td>${vo.getNick()}<input  type="hidden" name="writer" value="${vo.getId()}"> </td>
 					</tr>
 					<tr>
 						<td colspan="2">내용</td>

@@ -405,6 +405,9 @@
 
                             });
                         </script>
+                        <form action="ViewMatch.jsp">
+                        	<input type="hidden" name="date" value="${year}.${month}.${dayCount}">
+                        </form>
 
 
                     </div>
