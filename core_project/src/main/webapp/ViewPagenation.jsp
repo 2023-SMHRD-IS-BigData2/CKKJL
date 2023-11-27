@@ -350,7 +350,7 @@
                                             } else if (dayCount <= daysInMonth) {
                                                 // Fill in the days
                                                 dayLink.textContent = dayCount;
-                                                dayLink.href = `ViewMatch.jsp?date=${year}-${month}-${dayCount}`;
+                                                dayLink.href = `ViewMatch.jsp?date=${year}.${month}.${dayCount}`;
                                                 if (month === 11 && dayCount >= 19 && dayCount <= 30) {
                                                     dayLink.classList.add("bold");
                                                 }
