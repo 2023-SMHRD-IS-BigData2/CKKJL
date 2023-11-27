@@ -18,7 +18,6 @@ public class FriendService2 extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("여기까지 왔다");
 		// 친구 수락
 		String acceptor = request.getParameter("id2");
 		String acc_nick = request.getParameter("nick2");

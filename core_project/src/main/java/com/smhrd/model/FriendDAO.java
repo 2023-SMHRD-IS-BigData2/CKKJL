@@ -62,5 +62,18 @@ public class FriendDAO {
 		return cnt;	
 		
 	}
+	
+	public int reject(Friend user) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.update("com.smhrd.database.FriendMapper.Reject", user);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+		
+	}
 
 }
