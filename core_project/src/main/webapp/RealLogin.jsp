@@ -52,7 +52,7 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image" style="background: url('img/로그인\ 풋살사진.jpg'); background-size: cover; background-position: center; height: 70vh;">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image" style="background: url('/img/로그인 풋살사진.jpg'); background-size: cover; background-position: center; height: 70vh;">
                             </div>
                             
                             <div class="col-lg-6">
