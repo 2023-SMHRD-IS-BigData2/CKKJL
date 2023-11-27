@@ -10,30 +10,30 @@
 
  	<!-- 친구 추가 -->
 	<insert id="Add" parameterType="Friend">
-		INSERT INTO FRIEND VALUES (#{applicant},#{app_nick},#{acceptor},#{acc_nick},0)	
+		INSERT INTO TB_FRIEND VALUES (#{applicant},#{app_nick},#{app_pic},#{acceptor},#{acc_nick},#{acc_pic},'X')	
 	</insert>
 	
 	<!-- 중복확인 -->
 	<select id="Set" parameterType="Friend">
-		SELECT * FROM FRIEND WHERE applicant = #{applicant} AND acceptor = #{acceptor}
+		SELECT * FROM TB_FRIEND WHERE applicant = #{applicant} AND acceptor = #{acceptor}
 	</select>
 	
 	<!-- 친구 요청 확인 -->
-	<select id="Check">
-		SELECT APPLICANT FROM FRIEND WHERE ACCEPTOR = #{id} AND MATCH = 0
+	<select id="Check" parameterType="String" resultType="Friend" >
+		SELECT * FROM TB_FRIEND WHERE ACCEPTOR = #{id} AND MATCH = 'X'
 	</select>
 	
 	<!-- 친구 수락 -->
 	<update id="Accept1">
-		UPDATE FRIEND SET MATCH = 1 WHERE ACCEPTOR = #{applicant} AND APPLICANT = #{acceptor}
+		UPDATE TB_FRIEND SET MATCH = 'O' WHERE ACCEPTOR = #{applicant} AND APPLICANT = #{acceptor}
 	</update>
 	<insert id="Accept2">
-		INSERT INTO FRIEND VALUES (#{applicant},#{app_nick},#{acceptor},#{acc_nick},1)
+		INSERT INTO TB_FRIEND VALUES (#{applicant},#{app_nick},#{app_pic},#{acceptor},#{acc_nick},#{acc_pic},'O')
 	</insert>
 	
 	<!-- 친구 거절 -->
 	<delete id="Reject">
-		DELETE FROM FRIEND WHERE APPLICANT = #{applicant} AND ACCEPTOR = #{acceptor}
+		DELETE FROM TB_FRIEND WHERE APPLICANT = #{applicant} AND ACCEPTOR = #{acceptor}
 	</delete>
 	
 </mapper>

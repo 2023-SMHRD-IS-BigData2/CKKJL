@@ -27,18 +27,22 @@ public class LoginService extends HttpServlet {
 
 		Member vo = new Member(id, nick, pic);
 
-		int cnt = new MemberDAO().join(vo);
+		int cnt = new MemberDAO().check(vo);
 
-		if (cnt > 0) {
-			System.out.println("신규회원");
-		} else {
+		if (cnt == 1) {
+
 			System.out.println("기존회원");
-			vo = new MemberDAO().login(vo.getU_id());
-		}
 
+			vo = new MemberDAO().login(vo.getU_id());
+			
+		} else {
+
+			cnt = new MemberDAO().join(vo);
+		}
+		
 		HttpSession session = request.getSession();
 		session.setAttribute("vo", vo);
-		//member로 바꿔놓음
+		// member로 바꿔놓음
 		response.sendRedirect("./RealMain.jsp");
 
 	}
