@@ -170,7 +170,14 @@ body {
 									</form>
 								</div></li>
 
+							 <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa-regular fa-futbol"></i>
 
+                                </a> <!-- Dropdown - Messages -->
+                                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                                    
+                                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                                </div>
+                            </li>
 							<!-- Nav Item - Alerts -->
 							<li class="nav-item dropdown no-arrow mx-1"><a
 								class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
@@ -225,7 +232,7 @@ body {
 									<a class="dropdown-item text-center small text-gray-500"
 										href="#">Show All Alerts</a>
 								</div></li>
-
+							
 							<!-- Nav Item - Messages -->
 
 							<li class="nav-item dropdown no-arrow mx-1"><a
@@ -286,6 +293,7 @@ body {
  %> <a class="dropdown-item text-center small text-gray-500" href="#">Read
 											More Messages</a>
 								</div></li>
+								
 							<div class="topbar-divider d-none d-sm-block"></div>
 
 							<!-- Nav Item - User Information -->
@@ -504,11 +512,13 @@ body {
 												Member member = new MemberDAO().login(index);
 												%>
 												<%=member.getNick()%>
+												
 												<a
 													href="FriendService?id=<%=member.getU_id()%>&nick=<%=member.getNick()%>&pic=<%=member.getPic()%>">
 													<i class="fas fa-user fa-fw float-right"
 													style="color: #62ac2e"></i>
 												</a>
+												
 											</h6>
 										</div>
 										<div class="card-body">
