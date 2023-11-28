@@ -194,30 +194,9 @@
                                         Message Center
                                         <!-- 문자 찾기 -->
                                     </h6>
-                                    <%
+                                   <%
 									if (vo == null) {
 									%>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="dropdown-list-image mr-3">
-                                            <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
-                                            <div class="status-indicator bg-success"></div>
-                                        </div>
-                                        <div class="font-weight-bold">
-                                            <div class="text-truncate">Hi there! I am wondering if
-                                                you can help me with a problem I've been having.</div>
-                                            <div class="small text-gray-500">Emily Fowler · 58m</div>
-                                        </div>
-                                    </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="dropdown-list-image mr-3">
-                                            <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
-                                            <div class="status-indicator"></div>
-                                        </div>
-                                        <div>
-                                            <div class="text-truncate">I have the photos that you
-                                                ordered last month, how would you like them sent to you?</div>
-                                            <div class="small text-gray-500">Jae Chun · 1d</div>
-                                        </div>
-                                    </a>
                                     <%
 									} else {
 									List<Message> messages = new MessageDAO().showMessage(vo.getNick());
@@ -229,7 +208,7 @@
 										for (int i = 0; i < 3; i++) {
 											System.out.println(messages.get(i).getSender());
 									%>
-
+									
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="dropdown-list-image mr-3">
                                             <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">

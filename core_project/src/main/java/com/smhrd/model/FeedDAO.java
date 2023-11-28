@@ -77,9 +77,12 @@ public class FeedDAO {
 	public boolean whetherlike(FeedLike feedlike) {
 		FeedLike like = null;
 		like = selFeedlike(feedlike);
+		
 		if(like != null) {
+			System.out.println("좋아요를 이미 하셨어요!");
 			return true;
 		}else {
+			System.out.println("좋아요를 하지 않으셨어요!!");
 			return false;
 		}
 		

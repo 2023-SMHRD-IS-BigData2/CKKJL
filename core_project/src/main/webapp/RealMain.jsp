@@ -199,27 +199,6 @@
                                     <%
 									if (vo == null) {
 									%>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="dropdown-list-image mr-3">
-                                            <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
-                                            <div class="status-indicator bg-success"></div>
-                                        </div>
-                                        <div class="font-weight-bold">
-                                            <div class="text-truncate">Hi there! I am wondering if
-                                                you can help me with a problem I've been having.</div>
-                                            <div class="small text-gray-500">Emily Fowler · 58m</div>
-                                        </div>
-                                    </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="dropdown-list-image mr-3">
-                                            <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
-                                            <div class="status-indicator"></div>
-                                        </div>
-                                        <div>
-                                            <div class="text-truncate">I have the photos that you
-                                                ordered last month, how would you like them sent to you?</div>
-                                            <div class="small text-gray-500">Jae Chun · 1d</div>
-                                        </div>
-                                    </a>
                                     <%
 									} else {
 									List<Message> messages = new MessageDAO().showMessage(vo.getNick());
@@ -381,19 +360,30 @@
 
                                     <!-- Illustrations -->
                                     <% List<Feed> feeds = new FeedDAO().totalFeed();%>
+                                    <% String ck = null; // 좋아요 여부 및 로그인 판별%>
+                                    <% String link = "RealLogin.jsp"; // 초기 설정%>
+                                    <% String hart = "♡"; // 초기 설정%>
                                     <% FeedLike fl = null; %>
                                     <% for(Feed i : feeds){ %>
                                     <% if(vo!=null){ %>
                                     <% fl = new FeedLike(i.getFeed_index(), vo.getU_id()); %>
-                                    <%} %>
-
+                                    <% System.out.println(fl.toString()); %>
+                                    <% link = "RealMain.jsp"; // 초기 설정%>
+	                                    <% if(new FeedDAO().whetherlike(fl)){ %>
+	                                    <% ck = "dislikeBtn";%>
+	                                    <% hart = "❤";%>
+										<%}else{ %>
+	                                    <% ck = "likeBtn";%>
+	                                    <% hart = "♡";%>
+										<%} %>
+                                    <%}else{ %>
+                                    <% ck = "login"; %>
+									<%} %>
                                     <div class="card shadow mb-4">
                                         <div class="card-header py-3">
                                             <h6 class="m-0 font-weight-bold text-primary">
                                                 <%
 												String index = i.getF_user_index();
-												%>
-                                                <%
 												Member member = new MemberDAO().login(index);
 												%>
                                                 <%=member.getNick()%>
@@ -415,8 +405,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td rowspan="2"><img alt="" src="img/<%=i.getFeed_file()%>" width="300" height="300" object-fit: cover><br>
-                                                                    <br><%=i.getFeed_content()%></td>
-                                                                    
+                                                                    <br><%=i.getFeed_content()%> <h2><a class=<%=ck %> href=<%=link %>><%=hart %></a></h2><%=i.getF_likecnt() %> </td>
                                                                 <%
 																List<Comment> Comments = new CommentDAO().showComment(i.getFeed_index());
 																%>
@@ -535,6 +524,31 @@
     <script>
         Kakao.init('eefca775da363abc546f57a131ec1863'); //발급받은 키 중 javascript키를 사용해준다.
         console.log(Kakao.isInitialized()); // sdk초기화여부판단
+        
+        $(document).on('click', '.likeBtn', (e) => {
+            // console.log(e);
+        $(e.target).text('♥');
+        // $('.likeBtn+span').text('1');
+		<% new FeedDAO().likeup(fl);%>
+        $(e.target).removeAttr('class');    /// 속성자체
+        $(e.target).attr('class', 'dislikeBtn');
+        });
+        
+        
+        
+        // (2) 좋아요 취소 버튼 클릭 시
+        //     좋아요 취소 -> 좋아요
+        //      1 -> 0
+        //     class="dislikeBtn" -> class="likeBtn"
+        $(document).on('click', '.dislikeBtn', (e) => {
+		<% new FeedDAO().likedown(fl);%>
+        $(e.target).text('♡');
+        // $('.dislikeBtn+span').text('0');
+        <%System.out.println(fl.toString());%>
+
+        $(e.target).removeClass('dislikeBtn'); /// 속성 값만
+        $(e.target).attr('class', 'likeBtn');
+        });
     </script>
 
 </body>

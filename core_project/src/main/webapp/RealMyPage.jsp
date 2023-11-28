@@ -341,8 +341,11 @@
                                                     <tr>
                                                         <td class="border">친구 목록</td>
                                                     </tr>
+                                                    <% List<String> friends = new FriendDAO().All(vo.getU_id());%>
                                                     <tr>
-                                                    	<td> getFriend();</td>
+                                                    <%for(String a : friends){ %>
+                                                    	<td><%=a %></td>
+                                                    <%} %>
                                                     </tr>
                                             </table> 
                                             <table>
