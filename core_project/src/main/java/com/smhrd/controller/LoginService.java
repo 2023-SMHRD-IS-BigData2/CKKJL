@@ -43,7 +43,7 @@ public class LoginService extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("vo", vo);
 		// member로 바꿔놓음
-		response.sendRedirect("./RealMain.jsp");
+		response.sendRedirect("./UpdateUser.jsp");
 
 	}
 

@@ -260,7 +260,7 @@
                                     <img class="img-profile rounded-circle" src="img/undraw_profile.svg"> <%
  } else {
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
-                                    <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
+                                    <img class="img-profile rounded-circle" src="img/<%=vo.getPic()%>">
                                     <%
 									}
 									%></a>
@@ -358,7 +358,7 @@
 
                         <!-- Illustrations -->
 
-                        <form action="./UpdateService" method="post">
+                        <form action="UpdateService" method="post">
                            <div class="card shadow mb-4">
                               <div class="card-header py-3">
                                  <input type="hidden" name="u_id" value="<%=vo.getU_id()%>">
