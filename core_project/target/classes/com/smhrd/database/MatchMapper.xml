@@ -15,10 +15,25 @@
    </select>
    
    <update id="updateMEMA" parameterType="Mercenary_Match">
-      UPDATE TB_MATCH set MM = #{mm} where F_INDEX = #{f_index};
+      UPDATE TB_MATCH set MM = #{mm} where F_INDEX = #{f_index}
    </update>
    
    <!-- 구분선 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
    
+   <insert id="sendMatching" parameterType="Matching">
+   INSERT INTO MATCHING VALUES (M_INDEX.NEXTVAL, 
+   #{writer},#{challenger},#{f_index},#{matching})
+   </insert>
    
+   <select id="allMatching" resultType="Matching">
+   SELECT * FROM MATCHING
+   </select>
+   
+   <update id="sacramentMatching">
+   UPDATE MATCHING set MATCHING = 'O' WHERE M_INDEX = #{m_index}
+   </update>
+   
+   <delete id="delMatching">
+   DELETE from MATCHING WHERE F_INDEX = #{f_index} AND MATCHING = 'X'
+   </delete>
 </mapper>
