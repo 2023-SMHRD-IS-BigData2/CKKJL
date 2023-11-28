@@ -439,6 +439,7 @@ body {
 											<p>팀 선택</p>
 											<p>
 												<select name="team">
+<!-- for문 사용 및 이름 가져오기 -->
 													<option value="1">team1</option>
 													<option value="2">team2</option>
 													<option value="3">team3</option>
