@@ -1,3 +1,4 @@
+<%@page import="java.awt.Window"%>
 <%@page import="com.smhrd.model.IframeDAO"%>
 <%@page import="java.util.Random"%>
 <%@page import="com.smhrd.model.FeedLike"%>
@@ -79,6 +80,7 @@ body {
 
 	<%
 	Member vo = (Member) session.getAttribute("vo");
+    
 	%>
 
 

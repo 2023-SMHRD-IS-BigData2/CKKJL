@@ -1,5 +1,5 @@
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.Mercenary_MatchDAO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.Mercenary_Match"%>
 <%@page import="com.smhrd.model.FeedLike"%>
 <%@page import="com.smhrd.model.Friend"%>
@@ -117,6 +117,8 @@
                         </a></li>
                         </ul>
                         </div>
+                                               
+						
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
 
@@ -274,6 +276,7 @@
 
                     </nav>
                     <!-- 여기부터 복사해요 -->
+
 
                     <!-- 여기부터 복사해요 -->
 
