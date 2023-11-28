@@ -381,6 +381,7 @@
                                     <% for(Feed i : feeds){ %>
                                     <% if(vo!=null){ %>
                                     <% fl = new FeedLike(i.getFeed_index(), vo.getU_id()); %>
+                                    
                                     <% System.out.println(fl.toString()); %>
                                     <% if(new FeedDAO().whetherlike(fl)){ %>
                                     <% ck = "dislikeBtn";%>
@@ -395,6 +396,7 @@
                                     <% ck = "login"; %>
                                     <%} %>
                                     <div class="card shadow mb-4" style="max-width: 5000px;">
+
                                         <div class="card-header py-3">
                                             <h6 class="m-0 font-weight-bold text-primary">
                                                 <%
@@ -467,10 +469,8 @@
                                         </div>
                                     </div>
                                     <!-- //Illustrations -->
-                                    <%
-									}
-									%>
-
+                                   
+<%} %>
 
                                 </div>
                             </div>

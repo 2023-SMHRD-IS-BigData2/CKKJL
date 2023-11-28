@@ -79,10 +79,8 @@ public class FeedDAO {
 		like = selFeedlike(feedlike);
 		
 		if(like != null) {
-			System.out.println("좋아요를 이미 하셨어요!");
 			return true;
 		}else {
-			System.out.println("좋아요를 하지 않으셨어요!!");
 			return false;
 		}
 		
@@ -95,15 +93,17 @@ public class FeedDAO {
 		int like_cnt = 0;
 		
 		send_cnt = sendFeedlike(feedlike);
-		if (send_cnt == 0) {
-			System.out.println("좋아요 입력 실패");
-		}else {
-			like_cnt = updatelikeup(feedlike.getFeed_index());
+		System.out.println(send_cnt);
+		like_cnt = updatelikeup(feedlike.getFeed_index());
+		System.out.println(like_cnt);
+		if (send_cnt != 0) {
+			System.out.println("입력 성공");
+			
 			
 			if (like_cnt != 0) {
-				System.out.println("좋아요 업데이트 성공");
+				System.out.println("좋아요 ekdns 성공");
 			}else {
-				System.out.println("좋아요 업데이트 실패");
+				System.out.println("좋아요 ekdns 실패");
 			}
 		}
 		
@@ -115,15 +115,15 @@ public class FeedDAO {
 		int like_cnt = 0;
 		
 		del_cnt = delFeedlike(feedlike);
-		if (del_cnt == 0) {
+		if (del_cnt != 0) {
 			System.out.println("삭제 성공");
 			
 			like_cnt = updatelikedown(feedlike.getFeed_index());
 			
 			if (like_cnt != 0) {
-				System.out.println("좋아요 업데이트 성공");
+				System.out.println("좋아요 ekdns 성공");
 			}else {
-				System.out.println("좋아요 업데이트 실패");
+				System.out.println("좋아요 ekdns 실패");
 			}
 		}
 	}
@@ -133,7 +133,7 @@ public class FeedDAO {
 		try {
 			cnt = sqlSession.update("com.smhrd.database.FeedMapper.updatelikeup", index);
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}finally {
 			sqlSession.close();
 		}
@@ -145,7 +145,7 @@ public class FeedDAO {
 		try {
 			cnt = sqlSession.update("com.smhrd.database.FeedMapper.updatelikedown", index);
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}finally {
 			sqlSession.close();
 		}
@@ -158,8 +158,6 @@ public class FeedDAO {
 			cnt = sqlSession.insert("com.smhrd.database.FeedMapper.sendFeedlike", feedlike);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
-			sqlSession.close();
 		}
 		return cnt;
 	}
