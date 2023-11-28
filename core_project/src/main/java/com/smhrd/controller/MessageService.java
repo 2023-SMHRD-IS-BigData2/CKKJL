@@ -40,7 +40,7 @@ public class MessageService extends HttpServlet {
          System.out.println("메시지 전송 실패");
       }
       
-      response.sendRedirect("./RealMain.jsp");
+      response.sendRedirect("MessageWrite.jsp");
       
    }
 
