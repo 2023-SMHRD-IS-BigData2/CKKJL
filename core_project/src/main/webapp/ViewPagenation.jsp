@@ -17,88 +17,123 @@
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>FUTSAL 062</title>
-
-    <!-- Custom fonts for this template-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Page</title>
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="path/to/styles.css">
     <style>
+        /* Add your custom styles here */
         body {
-            margin-left: 10px;
-            /* 원하는 여백 값으로 조절하세요 */
+            font-family: 'Nunito', sans-serif;
+        background-color: #f8f9fc;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .calendar-container {
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 200px; /* 왼쪽 마진 추가 */
+        margin-right: 200px; /* 오른쪽 마진 추가 */
+    }
+    .navbar {
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    .navbar img {
+        margin: 10px;
+    }
+
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
         }
 
-        .navbar-nav .nav-link.collapsed {
-            margin-right: 10px;
-            /* Adjust the margin as needed */
+        .pagination a {
+            text-decoration: none;
+            color: #62ac2e;
+            padding: 8px 16px;
+            border-radius: 5px;
+            margin: 0 4px;
+            transition: background-color 0.3s;
         }
 
-        .card.shadow.mb-4 {
-            width: 800px;
-            /* Adjust the width as needed */
+        .pagination a:hover {
+            background-color: #d1e7ff;
         }
 
-        .comment-list {
-            max-height: 200px;
-            /* 최대 높이를 지정합니다. */
-            overflow-y: auto;
+        .pagination a.active {
+            background-color: #62ac2e;
+            color: #fff;
         }
 
-        /* 세로 스크롤을 활성화합니다. */
-
-        .profileimg {
-            border-radius: 40%;
-            object-fit: cover;
-            width: 60px;
-            height: 60px;
+        .calendar-container {
+            text-align: center;
+            margin-top: 20px;
         }
+
+        #calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            
+        }
+
+        #calendar-table th,
+        #calendar-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+
+        #calendar-table a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 2px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        #calendar-table a:hover {
+            background-color: #f2f2f2;
+        }
+        h1 {
+        color: #62ac2e;
+    }
     </style>
-
-
 </head>
 
-<body id="page-top">
-
-
-    <%
+<body>
+ <%
 	Member vo = (Member) session.getAttribute("vo");
 	%>
-
-
-
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
-
-        <!-- Topbar Navbar -->
-        <ul class="navbar-nav ml-auto">
-            <!-- Content Wrapper -->
-            <div id="content-wrapper" class="d-flex flex-column">
-
-                <!-- Main Content -->
-                <div id="content">
-
-                    <!-- Topbar -->
-                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                        <!-- Sidebar Toggle (Topbar) -->
-                        <div>
-                            <a href="RealMain.jsp"><img src="img/futsal062.png" alt="" width="200" height="40"></a>
-                        </div>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <div>
+            <a href="RealMain.jsp"><img src="img/futsal062.png" alt="" width="200" height="40"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto"> <!-- mx-auto 클래스를 사용하여 수평 가운데 정렬 -->
                         <li class="nav-item">                  
 						<a class="nav-link collapsed" href=<%if (vo != null) {%>"RealMyPage.jsp"<%} else{%>"RealLogin.jsp"<% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">My Page</button></span>
@@ -114,28 +149,7 @@
                         </a></li>
                         </ul>
                         </div>
-                        <!-- Topbar Navbar -->
-                        <ul class="navbar-nav ml-auto">
-
-                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                            <li class="nav-item dropdown no-arrow d-sm-none"><a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-search fa-fw"></i>
-                                </a> <!-- Dropdown - Messages -->
-                                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                                    <form class="form-inline mr-auto w-100 navbar-search">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" type="button">
-                                                    <i class="fas fa-search fa-sm"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </li>
-
-
-                            <!-- Nav Item - Alerts -->
+     <!-- Nav Item - Alerts -->
                             <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
 
 
@@ -193,9 +207,30 @@
                                         Message Center
                                         <!-- 문자 찾기 -->
                                     </h6>
-                                   <%
+                                    <%
 									if (vo == null) {
 									%>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="dropdown-list-image mr-3">
+                                            <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                            <div class="status-indicator bg-success"></div>
+                                        </div>
+                                        <div class="font-weight-bold">
+                                            <div class="text-truncate">Hi there! I am wondering if
+                                                you can help me with a problem I've been having.</div>
+                                            <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                        </div>
+                                    </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="dropdown-list-image mr-3">
+                                            <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                                            <div class="status-indicator"></div>
+                                        </div>
+                                        <div>
+                                            <div class="text-truncate">I have the photos that you
+                                                ordered last month, how would you like them sent to you?</div>
+                                            <div class="small text-gray-500">Jae Chun · 1d</div>
+                                        </div>
+                                    </a>
                                     <%
 									} else {
 									List<Message> messages = new MessageDAO().showMessage(vo.getNick());
@@ -207,7 +242,7 @@
 										for (int i = 0; i < 3; i++) {
 											System.out.println(messages.get(i).getSender());
 									%>
-									
+
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="dropdown-list-image mr-3">
                                             <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
@@ -261,261 +296,125 @@
 
 
                     </nav>
-                    <!-- 여기부터 복사해요 -->
+    <!-- Your existing navigation bar code here -->
 
-                    <!-- End of Topbar -->
-                    <section>
-                        <div class="container button-container">
-                            <!-- 고정시켜야됨 -->
+    
 
+    <!-- Calendar Container -->
+    <div class="calendar-container">
+        <h1>⚽ 원하시는 날짜를 선택해주세요 ⚽</h1>
+        <!-- Pagination -->
+    <div class="pagination" id="pagination"></div>
 
+        <table id="calendar-table">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="calendar-body"></tbody>
+        </table>
+    </div>
 
+    <!-- Pagination Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const calendarContainer = document.querySelector(".calendar-container");
+            const calendarBody = document.getElementById("calendar-body");
+            const paginationContainer = document.getElementById("pagination");
 
+            let currentMonth = new Date().getMonth() + 1; // 현재 월 (1-12)
+            let currentYear = new Date().getFullYear();
 
-                        </div>
-                </div>
-                </section>
+            function generateCalendar(month, year) {
+                calendarBody.innerHTML = "";
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+                // 월의 첫째 날 가져오기
+                const firstDay = new Date(year, month - 1, 1).getDay();
 
-                    <!-- Page Heading -->
+                // 월의 마지막 날 가져오기
+                const lastDay = new Date(year, month, 0).getDate();
 
-                    <!-- Content Row -->
-                    <div class="row">
+                let dateCounter = 1;
 
+                for (let i = 0; i < 5; i++) {
+                    const row = document.createElement("tr");
 
+                    for (let j = 0; j < 7; j++) {
+                        const cell = document.createElement("td");
+                        const dayLink = document.createElement("a");
 
+                        if (i === 0 && j < firstDay) {
+                            // 첫째 날 이전의 빈 셀 추가
+                        	dayLink.textContent = "";
+                        } else if (dateCounter <= lastDay) {
+                            // 캘린더에 날짜 추가
+                            
+                            dayLink.href = "#";
+                            dayLink.textContent = dateCounter;
 
-
-                        <!-- Earnings (Monthly) Card Example -->
-
-
-
-
-                        <!-- Content Row -->
-
-
-                        <div class="row">
-
-
-                            <!-- Area Chart -->
-                            <div class="col-xl-8 col-lg-7">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5"></div>
-
-
-                        <!-- Content Row -->
-                        <div class="row">
-
-                            <!-- Content Column -->
-                            <div class="col-lg-6 mb-4">
-
-                                <!-- Project Card Example -->
-
-
-                                <!-- Color System -->
-                                <div class="row"></div>
-                            </div>
-
-                        </div>
-
-                        <div class="calendar-container">
-                            <h1 class="h3 mb-4 text-gray-800">⚽ 원하시는 날짜를 선택해주세요 ⚽</h1>
-
-                            <!-- Illustrations -->
-
-                            <div class="pagination" id="pagination"></div>
-
-                            <table id="calendar-table">
-                                <thead>
-                                    <tr>
-                                        <th>Sun</th>
-                                        <th>Mon</th>
-                                        <th>Tue</th>
-                                        <th>Wed</th>
-                                        <th>Thu</th>
-                                        <th>Fri</th>
-                                        <th>Sat</th>
-                                    </tr>
-
-
-                                </thead>
-                                <tbody id="calendar-body"></tbody>
-
-
-                            </table>
-                        </div>
-
-                        <script>
-                            document.addEventListener("DOMContentLoaded", function() {
-                                const calendarContainer = document.querySelector(".calendar-container");
-                                const calendarBody = document.getElementById("calendar-body");
-                                const paginationContainer = document.getElementById("pagination");
-
-                                let currentMonth = new Date().getMonth() + 1; // Current month (1-12)
-                                let currentYear = new Date().getFullYear();
-
-                                function generateCalendar(month, year) {
-                                    calendarBody.innerHTML = "";
-
-                                    const firstDay = new Date(year, month - 1, 1).getDay();
-                                    const daysInMonth = new Date(year, month, 0).getDate();
-
-                                    let dayCount = 1;
-
-                                    for (let i = 0; i < 5; i++) {
-                                        const row = document.createElement("tr");
-
-                                        for (let j = 0; j < 7; j++) {
-                                            const cell = document.createElement("td");
-                                            const dayLink = document.createElement("a");
-
-                                            if (i === 0 && j < firstDay) {
-                                                // Empty cells before the first day
-                                                dayLink.textContent = "";
-                                            } else if (dayCount <= daysInMonth) {
-                                                // Fill in the days
-                                                dayLink.textContent = dayCount;
-                                                dayLink.href = `ViewMatch.jsp?date=${year}.${month}.${dayCount}`;
-                                                if (month === 11 && dayCount >= 19 && dayCount <= 30) {
+                            // 각 날짜를 처리하는 논리를 여기에 추가하세요
+                            // 필요한 경우 클릭 이벤트를 추가하거나 필요에 맞게 사용자 지정하세요
+                            dayLink.href = `ViewMatch.jsp?date=${year}.${month}.${dateCounter}`;
+                                                if (month === 11 && dateCounter >= 19 && dateCounter <= 30) {
                                                     dayLink.classList.add("bold");
                                                 }
-                                                
-                                                dayCount++;
-                                            }
 
+                            
+                            dateCounter++;
+                        }
 
-                                            cell.appendChild(dayLink);
-                                            row.appendChild(cell);
-                                        }
+                        cell.appendChild(dayLink);
+                        row.appendChild(cell);
+                    }
 
-                                        calendarBody.appendChild(row);
-                                    }
-                                }
-                                
+                    calendarBody.appendChild(row);
+                }
+            }
 
-                                function displayPagination() {
-                                    paginationContainer.innerHTML = "";
+            function displayPagination() {
+                paginationContainer.innerHTML = "";
 
-                                    for (let i = 1; i <= 12; i++) {
-                                        const pageLink = document.createElement("a");
-                                        pageLink.href = "#";
-                                        pageLink.textContent = i;
+                for (let i = 1; i <= 12; i++) {
+                    const pageLink = document.createElement("a");
+                    pageLink.href = "#";
+                    pageLink.textContent = i;
 
-                                        pageLink.addEventListener("click", function() {
-                                            currentMonth = i;
-                                            generateCalendar(currentMonth, currentYear);
-                                            highlightActivePage(i);
-                                        });
+                    pageLink.addEventListener("click", function () {
+                        currentMonth = i;
+                        generateCalendar(currentMonth, currentYear);
+                        highlightActivePage(i);
+                    });
 
-                                        paginationContainer.appendChild(pageLink);
-                                    }
+                    paginationContainer.appendChild(pageLink);
+                }
 
-                                    // Highlight the current month initially
-                                    highlightActivePage(currentMonth);
-                                }
+                // 초기에 현재 월을 강조합니다.
+                highlightActivePage(currentMonth);
+            }
 
-                                function highlightActivePage(month) {
-                                    const paginationLinks = document.querySelectorAll(".pagination a");
-                                    paginationLinks.forEach(link => link.classList.remove("active"));
+            function highlightActivePage(month) {
+                const paginationLinks = document.querySelectorAll(".pagination a");
+                paginationLinks.forEach(link => link.classList.remove("active"));
 
-                                    const activeLink = document.querySelector(`.pagination a:nth-child(${month})`);
-                                    if (activeLink) {
-                                        activeLink.classList.add("active");
-                                    }
-                                }
+                const activeLink = document.querySelector(`.pagination a:nth-child(${month})`);
+                if (activeLink) {
+                    activeLink.classList.add("active");
+                }
+            }
 
-                                // Initial display
-                                generateCalendar(currentMonth, currentYear);
-                                displayPagination();
+            // 초기 표시
+            generateCalendar(currentMonth, currentYear);
+            displayPagination();
 
-                            });
-                        </script>
-                        <form action="ViewMatch.jsp">
-                        	<input type="hidden" name="date" value="${year}.${month}.${dayCount}">
-                        </form>
-
-
-                    </div>
-
-
-                    <!-- Approach -->
-
-
-
-                </div>
-            </div>
-
-    </div>
-    <!-- /.container-fluid -->
-
-    </div>
-    <!-- End of Main Content -->
-
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; FUTSAL062</span>
-            </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top"> <i class="fas fa-angle-up"></i>
-    </a>
-
-     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">나가시겠습니까?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                </div>
-                <div class="modal-body">로그인 버튼을 누르시면 로그아웃 됩니다.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
-                    <a class="btn btn-primary" href="LogoutService">로그아웃</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-
+        });
+    </script>
 </body>
 
 </html>
