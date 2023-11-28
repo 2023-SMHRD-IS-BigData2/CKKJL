@@ -17,5 +17,8 @@
    <update id="updateMEMA" parameterType="Mercenary_Match">
       UPDATE TB_MATCH set MM = #{mm} where F_INDEX = #{f_index};
    </update>
-
+   
+   <!-- 구분선 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+   
+   
 </mapper>
