@@ -365,16 +365,18 @@
                                     <% String hart = "♡"; // 초기 설정%>
                                     <% FeedLike fl = null; %>
                                     <% for(Feed i : feeds){ %>
+                                    <% // link = "likeService?check=2&num="+i.getFeed_index(); // 초기 설정%>
                                     <% if(vo!=null){ %>
                                     <% fl = new FeedLike(i.getFeed_index(), vo.getU_id()); %>
                                     <% System.out.println(fl.toString()); %>
-                                    <% link = "RealMain.jsp"; // 초기 설정%>
 	                                    <% if(new FeedDAO().whetherlike(fl)){ %>
 	                                    <% ck = "dislikeBtn";%>
 	                                    <% hart = "❤";%>
+	                                    <% link = "likeService?check=1&num="+i.getFeed_index(); %>
 										<%}else{ %>
 	                                    <% ck = "likeBtn";%>
 	                                    <% hart = "♡";%>
+	                                    <% link = "likeService?check=2&num="+i.getFeed_index(); %>
 										<%} %>
                                     <%}else{ %>
                                     <% ck = "login"; %>
@@ -525,7 +527,7 @@
         Kakao.init('eefca775da363abc546f57a131ec1863'); //발급받은 키 중 javascript키를 사용해준다.
         console.log(Kakao.isInitialized()); // sdk초기화여부판단
         
-        $(document).on('click', '.likeBtn', (e) => {
+<%--         $(document).on('click', '.likeBtn', (e) => {
             // console.log(e);
         $(e.target).text('♥');
         // $('.likeBtn+span').text('1');
@@ -548,7 +550,7 @@
 
         $(e.target).removeClass('dislikeBtn'); /// 속성 값만
         $(e.target).attr('class', 'likeBtn');
-        });
+        }); --%>
     </script>
 
 </body>
