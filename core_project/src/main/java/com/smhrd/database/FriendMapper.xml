@@ -41,18 +41,12 @@
 		DELETE FROM TB_FRIEND WHERE
 		APPLICANT = #{applicant} AND ACCEPTOR = #{acceptor}
 	</delete>
-<<<<<<< HEAD
+
 
 	<!-- 친구 목록 -->
 	<select id="All" resultType="Friend" parameterType="String">
 		select * from TB_FRIEND where ACCEPTOR = #{ACCEPTOR} and match='O'
 	</select>
 
-=======
-	
-	<select id="All" resultType="String" parameterType="String">
-         select APP_NICK from TB_FRIEND where ACCEPTOR = #{ACCEPTOR} and match='O'
-   </select>
-	
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
+
 </mapper>

@@ -23,11 +23,12 @@ public class UpdateService extends HttpServlet {
       String nick = request.getParameter("nick");
       String intro = request.getParameter("intro");
       String pic = request.getParameter("pic");
-      System.out.println(u_id + "+" + nick + "+" + intro + "+" + pic);
+      int team = Integer.parseInt(request.getParameter("team"));
       // 3. Member객체 생성
       Member updateMember = new Member(u_id, nick, pic);
 
       updateMember.setIntro(intro);
+      updateMember.setTeam_index(team);
 
       // 4. DAO에 있는 updateMember() 호출 -> 정수데이터 반환
       int cnt = new MemberDAO().updateMember(updateMember);

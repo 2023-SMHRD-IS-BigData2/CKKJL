@@ -48,7 +48,7 @@ public class MatchService extends HttpServlet {
       }
       
       
-      response.sendRedirect("ViewMatch.jsp");
+      response.sendRedirect("ViewMatch.jsp?date="+matchDay);
    
    
    }
