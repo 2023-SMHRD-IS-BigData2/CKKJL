@@ -6,10 +6,10 @@
 <mapper namespace="com.smhrd.database.TeamMapper">
    
    <select id="selTeam" resultType="Team">
-      SELECT * FROM TB_TEAM_INFO WHERE T_INDEX=#{t_index}
+      SELECT * FROM TB_TEAM_INFO WHERE T_INDEX=#{index}
    </select>
    
-   <update id="updateTeam" parameterType="Team">
+   <update id="updateTeamSum" parameterType="Team">
       UPDATE TB_TEAM_INFO SET 
       T_ESTNUM=(T_ESTNUM+1), E_TIME=(E_TIME+#{e_time}),E_LEVEL=(E_LEVEL+#{e_level}),
       E_MONEY=(E_MONEY+#{e_money}), E_MANNER=(E_MANNER+#{e_manner}), E_RESPON=(E_RESPON+#{e_respon})
