@@ -150,7 +150,7 @@ fieldset {
       <textarea placeholder="보낼 메세지를 입력하세요"  name="message" tabindex="5" required></textarea>
     </fieldset>
     <fieldset>
-      <button   name="submit" type="submit" id="contact-submit"  data-submit="...Sending">문자 전화</button>
+      <button   name="submit" type="submit" id="contact-submit"  data-submit="...Sending">문자 전송</button>
     </fieldset>
   </form>
  
