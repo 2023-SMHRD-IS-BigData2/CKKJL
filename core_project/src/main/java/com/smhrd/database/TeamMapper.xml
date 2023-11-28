@@ -5,12 +5,15 @@
   
 <mapper namespace="com.smhrd.database.TeamMapper">
    
-   <select id="allMEMAdate" resultType="Mercenary_Match">
-      SELECT * FROM TB_MATCH WHERE m_date in #{date}
+   <select id="selTeam" resultType="Team">
+      SELECT * FROM TB_TEAM_INFO WHERE T_INDEX=#{t_index}
    </select>
    
-   <update id="updateMEMA" parameterType="Mercenary_Match">
-      UPDATE TB_MATCH set MM = #{mm} where F_INDEX = #{f_index};
+   <update id="updateTeam" parameterType="Team">
+      UPDATE TB_TEAM_INFO SET 
+      T_ESTNUM=(T_ESTNUM+1), E_TIME=(E_TIME+#{e_time}),E_LEVEL=(E_LEVEL+#{e_level}),
+      E_MONEY=(E_MONEY+#{e_money}), E_MANNER=(E_MANNER+#{e_manner}), E_RESPON=(E_RESPON+#{e_respon})
+      WHERE T_INDEX=#{t_index}
    </update>
 
 </mapper>
