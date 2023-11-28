@@ -26,16 +26,12 @@ public class likeService extends HttpServlet {
 		
 		switch (ck) {
 		case 1:
-			System.out.println("이미 좋아요를 하셨네요!");
 			new FeedDAO().likedown(fl);
-			
 			break;
 		case 2:
-			System.out.println("좋아요를 아직 안 하셨네요!");
 			new FeedDAO().likeup(fl);
 			
 			break;
-
 		default:
 			System.out.println("이거는 뭐죠?!");
 			break;

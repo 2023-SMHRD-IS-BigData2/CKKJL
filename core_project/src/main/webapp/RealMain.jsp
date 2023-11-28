@@ -364,10 +364,8 @@
                                     <% String hart = "♡"; // 초기 설정%>
                                     <% FeedLike fl = null; %>
                                     <% for(Feed i : feeds){ %>
-                                    <% // link = "likeService?check=2&num="+i.getFeed_index(); // 초기 설정%>
                                     <% if(vo!=null){ %>
                                     <% fl = new FeedLike(i.getFeed_index(), vo.getU_id()); %>
-                                    <% System.out.println(fl.toString()); %>
 	                                    <% if(new FeedDAO().whetherlike(fl)){ %>
 	                                    <% ck = "dislikeBtn";%>
 	                                    <% hart = "❤";%>
