@@ -49,11 +49,24 @@ public class MatchingDAO {
 		return cnt;
 	}
 	
-	public int delMatching(int f_index) {
+	public int delAllMatching(int f_index) {
 		int cnt = 0;
 		SqlSession sqlSession = sqlsessionFactory.openSession(true);
 		try {
-			cnt = sqlSession.insert("com.smhrd.database.MatchMapper.sacramentMatching", f_index);
+			cnt = sqlSession.insert("com.smhrd.database.MatchMapper.delAllMatching", f_index);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
+	
+	public int delMatching(int m_index) {
+		int cnt = 0;
+		SqlSession sqlSession = sqlsessionFactory.openSession(true);
+		try {
+			cnt = sqlSession.insert("com.smhrd.database.MatchMapper.delMatching", m_index);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
