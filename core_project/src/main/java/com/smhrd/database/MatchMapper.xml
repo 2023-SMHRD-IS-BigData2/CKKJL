@@ -33,7 +33,11 @@
    UPDATE MATCHING set MATCHING = 'O' WHERE M_INDEX = #{m_index}
    </update>
    
-   <delete id="delMatching">
+   <delete id="delAllMatching">
    DELETE from MATCHING WHERE F_INDEX = #{f_index} AND MATCHING = 'X'
+   </delete>
+   
+   <delete id="delMatching">
+   DELETE from MATCHING WHERE M_INDEX = #{m_index} AND MATCHING = 'X'
    </delete>
 </mapper>
