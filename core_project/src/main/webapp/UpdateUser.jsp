@@ -379,8 +379,7 @@
                                  <p>프로필 사진</p>
                                  <p>
                                     <input type="file" id="input-file" className="btnOfinput"
-                                       name="pic"> <img src="<%=vo.getPic()%>" alt="사진"
-                                       width="60" height="60"> <label for="input-file"
+                                       name="pic">  <label for="input-file"
                                        style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold; font-size: 20px; padding: 3px 5px;">업로드</label>
 
                                  </p>
