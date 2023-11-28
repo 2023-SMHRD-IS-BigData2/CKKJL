@@ -326,8 +326,8 @@
                                                     <img class="rounded-circle mr-3" src="img/로그인 풋살사진.jpg" alt="프로필 사진" width="50" height="50">
                                                 </div>
                                                 <div class="col">
-                                                    <h6 class="m-0 font-weight-bold text-primary">My Profile</h6>
-                                                    <small>광주 풋살 대장 발흥민</small>
+                                                    <h3 class="m-0 font-weight-bold text-primary">My Profile</h3>
+                                                    <h5><%=vo.getIntro() %></h5>
                                                 </div>
                                             </div>
                                         </div>
