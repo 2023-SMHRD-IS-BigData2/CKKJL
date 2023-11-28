@@ -98,23 +98,24 @@
                             <a href="RealMain.jsp"><img src="img/futsal062.png" alt="" width="200" height="40"></a>
                         </div>
                         </button>
-                        <!-- Topbar Search -->
-                        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                            <div class="input-group">
-                                <div class="input-group-append">
-                                    <button class="search " type="button">
-                                        <i class="fas fa-search fa-sm"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            </div>
-                        </form>
-                                               
-						<a class="nav-link collapsed" href=<%if (vo != null) {%>"RealMyPage.jsp"<%} else{%>"RealLogin.jsp"<% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">My Page</button></span>
-                        </a> <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealFeedWrite.jsp"<%} else {%> "RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">피드 작성</button></span>
-                        </a> <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealPagenation.jsp"<%} else {%>"RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">매칭용병 등록</button></span>
-                        </a> <a class="nav-link collapsed" href="ViewPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span><button class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
-                        </a>
+                        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto"> <!-- mx-auto 클래스를 사용하여 수평 가운데 정렬 -->
+                        <li class="nav-item">                  
+						<a class="nav-link collapsed" href=<%if (vo != null) {%>"RealMyPage.jsp"<%} else{%>"RealLogin.jsp"<% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">My Page</button></span>
+                        </a></li>
+                        <li class="nav-item">  
+                        <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealFeedWrite.jsp"<%} else {%> "RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">피드 작성</button></span>
+                        </a></li>
+                        <li class="nav-item">   
+                        <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealPagenation.jsp"<%} else {%>"RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">매칭용병 등록</button></span>
+                        </a></li>
+                        <li class="nav-item"> 
+                        <a class="nav-link collapsed" href="ViewPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
+                        </a></li>
+                        </ul>
+                        </div>
+                         
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
 
@@ -361,14 +362,14 @@
                                 <div class="card shadow mb-4">
                                     <div class="card-header py-3">
                                         <form action="./FeedService" method="post" enctype="multipart/form-data">
-                                            <p>타이틀</p>
-                                            <p>
+                                            <p align="center">타이틀</p>
+                                            <p align="center">
                                                 <input type="text" name="title">
                                             </p>
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body" align="center">
                                         <div class="text-center"></div>
-                                        <p colspan="2">내용</p>
+                                        <p colspan="2" align="center">내용</p>
                                         <br>
                                         <p colspan="2"></p>
 
@@ -379,7 +380,7 @@
                                                 <tr>
                                                     <td colspan="2">
                                                         <input type="file" id="input-file" className="btnOfinput" name="filename" />
-                                                        <label for="input-file" style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold; font-size: 20px; padding: 3px 5px;">업로드</label>
+                                                        <label for="input-file" style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold; font-size: 18px; padding: 1px 10px;">사진업로드</label>
 
                                                         <input type="submit" value="작성하기" style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold">
                                                         <input type="reset" value="초기화" style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold">
