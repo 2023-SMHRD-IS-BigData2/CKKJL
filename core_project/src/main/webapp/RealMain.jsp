@@ -48,7 +48,7 @@
         }
 
         .card.shadow.mb-4 {
-            width: 800px;
+            width: 1000px;
             /* Adjust the width as needed */
         }
 
@@ -65,6 +65,8 @@
             object-fit: cover;
             width: 60px;
             height: 60px;
+        }
+
         }
     </style>
 
@@ -101,20 +103,21 @@
                         </div>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto"> <!-- mx-auto 클래스를 사용하여 수평 가운데 정렬 -->
-                        <li class="nav-item">                  
-						<a class="nav-link collapsed" href=<%if (vo != null) {%>"RealMyPage.jsp"<%} else{%>"RealLogin.jsp"<% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">My Page</button></span>
-                        </a></li>
-                        <li class="nav-item">  
-                        <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealFeedWrite.jsp"<%} else {%> "RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">피드 작성</button></span>
-                        </a></li>
-                        <li class="nav-item">   
-                        <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealPagenation.jsp"<%} else {%>"RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">매칭용병 등록</button></span>
-                        </a></li>
-                        <li class="nav-item"> 
-                        <a class="nav-link collapsed" href="ViewPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
-                        </a></li>
-                        </ul>
+                            <ul class="navbar-nav mx-auto">
+                                <!-- mx-auto 클래스를 사용하여 수평 가운데 정렬 -->
+                                <li class="nav-item">
+                                    <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealMyPage.jsp"<%} else{%>"RealLogin.jsp"<% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">My Page</button></span>
+                                    </a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealFeedWrite.jsp"<%} else {%> "RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">피드 작성</button></span>
+                                    </a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealPagenation.jsp"<%} else {%>"RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">매칭용병 등록</button></span>
+                                    </a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link collapsed" href="ViewPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
+                                    </a></li>
+                            </ul>
                         </div>
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
@@ -155,26 +158,26 @@
 													
 										%>
 
-										<a class="dropdown-item d-flex align-items-center" href="#">
-										<div class="mr-3">
-											<div class="icon-circle bg-primary">
-												<img class="profileimg" src="<%=friends.get(i).getApp_pic()%>">
-											</div>
-										</div>
-										<div>
-											<div class="small text-gray-500"><%=friends.get(i).getApp_nick()%>님이
-												친구 요청을 했습니다.
-											</div>
-											<span class="font-weight-bold"> 
-											<a href="FriendService2?id2=<%=friends.get(i).getApplicant()%>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="mr-3">
+                                            <div class="icon-circle bg-primary">
+                                                <img class="profileimg" src="<%=friends.get(i).getApp_pic()%>">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="small text-gray-500"><%=friends.get(i).getApp_nick()%>님이
+                                                친구 요청을 했습니다.
+                                            </div>
+                                            <span class="font-weight-bold">
+                                                <a href="FriendService2?id2=<%=friends.get(i).getApplicant()%>
 											&nick2=<%=friends.get(i).getApp_nick()%>&pic2=<%=friends.get(i).getApp_pic()%>">
-											<input id="acc2" type="button" value="수락"></a> 
-											<a href="FriendService3?id3=<%=friends.get(i).getApplicant()%>
+                                                    <input id="acc2" type="button" value="수락"></a>
+                                                <a href="FriendService3?id3=<%=friends.get(i).getApplicant()%>
 											&nick3=<%=friends.get(i).getApp_nick()%>&pic3=<%=friends.get(i).getApp_pic()%>">
-											<input id="acc3"
-												type="button" value="거절"></a>
-											</span>
-										</div></a> <%
+                                                    <input id="acc3" type="button" value="거절"></a>
+                                            </span>
+                                        </div>
+                                    </a> <%
 
  }
  }
@@ -195,6 +198,17 @@
                                         Message Center
                                         <!-- 문자 찾기 -->
                                     </h6>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="dropdown-list-image mr-3">
+                                            <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                            <div class="status-indicator bg-success"></div>
+                                        </div>
+                                        <div class="font-weight-bold">
+                                            <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                                problem I've been having.</div>
+                                            <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                        </div>
+                                    </a>
                                     <%
 									if (vo == null) {
 									%>
@@ -221,14 +235,14 @@
                                                 ·
                                                 <%=messages.get(i).getM_date()%></div>
                                         </div>
-                                    </a>
 
-                                    <%
+
+                                        <%
 									}
 									}
 									}
 									%>
-                                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                                        <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                                 </div>
                             </li>
                             <div class="topbar-divider d-none d-sm-block"></div>
@@ -240,26 +254,26 @@
                                     <img class="img-profile rounded-circle" src="img/undraw_profile.svg"> <%
  } else {
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
-                                    <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
+                                    <img class="img-profile rounded-circle" src="img/<%=vo.getPic()%>">
                                     <%
 									}
 									%></a>
-									 <!-- Dropdown - User Information -->
-									 
-									
+                                <!-- Dropdown - User Information -->
+
+
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                 <% if(vo == null) { %>
+                                    <% if(vo == null) { %>
                                     <a class="dropdown-item" href="RealLogin.jsp"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> 로그인
-                                   </a> <% } else { %>
-                                     <a class="dropdown-item" href="UpdateUser.jsp"> <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    </a> <% } else { %>
+                                    <a class="dropdown-item" href="UpdateUser.jsp"> <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                         정보변경
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        로그아웃 
-                                    </a> <%} %> 
-                                </div> 
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            로그아웃
+                                        </a> <%} %>
+                                </div>
                             </li>
-									
-                        </ul> 
+
+                        </ul>
 
 
                     </nav>
@@ -296,18 +310,18 @@
 
 
                             <!-- Area Chart -->
-                            
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
+
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
 
 
-                                    <!-- End of Footer -->
+                                <!-- End of Footer -->
 
 
-                                </div>
+                            </div>
 
 
-                            
+
 
                             <!-- Pie Chart -->
                             <div class="col-xl-4 col-lg-5"></div>
@@ -315,32 +329,33 @@
 
                             <!-- Content Row -->
                             <div class="row">
-                            <table class="futsal-class"> <h1 class="h3 mb-4 text-gray-800"> 풋살 강좌</h1>
-        <!--caption : 표의 제목-->
-        
-        <!--thead : Header에 들어가 Content를 모아놓은 태그-->
-        <thead>
-           <!--tr : table row 행을 의미하는 태그-->
-           <tr align="center">
-              <!--th : table header 행의 제목을 의미하는 태그-->
-              
-             
-                    
-						<% Random random = new Random(); 
+                                <table class="futsal-class">
+                                    <h1 class="h3 mb-4 text-gray-800"> 풋살 강좌</h1>
+                                    <!--caption : 표의 제목-->
+
+                                    <!--thead : Header에 들어가 Content를 모아놓은 태그-->
+                                    <thead>
+                                        <!--tr : table row 행을 의미하는 태그-->
+                                        <tr align="center">
+                                            <!--th : table header 행의 제목을 의미하는 태그-->
+
+
+
+                                            <% Random random = new Random(); 
 						for (int i=0; i<3;i++){							
 							int j = random.nextInt(99);
 							String address = new IframeDAO().Load(j);%>
-							<th width="300" height="400"><%=address %></th>
-						
-						<% 	
+                                            <th width="300" height="400"><%=address %></th>
+
+                                            <% 	
 						}
 						%>
-                       
-                          
-           </tr>
-        </thead>
-     </table>
-						
+
+
+                                        </tr>
+                                    </thead>
+                                </table>
+
                                 <!-- Content Column -->
                                 <div class="col-lg-6 mb-4">
 
@@ -366,19 +381,22 @@
                                     <% for(Feed i : feeds){ %>
                                     <% if(vo!=null){ %>
                                     <% fl = new FeedLike(i.getFeed_index(), vo.getU_id()); %>
-	                                    <% if(new FeedDAO().whetherlike(fl)){ %>
-	                                    <% ck = "dislikeBtn";%>
-	                                    <% hart = "❤";%>
-	                                    <% link = "likeService?check=1&num="+i.getFeed_index(); %>
-										<%}else{ %>
-	                                    <% ck = "likeBtn";%>
-	                                    <% hart = "♡";%>
-	                                    <% link = "likeService?check=2&num="+i.getFeed_index(); %>
-										<%} %>
+                                    
+                                    <% System.out.println(fl.toString()); %>
+                                    <% if(new FeedDAO().whetherlike(fl)){ %>
+                                    <% ck = "dislikeBtn";%>
+                                    <% hart = "♥";%>
+                                    <% link = "likeService?check=1&num="+i.getFeed_index(); %>
+                                    <%}else{ %>
+                                    <% ck = "likeBtn";%>
+                                    <% hart = "♡";%>
+                                    <% link = "likeService?check=2&num="+i.getFeed_index(); %>
+                                    <%} %>
                                     <%}else{ %>
                                     <% ck = "login"; %>
-									<%} %>
-                                    <div class="card shadow mb-4">
+                                    <%} %>
+                                    <div class="card shadow mb-4" style="max-width: 5000px;">
+
                                         <div class="card-header py-3">
                                             <h6 class="m-0 font-weight-bold text-primary">
                                                 <%
@@ -394,7 +412,7 @@
                                         <div class="card-body">
                                             <div class="container-fluid">
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered" id="dataTable" style="width: 700px;" cellspacing="0">
+                                                    <table class="table table-bordered" id="dataTable" style="width: 100%;" cellspacing="0">
                                                         <thead>
                                                             <tr>
                                                                 <th class="text-center">피드</th>
@@ -403,22 +421,20 @@
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td rowspan="2"><img alt="" src="img/<%=i.getFeed_file()%>" width="300" height="300" object-fit: cover><br>
-                                                                    <br><%=i.getFeed_content()%> <h2><a class=<%=ck %> href=<%=link %>><%=hart %></a></h2><%=i.getF_likecnt() %> </td>
+                                                                <td rowspan="2"><img alt="" src="img/<%=i.getFeed_file()%>" width="300" height="300" object-fit: cover ><br>
+                                                                    <br><%=i.getFeed_content()%> <h4><a class=<%=ck %> href=<%=link %> style="margin-right:5px;"><%=hart %></a><%=i.getF_likecnt() %></h4>
+                                                                </td>
                                                                 <%
 																List<Comment> Comments = new CommentDAO().showComment(i.getFeed_index());
 																%>
-                                                                <td>
+                                                                <td style="height:270px;">
                                                                     <%
 																	for (int j = 0; j < Comments.size(); j++) {
 																	%>
                                                                     <ul class="comment-list">
                                                                         <li><strong><%=Comments.get(j).getC_NAME()%></strong>
                                                                             <br><%=Comments.get(j).getC_COMMENT()%></li>
-                                                                            
-                                                                    </ul> <%
- }
- %>
+                                                                    </ul> <%}%>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -431,10 +447,10 @@
                                                                 <td>
                                                                     <div class="comment-form">
                                                                         <form id="commentForm" action="CommentService">
-                                                                            <input type="hidden" name="F_INDEX" value="<%=i.getFeed_index()%>"> <input type="hidden" name="C_NAME" value="<%=vo.getNick()%>"> 
+                                                                            <input type="hidden" name="F_INDEX" value="<%=i.getFeed_index()%>"> <input type="hidden" name="C_NAME" value="<%=vo.getNick()%>">
                                                                             <%if(vo!=null){ %>
-                                                                            <label for="comment">댓글 입력</label>
-                                                                            <textarea id="comment" name="C_COMMENT" rows="4" cols="50" required></textarea>
+                                                                            
+                                                                            <textarea id="comment" name="C_COMMENT" rows="4" cols="50" placeholder="댓글을 입력하세요" required style="resize: none;";"></textarea>
                                                                             <br> <input type="submit" value="댓글 전송">
                                                                             <%} else{ %>
                                                                             <p>로그인 후에 이용할 수 있습니다.</p>
@@ -453,10 +469,8 @@
                                         </div>
                                     </div>
                                     <!-- //Illustrations -->
-                                    <%
-									}
-									%>
-
+                                   
+<%} %>
 
                                 </div>
                             </div>
@@ -523,31 +537,36 @@
     <script>
         Kakao.init('eefca775da363abc546f57a131ec1863'); //발급받은 키 중 javascript키를 사용해준다.
         console.log(Kakao.isInitialized()); // sdk초기화여부판단
-        
-<%--         $(document).on('click', '.likeBtn', (e) => {
+
+        <
+        % --$(document).on('click', '.likeBtn', (e) => {
             // console.log(e);
-        $(e.target).text('♥');
-        // $('.likeBtn+span').text('1');
-		<% new FeedDAO().likeup(fl);%>
-        $(e.target).removeAttr('class');    /// 속성자체
-        $(e.target).attr('class', 'dislikeBtn');
+            $(e.target).text('♥');
+            // $('.likeBtn+span').text('1');
+            <
+            % new FeedDAO().likeup(fl); % >
+            $(e.target).removeAttr('class'); /// 속성자체
+            $(e.target).attr('class', 'dislikeBtn');
         });
-        
-        
-        
+
+
+
         // (2) 좋아요 취소 버튼 클릭 시
         //     좋아요 취소 -> 좋아요
         //      1 -> 0
         //     class="dislikeBtn" -> class="likeBtn"
         $(document).on('click', '.dislikeBtn', (e) => {
-		<% new FeedDAO().likedown(fl);%>
-        $(e.target).text('♡');
-        // $('.dislikeBtn+span').text('0');
-        <%System.out.println(fl.toString());%>
+            <
+            % new FeedDAO().likedown(fl); % >
+            $(e.target).text('♡');
+            // $('.dislikeBtn+span').text('0');
+            <
+            % System.out.println(fl.toString()); % >
 
-        $(e.target).removeClass('dislikeBtn'); /// 속성 값만
-        $(e.target).attr('class', 'likeBtn');
-        }); --%>
+            $(e.target).removeClass('dislikeBtn'); /// 속성 값만
+            $(e.target).attr('class', 'likeBtn');
+        });
+        -- % >
     </script>
 
 </body>

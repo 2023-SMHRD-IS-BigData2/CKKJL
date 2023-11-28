@@ -378,9 +378,31 @@
 
                                  <p>프로필 사진</p>
                                  <p>
+<<<<<<< HEAD
                                     <input type="file" id="input-file" className="btnOfinput"
                                        name="pic">  <label for="input-file"
                                        style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold; font-size: 20px; padding: 3px 5px;">업로드</label>
+=======
+                                    <input type="file" id="input-file" className="btnOfinput" name="pic"  onchange="updateFileName()"/>
+                                    
+                                        <label for="input-file" style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold; font-size: 20px; padding: 3px 5px;">업로드</label>
+                                       <span id="file-name-display"></span>  
+                                       
+                                        <script>
+    function updateFileName() {
+        var input = document.getElementById('input-file');
+        var display = document.getElementById('file-name-display');
+
+        // 파일이 선택되었을 때만 실행
+        if (input.files.length > 0) {
+            display.textContent = '선택한 파일: ' + input.files[0].name;
+        } else {
+            display.textContent = ''; // 파일이 선택되지 않았을 때 초기화
+        }
+    }
+</script>
+                                        
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
 
                                  </p>
                               </div>
