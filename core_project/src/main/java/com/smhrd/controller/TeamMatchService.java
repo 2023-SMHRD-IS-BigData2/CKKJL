@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.Matching;
+import com.smhrd.model.MatchingDAO;
 import com.smhrd.model.Member;
 
 
@@ -25,6 +26,13 @@ public class TeamMatchService extends HttpServlet {
 		
 		Matching game = new Matching(writer, challenger, f_index);
 		
+		int cnt = new MatchingDAO().sendMatching(game);
+		if(cnt>0) {
+			System.out.println("입력 성공");
+		} else {
+			System.out.println("입력 실패");
+		}
+		response.sendRedirect("");
 		
 		
 	}

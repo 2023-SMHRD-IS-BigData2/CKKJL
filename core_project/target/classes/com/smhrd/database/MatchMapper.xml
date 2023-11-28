@@ -22,7 +22,7 @@
    
    <insert id="sendMatching" parameterType="Matching">
    INSERT INTO MATCHING VALUES (M_INDEX.NEXTVAL, 
-   #{writer},#{challenger},#{f_index},#{matching})
+   #{writer},#{challenger},#{f_index},'X')
    </insert>
    
    <select id="allMatching" resultType="Matching">
