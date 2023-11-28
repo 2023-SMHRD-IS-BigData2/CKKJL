@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.smhrd.database.TeamMapper">
+   
+   <select id="selTeam" resultType="Team">
+      SELECT * FROM TB_TEAM_INFO WHERE T_INDEX=#{index}
+   </select>
+   
+   <update id="updateTeamSum" parameterType="Team">
+      UPDATE TB_TEAM_INFO SET 
+      T_ESTNUM=(T_ESTNUM+1), E_TIME=(E_TIME+#{e_time}),E_LEVEL=(E_LEVEL+#{e_level}),
+      E_MONEY=(E_MONEY+#{e_money}), E_MANNER=(E_MANNER+#{e_manner}), E_RESPON=(E_RESPON+#{e_respon})
+      WHERE T_INDEX=#{t_index}
+   </update>
+
+</mapper>
