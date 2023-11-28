@@ -80,7 +80,6 @@ body {
 
 	<%
 	Member vo = (Member) session.getAttribute("vo");
-    
 	%>
 
 
@@ -534,7 +533,7 @@ body {
 																<%
 																List<Comment> Comments = new CommentDAO().showComment(i.getFeed_index());
 																%>
-																<td >
+																<td>
 																	<div style="overflow-y: scroll; max-height: 350px;">
 																		<%
 																		for (int j = 0; j < Comments.size(); j++) {
