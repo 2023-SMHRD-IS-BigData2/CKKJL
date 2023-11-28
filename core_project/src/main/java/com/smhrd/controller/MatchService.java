@@ -25,9 +25,7 @@ public class MatchService extends HttpServlet {
       Member vo = (Member)session.getAttribute("vo");
       int mm = Integer.valueOf(request.getParameter("mm"));
       String starttime = request.getParameter("starttime");
-      String start = starttime.split(":")[0];
-      String finishtime = request.getParameter("finishtime");
-      String finish = finishtime.split(":")[0];
+      String finishtime = request.getParameter("finishtime");  
       String peoplenum = request.getParameter("peoplenum");
       String level = request.getParameter("level");
       String comment = request.getParameter("comment");
@@ -36,7 +34,7 @@ public class MatchService extends HttpServlet {
    
       Mercenary_Match mercenary_match = null;
       // 아래부분 개수부족
-      mercenary_match = new Mercenary_Match(mm, matchDay, vo.getU_id(), start, finish, peoplenum, level);
+      mercenary_match = new Mercenary_Match(mm, matchDay, vo.getU_id(), starttime, finishtime, peoplenum, level);
       if (comment != null) {
          mercenary_match.setWriting(comment);
       }

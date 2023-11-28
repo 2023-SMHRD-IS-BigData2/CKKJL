@@ -50,10 +50,7 @@ public class Mercenary_Match {
          break;
       }
    }
-
-   
-   
-   
+  
    
 
 }

@@ -676,35 +676,6 @@ body {
         Kakao.init('eefca775da363abc546f57a131ec1863'); //발급받은 키 중 javascript키를 사용해준다.
         console.log(Kakao.isInitialized()); // sdk초기화여부판단
 
-        <
-        % --$(document).on('click', '.likeBtn', (e) => {
-            // console.log(e);
-            $(e.target).text('♥');
-            // $('.likeBtn+span').text('1');
-            <
-            % new FeedDAO().likeup(fl); % >
-            $(e.target).removeAttr('class'); /// 속성자체
-            $(e.target).attr('class', 'dislikeBtn');
-        });
-
-
-
-        // (2) 좋아요 취소 버튼 클릭 시
-        //     좋아요 취소 -> 좋아요
-        //      1 -> 0
-        //     class="dislikeBtn" -> class="likeBtn"
-        $(document).on('click', '.dislikeBtn', (e) => {
-            <
-            % new FeedDAO().likedown(fl); % >
-            $(e.target).text('♡');
-            // $('.dislikeBtn+span').text('0');
-            <
-            % System.out.println(fl.toString()); % >
-
-            $(e.target).removeClass('dislikeBtn'); /// 속성 값만
-            $(e.target).attr('class', 'likeBtn');
-        });
-        -- % >
     </script>
 
 </body>
