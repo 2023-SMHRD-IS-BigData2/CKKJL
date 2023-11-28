@@ -327,7 +327,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <h3 class="m-0 font-weight-bold text-primary">My Profile</h3>
-                                                    <h5><%=vo.getIntro() %></h5>
+                                                    <h5><%=vo.getIntro() %></h5> 
                                                 </div>
                                             </div>
                                         </div>
