@@ -76,7 +76,12 @@ body {
 </head>
 
 <body id="page-top">
-
+<script type="text/javascript">
+      function MessageWrite() {
+         window.open("MessageWrite.jsp", "MessageWrite",
+               "width=400, height=500, top=10, left=10")
+      }
+   </script>
 
    <%
    Member vo = (Member) session.getAttribute("vo");
@@ -247,31 +252,15 @@ body {
                               Message Center
                               <!-- 문자 찾기 -->
                            </h6>
-                           <a class="dropdown-item d-flex align-items-center" href="#">
-                              <div class="dropdown-list-image mr-3">
-                                 <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                    alt="...">
-                                 <div class="status-indicator bg-success"></div>
-                              </div>
-                              <div class="font-weight-bold">
-                                 <div class="text-truncate">Hi there! I am wondering if
-                                    you can help me with a problem I've been having.</div>
-                                 <div class="small text-gray-500">Emily Fowler · 58m</div>
-                              </div>
-                           </a>
+                           
                            <%
                            if (vo == null) {
                            %>
                            <%
                            } else {
                            List<Message> messages = new MessageDAO().showMessage(vo.getNick());
-                           if (messages.size() < 3) {
+                           
                               for (int i = 0; i < messages.size(); i++) {
-                                 System.out.println(messages.get(i).getSender());
-                              }
-                           } else {
-                              for (int i = 0; i < 3; i++) {
-                                 System.out.println(messages.get(i).getSender());
                            %>
 
                            <a class="dropdown-item d-flex align-items-center" href="#">
@@ -288,9 +277,8 @@ body {
                               </div> <%
  }
  }
- }
- %> <a class="dropdown-item text-center small text-gray-500" href="#">Read
-                                 More Messages</a>
+ 
+ %> <a class="dropdown-item text-center small text-gray-500" href="javascript:MessageWrite()">문자 보내기</a>
                         </div></li>
                         
                      <div class="topbar-divider d-none d-sm-block"></div>
@@ -676,6 +664,35 @@ body {
         Kakao.init('eefca775da363abc546f57a131ec1863'); //발급받은 키 중 javascript키를 사용해준다.
         console.log(Kakao.isInitialized()); // sdk초기화여부판단
 
+        <
+        % --$(document).on('click', '.likeBtn', (e) => {
+            // console.log(e);
+            $(e.target).text('♥');
+            // $('.likeBtn+span').text('1');
+            <
+            % new FeedDAO().likeup(fl); % >
+            $(e.target).removeAttr('class'); /// 속성자체
+            $(e.target).attr('class', 'dislikeBtn');
+        });
+
+
+
+        // (2) 좋아요 취소 버튼 클릭 시
+        //     좋아요 취소 -> 좋아요
+        //      1 -> 0
+        //     class="dislikeBtn" -> class="likeBtn"
+        $(document).on('click', '.dislikeBtn', (e) => {
+            <
+            % new FeedDAO().likedown(fl); % >
+            $(e.target).text('♡');
+            // $('.dislikeBtn+span').text('0');
+            <
+            % System.out.println(fl.toString()); % >
+
+            $(e.target).removeClass('dislikeBtn'); /// 속성 값만
+            $(e.target).attr('class', 'likeBtn');
+        });
+        -- % >
     </script>
 
 </body>
