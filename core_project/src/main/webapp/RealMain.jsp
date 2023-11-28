@@ -359,19 +359,32 @@
 
                                     <!-- Illustrations -->
                                     <% List<Feed> feeds = new FeedDAO().totalFeed();%>
+                                    <% String ck = null; // 좋아요 여부 및 로그인 판별%>
+                                    <% String link = "RealLogin.jsp"; // 초기 설정%>
+                                    <% String hart = "♡"; // 초기 설정%>
                                     <% FeedLike fl = null; %>
                                     <% for(Feed i : feeds){ %>
+                                    <% // link = "likeService?check=2&num="+i.getFeed_index(); // 초기 설정%>
                                     <% if(vo!=null){ %>
                                     <% fl = new FeedLike(i.getFeed_index(), vo.getU_id()); %>
-                                    <%} %>
-
+                                    <% System.out.println(fl.toString()); %>
+	                                    <% if(new FeedDAO().whetherlike(fl)){ %>
+	                                    <% ck = "dislikeBtn";%>
+	                                    <% hart = "❤";%>
+	                                    <% link = "likeService?check=1&num="+i.getFeed_index(); %>
+										<%}else{ %>
+	                                    <% ck = "likeBtn";%>
+	                                    <% hart = "♡";%>
+	                                    <% link = "likeService?check=2&num="+i.getFeed_index(); %>
+										<%} %>
+                                    <%}else{ %>
+                                    <% ck = "login"; %>
+									<%} %>
                                     <div class="card shadow mb-4">
                                         <div class="card-header py-3">
                                             <h6 class="m-0 font-weight-bold text-primary">
                                                 <%
 												String index = i.getF_user_index();
-												%>
-                                                <%
 												Member member = new MemberDAO().login(index);
 												%>
                                                 <%=member.getNick()%>
@@ -393,8 +406,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td rowspan="2"><img alt="" src="img/<%=i.getFeed_file()%>" width="300" height="300" object-fit: cover><br>
-                                                                    <br><%=i.getFeed_content()%></td>
-                                                                    
+                                                                    <br><%=i.getFeed_content()%> <h2><a class=<%=ck %> href=<%=link %>><%=hart %></a></h2><%=i.getF_likecnt() %> </td>
                                                                 <%
 																List<Comment> Comments = new CommentDAO().showComment(i.getFeed_index());
 																%>
@@ -513,6 +525,31 @@
     <script>
         Kakao.init('eefca775da363abc546f57a131ec1863'); //발급받은 키 중 javascript키를 사용해준다.
         console.log(Kakao.isInitialized()); // sdk초기화여부판단
+        
+<%--         $(document).on('click', '.likeBtn', (e) => {
+            // console.log(e);
+        $(e.target).text('♥');
+        // $('.likeBtn+span').text('1');
+		<% new FeedDAO().likeup(fl);%>
+        $(e.target).removeAttr('class');    /// 속성자체
+        $(e.target).attr('class', 'dislikeBtn');
+        });
+        
+        
+        
+        // (2) 좋아요 취소 버튼 클릭 시
+        //     좋아요 취소 -> 좋아요
+        //      1 -> 0
+        //     class="dislikeBtn" -> class="likeBtn"
+        $(document).on('click', '.dislikeBtn', (e) => {
+		<% new FeedDAO().likedown(fl);%>
+        $(e.target).text('♡');
+        // $('.dislikeBtn+span').text('0');
+        <%System.out.println(fl.toString());%>
+
+        $(e.target).removeClass('dislikeBtn'); /// 속성 값만
+        $(e.target).attr('class', 'likeBtn');
+        }); --%>
     </script>
 
 </body>
