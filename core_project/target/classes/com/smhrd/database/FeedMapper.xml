@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.smhrd.database.FeedMapper">
+	<insert id="writeFeed" parameterType="Feed">
+		insert into TB_FEED values (FEED_INDEX.nextval,#{f_user_index},#{feed_title},#{feed_content}, sysdate, #{feed_file}, 0)
+	</insert>
+	<select id="totalFeed" resultType="Feed">
+		select * from TB_FEED order by feed_index DESC
+	</select>
+	<delete id="deleteFeed">
+		delete from TB_FEED where FEED_INDEX=#{feed_index} 
+	</delete>
+	<select id="detailFeed" resultType="Feed">
+		select * from TB_FEED where FEED_INDEX=#{feed_index}
+	</select>
+	
+	<insert id="sendFeedlike" parameterType="FeedLike">
+		insert into TB_FEED_LIKE values (#{feed_index}, #{user_index})
+	</insert>
+	
+	<update id="updatelikeup">
+		UPDATE TB_FEED SET F_LIKECNT=(F_LIKECNT+1) WHERE FEED_INDEX=#{index}
+	</update>
+
+	<update id="updatelikedown">
+		UPDATE TB_FEED SET F_LIKECNT=(F_LIKECNT-1) WHERE FEED_INDEX=#{index}
+	</update>
+	
+	<select id="selFeedlike" resultType="FeedLike" parameterType="FeedLike">
+		select * from TB_FEED_LIKE WHERE FEED_INDEX=#{feed_index} AND USER_INDEX=#{user_index}
+	</select>
+	
+	<delete id="delFeedlike" parameterType="FeedLike">
+		DELETE FROM TB_FEED_LIKE WHERE FEED_INDEX=#{feed_index} and USER_INDEX = #{user_index}
+	</delete>
+</mapper>

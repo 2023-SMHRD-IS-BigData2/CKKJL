@@ -129,6 +129,11 @@ fieldset {
 
 </head>
 <body>
+<script type="text/javascript">
+	function closeTab() {
+		window.close();
+	}
+</script>
 <%
 	Member vo = (Member) session.getAttribute("vo");
 	%>
@@ -145,17 +150,12 @@ fieldset {
       <textarea placeholder="보낼 메세지를 입력하세요"  name="message" tabindex="5" required></textarea>
     </fieldset>
     <fieldset>
-      <button onclick="closeTab()"  name="submit" type="submit" id="contact-submit" data-submit="...Sending">문자 전송	</button>
+      <button   name="submit" type="submit" id="contact-submit"  data-submit="...Sending">문자 전화</button>
     </fieldset>
   </form>
  
   
 </div>
 
-<script type="text/javascript">
-	function closeTab() {
-		window.close();
-	}
-</script>
 </body>
 </html>
