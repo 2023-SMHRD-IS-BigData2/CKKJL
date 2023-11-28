@@ -100,6 +100,7 @@
 							console.log(id);
 							console.log(pic);
 							console.log(nick);
+														
 						
 							document.token_value.id.value = id;
 							document.token_value.pic.value = pic;	
