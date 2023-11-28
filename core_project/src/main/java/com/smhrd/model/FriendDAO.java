@@ -75,10 +75,10 @@ public class FriendDAO {
 		return cnt;
 		
 	}
-	public List<String> All(String ACCEPTOR){
-	      List<String> friends =null;
+	public List<Friend> All(String acceptor){
+	      List<Friend> friends =null;
 	         try {
-	             friends = sqlSession.selectList("com.smhrd.database.FriendMapper.All", ACCEPTOR);
+	             friends = sqlSession.selectList("com.smhrd.database.FriendMapper.All", acceptor);
 	         } catch (Exception e) {
 	            e.printStackTrace();
 	         } finally {

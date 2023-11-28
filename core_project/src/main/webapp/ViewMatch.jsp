@@ -1,5 +1,5 @@
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.Mercenary_MatchDAO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.Mercenary_Match"%>
 <%@page import="com.smhrd.model.FeedLike"%>
 <%@page import="com.smhrd.model.Friend"%>
@@ -117,6 +117,8 @@
                         </a></li>
                         </ul>
                         </div>
+                                               
+						
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
 
@@ -275,6 +277,7 @@
                     </nav>
                     <!-- 여기부터 복사해요 -->
 
+
                     <!-- 여기부터 복사해요 -->
 
 					<div>
@@ -332,23 +335,25 @@
 
 					<table border="1" align="center">
     <thead>
-        <tr>
-            <td colspan="6" align="center" rowspan="2"><b>대기중인 매칭 목록</b></td>
-        </tr>	
+             <tr>
+            <td colspan="8" align="center" rowspan="2"><b>대기중인 매칭 목록</b></td>
+        </tr>   
     </thead>
 
     <% if (ma1.size() == 0) { %>
       <tr align="center">
-                <td colspan="6">대기중인 매칭 정보가 없습니다.</td>
+                <td colspan="8">대기중인 매칭 정보가 없습니다.</td>
             </tr>
     <% } else { %>
             <tr align="center">
-                <th>닉네임</th>
+                <th>닉네임</th>      
                 <th>시작 시간</th>
                 <th>종료 시간</th>
                 <th>레벨</th>
                 <th>인원 수</th>
+       <th>별점</th>
                 <th>남기실 말</th>
+      <th><a> 매치 신청</a></th>      
             </tr>
         <tbody>
             <% for (Mercenary_Match i : ma1) { %>
@@ -359,19 +364,21 @@
                     <td><%= i.getF_level() %></td>
                     <td><%= i.getPeople_num() %></td>
                     <td><%= i.getWriting() %></td>
+          <%-- <td><%=i.getTeam_estimate() %></td> --%>
+         <td>여기바꿔여기여기여기여기  </td>   
                 </tr>
             <% } %>
         </tbody>
     <% } %>
 
     <tr>
-        <td colspan="6" align="center" rowspan="2"><b> 대기중인 용병 목록 </b></td>
+        <td colspan="8" align="center" rowspan="2"><b> 대기중인 용병 목록 </b></td>
     </tr>
 
     <tbody>
         <% if (me1.size() == 0) { %>
             <tr align="center">
-                <td colspan="6">대기중인 용병 정보가 없습니다.</td>
+                <td colspan="8">대기중인 용병 정보가 없습니다.</td>
             </tr>
         <% } else { %>
             <thead>
@@ -381,7 +388,9 @@
                     <th>종료 시간</th>
                     <th>레벨</th>
                     <th>인원 수</th>
+                    <th>별점</th>
                     <th>남기실 말</th>
+           <th><a>친구 신청</a></th>   
                 </tr>
             </thead>
             <tbody>
@@ -393,6 +402,8 @@
                         <td><%= i.getF_level() %></td>
                         <td><%= i.getPeople_num() %></td>
                         <td><%= i.getWriting() %></td>
+       <%-- <td><%=i.getEstimate() %></td> --%>
+      <td> 여기바꿔여기여기여기여기 </td>
                     </tr>
                 <% } %>
             </tbody>
