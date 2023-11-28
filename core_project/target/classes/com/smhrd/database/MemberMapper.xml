@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.smhrd.database.MemberMapper">
+
+	<update id="Check" parameterType="Member">
+		UPDATE TB_USER_INFO SET U_ID = #{u_id} WHERE U_ID = #{u_id}
+	</update>
+
+   <insert id="Join" parameterType="Member">
+   		INSERT INTO TB_USER_INFO (u_id,nick,pic) VALUES (#{u_id},#{nick},#{pic})
+   </insert>
+   
+   
+   <select id="Login" resultType="Member" parameterType="String">
+   		SELECT * FROM TB_USER_INFO WHERE u_id=#{u_id}
+   </select>
+   
+   <update id="updateMember" parameterType="Member">
+       UPDATE TB_USER_INFO SET NICK=#{nick}, INTRO=#{intro}, PIC=#{pic} WHERE U_ID=#{u_id} 
+   </update>
+   
+</mapper>
