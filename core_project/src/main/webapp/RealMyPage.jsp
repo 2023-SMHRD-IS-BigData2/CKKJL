@@ -258,21 +258,12 @@ height: 50px;
                               <!-- 문자 찾기 -->
                            </h6>
 
-<<<<<<< HEAD
                            <%
                            if (vo == null) {
                            %>
                            <%
                            } else {
-                           List<Message> messages = new MessageDAO().showMessage(vo.getNick());
-=======
-									<%
-									if (vo == null) {
-									%>
-									<%
-									} else {
-									List<Message> messages = new MessageDAO().showMessage(vo.getU_id());
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
+                           List<Message> messages = new MessageDAO().showMessage(vo.getU_id());
 
                            for (int i = 0; i < messages.size(); i++) {
                            %>
@@ -318,21 +309,14 @@ height: 50px;
                            src="img/undraw_profile.svg"> <%
  } else {
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
-<<<<<<< HEAD
+                           <%if(vo.getPic().contains("http")){ %>
                            <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
+                           <%}else{ %>
+                           <img class="img-profile rounded-circle" src="img/<%=vo.getPic()%>">
+                           <%} %>
                            <%
                            }
                            %></a> <!-- Dropdown - User Information -->
-=======
-									<%if(vo.getPic().contains("http")){ %>
-									<img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
-									<%}else{ %>
-									<img class="img-profile rounded-circle" src="img/<%=vo.getPic()%>">
-									<%} %>
-									<%
-									}
-									%></a> <!-- Dropdown - User Information -->
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
 
 
 
@@ -402,10 +386,10 @@ height: 50px;
                                                 <div class="col-auto d-flex">
                                                     <!-- 여기에 프로필 사진 추가 -->
                                                     <%if(vo.getPic().contains("http")){ %>
-													<img class="rounded-circle mr-3" src="<%=vo.getPic()%>" alt="프로필 사진" width="120" height="120">
-												<%}else{ %>
-													<img class="rounded-circle mr-3" src="img/<%=vo.getPic()%>" alt="프로필 사진" width="120" height="120">
-												<%} %>
+                                       <img class="rounded-circle mr-3" src="<%=vo.getPic()%>" alt="프로필 사진" width="120" height="120">
+                                    <%}else{ %>
+                                       <img class="rounded-circle mr-3" src="img/<%=vo.getPic()%>" alt="프로필 사진" width="120" height="120">
+                                    <%} %>
 
                                                 </div>
                                                 <div class="col">
