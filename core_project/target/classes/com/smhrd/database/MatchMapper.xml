@@ -27,6 +27,10 @@
    SELECT * FROM MATCHING
    </select>
    
+   <select id="receiveMatching" resultType="Matching" parameterType="String">
+   SELECT * FROM MATCHING WHERE WRITER = #{id} AND MATCHING = 'X'
+   </select>
+   
    <update id="sacramentMatching">
    UPDATE MATCHING set MATCHING = 'O' WHERE M_INDEX = #{m_index}
    </update>
