@@ -186,7 +186,7 @@ body {
                      <li class="nav-item dropdown no-arrow mx-1"><a
                         class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
                         role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
+                        aria-expanded="false"> <i class="fas fa-user fa-fw"></i> 
 
 
 
@@ -194,7 +194,7 @@ body {
                         <div
                            class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                            aria-labelledby="alertsDropdown">
-                           <h6 class="dropdown-header">Alerts Center</h6>
+                           <h6 class="dropdown-header">friends Center</h6>
 
                            <%
                            if (vo != null) {
@@ -202,7 +202,7 @@ body {
                               List<Friend> friends = new FriendDAO().check(vo.getU_id());
                               if (friends != null) {
                                  for (int i = 0; i < friends.size(); i++) {
-                                	 Member friend = new MemberDAO().login(friends.get(i).getApplicant());
+                                    Member friend = new MemberDAO().login(friends.get(i).getApplicant());
                            %>
 
                            <a class="dropdown-item d-flex align-items-center" href="#">
