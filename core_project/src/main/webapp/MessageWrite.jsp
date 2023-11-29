@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.Friend"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.FriendDAO"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
@@ -144,7 +147,14 @@ fieldset {
     <input type="hidden" name="sender"
             id="name" value="<%=vo.getNick() %>" />
     <fieldset>
-      <input placeholder="받는 사람" type="text" name="recipient" tabindex="1" required autofocus>
+      <!-- <input placeholder="받는 사람" type="text" name="recipient" tabindex="1" required autofocus> -->
+      <legend>받는 사람</legend>
+      <select name="recipient">
+      <% List<Friend> friends =  new FriendDAO().All(vo.getU_id());
+      for (Friend i : friends) {%>
+      	<option value="<%=i.getApplicant()%>"><%=i.getApp_nick()%></option>
+      <%}%>	
+      </select>
     </fieldset>
     <fieldset>
       <textarea placeholder="보낼 메세지를 입력하세요"  name="message" tabindex="5" required></textarea>

@@ -202,26 +202,25 @@ body {
                               List<Friend> friends = new FriendDAO().check(vo.getU_id());
                               if (friends != null) {
                                  for (int i = 0; i < friends.size(); i++) {
+                                	Member user = new MemberDAO().login(friends.get(i).getApplicant());
                            %>
 
                            <a class="dropdown-item d-flex align-items-center" href="#">
                               <div class="mr-3">
                                  <div class="icon-circle bg-primary">
                                     <img class="profileimg"
-                                       src="<%=friends.get(i).getApp_pic()%>">
+                                       src="<%=user.getPic()%>">
                                  </div>
                               </div>
                               <div>
-                                 <div class="small text-gray-500"><%=friends.get(i).getApp_nick()%>님이
+                                 <div class="small text-gray-500"><%=user.getNick()%>님이
                                     친구 요청을 했습니다.
                                  </div>
                                  <span class="font-weight-bold"> <a
-                                    href="FriendService2?id2=<%=friends.get(i).getApplicant()%>
-                                 &nick2=<%=friends.get(i).getApp_nick()%>&pic2=<%=friends.get(i).getApp_pic()%>">
+                                    href="FriendService2?id2=<%=friends.get(i).getApplicant()%>">
                                        <input id="acc2" type="button" value="수락">
                                  </a> <a
-                                    href="FriendService3?id3=<%=friends.get(i).getApplicant()%>
-                                 &nick3=<%=friends.get(i).getApp_nick()%>&pic3=<%=friends.get(i).getApp_pic()%>">
+                                    href="FriendService3?id3=<%=friends.get(i).getApplicant()%>">
                                        <input id="acc3" type="button" value="거절">
                                  </a>
                                  </span>
@@ -404,34 +403,33 @@ body {
                                             <label for="position">풋살장 선택 </label>
                                             <select id="place" name="place" >
 	                                            <option value="미정">미정</option>
-	                                            <option value="풋살장">풋살장</option>
-												<option value="위닝풋살장">위닝풋살장</option>
 												<option value="광주풋살장">광주풋살장</option>
-												<option value="챔피언스풋살장 상무정">챔피언스풋살장 상무정</option>
-												<option value="바로풋살">바로풋살</option>
-												<option value="더프라임풋살">더프라임풋살</option>
-												<option value="효창풋살장">효창풋살장</option>
-												<option value="챔피언스풋살장">챔피언스풋살장</option>
-												<option value="위너풋살파크">위너풋살파크</option>
-												<option value="신화스포디움">신화스포디움</option>
+												<option value="광주풋살파크">광주풋살파크</option>
 												<option value="더(THE) 신창풋살파크">더(THE) 신창풋살파크</option>
-												<option value="케이지풋살아레나 백운점">케이지풋살아레나 백운점</option>
-												<option value="스타실내풋살장">스타실내풋살장</option>
-												<option value="상지풋살">상지풋살</option>
-												<option value="터프필드 풋살장">터프필드 풋살장</option>
-												<option value="위너풋살파크 2호점">위너풋살파크 2호점</option>
+												<option value="더프라임풋살">더프라임풋살</option>
+												<option value="돌파풋살">돌파풋살</option>
+												<option value="동구풋살경기장">동구풋살경기장</option>
+												<option value="리스스포츠클럽">리스스포츠클럽</option>
+												<option value="바로풋살">바로풋살</option>
 												<option value="베스트 풋살">베스트 풋살</option>
+												<option value="상지풋살">상지풋살</option>
+												<option value="스타실내풋살장">스타실내풋살장</option>
+												<option value="신가풋살">신가풋살</option>
+												<option value="신화스포디움">신화스포디움</option>
+												<option value="위너풋살파크">위너풋살파크</option>
+												<option value="위너풋살파크 2호점">위너풋살파크 2호점</option>
+												<option value="위닝풋살장">위닝풋살장</option>
+												<option value="전남대학교 광주캠퍼스풋살장">전남대학교 광주캠퍼스풋살장</option>
+												<option value="제일풋살장">제일풋살장</option>
+												<option value="중외공원운동장풋살장">중외공원운동장풋살장</option>
+												<option value="챔피언스풋살장">챔피언스풋살장</option>
+												<option value="챔피언스풋살장 상무정">챔피언스풋살장 상무정</option>
+												<option value="케이지풋살아레나 백운점">케이지풋살아레나 백운점</option>
 												<option value="케이지풋살아레나 전대점">케이지풋살아레나 전대점</option>
 												<option value="태양풋살">태양풋살</option>
-												<option value="신가풋살">신가풋살</option>
-												<option value="리스스포츠클럽">리스스포츠클럽</option>
-												<option value="제일풋살장">제일풋살장</option>
-												<option value="동구풋살경기장">동구풋살경기장</option>
-												<option value="돌파풋살">돌파풋살</option>
-												<option value="광주풋살파크">광주풋살파크</option>
+												<option value="터프필드 풋살장">터프필드 풋살장</option>
+												<option value="효창풋살장">효창풋살장</option>
 												<option value="히딩크드림필드 광주구장">히딩크드림필드 광주구장</option>
-												<option value="전남대학교 광주캠퍼스풋살장">전남대학교 광주캠퍼스풋살장</option>
-												<option value="중외공원운동장풋살장">중외공원운동장풋살장</option>
                                             </select>
                                             <br> <label for="position">시작 시간</label> <select id="matching_starttime" name="starttime" required>
                                                 <option value="미정">미정</option>

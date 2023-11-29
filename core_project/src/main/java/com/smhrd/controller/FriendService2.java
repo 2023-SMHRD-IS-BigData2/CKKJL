@@ -20,19 +20,14 @@ public class FriendService2 extends HttpServlet {
 		
 		// 친구 수락
 		String acceptor = request.getParameter("id2");
-		String acc_nick = request.getParameter("nick2");
-		String acc_pic = request.getParameter("pic2");
 		
 		HttpSession session = request.getSession();
 		Member vo = (Member)session.getAttribute("vo");
 
 		String applicant = vo.getU_id();
-		String app_nick = vo.getNick();
-		String app_pic = vo.getPic();
-
 
 		
-		Friend user = new Friend(applicant, app_nick, app_pic, acceptor, acc_nick, acc_pic);
+		Friend user = new Friend(applicant, acceptor);
 		
 		int cnt = new FriendDAO().accept(user);
 		

@@ -11,7 +11,7 @@
       where recipient=#{recipient} order by num desc
    </select>
    <delete id="deleteMessage"> delete from TB_message where num=#{num} </delete>
-   <delete id="deleteMessageAll" parameterType="String"> delete from
+   <!-- <delete id="deleteMessageAll" parameterType="String"> delete from
       TB_message where recipient=#{email}
-   </delete>
+   </delete> -->
 </mapper>

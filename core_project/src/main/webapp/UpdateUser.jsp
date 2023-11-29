@@ -415,7 +415,7 @@ body {
 										<div class="card-header py-3">
 											<p>자기소개</p>
 											<p>
-												<input type="text" name="intro" value="<%=vo.getIntro()%>">
+												<input type="text" name="intro" placeholder="자기소개를 작성해주세요!!!">
 											</p>
 										</div>
 										<%if (vo.getTeam_index() == 0) {%>

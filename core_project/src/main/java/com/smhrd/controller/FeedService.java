@@ -28,7 +28,7 @@ public class FeedService extends HttpServlet {
 		System.out.println(savePath);
 		Member vo = (Member)session.getAttribute("vo");
 		String writer = vo.getU_id();
-		System.out.println(writer);
+		System.out.println(savePath);
 
 		// 3. 파일 최대 크기 (int)
 		int maxSize = 1024 * 1024 * 10;
