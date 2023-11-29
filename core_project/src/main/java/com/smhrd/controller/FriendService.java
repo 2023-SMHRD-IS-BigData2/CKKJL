@@ -45,10 +45,10 @@ public class FriendService extends HttpServlet {
 				} else {
 					System.out.println("친구 추가 실패");
 				}
+			} else {
+				System.out.println("중복 친구 추가");
 			}
 				
-			
-
 			response.sendRedirect("RealMain.jsp");
 		}
 
