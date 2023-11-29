@@ -202,17 +202,18 @@ body {
                               List<Friend> friends = new FriendDAO().check(vo.getU_id());
                               if (friends != null) {
                                  for (int i = 0; i < friends.size(); i++) {
+                                	Member user = new MemberDAO().login(friends.get(i).getApplicant());
                            %>
 
                            <a class="dropdown-item d-flex align-items-center" href="#">
                               <div class="mr-3">
                                  <div class="icon-circle bg-primary">
                                     <img class="profileimg"
-                                       src="<%=friends.get(i).getApp_pic()%>">
+                                       src="<%=user.getPic()%>">
                                  </div>
                               </div>
                               <div>
-                                 <div class="small text-gray-500"><%=friends.get(i).getApp_nick()%>님이
+                                 <div class="small text-gray-500"><%=user.getNick()%>님이
                                     친구 요청을 했습니다.
                                  </div>
                                  <span class="font-weight-bold"> <a
