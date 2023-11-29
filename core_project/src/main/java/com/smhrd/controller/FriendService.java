@@ -20,21 +20,18 @@ public class FriendService extends HttpServlet {
 
 		// 친구 추가
 		String acceptor = request.getParameter("id");
-		String acc_nick = request.getParameter("nick");
-		String acc_pic = request.getParameter("pic");
+
 		HttpSession session = request.getSession();
 		Member vo = (Member) session.getAttribute("vo");
 		
-		String id = vo.getU_id();
-		String nick = vo.getNick();
-		String pic = vo.getPic();
+		String applicant = vo.getU_id();
 
-		if (id.equals(acceptor)) {
+		if (applicant.equals(acceptor)) {
 			
 			response.sendRedirect("RealMain.jsp");
 			
 		} else {
-			Friend user = new Friend(id, nick, pic, acceptor, acc_nick, acc_pic);
+			Friend user = new Friend(applicant,  acceptor );
 
 			int row = new FriendDAO().set(user);
 			

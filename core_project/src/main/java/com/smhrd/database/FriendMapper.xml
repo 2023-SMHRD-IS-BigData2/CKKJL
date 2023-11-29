@@ -11,7 +11,7 @@
 	<!-- 친구 추가 -->
 	<insert id="Add" parameterType="Friend">
 		INSERT INTO TB_FRIEND VALUES
-		(#{applicant},#{app_nick},#{app_pic},#{acceptor},#{acc_nick},#{acc_pic},'X')
+		(#{applicant},#{acceptor},'X')
 	</insert>
 
 	<!-- 중복확인 -->
@@ -33,7 +33,7 @@
 	</update>
 	<insert id="Accept2" parameterType="Friend">
 		INSERT INTO TB_FRIEND VALUES
-		(#{applicant},#{app_nick},#{app_pic},#{acceptor},#{acc_nick},#{acc_pic},'O')
+		(#{applicant},#{acceptor},'O')
 	</insert>
 
 	<!-- 친구 거절 -->
