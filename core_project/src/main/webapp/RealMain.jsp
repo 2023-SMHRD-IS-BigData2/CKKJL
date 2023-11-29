@@ -517,7 +517,7 @@ height: 50px;
 												Member member = new MemberDAO().login(index);
 												%>
 												<%=member.getNick()%>
-
+												
 												<a
 													href="FriendService?id=<%=member.getU_id()%>&nick=<%=member.getNick()%>&pic=<%=member.getPic()%>">
 													<i class="fas fa-user fa-fw float-right"
