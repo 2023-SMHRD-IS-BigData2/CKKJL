@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.MemberDAO"%>
 <%@page import="com.smhrd.model.Friend"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.FriendDAO"%>
@@ -151,8 +152,10 @@ fieldset {
       <legend>받는 사람</legend>
       <select name="recipient">
       <% List<Friend> friends =  new FriendDAO().All(vo.getU_id());
-      for (Friend i : friends) {%>
-      	<option value="<%=i.getApplicant()%>"><%=i.getApp_nick()%></option>
+      for (Friend i : friends) {
+      Member friend = new MemberDAO().login(i.getApplicant());
+      %>
+      	<option value="<%=friend.getU_id()%>"><%=friend.getNick()%></option>
       <%}%>	
       </select>
     </fieldset>
