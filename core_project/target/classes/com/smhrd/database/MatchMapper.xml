@@ -7,7 +7,7 @@
    
    <insert id="makeMEMA" parameterType="Mercenary_Match">
       INSERT INTO TB_MATCH VALUES(MATCH_INDEX.nextval,#{mm}, #{m_date},#{user_index},#{start_hour},#{last_hour},
-      #{people_num},#{f_level},#{writing})
+      #{people_num},#{f_level},#{writing}, #{place})
    </insert>
    
    <select id="allMEMAdate" resultType="Mercenary_Match">

@@ -20,14 +20,18 @@ public class Mercenary_Match {
    @NonNull private int mm; // 1 = 매칭 / 2 = 용병 / 3 = 매칭 성사 / 4 = 용병 성사
    @NonNull private String m_date; // 경기날짜
    @NonNull private String user_index; // 작성자 고유번호
-   @NonNull private String start_hour; // 시작시간 ex) 11:00 -> 11
-   @NonNull private String last_hour; // 끝시간 ex) 20:00 -> 20
-   @NonNull private String people_num; // 인원수/원하는 인원수
-   @NonNull private String f_level; // 수준
-   private String writing; // 남기실 말
+   @NonNull private String start_hour;
+   @NonNull private String last_hour;
+   @NonNull private String people_num;
+   @NonNull private String f_level;
+   private String writing;
+   private String place;
    
    public void setWriting(String writing) {
       this.writing = writing;
+   }
+   public void setPlace(String place) {
+	   this.place = place;
    }
    
    public void update() {
