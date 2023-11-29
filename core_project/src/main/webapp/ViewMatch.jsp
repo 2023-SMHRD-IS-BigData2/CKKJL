@@ -403,7 +403,7 @@ body {
 								<th>종료 시간</th>
 								<th>레벨</th>
 								<th>인원 수</th>
-								<th>별점</th>
+								<!--<th>별점</th>-->
 								<th>남기실 말</th>
 								<th><a> 매치 신청</a></th>
 							</tr>
@@ -417,10 +417,9 @@ body {
 									<td><%=i.getLast_hour()%></td>
 									<td><%=i.getF_level()%></td>
 									<td><%=i.getPeople_num()%></td>
-									<td><%-- <%=i.getTeam_estimate() %>--%></td> 
+									<%-- <td> <%=i.getTeam_estimate() %></td>--%> 
 									<td><%=i.getWriting()%></td>
-									<td><a href="TeamMatchService?writer=<%=i.getUser_index()%>&f_index=<%=i.getF_index()%>">
-									<i class="fas fa-envelope fa-fw"></a></td>
+									<td><i class="fas fa-envelope fa-fw"></td>
 								</tr>
 								<%
 								}
@@ -453,7 +452,7 @@ body {
 									<th>종료 시간</th>
 									<th>레벨</th>
 									<th>인원 수</th>
-									<th>별점</th>
+									<!--<th>별점</th>-->
 									<th>남기실 말</th>
 									<th><a>친구 신청</a></th>
 								</tr>
@@ -468,7 +467,8 @@ body {
 									<td><%=i.getLast_hour()%></td>
 									<td><%=i.getF_level()%></td>
 									<td><%=i.getPeople_num()%></td>
-									<td><%--<%=i.getEstimate() --%></td>
+<
+									<%-- <td><%=i.getEstimate()</td>--%>
 									<td><%=i.getWriting()%></td>
 									<td><i class="fas fa-user fa-fw"></td>
 								</tr>
