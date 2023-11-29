@@ -206,12 +206,12 @@ body {
                            %>
 
                            <a class="dropdown-item d-flex align-items-center" href="#">
-                              <div class="mr-3">
+                              <%-- <div class="mr-3">
                                  <div class="icon-circle bg-primary">
                                     <img class="profileimg"
                                        src="<%=user.getPic()%>">
                                  </div>
-                              </div>
+                              </div> --%>
                               <div>
                                  <div class="small text-gray-500"><%=user.getNick()%>님이
                                     친구 요청을 했습니다.
