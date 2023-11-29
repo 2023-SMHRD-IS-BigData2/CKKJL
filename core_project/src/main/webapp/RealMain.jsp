@@ -217,20 +217,20 @@ height: 50px;
 											for (int i = 0; i < friends.size(); i++) {
 										Member friend = new MemberDAO().login(friends.get(i).getApplicant());
 									%>
-									<div class="friend-request">
+									<div class="friend-request" align="center">
 										<div class="friend-info">
 											
-											<div> <%=friend.getNick()%>님이
-												친구 요청을 했습니다.
+											<div style="font-size: 16px"> <%=friend.getNick()%>님이
+												친구 요청
 											</div>
 										</div>
 										<div class="friend-actions">
 											<a
 												href="FriendService2?id2=<%=friends.get(i).getApplicant()%>">
-												<button class="btn-accept">수락</button>
+												<button class="btn-accept" style="width:50px;height:30px;">수락</button>
 											</a> <a
 												href="FriendService3?id3=<%=friends.get(i).getApplicant()%>">
-												<button class="btn-reject">거절</button>
+												<button class="btn-reject" style="width:50px;height:30px;">거절</button>
 											</a>
 										</div>
 									</div>
@@ -240,8 +240,6 @@ height: 50px;
 									}
 									%>
 
-									<a class="dropdown-item text-center small text-gray-500"
-										href="#">Show All Alerts</a>
 								</div></li>
 
 							<!-- Nav Item - Messages -->
