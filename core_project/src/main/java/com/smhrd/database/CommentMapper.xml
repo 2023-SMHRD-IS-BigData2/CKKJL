@@ -6,6 +6,6 @@
  <insert id="writeComment" parameterType="Comment"> insert into feed_comment values(num_Comment.nextval,#{F_INDEX}, #{C_NAME},#{C_COMMENT}, sysdate)
    </insert>
    <select id="showComment" resultType="Comment"> select * from feed_comment
-      where F_INDEX=#{F_INDEX} order by C_INDEX desc
+      where F_INDEX=#{F_INDEX} order by C_INDEX ASC
    </select>
 </mapper>
