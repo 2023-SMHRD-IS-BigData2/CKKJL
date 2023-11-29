@@ -517,12 +517,23 @@ height: 50px;
 												Member member = new MemberDAO().login(index);
 												%>
 												<%=member.getNick()%>
-												
+												<%-- <% List<Friend> friends =  new FriendDAO().All(vo.getU_id()); 
+												boolean checkFriend =friends.equals(member.getU_id());
+												if (checkFriend){%>
+												<a
+													href="MessageWrite.jsp">
+													<i class="fas fa-user fa-fw float-right"
+													style="color: #62ac2e"></i>
+												</a>
+												<%} else {%>	
 												<a
 													href="FriendService?id=<%=member.getU_id()%>&nick=<%=member.getNick()%>&pic=<%=member.getPic()%>">
 													<i class="fas fa-user fa-fw float-right"
 													style="color: #62ac2e"></i>
 												</a>
+												
+												
+												<%}%> --%>
 
 											</h6>
 										</div>
