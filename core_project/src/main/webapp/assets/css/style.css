@@ -1,10 +1,8 @@
 button{
-    width: 120px;
-    height: 40px;
+    
     background-color: #62ac2e;
     border: none;
     color: white;
-    font-size: 16px;
     font-weight:bold;
     border-radius: 10px;
 }
