@@ -33,7 +33,7 @@ public class TeamMatchService extends HttpServlet {
 		} else {
 			System.out.println("입력 실패");
 		}
-		response.sendRedirect("");
+		response.sendRedirect("RealMain.jsp");
 		
 		
 	}

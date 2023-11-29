@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+Manifest-Version: 1.0
+Built-By: SMHRD
+=======
 Manifest-Version: 1.0
 Built-By: smhrd
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
 Build-Jdk: 17.0.6
 Created-By: Maven Integration for Eclipse
 
