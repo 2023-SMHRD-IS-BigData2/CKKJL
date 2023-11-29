@@ -18,6 +18,6 @@ public class Matching {
 	@NonNull private String writer;  // 글 작성자
 	@NonNull private String challenger;  // 매칭 신청자
 	@NonNull private int f_index;      // 매칭(Mercenary_Match) 고유번호
-	@NonNull private char matching;    // 상시 여부 OX
+	private char matching;    // 상시 여부 OX
 	
 }
