@@ -69,6 +69,15 @@ body {
 	object-fit: cover;
 	width: 60px;
 	height: 60px;
+
+}
+.topbar {
+   height: 6rem
+}
+.button{
+height: 50px;
+    font-size: 23px;
+    width: 180px;
 }
 </style>
 
@@ -210,9 +219,7 @@ body {
 									%>
 									<div class="friend-request">
 										<div class="friend-info">
-											<div>
-												<img src="<%=friend.getPic()%>">
-											</div>
+											
 											<div> <%=friend.getNick()%>님이
 												친구 요청을 했습니다.
 											</div>
