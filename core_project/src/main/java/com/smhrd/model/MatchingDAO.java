@@ -75,5 +75,18 @@ public class MatchingDAO {
 		}
 		return cnt;
 	}
+	
+	public List<Matching> receiveMatching(String id) {
+		List<Matching> matching = null;
+		SqlSession sqlSession = sqlsessionFactory.openSession(true);
+		try {
+			matching = sqlSession.selectList("com.smhrd.database.MatchMapper.receiveMatching",id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return matching;
+	}
 
 }

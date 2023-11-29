@@ -434,7 +434,8 @@ height: 50px;
 									<td><%=i.getPeople_num()%></td>
 									<%-- <td> <%=i.getTeam_estimate() %></td>--%>
 									<td><%=i.getWriting()%></td>
-									<td><i class="fas fa-envelope fa-fw"></td>
+									<td><a href="TeamMatchService?writer=<%=i.getUser_index()%>&f_index=<%=i.getF_index()%>">
+									<i class="fas fa-user fa-fw"></a></td>
 								</tr>
 								<%
 								}
@@ -482,10 +483,13 @@ height: 50px;
 									<td><%=i.getLast_hour()%></td>
 									<td><%=i.getF_level()%></td>
 									<td><%=i.getPeople_num()%></td>
-<
+
 									<%-- <td><%=i.getEstimate()</td>--%>
 									<td><%=i.getWriting()%></td>
-									<td><i class="fas fa-user fa-fw"></td>
+									<td><a href="FriendService?id=<%=i.getUser_index()%>">
+										<i class="fas fa-user fa-fw float-right"
+										style="color: #62ac2e"></i>
+									</a></td>
 								</tr>
 								<%
 								}
