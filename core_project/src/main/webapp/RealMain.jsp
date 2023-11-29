@@ -274,7 +274,6 @@ body {
                                  <div class="small text-gray-500"><%=messages.get(i).getSender()%>
                                     ·
                                     <%=messages.get(i).getM_date()%></div>
-
                               </div>
                               <div>
                               <form action="DeleteService" method="post">
@@ -283,8 +282,8 @@ body {
                               </form>
                               </div>
                                <%
-
- }}
+ }
+ }
  
  %> <a class="dropdown-item text-center small text-gray-500" href="javascript:MessageWrite()">문자 보내기</a>
                         </div></li>
