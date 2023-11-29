@@ -186,14 +186,9 @@ body {
                      <li class="nav-item dropdown no-arrow mx-1"><a
                         class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
                         role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"> 
-                        <%
-                        List<Friend> friends = new FriendDAO().check(vo.getU_id());
-                        if(friends.size()==0){ %>
-                        <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
-						<%}else{ %>
-						<i class="fas fa-user fa-fw"style="color: #0f4fbd;"></i>
-						<%} %>
+                        aria-expanded="false"> <i class="fas fa-user fa-fw"></i> 
+
+
 
                      </a> <!-- Dropdown - Alerts -->
                         <div
@@ -203,13 +198,14 @@ body {
 
                            <%
                            if (vo != null) {
-                              
+                              System.out.println(vo.getU_id());
+                              List<Friend> friends = new FriendDAO().check(vo.getU_id());
                               if (friends != null) {
                                  for (int i = 0; i < friends.size(); i++) {
-                                	 Member friend = new MemberDAO().login(friends.get(i).getApplicant());
+                                    Member friend = new MemberDAO().login(friends.get(i).getApplicant());
                            %>
 
-                            <a class="dropdown-item d-flex align-items-center" href="#">
+                           <a class="dropdown-item d-flex align-items-center" href="#">
                               <div class="mr-3">
                                  <div class="icon-circle bg-primary">
                                     <img class="profileimg"
@@ -241,19 +237,12 @@ body {
                         </div></li>
                      
                      <!-- Nav Item - Messages -->
-						
+
                      <li class="nav-item dropdown no-arrow mx-1"><a
                         class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
                         role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"> 
-                       <%
-                       List<Message> messages = new MessageDAO().showMessage(vo.getNick());
-                       if(messages.size()==0){ %>
-                        <i class="fas fa-envelope fa-fw"></i>
-						<%}else{ %>
-						<i class="fas fa-envelope fa-fw"style="color: #0f4fbd;"></i>
-						
-						<%} %> 
+                        aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i>
+
                      </a> <!-- Dropdown - Messages -->
                         <div
                            class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -262,11 +251,14 @@ body {
                               Message Center
                               <!-- 문자 찾기 -->
                            </h6>
+                           
                            <%
                            if (vo == null) {
-                           
+                           %>
+                           <%
                            } else {
-                        	   
+                           List<Message> messages = new MessageDAO().showMessage(vo.getNick());
+                           
                               for (int i = 0; i < messages.size(); i++) {
                            %>
 
