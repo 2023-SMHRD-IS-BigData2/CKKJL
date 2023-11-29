@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Team"%>
 <%@page import="com.smhrd.model.Mercenary_MatchDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.Mercenary_Match"%>
@@ -416,15 +417,23 @@ height: 50px;
 								<th>닉네임</th>
 								<th>시작 시간</th>
 								<th>종료 시간</th>
-								<th>레벨</th>
+								<th>수준</th>
 								<th>인원 수</th>
-								<!--<th>별점</th>-->
+								<th>별점</th>
 								<th>남기실 말</th>
 								<th><a> 매치 신청</a></th>
 							</tr>
 							<tbody>
 								<%
 								for (Mercenary_Match i : ma1) {
+									float star = new Mercenary_MatchDAO().starNum(i.getUser_index());
+									Team team = new Mercenary_MatchDAO().userTeam(i.getUser_index());
+									String f_star;
+									if(star>6){
+										f_star = "5점(0)";
+									}else{
+										f_star = star+"점("+team.getT_estnum()+")";
+									}
 								%>
 								<tr align="center">
 									<td><%=new MemberDAO().login(i.getUser_index()).getNick()%></td>
@@ -432,7 +441,8 @@ height: 50px;
 									<td><%=i.getLast_hour()%></td>
 									<td><%=i.getF_level()%></td>
 									<td><%=i.getPeople_num()%></td>
-									<%-- <td> <%=i.getTeam_estimate() %></td>--%>
+									<td> <%=f_star %>
+									</td>
 									<td><%=i.getWriting()%></td>
 									<td><a href="TeamMatchService?writer=<%=i.getUser_index()%>&f_index=<%=i.getF_index()%>">
 									<i class="fas fa-user fa-fw"></a></td>
@@ -466,9 +476,9 @@ height: 50px;
 									<th>닉네임</th>
 									<th>시작 시간</th>
 									<th>종료 시간</th>
-									<th>레벨</th>
+									<th>수준</th>
 									<th>인원 수</th>
-									<!--<th>별점</th>-->
+									<th>별점</th>
 									<th>남기실 말</th>
 									<th><a>친구 신청</a></th>
 								</tr>
@@ -484,7 +494,12 @@ height: 50px;
 									<td><%=i.getF_level()%></td>
 									<td><%=i.getPeople_num()%></td>
 
+
 									<%-- <td><%=i.getEstimate()</td>--%>
+
+
+									<td><%=new Mercenary_MatchDAO().starNum(i.getUser_index())%></td>
+
 									<td><%=i.getWriting()%></td>
 									<td><a href="FriendService?id=<%=i.getUser_index()%>">
 										<i class="fas fa-user fa-fw float-right"
