@@ -424,7 +424,7 @@ height: 50px;
                                             <!-- Add the table -->
                                             <table class="table">
                                                     <tr>
-                                                        <th class="border">친구 목록</th>
+                                                        <th style="background-color: gray;"><font color="white">친구 목록</th>
                                                     </tr>
                                                     <% List<Friend> friends = new FriendDAO().All(vo.getU_id());%>
                                                     <%for(Friend a : friends){ 
@@ -432,15 +432,15 @@ height: 50px;
                                                     %>
                                                     
                                                     <tr>
-                                                       <td><%=user.getNick()%></td>
+                                                       <td><%=user.getNick()%> : <%=user.getIntro() %></td>
                                                     </tr>
                                                     <%} %> 
                                             </table>
-                                            <table class="table">
+                                            <table class="table" align="center" >
                                                     <tr>
-                                                        <th colspan="2">팀 평가</th>
+                                                        <th colspan="2" style="background-color: gray;"><font color="white">팀 평가</th>
                                                     </tr>
-                                                    <tr align="center" >
+                                                    <tr>
                                                     <td style="width:30%" >시간</td>
                                                     <td></td>
                                                     </tr>
