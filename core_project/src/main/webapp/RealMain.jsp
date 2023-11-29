@@ -186,33 +186,33 @@ body {
                      <li class="nav-item dropdown no-arrow mx-1"><a
                         class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
                         role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
-
-
+                        aria-expanded="false"> 
+                        <%
+                        List<Friend> friends = new FriendDAO().check(vo.getU_id());
+                        if(friends.size()==0){ %>
+                        <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
+						<%}else{ %>
+						<i class="fas fa-user fa-fw"style="color: #0f4fbd;"></i>
+						<%} %>
 
                      </a> <!-- Dropdown - Alerts -->
                         <div
                            class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                            aria-labelledby="alertsDropdown">
-                           <h6 class="dropdown-header">Alerts Center</h6>
+                           <h6 class="dropdown-header">friends Center</h6>
 
                            <%
                            if (vo != null) {
-                              System.out.println(vo.getU_id());
-                              List<Friend> friends = new FriendDAO().check(vo.getU_id());
+                              
                               if (friends != null) {
                                  for (int i = 0; i < friends.size(); i++) {
                            %>
 
                            <a class="dropdown-item d-flex align-items-center" href="#">
-                              <div class="mr-3">
-                                 <div class="icon-circle bg-primary">
-                                    <img class="profileimg"
-                                       src="<%=friends.get(i).getApp_pic()%>">
-                                 </div>
-                              </div>
+                          
                               <div>
-                                 <div class="small text-gray-500"><%=friends.get(i).getApp_nick()%>님이
+                                 <div class="small text-gray-500"><img class="profileimg"
+                                       src="<%=friends.get(i).getApp_pic()%>"><%=friends.get(i).getApp_nick()%>님이
                                     친구 요청을 했습니다.
                                  </div>
                                  <span class="font-weight-bold"> 
@@ -236,12 +236,19 @@ body {
                         </div></li>
                      
                      <!-- Nav Item - Messages -->
-
+						
                      <li class="nav-item dropdown no-arrow mx-1"><a
                         class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
                         role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i>
-
+                        aria-expanded="false"> 
+                       <%
+                       List<Message> messages = new MessageDAO().showMessage(vo.getNick());
+                       if(messages.size()==0){ %>
+                        <i class="fas fa-envelope fa-fw"></i>
+						<%}else{ %>
+						<i class="fas fa-envelope fa-fw"style="color: #0f4fbd;"></i>
+						
+						<%} %> 
                      </a> <!-- Dropdown - Messages -->
                         <div
                            class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -250,14 +257,11 @@ body {
                               Message Center
                               <!-- 문자 찾기 -->
                            </h6>
-                           
                            <%
                            if (vo == null) {
-                           %>
-                           <%
-                           } else {
-                           List<Message> messages = new MessageDAO().showMessage(vo.getNick());
                            
+                           } else {
+                        	   
                               for (int i = 0; i < messages.size(); i++) {
                            %>
 
