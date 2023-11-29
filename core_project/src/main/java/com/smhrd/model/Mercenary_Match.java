@@ -25,10 +25,13 @@ public class Mercenary_Match {
    @NonNull private String people_num;
    @NonNull private String f_level;
    private String writing;
-   @NonNull private String place;
+   private String place;
    
    public void setWriting(String writing) {
       this.writing = writing;
+   }
+   public void setPlace(String place) {
+	   this.place = place;
    }
    
    public void update() {
