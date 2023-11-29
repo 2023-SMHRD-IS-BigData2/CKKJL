@@ -121,6 +121,14 @@
         h1 {
         color: #62ac2e;
     }
+    .topbar {
+	height: 7rem
+}
+.button{
+height: 60px;
+    font-size: 26px;
+    width: 180px;
+}
     </style>
 </head>
 
@@ -158,40 +166,41 @@
                                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                     <h6 class="dropdown-header">Alerts Center</h6>
 
-                                    <%
-										if (vo != null) {
-											System.out.println(vo.getU_id());
-											List<Friend> friends = new FriendDAO().check(vo.getU_id());
-											if (friends != null) {
-												for (int i = 0; i<friends.size();i++) {
-													
-										%>
+                                  <%
+                           if (vo != null) {
+                              System.out.println(vo.getU_id());
+                              List<Friend> friends = new FriendDAO().check(vo.getU_id());
+                              if (friends != null) {
+                                 for (int i = 0; i < friends.size(); i++) {
+                                    Member friend = new MemberDAO().login(friends.get(i).getApplicant());
+                           %>
 
-										<a class="dropdown-item d-flex align-items-center" href="#">
-										<div class="mr-3">
-											<div class="icon-circle bg-primary">
-												<img class="profileimg" src="<%=friends.get(i).getApp_pic()%>">
-											</div>
-										</div>
-										<div>
-											<div class="small text-gray-500"><%=friends.get(i).getApp_nick()%>님이
-												친구 요청을 했습니다.
-											</div>
-											<span class="font-weight-bold"> 
-											<a href="FriendService2?id2=<%=friends.get(i).getApplicant()%>
-											&nick2=<%=friends.get(i).getApp_nick()%>&pic2=<%=friends.get(i).getApp_pic()%>">
-											<input id="acc2" type="button" value="수락"></a> 
-											<a href="FriendService3?id3=<%=friends.get(i).getApplicant()%>
-											&nick3=<%=friends.get(i).getApp_nick()%>&pic3=<%=friends.get(i).getApp_pic()%>">
-											<input id="acc3"
-												type="button" value="거절"></a>
-											</span>
-										</div></a> <%
-
- }
- }
- }
- %>
+                           <a class="dropdown-item d-flex align-items-center" href="#">
+                              <div class="mr-3">
+                                 <div class="icon-circle bg-primary">
+                                    <img class="profileimg"
+                                       src="<%=friend.getPic()%>">
+                                 </div>
+                              </div>
+                              <div>
+                                 <div class="small text-gray-500"><%=friend.getNick()%>님이
+                                    친구 요청을 했습니다.
+                                 </div>
+                                 <span class="font-weight-bold"> 
+                                 <a href="FriendService2?id2=<%=friends.get(i).getApplicant()%>">
+                                       <input id="acc2" type="button" value="수락">
+                                 </a> 
+                                 <a  href="FriendService3?id3=<%=friends.get(i).getApplicant()%>">
+                                       <input id="acc3" type="button" value="거절">
+                                 </a>
+                                 </span>
+                              </div>
+                           </a>
+                           <%
+                           }
+                           }
+                           }
+                           %>
 
                                     <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                                 </div>
