@@ -357,7 +357,11 @@ height: 50px;
 									src="img/undraw_profile.svg"> <%
  } else {
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
+									<%if(vo.getPic().contains("http")){ %>
 									<img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
+									<%}else{ %>
+									<img class="img-profile rounded-circle" src="img/<%=vo.getPic()%>">
+									<%} %>
 									<%
 									}
 									%></a> <!-- Dropdown - User Information -->

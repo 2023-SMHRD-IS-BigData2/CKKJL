@@ -309,7 +309,11 @@ height: 50px;
 									src="img/undraw_profile.svg"> <%
  } else {
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
+									<%if(vo.getPic().contains("http")){ %>
 									<img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
+									<%}else{ %>
+									<img class="img-profile rounded-circle" src="img/<%=vo.getPic()%>">
+									<%} %>
 									<%
 									}
 									%></a> <!-- Dropdown - User Information -->
@@ -381,7 +385,12 @@ height: 50px;
                                             <div class="row align-items-center">
                                                 <div class="col-auto d-flex">
                                                     <!-- 여기에 프로필 사진 추가 -->
-                                                    <img class="rounded-circle mr-3" src="img/로그인 풋살사진.jpg" alt="프로필 사진" width="50" height="50">
+                                                    <%if(vo.getPic().contains("http")){ %>
+													<img class="rounded-circle mr-3" src="<%=vo.getPic()%>" alt="프로필 사진" width="120" height="120">
+												<%}else{ %>
+													<img class="rounded-circle mr-3" src="img/<%=vo.getPic()%>" alt="프로필 사진" width="120" height="120">
+												<%} %>
+
                                                 </div>
                                                 <div class="col">
                                                     <h3 class="m-0 font-weight-bold text-primary">My Profile</h3>
