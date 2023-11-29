@@ -272,14 +272,17 @@ body {
                                  <div class="small text-gray-500"><%=messages.get(i).getSender()%>
                                     ·
                                     <%=messages.get(i).getM_date()%></div>
-                              </div> 
+
+                              </div>
+                              <div>
                               <form action="DeleteService" method="post">
                               <input name="num" type="hidden" value="<%=messages.get(i).getNum()%>">
                               <div style="margin-left: 10px"><input type="submit" value="삭제" style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold"></div>
                               </form>
-                              <%
- }
- }
+                              </div>
+                               <%
+
+ }}
  
  %> <a class="dropdown-item text-center small text-gray-500" href="javascript:MessageWrite()">문자 보내기</a>
                         </div></li>
@@ -301,6 +304,7 @@ body {
                            src="<%=vo.getPic()%>"> <%
  }
  %></a> <!-- Dropdown - User Information -->
+
 
 
                         <div

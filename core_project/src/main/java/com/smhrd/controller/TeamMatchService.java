@@ -15,6 +15,7 @@ import com.smhrd.model.Member;
 
 @WebServlet("/TeamMatchService")
 public class TeamMatchService extends HttpServlet {
+
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -38,3 +39,4 @@ public class TeamMatchService extends HttpServlet {
 	}
 
 }
+

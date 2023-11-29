@@ -70,6 +70,21 @@ body {
    width: 60px;
    height: 60px;
 }
+table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2; 
+        }
 </style>
 
 
@@ -383,28 +398,42 @@ body {
                                             <!-- Add the table -->
                                             <table class="table">
                                                     <tr>
-                                                        <td class="border">친구 목록</td>
+                                                        <th class="border">친구 목록</th>
                                                     </tr>
                                                     <% List<Friend> friends = new FriendDAO().All(vo.getU_id());%>
-                                                    <tr>
                                                     <%for(Friend a : friends){ %>
-                                                    	<td><%=a.getApp_nick() %></td>
+                                                    <tr>
+                                                       <td><%=a.getApp_nick() %></td>
+                                                    </tr>
                                                     <%} %> 
-                                                    </tr>
-                                            </table> 
-                                            <table>
+                                            </table>
+                                            <table class="table">
                                                     <tr>
-                                                        <td class="border">친구1</td>
-                                                        <td class="border">친구2</td>
-                                                        <td class="border">광주풋살끝판왕</td>
+                                                        <th colspan="2">팀 평가</th>
                                                     </tr>
-                                            </table>       
-			                                <table>
+                                                    <tr align="center" >
+                                                    <td style="width:30%" >시간</td>
+                                                    <td></td>
+                                                    </tr>
                                                     <tr>
-                                                        <td class="border">팔자철</td>
-                                                        <td class="border">풋살 챌린지 영상</td>
+                                                    <td style="width:30%">매너</td>
+                                                    <td></td>
                                                     </tr>
-			                                </table>                
+                                                    <tr>
+                                                    <td style="width:30%">비용</td>
+                                                    <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td style="width:30%">응답 속도</td>
+                                                    <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td style="width:30%">팀 레벨</td>
+                                                    <td></td>
+                                                    </tr>
+                                                    
+                                                     
+                                            </table>               
                                                     <!-- Add more rows if needed -->
                                                
                                            

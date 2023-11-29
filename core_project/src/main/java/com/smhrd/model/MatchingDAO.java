@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.smhrd.database.SqlSessionManager;
 
 public class MatchingDAO {
+
 	SqlSessionFactory sqlsessionFactory = SqlSessionManager.getSqlSession();
 
 	public int sendMatching(Matching vo) {
