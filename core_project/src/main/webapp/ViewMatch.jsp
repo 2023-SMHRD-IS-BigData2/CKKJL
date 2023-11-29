@@ -70,6 +70,14 @@ body {
 	width: 60px;
 	height: 60px;
 }
+.topbar {
+   height: 6rem
+}
+.button{
+height: 50px;
+    font-size: 23px;
+    width: 180px;
+}
 </style>
 
 
@@ -77,6 +85,12 @@ body {
 
 <body id="page-top">
 
+<script type="text/javascript">
+      function MessageWrite() {
+         window.open("MessageWrite.jsp", "MessageWrite",
+               "width=400, height=500, top=10, left=10")
+      }
+   </script>
 
 	<%
 	Member vo = (Member) session.getAttribute("vo");
@@ -142,8 +156,6 @@ body {
 								</a></li>
 							</ul>
 						</div>
-
-
 						<!-- Topbar Navbar -->
 						<ul class="navbar-nav ml-auto">
 
@@ -171,20 +183,31 @@ body {
 									</form>
 								</div></li>
 
+							<li class="nav-item dropdown no-arrow mx-1"><a
+								class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">     <i class="fas fa-thumbs-up"></i>
 
+							</a> <!-- Dropdown - Messages -->
+								<div
+									class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+									aria-labelledby="messagesDropdown">
+
+									<a class="dropdown-item text-center small text-gray-500"
+										href="#">Read More Messages</a>
+								</div></li>
 							<!-- Nav Item - Alerts -->
 							<li class="nav-item dropdown no-arrow mx-1"><a
 								class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
 								role="button" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
-
+								aria-expanded="false"> <i class="fas fa-user fa-fw"></i>
 
 
 							</a> <!-- Dropdown - Alerts -->
 								<div
 									class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
 									aria-labelledby="alertsDropdown">
-									<h6 class="dropdown-header">Alerts Center</h6>
+									<h6 class="dropdown-header">friends Center</h6>
 
 									<%
 									if (vo != null) {
@@ -217,8 +240,6 @@ body {
 									}
 									%>
 
-									<a class="dropdown-item text-center small text-gray-500"
-										href="#">Show All Alerts</a>
 								</div></li>
 
 							<!-- Nav Item - Messages -->
@@ -236,26 +257,15 @@ body {
 										Message Center
 										<!-- 문자 찾기 -->
 									</h6>
+
 									<%
 									if (vo == null) {
 									%>
-									<a class="dropdown-item d-flex align-items-center" href="#">
-										<div class="dropdown-list-image mr-3">
-											<div class="font-weight-bold"></div>
-									</a> <a class="dropdown-item d-flex align-items-center" href="#">
-										<div class="dropdown-list-image mr-3">
-											<div></div>
-									</a>
 									<%
 									} else {
 									List<Message> messages = new MessageDAO().showMessage(vo.getNick());
-									if (messages.size() < 3) {
-										for (int i = 0; i < messages.size(); i++) {
-											System.out.println(messages.get(i).getSender());
-										}
-									} else {
-										for (int i = 0; i < 3; i++) {
-											System.out.println(messages.get(i).getSender());
+
+									for (int i = 0; i < messages.size(); i++) {
 									%>
 
 									<a class="dropdown-item d-flex align-items-center" href="#">
@@ -270,16 +280,22 @@ body {
 												·
 												<%=messages.get(i).getM_date()%></div>
 										</div>
-									</a>
-
-									<%
-									}
-									}
-									}
-									%>
-									<a class="dropdown-item text-center small text-gray-500"
-										href="#">Read More Messages</a>
+										<div>
+											<form action="DeleteService" method="post">
+												<input name="num" type="hidden"
+													value="<%=messages.get(i).getNum()%>">
+												<div style="margin-left: 10px">
+													<input type="submit" value="삭제"
+														style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold">
+												</div>
+											</form>
+										</div> <%
+ }
+ }
+ %> <a class="dropdown-item text-center small text-gray-500"
+										href="javascript:MessageWrite()">문자 보내기</a>
 								</div></li>
+
 							<div class="topbar-divider d-none d-sm-block"></div>
 
 							<!-- Nav Item - User Information -->
@@ -297,6 +313,7 @@ body {
 									<%
 									}
 									%></a> <!-- Dropdown - User Information -->
+
 
 
 								<div

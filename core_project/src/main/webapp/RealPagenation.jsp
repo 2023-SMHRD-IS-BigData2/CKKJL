@@ -121,181 +121,277 @@
         h1 {
         color: #62ac2e;
     }
+    .topbar {
+   height: 6rem
+}
+.button{
+height: 50px;
+    font-size: 23px;
+    width: 180px;
+}
     </style>
 </head>
 
 <body>
- <%
+<script type="text/javascript">
+      function MessageWrite() {
+         window.open("MessageWrite.jsp", "MessageWrite",
+               "width=400, height=500, top=10, left=10")
+      }
+   </script>
+
+	<%
 	Member vo = (Member) session.getAttribute("vo");
 	%>
-    
-    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-        <div>
-            <a href="RealMain.jsp"><img src="img/futsal062.png" alt="" width="200" height="40"></a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto"> <!-- mx-auto 클래스를 사용하여 수평 가운데 정렬 -->
-                        <li class="nav-item">                  
-						<a class="nav-link collapsed" href=<%if (vo != null) {%>"RealMyPage.jsp"<%} else{%>"RealLogin.jsp"<% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">My Page</button></span>
-                        </a></li>
-                        <li class="nav-item">  
-                        <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealFeedWrite.jsp"<%} else {%> "RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">피드 작성</button></span>
-                        </a></li>
-                        <li class="nav-item">   
-                        <a class="nav-link collapsed" href=<%if (vo != null) {%>"RealPagenation.jsp"<%} else {%>"RealLogin.jsp" <% } %> data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">매칭용병 등록</button></span>
-                        </a></li>
-                        <li class="nav-item"> 
-                        <a class="nav-link collapsed" href="ViewPagenation.jsp" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <span align="center"><button class="button is-primary is-outlined is-large">매칭용병 보기</button></span>
-                        </a></li>
-                        </ul>
-                        </div>
-     <!-- Nav Item - Alerts -->
-                            <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user fa-fw"></i> <!-- Counter - Alerts -->
 
 
 
-                                </a> <!-- Dropdown - Alerts -->
-                                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                                    <h6 class="dropdown-header">Alerts Center</h6>
+	<!-- Page Wrapper -->
+	<div id="wrapper">
 
-                                    <%
-										if (vo != null) {
-											System.out.println(vo.getU_id());
-											List<Friend> friends = new FriendDAO().check(vo.getU_id());
-											if (friends != null) {
-												for (int i = 0; i<friends.size();i++) {
-													
-										%>
 
-										<a class="dropdown-item d-flex align-items-center" href="#">
-										<div class="mr-3">
-											<div class="icon-circle bg-primary">
-												<img class="profileimg" src="<%=friends.get(i).getApp_pic()%>">
+		<!-- Topbar Navbar -->
+		<ul class="navbar-nav ml-auto">
+			<!-- Content Wrapper -->
+			<div id="content-wrapper" class="d-flex flex-column">
+
+				<!-- Main Content -->
+				<div id="content">
+
+					<!-- Topbar -->
+					<nav
+						class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+						<!-- Sidebar Toggle (Topbar) -->
+						<div>
+							<a href="RealMain.jsp"><img src="img/futsal062.png" alt=""
+								width="200" height="40"></a>
+						</div>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav mx-auto">
+								<!-- mx-auto 클래스를 사용하여 수평 가운데 정렬 -->
+								<li class="nav-item"><a class="nav-link collapsed"
+									href=<%if (vo != null) {%>
+									"RealMyPage.jsp"<%} else {%>"RealLogin.jsp"<%}%>
+									data-target="#collapseTwo" aria-expanded="true"
+									aria-controls="collapseTwo"> <span align="center"><button
+												class="button is-primary is-outlined is-large">My
+												Page</button></span>
+								</a></li>
+								<li class="nav-item"><a class="nav-link collapsed"
+									href=<%if (vo != null) {%>
+									"RealFeedWrite.jsp"<%} else {%> "RealLogin.jsp" <%}%>
+									data-target="#collapseTwo" aria-expanded="true"
+									aria-controls="collapseTwo"> <span align="center"><button
+												class="button is-primary is-outlined is-large">피드
+												작성</button></span>
+								</a></li>
+								<li class="nav-item"><a class="nav-link collapsed"
+									href=<%if (vo != null) {%>
+									"RealPagenation.jsp"<%} else {%>"RealLogin.jsp" <%}%>
+									data-target="#collapseTwo" aria-expanded="true"
+									aria-controls="collapseTwo"> <span align="center"><button
+												class="button is-primary is-outlined is-large">매칭용병
+												등록</button></span>
+								</a></li>
+								<li class="nav-item"><a class="nav-link collapsed"
+									href="ViewPagenation.jsp" data-target="#collapseTwo"
+									aria-expanded="true" aria-controls="collapseTwo"> <span
+										align="center"><button
+												class="button is-primary is-outlined is-large">매칭용병
+												보기</button></span>
+								</a></li>
+							</ul>
+						</div>
+						<!-- Topbar Navbar -->
+						<ul class="navbar-nav ml-auto">
+
+							<!-- Nav Item - Search Dropdown (Visible Only XS) -->
+							<li class="nav-item dropdown no-arrow d-sm-none"><a
+								class="nav-link dropdown-toggle" href="#" id="searchDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> <i class="fas fa-search fa-fw"></i>
+							</a> <!-- Dropdown - Messages -->
+								<div
+									class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+									aria-labelledby="searchDropdown">
+									<form class="form-inline mr-auto w-100 navbar-search">
+										<div class="input-group">
+											<input type="text"
+												class="form-control bg-light border-0 small"
+												placeholder="Search for..." aria-label="Search"
+												aria-describedby="basic-addon2">
+											<div class="input-group-append">
+												<button class="btn btn-primary" type="button">
+													<i class="fas fa-search fa-sm"></i>
+												</button>
 											</div>
 										</div>
-										<div>
-											<div class="small text-gray-500"><%=friends.get(i).getApp_nick()%>님이
-												친구 요청을 했습니다.
+									</form>
+								</div></li>
+
+							<li class="nav-item dropdown no-arrow mx-1"><a
+								class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">     <i class="fas fa-thumbs-up"></i>
+
+							</a> <!-- Dropdown - Messages -->
+								<div
+									class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+									aria-labelledby="messagesDropdown">
+
+									<a class="dropdown-item text-center small text-gray-500"
+										href="#">Read More Messages</a>
+								</div></li>
+							<!-- Nav Item - Alerts -->
+							<li class="nav-item dropdown no-arrow mx-1"><a
+								class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> <i class="fas fa-user fa-fw"></i>
+
+
+							</a> <!-- Dropdown - Alerts -->
+								<div
+									class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+									aria-labelledby="alertsDropdown">
+									<h6 class="dropdown-header">friends Center</h6>
+
+									<%
+									if (vo != null) {
+										System.out.println(vo.getU_id());
+										List<Friend> friends = new FriendDAO().check(vo.getU_id());
+										if (friends != null) {
+											for (int i = 0; i < friends.size(); i++) {
+										Member friend = new MemberDAO().login(friends.get(i).getApplicant());
+									%>
+									<div class="friend-request" align="center">
+										<div class="friend-info">
+											
+											<div style="font-size: 16px"> <%=friend.getNick()%>님이
+												친구 요청
 											</div>
-											<span class="font-weight-bold"> 
-											<a href="FriendService2?id2=<%=friends.get(i).getApplicant()%>
-											&nick2=<%=friends.get(i).getApp_nick()%>&pic2=<%=friends.get(i).getApp_pic()%>">
-											<input id="acc2" type="button" value="수락"></a> 
-											<a href="FriendService3?id3=<%=friends.get(i).getApplicant()%>
-											&nick3=<%=friends.get(i).getApp_nick()%>&pic3=<%=friends.get(i).getApp_pic()%>">
-											<input id="acc3"
-												type="button" value="거절"></a>
-											</span>
-										</div></a> <%
+										</div>
+										<div class="friend-actions">
+											<a
+												href="FriendService2?id2=<%=friends.get(i).getApplicant()%>">
+												<button class="btn-accept" style="width:50px;height:30px;">수락</button>
+											</a> <a
+												href="FriendService3?id3=<%=friends.get(i).getApplicant()%>">
+												<button class="btn-reject" style="width:50px;height:30px;">거절</button>
+											</a>
+										</div>
+									</div>
+									<%
+									}
+									}
+									}
+									%>
 
- }
- }
- }
- %>
+								</div></li>
 
-                                    <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                                </div>
-                            </li>
+							<!-- Nav Item - Messages -->
 
-                            <!-- Nav Item - Messages -->
+							<li class="nav-item dropdown no-arrow mx-1"><a
+								class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i>
 
-                            <li class="nav-item dropdown no-arrow mx-1"><a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i>
+							</a> <!-- Dropdown - Messages -->
+								<div
+									class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+									aria-labelledby="messagesDropdown">
+									<h6 class="dropdown-header">
+										Message Center
+										<!-- 문자 찾기 -->
+									</h6>
 
-                                </a> <!-- Dropdown - Messages -->
-                                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                                    <h6 class="dropdown-header">
-                                        Message Center
-                                        <!-- 문자 찾기 -->
-                                    </h6>
-                                    <%
+									<%
 									if (vo == null) {
 									%>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="dropdown-list-image mr-3">
-                                            <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
-                                            <div class="status-indicator bg-success"></div>
-                                        </div>
-                                        <div class="font-weight-bold">
-                                            <div class="text-truncate">Hi there! I am wondering if
-                                                you can help me with a problem I've been having.</div>
-                                            <div class="small text-gray-500">Emily Fowler · 58m</div>
-                                        </div>
-                                    </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="dropdown-list-image mr-3">
-                                            <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
-                                            <div class="status-indicator"></div>
-                                        </div>
-                                        <div>
-                                            <div class="text-truncate">I have the photos that you
-                                                ordered last month, how would you like them sent to you?</div>
-                                            <div class="small text-gray-500">Jae Chun · 1d</div>
-                                        </div>
-                                    </a>
-                                    <%
+									<%
 									} else {
 									List<Message> messages = new MessageDAO().showMessage(vo.getNick());
-									if (messages.size() < 3) {
-										for (int i = 0; i < messages.size(); i++) {
-											System.out.println(messages.get(i).getSender());
-										}
-									} else {
-										for (int i = 0; i < 3; i++) {
-											System.out.println(messages.get(i).getSender());
+
+									for (int i = 0; i < messages.size(); i++) {
 									%>
 
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="dropdown-list-image mr-3">
-                                            <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
-                                            <div class="status-indicator bg-success"></div>
-                                        </div>
-                                        <div class="font-weight-bold">
-                                            <div class="text-truncate"><%=messages.get(i).getMessage()%></div>
-                                            <div class="small text-gray-500"><%=messages.get(i).getSender()%>
-                                                ·
-                                                <%=messages.get(i).getM_date()%></div>
-                                        </div>
-                                    </a>
+									<a class="dropdown-item d-flex align-items-center" href="#">
+										<div class="dropdown-list-image mr-3">
+											<img class="rounded-circle" src="img/undraw_profile_1.svg"
+												alt="...">
+											<div class="status-indicator bg-success"></div>
+										</div>
+										<div class="font-weight-bold">
+											<div class="text-truncate"><%=messages.get(i).getMessage()%></div>
+											<div class="small text-gray-500"><%=messages.get(i).getSender()%>
+												·
+												<%=messages.get(i).getM_date()%></div>
+										</div>
+										<div>
+											<form action="DeleteService" method="post">
+												<input name="num" type="hidden"
+													value="<%=messages.get(i).getNum()%>">
+												<div style="margin-left: 10px">
+													<input type="submit" value="삭제"
+														style="background-color: #5fa92d; border-color: #5fa92d; border-radius: 10px; color: white; font-weight: bold">
+												</div>
+											</form>
+										</div> <%
+ }
+ }
+ %> <a class="dropdown-item text-center small text-gray-500"
+										href="javascript:MessageWrite()">문자 보내기</a>
+								</div></li>
 
-                                    <%
-									}
-									}
-									}
-									%>
-                                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-                                </div>
-                            </li>
-                            <div class="topbar-divider d-none d-sm-block"></div>
+							<div class="topbar-divider d-none d-sm-block"></div>
 
-                            <!-- Nav Item - User Information -->
-                            <li class="nav-item dropdown no-arrow"><a class="nav-link dropdown-toggle" href="RealLogin.jsp" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%
+							<!-- Nav Item - User Information -->
+							<li class="nav-item dropdown no-arrow"><a
+								class="nav-link dropdown-toggle" href="RealLogin.jsp"
+								id="userDropdown" role="button" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> <%
  if (vo == null) {
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small">로그인해주세요</span>
-                                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg"> <%
+									<img class="img-profile rounded-circle"
+									src="img/undraw_profile.svg"> <%
  } else {
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
-                                    <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
-                                    <%
+									<img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
+									<%
 									}
-									%></a>
-									 <!-- Dropdown - User Information -->
-									 
-									
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                 <% if(vo == null) { %>
-                                    <a class="dropdown-item" href="RealLogin.jsp"> <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> 로그인
-                                   </a> <% } else { %>
-                                     <a class="dropdown-item" href="UpdateUser.jsp"> <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        정보변경
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        로그아웃 
-                                    </a> <%} %> 
-                                </div> 
-                            </li>
-									
-                        </ul> 
+									%></a> <!-- Dropdown - User Information -->
 
 
-                    </nav><!-- 여기부터 톱바 -->
+
+								<div
+									class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+									aria-labelledby="userDropdown">
+									<%
+									if (vo == null) {
+									%>
+									<a class="dropdown-item" href="RealLogin.jsp"> <i
+										class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> 로그인
+									</a>
+									<%
+									} else {
+									%>
+									<a class="dropdown-item" href="UpdateUser.jsp"> <i
+										class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> 정보변경 <a
+										class="dropdown-item" href="#" data-toggle="modal"
+										data-target="#logoutModal"> <i
+											class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+											로그아웃
+									</a> <%
+ }
+ %>
+								</div></li>
+
+						</ul>
+
+
+					</nav>
+					<!-- 여기부터 복사해요 -->
     <!-- Your existing navigation bar code here -->
 
     
