@@ -419,8 +419,7 @@ body {
 									<td><%=i.getPeople_num()%></td>
 									<td><%-- <%=i.getTeam_estimate() %>--%></td> 
 									<td><%=i.getWriting()%></td>
-									<td><a href="TeamMatchService?writer=<%=i.getUser_index()%>&f_index=<%=i.getF_index()%>">
-									<i class="fas fa-envelope fa-fw"></a></td>
+									<td><i class="fas fa-envelope fa-fw"></td>
 								</tr>
 								<%
 								}
@@ -468,7 +467,7 @@ body {
 									<td><%=i.getLast_hour()%></td>
 									<td><%=i.getF_level()%></td>
 									<td><%=i.getPeople_num()%></td>
-									<td><%--<%=i.getEstimate() --%></td>
+									<%-- <td><%=i.getEstimate() %></td> --%>
 									<td><%=i.getWriting()%></td>
 									<td><i class="fas fa-user fa-fw"></td>
 								</tr>
