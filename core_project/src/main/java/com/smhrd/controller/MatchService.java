@@ -30,11 +30,12 @@ public class MatchService extends HttpServlet {
       String level = request.getParameter("level");
       String comment = request.getParameter("comment");
       String matchDay = request.getParameter("matchDay");
+      String place = request.getParameter("place");
       System.out.println(vo.getU_id() + mm + matchDay + starttime + finishtime + peoplenum + level + comment );
    
       Mercenary_Match mercenary_match = null;
       // 아래부분 개수부족
-      mercenary_match = new Mercenary_Match(mm, matchDay, vo.getU_id(), starttime, finishtime, peoplenum, level);
+      mercenary_match = new Mercenary_Match(mm, matchDay, vo.getU_id(), starttime, finishtime, peoplenum, level, place);
       if (comment != null) {
          mercenary_match.setWriting(comment);
       }
