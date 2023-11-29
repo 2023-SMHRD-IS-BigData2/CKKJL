@@ -18,6 +18,7 @@
 		<typeAlias type="com.smhrd.model.Friend" alias="Friend"/>
 		<typeAlias type="com.smhrd.model.FeedAnComments" alias="FeedAnComments"/>
 		<typeAlias type="com.smhrd.model.Comment" alias="Comment"/>		
+		<typeAlias type="com.smhrd.model.Matching" alias="Matching"/>		
 	</typeAliases>			
 					
   <environments default="development">
