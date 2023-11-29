@@ -13,6 +13,7 @@ import com.smhrd.model.MessageDAO;
 public class DeleteService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		int num = Integer.parseInt(request.getParameter("num"));
 
 		int cnt = new MessageDAO().deleteMessage(num);

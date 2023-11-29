@@ -15,26 +15,28 @@ import com.smhrd.model.Member;
 
 @WebServlet("/TeamMatchService")
 public class TeamMatchService extends HttpServlet {
-   
-   protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      
-      String writer = request.getParameter("writer");
-      int f_index = Integer.parseInt(request.getParameter("f_index"));
-      HttpSession session = request.getSession();
-      Member vo = (Member) session.getAttribute("vo");
-      String challenger = vo.getU_id();
-      
-      Matching game = new Matching(writer, challenger, f_index);
-      
-      int cnt = new MatchingDAO().sendMatching(game);
-      if(cnt>0) {
-         System.out.println("입력 성공");
-      } else {
-         System.out.println("입력 실패");
-      }
-      response.sendRedirect("RealMain.jsp");
-      
-      
-   }
+
+	
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String writer = request.getParameter("writer");
+		int f_index = Integer.parseInt(request.getParameter("f_index"));
+		HttpSession session = request.getSession();
+		Member vo = (Member) session.getAttribute("vo");
+		String challenger = vo.getU_id();
+		
+		Matching game = new Matching(writer, challenger, f_index);
+		
+		int cnt = new MatchingDAO().sendMatching(game);
+		if(cnt>0) {
+			System.out.println("입력 성공");
+		} else {
+			System.out.println("입력 실패");
+		}
+		response.sendRedirect("");
+		
+		
+	}
 
 }
+
