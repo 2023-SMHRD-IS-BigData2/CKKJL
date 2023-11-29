@@ -10,8 +10,7 @@
 
 	<!-- 친구 추가 -->
 	<insert id="Add" parameterType="Friend">
-		INSERT INTO TB_FRIEND VALUES
-		(#{applicant},#{acceptor},'X')
+		INSERT INTO TB_FRIEND VALUES (#{applicant},#{acceptor},'X')
 	</insert>
 
 	<!-- 중복확인 -->
