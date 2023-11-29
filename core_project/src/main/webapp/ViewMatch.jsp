@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Team"%>
 <%@page import="com.smhrd.model.Mercenary_MatchDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.Mercenary_Match"%>
@@ -425,6 +426,14 @@ height: 50px;
 							<tbody>
 								<%
 								for (Mercenary_Match i : ma1) {
+									float star = new Mercenary_MatchDAO().starNum(i.getUser_index());
+									Team team = new Mercenary_MatchDAO().userTeam(i.getUser_index());
+									String f_star;
+									if(star>6){
+										f_star = "5점(0)";
+									}else{
+										f_star = star+"점("+team.getT_estnum()+")";
+									}
 								%>
 								<tr align="center">
 									<td><%=new MemberDAO().login(i.getUser_index()).getNick()%></td>
@@ -432,7 +441,8 @@ height: 50px;
 									<td><%=i.getLast_hour()%></td>
 									<td><%=i.getF_level()%></td>
 									<td><%=i.getPeople_num()%></td>
-									<td> <%=new Mercenary_MatchDAO().starNum(i.getUser_index()) %></td>
+									<td> <%=f_star %>
+									</td>
 									<td><%=i.getWriting()%></td>
 									<td><i class="fas fa-envelope fa-fw"></td>
 								</tr>

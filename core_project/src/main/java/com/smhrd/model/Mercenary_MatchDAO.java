@@ -49,13 +49,16 @@ public class Mercenary_MatchDAO {
       return cnt;
    }
    
-   public String starNum(String user_index) {
-	   float resuit = 0;
+   public Team userTeam(String user_index) {
 	   Member member = new MemberDAO().login(user_index);
-	   Team team = new TeamDAO().selTeam(member.getTeam_index());
+	   return new TeamDAO().selTeam(member.getTeam_index());
+   }
+   public float starNum(String user_index) {
+	   float resuit = 0;
+	   Team team = userTeam(user_index);
 	   
 	   if (team.getT_estnum() == 0) {
-		   return 5+"점"+"("+ team.getT_estnum() +")";
+		   resuit = 10;
 	   } else {
 		   float time = (float)team.getE_time()/team.getT_estnum();
 		   float level = (float)team.getE_level()/team.getT_estnum();
@@ -65,9 +68,9 @@ public class Mercenary_MatchDAO {
 		   
 		   resuit = (time+level+money+manner+respon)/5;
 		   
-		   
-		   return resuit+"점"+"("+ team.getT_estnum() +")";
 	   }
+	   return resuit;
 	   
    }
+   
 }
