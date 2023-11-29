@@ -81,7 +81,7 @@ height: 50px;
 }
 </style>
 
-
+<script src="https://kit.fontawesome.com/def66b134a.js" crossorigin="anonymous"></script>
 </head>
 
 <body id="page-top">
@@ -186,7 +186,7 @@ height: 50px;
 							<li class="nav-item dropdown no-arrow mx-1"><a
 								class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 								role="button" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false"> <i>⚽</i>
+								aria-expanded="false">     <i class="fas fa-thumbs-up"></i>
 
 							</a> <!-- Dropdown - Messages -->
 								<div
