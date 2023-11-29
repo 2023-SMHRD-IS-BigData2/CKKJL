@@ -416,9 +416,9 @@ height: 50px;
 								<th>닉네임</th>
 								<th>시작 시간</th>
 								<th>종료 시간</th>
-								<th>레벨</th>
+								<th>수준</th>
 								<th>인원 수</th>
-								<!--<th>별점</th>-->
+								<th>별점</th>
 								<th>남기실 말</th>
 								<th><a> 매치 신청</a></th>
 							</tr>
@@ -432,7 +432,7 @@ height: 50px;
 									<td><%=i.getLast_hour()%></td>
 									<td><%=i.getF_level()%></td>
 									<td><%=i.getPeople_num()%></td>
-									<%-- <td> <%=i.getTeam_estimate() %></td>--%>
+									<td> <%=new Mercenary_MatchDAO().starNum(i.getUser_index()) %></td>
 									<td><%=i.getWriting()%></td>
 									<td><i class="fas fa-envelope fa-fw"></td>
 								</tr>
@@ -465,9 +465,9 @@ height: 50px;
 									<th>닉네임</th>
 									<th>시작 시간</th>
 									<th>종료 시간</th>
-									<th>레벨</th>
+									<th>수준</th>
 									<th>인원 수</th>
-									<!--<th>별점</th>-->
+									<th>별점</th>
 									<th>남기실 말</th>
 									<th><a>친구 신청</a></th>
 								</tr>
@@ -483,7 +483,7 @@ height: 50px;
 									<td><%=i.getF_level()%></td>
 									<td><%=i.getPeople_num()%></td>
 <
-									<%-- <td><%=i.getEstimate()</td>--%>
+									<td><%=new Mercenary_MatchDAO().starNum(i.getUser_index())%></td>
 									<td><%=i.getWriting()%></td>
 									<td><i class="fas fa-user fa-fw"></td>
 								</tr>

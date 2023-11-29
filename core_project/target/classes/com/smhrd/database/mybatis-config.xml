@@ -19,6 +19,7 @@
 		<typeAlias type="com.smhrd.model.FeedAnComments" alias="FeedAnComments"/>
 		<typeAlias type="com.smhrd.model.Comment" alias="Comment"/>		
 		<typeAlias type="com.smhrd.model.Matching" alias="Matching"/>		
+		<typeAlias type="com.smhrd.model.Team" alias="Team"/>		
 	</typeAliases>			
 					
   <environments default="development">
@@ -42,5 +43,6 @@
     <mapper resource="com/smhrd/database/FeedAnCommentsMapper.xml"/>
     <mapper resource="com/smhrd/database/CommentMapper.xml"/>
     <mapper resource="com/smhrd/database/IframeMapper.xml"/>
+    <mapper resource="com/smhrd/database/TeamMapper.xml"/>
   </mappers>
 </configuration>
