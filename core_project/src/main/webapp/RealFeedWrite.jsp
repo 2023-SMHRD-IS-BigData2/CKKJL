@@ -405,9 +405,10 @@ body {
                                 <div class="card shadow mb-4">
                                     <div class="card-header py-3">
                                         <form action="./FeedService" method="post" enctype="multipart/form-data">
-                                            <p align="center">타이틀</p>
+                                            <p align="center">작성자</p>
                                             <p align="center">
-                                                <input type="text" name="title">
+                                            <%= vo.getNick()%>
+                                                <input type="HIDDEN" name="title" value="<%= vo.getNick()%>">
                                             </p>
                                     </div>
                                     <div class="card-body" align="center">
