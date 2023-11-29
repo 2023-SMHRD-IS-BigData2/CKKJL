@@ -192,31 +192,25 @@ body {
 										List<Friend> friends = new FriendDAO().check(vo.getU_id());
 										if (friends != null) {
 											for (int i = 0; i < friends.size(); i++) {
+										Member friend = new MemberDAO().login(friends.get(i).getApplicant());
 									%>
-
-									<a class="dropdown-item d-flex align-items-center" href="#">
-										<div class="mr-3">
-											<div class="icon-circle bg-primary">
-												<img class="profileimg"
-													src="<%=friends.get(i).getApp_pic()%>">
+									<div class="friend-request" align="center">
+										<div class="friend-info">
+											
+											<div style="font-size: 16px"> <%=friend.getNick()%>님이
+												친구 요청
 											</div>
 										</div>
-										<div>
-											<div class="small text-gray-500"><%=friends.get(i).getApp_nick()%>님이
-												친구 요청을 했습니다.
-											</div>
-											<span class="font-weight-bold"> <a
-												href="FriendService2?id2=<%=friends.get(i).getApplicant()%>
-											&nick2=<%=friends.get(i).getApp_nick()%>&pic2=<%=friends.get(i).getApp_pic()%>">
-													<input id="acc2" type="button" value="수락">
+										<div class="friend-actions">
+											<a
+												href="FriendService2?id2=<%=friends.get(i).getApplicant()%>">
+												<button class="btn-accept" style="width:50px;height:30px;">수락</button>
 											</a> <a
-												href="FriendService3?id3=<%=friends.get(i).getApplicant()%>
-											&nick3=<%=friends.get(i).getApp_nick()%>&pic3=<%=friends.get(i).getApp_pic()%>">
-													<input id="acc3" type="button" value="거절">
+												href="FriendService3?id3=<%=friends.get(i).getApplicant()%>">
+												<button class="btn-reject" style="width:50px;height:30px;">거절</button>
 											</a>
-											</span>
 										</div>
-									</a>
+									</div>
 									<%
 									}
 									}
