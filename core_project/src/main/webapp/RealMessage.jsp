@@ -216,7 +216,7 @@
                                     </a>
                                     <%
 									} else {
-									List<Message> messages = new MessageDAO().showMessage(vo.getNick());
+									List<Message> messages = new MessageDAO().showMessage(vo.getU_id());
 									if (messages.size() < 3) {
 										for (int i = 0; i < messages.size(); i++) {
 											System.out.println(messages.get(i).getSender());

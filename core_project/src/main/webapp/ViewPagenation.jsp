@@ -311,7 +311,7 @@ height: 50px;
 									%>
 									<%
 									} else {
-									List<Message> messages = new MessageDAO().showMessage(vo.getNick());
+									List<Message> messages = new MessageDAO().showMessage(vo.getU_id());
 
 									for (int i = 0; i < messages.size(); i++) {
 									%>
