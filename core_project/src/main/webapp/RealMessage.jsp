@@ -216,7 +216,7 @@
                                     </a>
                                     <%
 									} else {
-									List<Message> messages = new MessageDAO().showMessage(vo.getNick());
+									List<Message> messages = new MessageDAO().showMessage(vo.getU_id());
 									if (messages.size() < 3) {
 										for (int i = 0; i < messages.size(); i++) {
 											System.out.println(messages.get(i).getSender());
@@ -256,8 +256,12 @@
                                     <img class="img-profile rounded-circle" src="img/undraw_profile.svg"> <%
  } else {
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
-                                    <img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
-                                    <%
+                                    <%if(vo.getPic().contains("http")){ %>
+									<img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
+									<%}else{ %>
+									<img class="img-profile rounded-circle" src="img/<%=vo.getPic()%>">
+									<%} %>
+									<%
 									}
 									%></a>
 									 <!-- Dropdown - User Information -->

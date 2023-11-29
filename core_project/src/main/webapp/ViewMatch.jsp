@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Team"%>
 <%@page import="com.smhrd.model.Mercenary_MatchDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.Mercenary_Match"%>
@@ -263,7 +264,7 @@ height: 50px;
 									%>
 									<%
 									} else {
-									List<Message> messages = new MessageDAO().showMessage(vo.getNick());
+									List<Message> messages = new MessageDAO().showMessage(vo.getU_id());
 
 									for (int i = 0; i < messages.size(); i++) {
 									%>
@@ -309,7 +310,11 @@ height: 50px;
 									src="img/undraw_profile.svg"> <%
  } else {
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
+									<%if(vo.getPic().contains("http")){ %>
 									<img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
+									<%}else{ %>
+									<img class="img-profile rounded-circle" src="img/<%=vo.getPic()%>">
+									<%} %>
 									<%
 									}
 									%></a> <!-- Dropdown - User Information -->
@@ -412,15 +417,23 @@ height: 50px;
 								<th>닉네임</th>
 								<th>시작 시간</th>
 								<th>종료 시간</th>
-								<th>레벨</th>
+								<th>수준</th>
 								<th>인원 수</th>
-								<!--<th>별점</th>-->
+								<th>별점</th>
 								<th>남기실 말</th>
 								<th><a> 매치 신청</a></th>
 							</tr>
 							<tbody>
 								<%
 								for (Mercenary_Match i : ma1) {
+									float star = new Mercenary_MatchDAO().starNum(i.getUser_index());
+									Team team = new Mercenary_MatchDAO().userTeam(i.getUser_index());
+									String f_star;
+									if(star>6){
+										f_star = "5점(0)";
+									}else{
+										f_star = star+"점("+team.getT_estnum()+")";
+									}
 								%>
 								<tr align="center">
 									<td><%=new MemberDAO().login(i.getUser_index()).getNick()%></td>
@@ -428,7 +441,8 @@ height: 50px;
 									<td><%=i.getLast_hour()%></td>
 									<td><%=i.getF_level()%></td>
 									<td><%=i.getPeople_num()%></td>
-									<%-- <td> <%=i.getTeam_estimate() %></td>--%>
+									<td> <%=f_star %>
+									</td>
 									<td><%=i.getWriting()%></td>
 									<td><i class="fas fa-envelope fa-fw"></td>
 								</tr>
@@ -461,9 +475,9 @@ height: 50px;
 									<th>닉네임</th>
 									<th>시작 시간</th>
 									<th>종료 시간</th>
-									<th>레벨</th>
+									<th>수준</th>
 									<th>인원 수</th>
-									<!--<th>별점</th>-->
+									<th>별점</th>
 									<th>남기실 말</th>
 									<th><a>친구 신청</a></th>
 								</tr>
@@ -479,7 +493,7 @@ height: 50px;
 									<td><%=i.getF_level()%></td>
 									<td><%=i.getPeople_num()%></td>
 <
-									<%-- <td><%=i.getEstimate()</td>--%>
+									<td><%=new Mercenary_MatchDAO().starNum(i.getUser_index())%></td>
 									<td><%=i.getWriting()%></td>
 									<td><i class="fas fa-user fa-fw"></td>
 								</tr>
