@@ -28,8 +28,6 @@ public class LoginService extends HttpServlet {
 		Member vo = new Member(id, nick, pic);
 
 		int cnt = new MemberDAO().check(vo);
-		HttpSession session = request.getSession();
-		session.setAttribute("vo", vo);
 
 		if (cnt == 1) {
 
@@ -45,6 +43,8 @@ public class LoginService extends HttpServlet {
 
 		}
 
+		HttpSession session = request.getSession();
+		session.setAttribute("vo", vo);
 
 	}
 
