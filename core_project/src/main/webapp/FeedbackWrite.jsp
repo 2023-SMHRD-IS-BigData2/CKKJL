@@ -4,7 +4,7 @@
 <%@page import="com.smhrd.model.FriendDAO"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,7 +81,7 @@
                 <td><button align="center"  name="submit" type="submit" id="contact-submit"  data-submit="...Sending">전송</button></td>
                 </tr>
          </table> 
-         <input type="hidden" name= "target" value="${target}">
+         <input type="hidden" name= "target" value="<%=target%>">
       	
 
 
