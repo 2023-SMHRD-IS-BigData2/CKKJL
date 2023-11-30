@@ -21,17 +21,18 @@ public class MatchingService extends HttpServlet {
 		int cnt=0;
 		int i = Integer.parseInt(request.getParameter("id"));
 		int f_index = Integer.parseInt(request.getParameter("f_index"));
-		/*
-		 * String challenger = request.getParameter("challenger"); HttpSession session =
-		 * request.getSession(); Member vo = (Member)session.getAttribute("vo"); String
-		 * writer = vo.getU_id(); Matching matching = new
-		 * Matching(writer,challenger,f_index);
-		 */
+		
+		String challenger = request.getParameter("challenger"); HttpSession session =
+		request.getSession(); Member vo = (Member)session.getAttribute("vo"); String
+		writer = vo.getU_id(); 
+		Matching matching = new Matching(writer,challenger,f_index);
+		 
 		
 		if(i==1) {
 			
-			cnt= new MatchingDAO().sacramentMatching(f_index);
-			if(cnt>0) {
+			cnt += new MatchingDAO().sacramentMatching(matching);
+			cnt += new MatchingDAO().delAllMatching(f_index);
+			if(cnt>1) {
 				System.out.println("성공");
 			}else {
 				System.out.println("실패");
@@ -39,7 +40,7 @@ public class MatchingService extends HttpServlet {
 			
 		} else if (i==2) {
 			
-			cnt= new MatchingDAO().delMatching(f_index);
+			cnt= new MatchingDAO().delMatching(matching);
 			if(cnt>0) {
 				System.out.println("성공");
 			}else {
