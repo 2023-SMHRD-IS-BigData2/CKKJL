@@ -80,7 +80,7 @@
                 </tr>
                
                 	<th colspan="7" align="center">
-                	<button align="center"  name="submit" type="submit" id="contact-submit"  data-submit="...Sending">전송</button>
+                	<button align="center"  name="submit" type="submit" id="contact-submit"  data-submit="...Sending">피드백 제출</button>
                 	</th>
                 
          </table> 

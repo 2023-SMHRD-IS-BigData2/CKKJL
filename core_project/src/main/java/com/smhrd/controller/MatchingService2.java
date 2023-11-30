@@ -33,5 +33,6 @@ public class MatchingService2 extends HttpServlet {
 		} else {
 			System.out.println("실패");
 		}
+		response.sendRedirect("RealMain.jsp");
 	}
 }
