@@ -182,7 +182,8 @@ height: 50px;
 										</div>
 									</form>
 								</div></li>
-
+								
+                         <!-- 매칭 경기 -->
 							<li class="nav-item dropdown no-arrow mx-1"><a
 								class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 								role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -196,6 +197,10 @@ height: 50px;
 									<a class="dropdown-item text-center small text-gray-500"
 										href="#">Read More Messages</a>
 								</div></li>
+								
+								
+								
+								
 							<!-- Nav Item - Alerts -->
 							<li class="nav-item dropdown no-arrow mx-1"><a
 								class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
@@ -309,7 +314,7 @@ height: 50px;
 									src="img/undraw_profile.svg"> <%
  } else {
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
-									<%if(vo.getPic().contains("http")){ %>
+ 									<%if(vo.getPic().contains("http")){ %>
 									<img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
 									<%}else{ %>
 									<img class="img-profile rounded-circle" src="img/<%=vo.getPic()%>">
@@ -519,12 +524,30 @@ height: 50px;
 												Member member = new MemberDAO().login(index);
 												%>
 												<%=member.getNick()%>
-
+												<% List<Friend> friends =  new FriendDAO().All(vo.getU_id()); 
+												boolean checkFriend=false;
+												for (Friend temp : friends){
+													if(member.getU_id().equals(temp.getApplicant())){
+														checkFriend=true;
+													}
+												}
+												
+							
+												if (checkFriend){%>
 												<a
-													href="FriendService?id=<%=member.getU_id()%>&nick=<%=member.getNick()%>&pic=<%=member.getPic()%>">
+													href="MessageWrite.jsp">
+													<i class="fas fa-envelope fa-fw float-right"
+													style="color: #62ac2e"></i>
+												</a>
+												<%} else {%>	
+												<a
+													href="FriendService?id=<%=member.getU_id()%>">
 													<i class="fas fa-user fa-fw float-right"
 													style="color: #62ac2e"></i>
 												</a>
+												
+												
+												<%}%> 
 
 											</h6>
 										</div>

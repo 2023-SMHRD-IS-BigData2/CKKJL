@@ -198,6 +198,7 @@ height: 50px;
 								<div
 									class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
 									aria-labelledby="messagesDropdown">
+									<h6 class="dropdown-header">Matching Center</h6>
 									<%
 									if (vo != null) {
 										System.out.println(vo.getU_id());
