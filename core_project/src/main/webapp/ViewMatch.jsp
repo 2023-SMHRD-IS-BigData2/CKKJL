@@ -429,7 +429,7 @@ height: 50px;
 								for (Mercenary_Match i : ma1) {
 									float star = new Mercenary_MatchDAO().starNum(i.getUser_index());
 									Team team = new Mercenary_MatchDAO().userTeam(i.getUser_index());
-									String f_star;
+									String f_star = null;
 									if(star>6){
 										f_star = "5점(0)";
 									}else{
