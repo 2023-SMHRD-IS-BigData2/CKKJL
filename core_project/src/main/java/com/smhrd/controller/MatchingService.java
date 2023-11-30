@@ -19,7 +19,6 @@ public class MatchingService extends HttpServlet {
 			throws ServletException, IOException {
 
 		int cnt = 0;
-		int i = Integer.parseInt(request.getParameter("id"));
 		int f_index = Integer.parseInt(request.getParameter("f_index"));
 
 		String challenger = request.getParameter("challenger");
