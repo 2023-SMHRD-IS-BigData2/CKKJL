@@ -47,4 +47,12 @@
    <delete id="delMatching" parameterType="Matching">
    DELETE from MATCHING WHERE f_INDEX = #{f_index}  AND CHALLENGER =#{challenger} AND WRITER=#{writer}
    </delete>
+   
+   <select id="feedback_w" resultType="Matching" parameterType="String">
+   SELECT * FROM MATCHING WHERE WRITER = #{id} AND MATCHING = 'O'
+   </select>
+   
+   <select id="feedback_c" resultType="Matching" parameterType="String">
+   SELECT * FROM MATCHING WHERE CHALLENGER = #{id} AND MATCHING = 'O'
+   </select>
 </mapper>

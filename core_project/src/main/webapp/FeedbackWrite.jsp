@@ -22,7 +22,9 @@
    }
 </script>
 <%
-   Member vo = (Member) session.getAttribute("vo");
+    Member vo = (Member) session.getAttribute("vo");
+	String target = request.getParameter("target");
+	
    %>
   <form action="FeedbackService">
         <table border="1">
@@ -79,7 +81,8 @@
                 <td><button align="center"  name="submit" type="submit" id="contact-submit"  data-submit="...Sending">전송</button></td>
                 </tr>
          </table> 
-      
+         <input type="hidden" name= "target" value="${target}">
+      	
 
 
 </form>

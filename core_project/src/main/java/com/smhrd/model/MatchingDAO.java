@@ -88,5 +88,31 @@ public class MatchingDAO {
 		}
 		return matching;
 	}
+	
+	public List<Matching> feedbackMatching(String id) {
+		List<Matching> matching = null;
+		SqlSession sqlSession = sqlsessionFactory.openSession(true);
+		try {
+			matching = sqlSession.selectList("com.smhrd.database.MatchMapper.feedback_w",id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return matching;
+	}
+	
+	public List<Matching> feedbackMatching2(String id) {
+		List<Matching> matching = null;
+		SqlSession sqlSession = sqlsessionFactory.openSession(true);
+		try {
+			matching = sqlSession.selectList("com.smhrd.database.MatchMapper.feedback_c",id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return matching;
+	}
 
 }
