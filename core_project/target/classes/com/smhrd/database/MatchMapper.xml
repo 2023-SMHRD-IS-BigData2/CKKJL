@@ -32,7 +32,7 @@
    </select>
    
    <update id="sacramentMatching">
-   UPDATE MATCHING set MATCHING = 'O' WHERE M_INDEX = #{m_index}
+   UPDATE MATCHING set MATCHING = 'O' WHERE f_INDEX = #{f_index}
    </update>
    
    <delete id="delAllMatching">

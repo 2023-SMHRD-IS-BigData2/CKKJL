@@ -37,11 +37,11 @@ public class MatchingDAO {
 		return matching;
 	}
 	
-	public int sacramentMatching(int m_index) {
+	public int sacramentMatching(int f_index) {
 		int cnt = 0;
 		SqlSession sqlSession = sqlsessionFactory.openSession(true);
 		try {
-			cnt = sqlSession.insert("com.smhrd.database.MatchMapper.sacramentMatching", m_index);
+			cnt = sqlSession.insert("com.smhrd.database.MatchMapper.sacramentMatching", f_index);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
