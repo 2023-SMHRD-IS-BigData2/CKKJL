@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Matching"%>
+<%@page import="com.smhrd.model.MatchingDAO"%>
 <%@page import="java.awt.Window"%>
 <%@page import="com.smhrd.model.IframeDAO"%>
 <%@page import="java.util.Random"%>
@@ -188,11 +190,42 @@ height: 50px;
 								class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 								role="button" data-toggle="dropdown" aria-haspopup="true"
 								aria-expanded="false">     <i class="fas fa-thumbs-up"></i>
+								
 
 							</a> <!-- Dropdown - Messages -->
 								<div
 									class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
 									aria-labelledby="messagesDropdown">
+									<%
+									if (vo != null) {
+										System.out.println(vo.getU_id());
+										List<Matching> matching = new MatchingDAO().receiveMatching(vo.getU_id());
+										if (matching != null) {
+											for (int i = 0; i < matching.size(); i++) {
+										Member challenger = new MemberDAO().login(matching.get(i).getChallenger());
+									%>
+									<div class="friend-request" align="center">
+										<div class="friend-info">
+											
+											<div style="font-size: 16px"> <%=challenger.getNick()%>님이
+												시합 요청
+											</div>
+										</div>
+										<div class="friend-actions">
+											<a
+												href="MatchingService?id=1&challenger<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
+												<button class="btn-accept" style="width:50px;height:30px;">수락</button>
+											</a> <a
+												href="MatchingService?id=2&challenger<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
+												<button class="btn-reject" style="width:50px;height:30px;">거절</button>
+											</a>
+										</div>
+									</div>
+									<%
+									}
+									}
+									}
+									%>
 
 									<a class="dropdown-item text-center small text-gray-500"
 										href="#">Read More Messages</a>

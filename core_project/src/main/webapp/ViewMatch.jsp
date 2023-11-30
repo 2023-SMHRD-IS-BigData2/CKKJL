@@ -446,7 +446,9 @@ height: 50px;
 									</td>
 									<td><%=i.getWriting()%></td>
 									<td><a href="TeamMatchService?writer=<%=i.getUser_index()%>&f_index=<%=i.getF_index()%>">
+
 									<i class="fas fa-thumbs-up"></a></td><!-- 여기수정 -->
+
 								</tr>
 								<%
 								}
@@ -480,8 +482,7 @@ height: 50px;
 									<th>종료 시간</th>
 									<th>수준</th>
 									<th>인원 수</th>
-									<th>별점</th>
-									<th>남기실 말</th>
+									<th colspan="2">남기실 말</th>
 									<th><a>친구 신청</a></th>
 								</tr>
 							</thead>
@@ -495,6 +496,7 @@ height: 50px;
 									<td><%=i.getLast_hour()%></td>
 									<td><%=i.getF_level()%></td>
 									<td><%=i.getPeople_num()%></td>
+
 
 
 									<%-- <td><%=i.getEstimate()</td>--%>
