@@ -446,7 +446,7 @@ height: 50px;
 									</td>
 									<td><%=i.getWriting()%></td>
 									<td><a href="TeamMatchService?writer=<%=i.getUser_index()%>&f_index=<%=i.getF_index()%>">
-									<i class="fas fa-user fa-fw"></a></td>
+									<i class="fas fa-thumbs-up"></a></td>
 								</tr>
 								<%
 								}
@@ -493,25 +493,14 @@ height: 50px;
 									<td><%=i.getStart_hour()%></td>
 									<td><%=i.getLast_hour()%></td>
 									<td><%=i.getF_level()%></td>
-<<<<<<< HEAD
 									<td><%=i.getPeople_num()%></td>
+
+
 									<td colspan="2"><%=i.getWriting()%></td>
-									<td><i class="fas fa-user fa-fw"></td>
-=======
-									<td><%=i.getPeople_num()%></td>
-
-
-									<%-- <td><%=i.getEstimate()</td>--%>
-
-
-									<td><%=new Mercenary_MatchDAO().starNum(i.getUser_index())%></td>
-
-									<td><%=i.getWriting()%></td>
 									<td><a href="FriendService?id=<%=i.getUser_index()%>">
-										<i class="fas fa-user fa-fw float-right"
+										<i class="fas fa-user fa-fw"
 										style="color: #62ac2e"></i>
 									</a></td>
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
 								</tr>
 								<%
 								}
