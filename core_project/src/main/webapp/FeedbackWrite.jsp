@@ -17,9 +17,9 @@
 </head>
 <body>
 <script type="text/javascript">
-	function closeTab() {
-		window.close();
-	}
+   function closeTab() {
+      window.close();
+   }
 </script>
 <%
 	Member vo = (Member) session.getAttribute("vo");
