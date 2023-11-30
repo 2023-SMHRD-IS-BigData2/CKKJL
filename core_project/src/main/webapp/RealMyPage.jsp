@@ -476,7 +476,7 @@
 													Member challenger = new MemberDAO().login(match1.get(m).getChallenger());
 											%>
                                 <tr>
-                                    <td><a href="FeedbackWrite.jsp?target=<%=match1.get(m).getChallenger()%>&index=<%=match2.get(m).getF_index() %>" style="color:#858796" id="feedbackLink<%=m%>" onclick="changeColor(<%=m%>)">
+                                    <td><a href="FeedbackWrite.jsp?target=<%=match1.get(m).getChallenger()%>&index=<%=match1.get(m).getF_index() %>" style="color:#858796" id="feedbackLink<%=m%>" onclick="changeColor(<%=m%>)">
                                             <%=challenger.getNick()%>과의 경기 피드백 하기
                                         </a></td>
                                 </tr>
@@ -491,7 +491,7 @@
 												for (int m = 0; m < match2.size(); m++) {
 													Member writer = new MemberDAO().login(match2.get(m).getWriter());%>
                                 <tr>
-                                    <td><a href="FeedbackWrite.jsp?target=<%=match2.get(m).getWriter()%>&index=<%=match2.get(m).getF_index() %>" style="color:#858796" id="feedbackLink<%=m%>" onclick="changeColor(<%=m%>)">
+                                    <td><a href="FeedbackWrite.jsp?target=<%=match2.get(m).getWriter()%>&index=<%=match2.get(m).getF_index()%>" style="color:#858796" id="feedbackLink<%=m%>" onclick="changeColor(<%=m%>)">
                                             <%=writer.getNick()%>과의 경기 피드백 하기
                                         </a>
                                     </td>
