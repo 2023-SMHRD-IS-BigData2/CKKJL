@@ -438,7 +438,7 @@ height: 50px;
 												<input type="text" name="intro" placeholder="자기소개를 작성해주세요!!!">
 											</p>
 										</div>
-										<%if (vo.getTeam_index() == 0) {%>
+									
 										<div class="card-header py-3">
 									    	
 											<p>팀 선택</p>
@@ -453,7 +453,7 @@ height: 50px;
 												</select>
 											</p>
 										</div>
-									   <% } %>
+									
 										<div class="card-header py-3">
 
 											<p>프로필 사진</p>

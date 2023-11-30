@@ -4,7 +4,7 @@
 <%@page import="com.smhrd.model.FriendDAO"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,12 +21,15 @@
       window.close();
    }
 </script>
+
 <%
-   Member vo = (Member) session.getAttribute("vo");
+    Member vo = (Member) session.getAttribute("vo");
+	String target = request.getParameter("target");
+	
    %>
   <form action="FeedbackService">
         <table border="1">
-            <th colspan="6"> 피드백 선택지 </th>
+            <th colspan="7"> 피드백 선택지 </th>
             <tr align="center">
               <td > 평가 항목</td>
               <td > 최악</td>
@@ -75,11 +78,14 @@
                     <td>4점<input type="radio" name="respon" value="4"> </td>
                     <td>5점<input type="radio" name="respon" value="5"> </td>
                 </tr>
-                <tr colspan="6" align="center">
-                <td><button align="center"  name="submit" type="submit" id="contact-submit"  data-submit="...Sending">전송</button></td>
-                </tr>
+               
+                	<th colspan="7" align="center">
+                	<button align="center"  name="submit" type="submit" id="contact-submit"  data-submit="...Sending">전송</button>
+                	</th>
+                
          </table> 
-      
+         <input type="hidden" name= "target" value="<%=target%>">
+      	
 
 
 </form>

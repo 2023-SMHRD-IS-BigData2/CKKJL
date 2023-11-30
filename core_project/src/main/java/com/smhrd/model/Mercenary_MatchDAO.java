@@ -22,6 +22,18 @@ public class Mercenary_MatchDAO {
       }
       return cnt;
    }
+   public int makeME(Mercenary_Match vo) {
+	   int cnt = 0;
+	   SqlSession sqlSession = sqlsessionFactory.openSession(true);
+	   try {
+		   cnt = sqlSession.insert("com.smhrd.database.MatchMapper.makeME", vo);
+	   } catch (Exception e) {
+		   e.printStackTrace();
+	   } finally {
+		   sqlSession.close();
+	   }
+	   return cnt;
+   }
    
    public List<Mercenary_Match> allMEMAdate(String date) {
       List<Mercenary_Match> memas = null;
@@ -56,6 +68,24 @@ public class Mercenary_MatchDAO {
    public float starNum(String user_index) {
 	   float resuit = 0;
 	   Team team = userTeam(user_index);
+	   
+	   if (team.getT_estnum() == 0) {
+		   resuit = 10;
+	   } else {
+		   float time = (float)team.getE_time()/team.getT_estnum();
+		   float level = (float)team.getE_level()/team.getT_estnum();
+		   float money = (float)team.getE_money()/team.getT_estnum();
+		   float manner = (float)team.getE_manner()/team.getT_estnum();
+		   float respon = (float)team.getE_respon()/team.getT_estnum();
+		   
+		   resuit = (time+level+money+manner+respon)/5;
+		   
+	   }
+	   return resuit;
+	   
+   }
+   public float starNum(Team team) {
+	   float resuit = 0;
 	   
 	   if (team.getT_estnum() == 0) {
 		   resuit = 10;

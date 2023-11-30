@@ -10,6 +10,11 @@
       #{people_num},#{f_level},#{writing}, #{place})
    </insert>
    
+   <insert id="makeME" parameterType="Mercenary_Match">
+      INSERT INTO TB_MATCH VALUES(MATCH_INDEX.nextval,#{mm}, #{m_date},#{user_index},#{start_hour},#{last_hour},
+      #{people_num},#{f_level},#{writing}, null)
+   </insert>
+   
    <select id="allMEMAdate" resultType="Mercenary_Match">
       SELECT * FROM TB_MATCH WHERE m_date in #{date}
    </select>
@@ -42,4 +47,12 @@
    <delete id="delMatching" parameterType="Matching">
    DELETE from MATCHING WHERE f_INDEX = #{f_index}  AND CHALLENGER =#{challenger} AND WRITER=#{writer}
    </delete>
+   
+   <select id="feedback_w" resultType="Matching" parameterType="String">
+   SELECT * FROM MATCHING WHERE WRITER = #{id} AND MATCHING = 'O'
+   </select>
+   
+   <select id="feedback_c" resultType="Matching" parameterType="String">
+   SELECT * FROM MATCHING WHERE CHALLENGER = #{id} AND MATCHING = 'O'
+   </select>
 </mapper>

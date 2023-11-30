@@ -25,5 +25,11 @@ public class Team {
 	@NonNull private int e_manner;    // 매너 총점
 	@NonNull private int e_respon;    // 응답 총점
 	
-
+	public float star(int e) {
+		float star = 0;
+		
+		star = (float)e/this.t_estnum;
+		
+		return star;
+	}
 }
