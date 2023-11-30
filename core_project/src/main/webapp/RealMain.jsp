@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Team"%>
+<%@page import="com.smhrd.model.TeamDAO"%>
 <%@page import="com.smhrd.model.Matching"%>
 <%@page import="com.smhrd.model.MatchingDAO"%>
 <%@page import="java.awt.Window"%>
@@ -203,12 +205,15 @@ height: 50px;
 										if (matching != null) {
 											for (int i = 0; i < matching.size(); i++) {
 										Member challenger = new MemberDAO().login(matching.get(i).getChallenger());
+										int team_i = challenger.getTeam_index();
+										Team info = new TeamDAO().selTeam(team_i);
 									%>
 									<div class="friend-request" align="center">
 										<div class="friend-info">
 											
-											<div style="font-size: 16px"> <%=challenger.getNick()%>님이
-												시합 요청
+											<div style="font-size: 16px"> <%=challenger.getNick()%>님이 시합 요청  
+											(<%=info.getT_estnum() %> 평가) 시간:<%=info.getE_time() %>,수준:<%= info.getE_level()%>,
+												비용:<%=info.getE_money() %>,	매너:<%=info.getE_manner() %>,응답:<%=info.getE_respon() %>
 											</div>
 										</div>
 										<div class="friend-actions">
