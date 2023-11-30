@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Team"%>
+<%@page import="com.smhrd.model.TeamDAO"%>
 <%@page import="com.smhrd.model.Matching"%>
 <%@page import="com.smhrd.model.MatchingDAO"%>
 <%@page import="java.awt.Window"%>
@@ -203,20 +205,23 @@ height: 50px;
 										if (matching != null) {
 											for (int i = 0; i < matching.size(); i++) {
 										Member challenger = new MemberDAO().login(matching.get(i).getChallenger());
+										int team_i = challenger.getTeam_index();
+										Team info = new TeamDAO().selTeam(team_i);
 									%>
 									<div class="friend-request" align="center">
 										<div class="friend-info">
 											
-											<div style="font-size: 16px"> <%=challenger.getNick()%>님이
-												시합 요청
+											<div style="font-size: 16px"> <%=challenger.getNick()%>님이 시합 요청  
+											(<%=info.getT_estnum() %> 평가) 시간:<%=info.getE_time() %>,수준:<%= info.getE_level()%>,
+												비용:<%=info.getE_money() %>,	매너:<%=info.getE_manner() %>,응답:<%=info.getE_respon() %>
 											</div>
 										</div>
 										<div class="friend-actions">
 											<a
-												href="MatchingService?id=1&challenger<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
+												href="MatchingService?challenger=<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
 												<button class="btn-accept" style="width:50px;height:30px;">수락</button>
 											</a> <a
-												href="MatchingService?id=2&challenger<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
+												href="MatchingService2?challenger=<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
 												<button class="btn-reject" style="width:50px;height:30px;">거절</button>
 											</a>
 										</div>
