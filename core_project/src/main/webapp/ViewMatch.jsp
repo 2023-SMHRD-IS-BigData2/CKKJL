@@ -446,7 +446,7 @@ height: 50px;
 									</td>
 									<td><%=i.getWriting()%></td>
 									<td><a href="TeamMatchService?writer=<%=i.getUser_index()%>&f_index=<%=i.getF_index()%>">
-									<i class="fas fa-user fa-fw"></a></td>
+									<i class="fas fa-thumbs-up"></a></td><!-- 여기수정 -->
 								</tr>
 								<%
 								}
@@ -503,8 +503,8 @@ height: 50px;
 									<td><%=new Mercenary_MatchDAO().starNum(i.getUser_index())%></td>
 
 									<td><%=i.getWriting()%></td>
-									<td><a href="FriendService?id=<%=i.getUser_index()%>">
-										<i class="fas fa-user fa-fw float-right"
+									<td ><a href="FriendService?id=<%=i.getUser_index()%>">
+										<i class="fas fa-user fa-fw" 
 										style="color: #62ac2e"></i>
 									</a></td>
 								</tr>
