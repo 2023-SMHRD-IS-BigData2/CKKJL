@@ -95,6 +95,12 @@ body {
 					"width=400, height=500, top=10, left=10")
 		}
 	</script>
+	<script type="text/javascript">
+      function Feedback() {
+         window.open("FeedbackWrite.jsp", "FeedbackWrite",
+               "width=600, height=500, top=10, left=10")
+      }
+   </script>
 
 	<%
 	Member vo = (Member) session.getAttribute("vo");

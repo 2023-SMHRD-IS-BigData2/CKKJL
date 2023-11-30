@@ -84,5 +84,23 @@ public class Mercenary_MatchDAO {
 	   return resuit;
 	   
    }
+   public float starNum(Team team) {
+	   float resuit = 0;
+	   
+	   if (team.getT_estnum() == 0) {
+		   resuit = 10;
+	   } else {
+		   float time = (float)team.getE_time()/team.getT_estnum();
+		   float level = (float)team.getE_level()/team.getT_estnum();
+		   float money = (float)team.getE_money()/team.getT_estnum();
+		   float manner = (float)team.getE_manner()/team.getT_estnum();
+		   float respon = (float)team.getE_respon()/team.getT_estnum();
+		   
+		   resuit = (time+level+money+manner+respon)/5;
+		   
+	   }
+	   return resuit;
+	   
+   }
    
 }

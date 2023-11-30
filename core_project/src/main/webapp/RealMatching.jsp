@@ -91,6 +91,7 @@ height: 50px;
                "width=400, height=500, top=10, left=10")
       }
    </script>
+   
 
    <%
    Member vo = (Member) session.getAttribute("vo");

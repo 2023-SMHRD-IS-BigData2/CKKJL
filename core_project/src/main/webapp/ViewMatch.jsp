@@ -429,7 +429,7 @@ height: 50px;
 								for (Mercenary_Match i : ma1) {
 									float star = new Mercenary_MatchDAO().starNum(i.getUser_index());
 									Team team = new Mercenary_MatchDAO().userTeam(i.getUser_index());
-									String f_star;
+									String f_star = null;
 									if(star>6){
 										f_star = "5점(0)";
 									}else{
@@ -495,6 +495,7 @@ height: 50px;
 									<td><%=i.getStart_hour()%></td>
 									<td><%=i.getLast_hour()%></td>
 									<td><%=i.getF_level()%></td>
+<<<<<<< HEAD
 									<td><%=i.getPeople_num()%></td>
 
 
@@ -507,6 +508,12 @@ height: 50px;
 									<td><%=i.getWriting()%></td>
 									<td ><a href="FriendService?id=<%=i.getUser_index()%>">
 										<i class="fas fa-user fa-fw" 
+=======
+									<td><%=i.getPeople_num()%></td>
+									<td colspan="2"><%=i.getWriting()%></td>
+									<td><a href="FriendService?id=<%=i.getUser_index()%>">
+										<i class="fas fa-user fa-fw"
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/CKKJL.git
 										style="color: #62ac2e"></i>
 									</a></td>
 								</tr>
