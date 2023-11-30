@@ -213,10 +213,10 @@ height: 50px;
 										</div>
 										<div class="friend-actions">
 											<a
-												href="MatchingService?id=1&challenger<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
+												href="MatchingService?challenger<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
 												<button class="btn-accept" style="width:50px;height:30px;">수락</button>
 											</a> <a
-												href="MatchingService?id=2&challenger<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
+												href="MatchingService2?challenger<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
 												<button class="btn-reject" style="width:50px;height:30px;">거절</button>
 											</a>
 										</div>
