@@ -494,8 +494,6 @@ height: 50px;
 									<td><%=i.getLast_hour()%></td>
 									<td><%=i.getF_level()%></td>
 									<td><%=i.getPeople_num()%></td>
-
-
 									<td colspan="2"><%=i.getWriting()%></td>
 									<td><a href="FriendService?id=<%=i.getUser_index()%>">
 										<i class="fas fa-user fa-fw"
