@@ -76,6 +76,19 @@ public class MatchingDAO {
 		return cnt;
 	}
 	
+	public int delMatch(int f_index) {
+		int cnt = 0;
+		SqlSession sqlSession = sqlsessionFactory.openSession(true);
+		try {
+			cnt = sqlSession.insert("com.smhrd.database.MatchMapper.delMatching", f_index);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
+	
 	public List<Matching> receiveMatching(String id) {
 		List<Matching> matching = null;
 		SqlSession sqlSession = sqlsessionFactory.openSession(true);

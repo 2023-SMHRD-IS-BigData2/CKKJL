@@ -25,6 +25,7 @@
 <%
     Member vo = (Member) session.getAttribute("vo");
 	String target = request.getParameter("target");
+	String f_index = request.getParameter("index");
 	
    %>
   <form action="FeedbackService">
@@ -85,7 +86,7 @@
                 
          </table> 
          <input type="hidden" name= "target" value="<%=target%>">
-      	
+      	 <input type="hidden" name= "index" value="<%=f_index%>">
 
 
 </form>

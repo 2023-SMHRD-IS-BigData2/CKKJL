@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.TeamDAO"%>
+<%@page import="com.smhrd.model.Team"%>
 <%@page import="com.smhrd.model.Matching"%>
 <%@page import="com.smhrd.model.MatchingDAO"%>
 <%@page import="java.awt.Window"%>
@@ -418,7 +420,17 @@
                                 </tr>
                                 <%
 											}
-											%>
+                                
+                                int t_index = vo.getTeam_index();
+                                Team team = new TeamDAO().selTeam(t_index);
+								float time = new Team().star(team.getE_time());
+								float manner = new Team().star(team.getE_manner());
+								float money = new Team().star(team.getE_money());
+								float respon = new Team().star(team.getE_respon());
+								float level = new Team().star(team.getE_level());
+									
+								%>
+											
                             </table>
                             <table class="table" align="center">
                                 <tr>
@@ -428,23 +440,23 @@
                                 </tr>
                                 <tr>
                                     <td style="width: 30%">시간</td>
-                                    <td></td>
+                                    <td><%=time %></td>
                                 </tr>
                                 <tr>
                                     <td style="width: 30%">매너</td>
-                                    <td></td>
+                                    <td><%=manner %></td>
                                 </tr>
                                 <tr>
                                     <td style="width: 30%">비용</td>
-                                    <td></td>
+                                    <td><%=money %></td>
                                 </tr>
                                 <tr>
                                     <td style="width: 30%">응답 속도</td>
-                                    <td></td>
+                                    <td><%=respon %></td>
                                 </tr>
                                 <tr>
                                     <td style="width: 30%">팀 레벨</td>
-                                    <td></td>
+                                    <td><%=level %></td>
                                 </tr>
 
 
@@ -464,7 +476,7 @@
 													Member challenger = new MemberDAO().login(match1.get(m).getChallenger());
 											%>
                                 <tr>
-                                    <td><a href="FeedbackWrite.jsp?target=<%=match1.get(m).getChallenger()%>" style="color:#858796" id="feedbackLink<%=m%>" onclick="changeColor(<%=m%>)">
+                                    <td><a href="FeedbackWrite.jsp?target=<%=match1.get(m).getChallenger()%>&index=<%=match2.get(m).getF_index() %>" style="color:#858796" id="feedbackLink<%=m%>" onclick="changeColor(<%=m%>)">
                                             <%=challenger.getNick()%>과의 경기 피드백 하기
                                         </a></td>
                                 </tr>
@@ -479,7 +491,7 @@
 												for (int m = 0; m < match2.size(); m++) {
 													Member writer = new MemberDAO().login(match2.get(m).getWriter());%>
                                 <tr>
-                                    <td><a href="FeedbackWrite.jsp?target=<%=match2.get(m).getWriter()%>" style="color:#858796" id="feedbackLink<%=m%>" onclick="changeColor(<%=m%>)">
+                                    <td><a href="FeedbackWrite.jsp?target=<%=match2.get(m).getWriter()%>&index=<%=match2.get(m).getF_index() %>" style="color:#858796" id="feedbackLink<%=m%>" onclick="changeColor(<%=m%>)">
                                             <%=writer.getNick()%>과의 경기 피드백 하기
                                         </a>
                                     </td>
