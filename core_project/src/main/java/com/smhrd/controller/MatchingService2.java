@@ -12,8 +12,8 @@ import com.smhrd.model.Matching;
 import com.smhrd.model.MatchingDAO;
 import com.smhrd.model.Member;
 
-@WebServlet("/MatchingService")
-public class MatchingService extends HttpServlet {
+@WebServlet("/MatchingService2")
+public class MatchingService2 extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -27,16 +27,11 @@ public class MatchingService extends HttpServlet {
 		String writer = vo.getU_id();
 		Matching matching = new Matching(writer, challenger, f_index);
 
-		cnt += new MatchingDAO().sacramentMatching(matching);
-		cnt += new MatchingDAO().delAllMatching(f_index);
-		if (cnt > 1) {
+		cnt = new MatchingDAO().delMatching(matching);
+		if (cnt > 0) {
 			System.out.println("성공");
 		} else {
 			System.out.println("실패");
 		}
-
-		response.sendRedirect("RealMain.jsp");
-
 	}
-
 }
