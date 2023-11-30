@@ -31,15 +31,15 @@
    SELECT * FROM MATCHING WHERE WRITER = #{id} AND MATCHING = 'X'
    </select>
    
-   <update id="sacramentMatching">
-   UPDATE MATCHING set MATCHING = 'O' WHERE f_INDEX = #{f_index}
+   <update id="sacramentMatching" parameterType="Matching">
+   UPDATE MATCHING set MATCHING = 'O' WHERE f_INDEX = #{f_index}  AND CHALLENGER =#{challenger} AND WRITER=#{writer} 
    </update>
    
    <delete id="delAllMatching">
    DELETE from MATCHING WHERE F_INDEX = #{f_index} AND MATCHING = 'X'
    </delete>
    
-   <delete id="delMatching">
-   DELETE from MATCHING WHERE M_INDEX = #{m_index} AND MATCHING = 'X'
+   <delete id="delMatching" parameterType="Matching">
+   DELETE from MATCHING WHERE f_INDEX = #{f_index}  AND CHALLENGER =#{challenger} AND WRITER=#{writer}
    </delete>
 </mapper>
