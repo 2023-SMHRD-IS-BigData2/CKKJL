@@ -212,7 +212,7 @@ height: 50px;
 									<div class="friend-request" align="center">
 										<div class="friend-info">
 											
-											<div style="font-size: 16px"> <%=challenger.getNick()%>님이 시합 요청  
+											<div style="font-size: 16px"> <%=challenger.getNick()%>님이 시합 요청 <br> 
 											(<%=info.getT_estnum() %> 평가) 시간:<%=info.getE_time() %>,수준:<%= info.getE_level()%>,
 												비용:<%=info.getE_money() %>,	매너:<%=info.getE_manner() %>,응답:<%=info.getE_respon() %>
 											</div>

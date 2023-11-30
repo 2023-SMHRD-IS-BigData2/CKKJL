@@ -22,6 +22,18 @@ public class Mercenary_MatchDAO {
       }
       return cnt;
    }
+   public int makeME(Mercenary_Match vo) {
+	   int cnt = 0;
+	   SqlSession sqlSession = sqlsessionFactory.openSession(true);
+	   try {
+		   cnt = sqlSession.insert("com.smhrd.database.MatchMapper.makeME", vo);
+	   } catch (Exception e) {
+		   e.printStackTrace();
+	   } finally {
+		   sqlSession.close();
+	   }
+	   return cnt;
+   }
    
    public List<Mercenary_Match> allMEMAdate(String date) {
       List<Mercenary_Match> memas = null;

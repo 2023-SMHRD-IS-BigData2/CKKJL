@@ -40,13 +40,11 @@ public class MatchService extends HttpServlet {
       }
       if (place != null) {
     	  mercenary_match.setPlace(place);
-      }
-      int ck = new Mercenary_MatchDAO().makeMEMA(mercenary_match);
-      if (ck != 0) {
-         System.out.println("성공");
+    	  int ck = new Mercenary_MatchDAO().makeMEMA(mercenary_match);
       }else {
-         System.out.println("실패!");
+    	  int ck = new Mercenary_MatchDAO().makeME(mercenary_match);
       }
+      
       
       
       response.sendRedirect("ViewMatch.jsp?date="+matchDay);
