@@ -73,19 +73,21 @@ body {
 	object-fit: cover;
 	width: 60px;
 	height: 60px;
+}
 
-}
 .topbar {
-   height: 6rem
+	height: 6rem
 }
-.button{
-height: 50px;
-    font-size: 23px;
-    width: 180px;
+
+.button {
+	height: 50px;
+	font-size: 23px;
+	width: 180px;
 }
 </style>
 
-<script src="https://kit.fontawesome.com/def66b134a.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/def66b134a.js"
+	crossorigin="anonymous"></script>
 </head>
 
 <body id="page-top">
@@ -186,13 +188,13 @@ height: 50px;
 										</div>
 									</form>
 								</div></li>
-								
-                         <!-- 매칭 경기 -->
+
+							<!-- 매칭 경기 -->
 							<li class="nav-item dropdown no-arrow mx-1"><a
 								class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 								role="button" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false">     <i class="fas fa-thumbs-up"></i>
-								
+								aria-expanded="false"> <i class="fas fa-thumbs-up"></i>
+
 
 							</a> <!-- Dropdown - Messages -->
 								<div
@@ -211,22 +213,32 @@ height: 50px;
 									%>
 									<div class="friend-request" align="center">
 										<div class="friend-info">
-											
-											<%int num = info.getT_estnum(); %>
-											<div style="font-size: 16px"> <%=challenger.getNick()%>님이 시합 요청 <br>
-											<%=(info.getE_time()/num + info.getE_level()/num + info.getE_money()/num + info.getE_manner()/num+info.getE_respon()/num) / 5%>점
-											(평가수<%=info.getT_estnum() %>) 시간:<%=info.getE_time()/num %>,수준:<%= info.getE_level()/num%>,
-												비용:<%=info.getE_money()/num  %>,	매너:<%=info.getE_manner()/num  %>,응답:<%=info.getE_respon()/num  %>
+
+
+											<%
+											int num = 1;
+											if (num < info.getT_estnum()) {
+												num = info.getT_estnum();
+											}
+											%>
+											<div style="font-size: 16px">
+												<%=challenger.getNick()%>님이 시합 요청 <br>
+												<%=((info.getE_time() / num) + (info.getE_level() / num) + (info.getE_money() / num) + (info.getE_manner() / num)
+		+ (info.getE_respon() / num)) / 5%>점
+												(평가수<%=info.getT_estnum()%>) 시간:<%=info.getE_time() / num%>,수준:<%=info.getE_level() / num%>,
+												비용:<%=info.getE_money() / num%>, 매너:<%=info.getE_manner() / num%>,응답:<%=info.getE_respon() / num%>
 
 											</div>
 										</div>
 										<div class="friend-actions">
 											<a
 												href="MatchingService?challenger=<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
-												<button class="btn-accept" style="width:50px;height:30px;">수락</button>
+												<button class="btn-accept"
+													style="width: 50px; height: 30px;">수락</button>
 											</a> <a
 												href="MatchingService2?challenger=<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
-												<button class="btn-reject" style="width:50px;height:30px;">거절</button>
+												<button class="btn-reject"
+													style="width: 50px; height: 30px;">거절</button>
 											</a>
 										</div>
 									</div>
@@ -239,10 +251,10 @@ height: 50px;
 									<a class="dropdown-item text-center small text-gray-500"
 										href="#">Read More Messages</a>
 								</div></li>
-								
-								
-								
-								
+
+
+
+
 							<!-- Nav Item - Alerts -->
 							<li class="nav-item dropdown no-arrow mx-1"><a
 								class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
@@ -266,18 +278,20 @@ height: 50px;
 									%>
 									<div class="friend-request" align="center">
 										<div class="friend-info">
-											
-											<div style="font-size: 16px"> <%=friend.getNick()%>님이
-												친구 요청
+
+											<div style="font-size: 16px">
+												<%=friend.getNick()%>님이 친구 요청
 											</div>
 										</div>
 										<div class="friend-actions">
 											<a
 												href="FriendService2?id2=<%=friends.get(i).getApplicant()%>">
-												<button class="btn-accept" style="width:50px;height:30px;">수락</button>
+												<button class="btn-accept"
+													style="width: 50px; height: 30px;">수락</button>
 											</a> <a
 												href="FriendService3?id3=<%=friends.get(i).getApplicant()%>">
-												<button class="btn-reject" style="width:50px;height:30px;">거절</button>
+												<button class="btn-reject"
+													style="width: 50px; height: 30px;">거절</button>
 											</a>
 										</div>
 									</div>
@@ -356,14 +370,18 @@ height: 50px;
 									src="img/undraw_profile.svg"> <%
  } else {
  %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
- 									<%if(vo.getPic().contains("http")){ %>
-									<img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
-									<%}else{ %>
-									<img class="img-profile rounded-circle" src="img/<%=vo.getPic()%>">
-									<%} %>
 									<%
-									}
-									%></a> <!-- Dropdown - User Information -->
+									if (vo.getPic().contains("http")) {
+									%> <img
+									class="img-profile rounded-circle" src="<%=vo.getPic()%>">
+									<%
+									} else {
+									%> <img class="img-profile rounded-circle"
+									src="img/<%=vo.getPic()%>"> <%
+ }
+ %> <%
+ }
+ %></a> <!-- Dropdown - User Information -->
 
 
 
@@ -566,30 +584,33 @@ height: 50px;
 												Member member = new MemberDAO().login(index);
 												%>
 												<%=member.getNick()%>
-												<% List<Friend> friends =  new FriendDAO().All(vo.getU_id()); 
-												boolean checkFriend=false;
-												for (Friend temp : friends){
-													if(member.getU_id().equals(temp.getApplicant())){
-														checkFriend=true;
+												<%
+												List<Friend> friends = new FriendDAO().All(vo.getU_id());
+												boolean checkFriend = false;
+												for (Friend temp : friends) {
+													if (member.getU_id().equals(temp.getApplicant())) {
+														checkFriend = true;
 													}
 												}
-												
-							
-												if (checkFriend){%>
-												<a
-													href="MessageWrite.jsp">
-													<i class="fas fa-envelope fa-fw float-right"
+
+												if (checkFriend) {
+												%>
+												<a href="MessageWrite.jsp"> <i
+													class="fas fa-envelope fa-fw float-right"
 													style="color: #62ac2e"></i>
 												</a>
-												<%} else {%>	
-												<a
-													href="FriendService?id=<%=member.getU_id()%>">
-													<i class="fas fa-user fa-fw float-right"
+												<%
+												} else {
+												%>
+												<a href="FriendService?id=<%=member.getU_id()%>"> <i
+													class="fas fa-user fa-fw float-right"
 													style="color: #62ac2e"></i>
 												</a>
-												
-												
-												<%}%> 
+
+
+												<%
+												}
+												%>
 
 											</h6>
 										</div>

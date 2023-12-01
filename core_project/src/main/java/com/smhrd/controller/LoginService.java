@@ -34,17 +34,19 @@ public class LoginService extends HttpServlet {
 			System.out.println("기존회원");
 
 			vo = new MemberDAO().login(vo.getU_id());
-			response.sendRedirect("./UpdateUser.jsp?");
+			HttpSession session = request.getSession();
+			session.setAttribute("vo", vo);
+			response.sendRedirect("./RealMain.jsp");
 			
 		} else {
 
 			cnt = new MemberDAO().join(vo);
+			HttpSession session = request.getSession();
+			session.setAttribute("vo", vo);
 			response.sendRedirect("./RealMain.jsp");
 
 		}
 
-		HttpSession session = request.getSession();
-		session.setAttribute("vo", vo);
 
 	}
 
