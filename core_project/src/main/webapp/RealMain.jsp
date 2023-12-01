@@ -212,9 +212,12 @@ height: 50px;
 									<div class="friend-request" align="center">
 										<div class="friend-info">
 
-											<%int num = info.getT_estnum(); %>
+											<%int num = 1;
+											 if(num<info.getT_estnum()){
+												 num=info.getT_estnum();	 
+											 }%>
 											<div style="font-size: 16px"> <%=challenger.getNick()%>님이 시합 요청 <br>
-											<%=(info.getE_time()/num + info.getE_level()/num + info.getE_money()/num + info.getE_manner()/num+info.getE_respon()/num) / 5%>점
+											<%=((info.getE_time()/num) + (info.getE_level()/num) + (info.getE_money()/num) + (info.getE_manner()/num)+(info.getE_respon()/num)) / 5%>점
 											(평가수<%=info.getT_estnum() %>) 시간:<%=info.getE_time()/num %>,수준:<%= info.getE_level()/num%>,
 												비용:<%=info.getE_money()/num  %>,	매너:<%=info.getE_manner()/num  %>,응답:<%=info.getE_respon()/num  %>
 

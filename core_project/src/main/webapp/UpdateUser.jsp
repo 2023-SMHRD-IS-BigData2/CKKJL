@@ -308,7 +308,7 @@ height: 50px;
 									<img class="img-profile rounded-circle"
 									src="img/undraw_profile.svg"> <%
  } else {
- %> <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
+ %> <%-- <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=vo.getNick()%></span>
 									<%if(vo.getPic().contains("http")){ %>
 									<img class="img-profile rounded-circle" src="<%=vo.getPic()%>">
 									<%}else{ %>
@@ -338,9 +338,9 @@ height: 50px;
 										data-target="#logoutModal"> <i
 											class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 											로그아웃
-									</a> <%
+									</a> <% 
  }
- %>
+ %>--%>
 								</div></li>
 
 						</ul>
@@ -428,7 +428,7 @@ height: 50px;
 											<input type="hidden" name="u_id" value="<%=vo.getU_id()%>">
 											<p>닉네임</p>
 											<p>
-												<input type="text" name="nick" value="<%=vo.getNick()%>">
+											<input type="text" name="nick" value="<%=vo.getNick()%>">							
 											</p>
 
 										</div>

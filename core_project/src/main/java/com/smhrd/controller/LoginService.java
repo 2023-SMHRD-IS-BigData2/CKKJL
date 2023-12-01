@@ -36,7 +36,7 @@ public class LoginService extends HttpServlet {
 			vo = new MemberDAO().login(vo.getU_id());
 			HttpSession session = request.getSession();
 			session.setAttribute("vo", vo);
-			response.sendRedirect("./UpdateUser.jsp?");
+			response.sendRedirect("./RealMain.jsp");
 			
 		} else {
 
