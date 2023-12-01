@@ -100,17 +100,14 @@ height: 50px;
 
 
    <!-- Page Wrapper -->
-   <div id="wrapper">
 
 
       <!-- Topbar Navbar -->
-      <ul class="navbar-nav ml-auto">
          <!-- Content Wrapper -->
-         <div id="content-wrapper" class="d-flex flex-column">
+         <!-- &아래 div지움 -->
 
             <!-- Main Content -->
-            <div id="content">
-
+            <!-- &아래 div지움 -->
                <!-- Topbar -->
                <nav
                   class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -269,7 +266,7 @@ height: 50px;
                            for (int i = 0; i < messages.size(); i++) {
                            %>
 
-                           <a class="dropdown-item d-flex align-items-center" href="#">
+                           <a class="dropdown-item d-flex align-items-center" href="#"></a>
                               <div class="dropdown-list-image mr-3">
                                  <img class="rounded-circle" src="img/undraw_profile_1.svg"
                                     alt="...">
@@ -318,9 +315,6 @@ height: 50px;
                            <%
                            }
                            %></a> <!-- Dropdown - User Information -->
-
-
-
                         <div
                            class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                            aria-labelledby="userDropdown">
@@ -333,7 +327,7 @@ height: 50px;
                            <%
                            } else {
                            %>
-                           <a class="dropdown-item" href="UpdateUser.jsp"> <i
+                           <a class="dropdown-item" href="UpdateUser.jsp"></a> <i
                               class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> 정보변경 <a
                               class="dropdown-item" href="#" data-toggle="modal"
                               data-target="#logoutModal"> <i
@@ -349,26 +343,18 @@ height: 50px;
 
                </nav>
                <!-- 여기부터 복사해요 -->
-
-
-               <!-- 여기부터 복사해요 -->
-
-               <div>
+              <!--  & 여기아래 div지움 -->
+              
                   <%
                   String date = request.getParameter("date");
 
                   System.out.print(date);
 
                   List<Mercenary_Match> mema = new ArrayList<Mercenary_Match>();
-
                   List<Mercenary_Match> ma1 = new ArrayList<Mercenary_Match>();
-
                   List<Mercenary_Match> ma2 = new ArrayList<Mercenary_Match>();
-
                   List<Mercenary_Match> me1 = new ArrayList<Mercenary_Match>();
-
                   List<Mercenary_Match> me2 = new ArrayList<Mercenary_Match>();
-
                   mema = new Mercenary_MatchDAO().allMEMAdate(date);
 
                   for (Mercenary_Match i : mema) {
@@ -403,7 +389,6 @@ height: 50px;
                                  목록</b></td>
                         </tr>
                      </thead>
-
 
                      <%
                      if (ma1.size() == 0) {
@@ -446,7 +431,7 @@ height: 50px;
                            </td>
                            <td><%=i.getWriting()%></td>
                            <td><a href="TeamMatchService?writer=<%=i.getUser_index()%>&f_index=<%=i.getF_index()%>">
-                           <i class="fas fa-thumbs-up"></a></td>
+                           <i class="fas fa-thumbs-up"></i></a></td>
                         </tr>
                         <%
                         }
@@ -456,13 +441,11 @@ height: 50px;
                      }
                      %>
 
-
                      <tr>
                         <td colspan="8" align="center" rowspan="2"><b> 대기중인 용병
                               목록 </b></td>
                      </tr>
-
-                     <tbody>
+						<tbody>
                         <%
                         if (me1.size() == 0) {
                         %>
@@ -509,3 +492,5 @@ height: 50px;
                      %>
                      </tbody>
                   </table>
+	</body>
+</html>

@@ -88,7 +88,6 @@
 
     <script src="https://kit.fontawesome.com/def66b134a.js" crossorigin="anonymous"></script>
 </head>
-
 <body id="page-top">
 
 	<script type="text/javascript">
@@ -103,6 +102,7 @@
                "width=600, height=500, top=10, left=10")
       }
    </script>
+  
     <%
 	Member vo = (Member) session.getAttribute("vo");
 	%>
@@ -112,9 +112,8 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-
         <!-- Topbar Navbar -->
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto"> </ul>
             <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
 

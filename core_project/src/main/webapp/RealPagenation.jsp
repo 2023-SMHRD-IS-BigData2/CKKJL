@@ -366,8 +366,6 @@ height: 50px;
                            }
                            %></a> <!-- Dropdown - User Information -->
 
-
-
                         <div
                            class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                            aria-labelledby="userDropdown">
@@ -393,12 +391,8 @@ height: 50px;
 
                   </ul>
 
-
                </nav>
                <!-- 여기부터 복사해요 -->
-    <!-- Your existing navigation bar code here -->
-
-    
 
     <!-- Calendar Container -->
     <div class="calendar-container">
@@ -460,8 +454,6 @@ height: 50px;
                             dayLink.textContent = dateCounter;
 
 
-                            // 각 날짜를 처리하는 논리를 여기에 추가하세요
-                            // 필요한 경우 클릭 이벤트를 추가하거나 필요에 맞게 사용자 지정하세요
                             dayLink.href = `RealMatching.jsp?#${year}.${month}.${dateCounter}`;
                                                 if (month === 11 && dateCounter >= 19 && dateCounter <= 30) {
 

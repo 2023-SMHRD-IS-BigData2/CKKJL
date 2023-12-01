@@ -1,3 +1,7 @@
+<%@page import="com.smhrd.model.Team"%>
+<%@page import="com.smhrd.model.TeamDAO"%>
+<%@page import="com.smhrd.model.Matching"%>
+<%@page import="com.smhrd.model.MatchingDAO"%>
 <%@page import="java.awt.Window"%>
 <%@page import="com.smhrd.model.IframeDAO"%>
 <%@page import="java.util.Random"%>
@@ -188,11 +192,49 @@ height: 50px;
 								class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 								role="button" data-toggle="dropdown" aria-haspopup="true"
 								aria-expanded="false">     <i class="fas fa-thumbs-up"></i>
+								
 
 							</a> <!-- Dropdown - Messages -->
 								<div
 									class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
 									aria-labelledby="messagesDropdown">
+									<h6 class="dropdown-header">Matching Center</h6>
+									<%
+									if (vo != null) {
+										System.out.println(vo.getU_id());
+										List<Matching> matching = new MatchingDAO().receiveMatching(vo.getU_id());
+										if (matching != null) {
+											for (int i = 0; i < matching.size(); i++) {
+										Member challenger = new MemberDAO().login(matching.get(i).getChallenger());
+										int team_i = challenger.getTeam_index();
+										Team info = new TeamDAO().selTeam(team_i);
+									%>
+									<div class="friend-request" align="center">
+										<div class="friend-info">
+
+											<%int num = info.getT_estnum(); %>
+											<div style="font-size: 16px"> <%=challenger.getNick()%>님이 시합 요청 <br>
+											<%=(info.getE_time()/num + info.getE_level()/num + info.getE_money()/num + info.getE_manner()/num+info.getE_respon()/num) / 5%>점
+											(평가수<%=info.getT_estnum() %>) 시간:<%=info.getE_time()/num %>,수준:<%= info.getE_level()/num%>,
+												비용:<%=info.getE_money()/num  %>,	매너:<%=info.getE_manner()/num  %>,응답:<%=info.getE_respon()/num  %>
+
+											</div>
+										</div>
+										<div class="friend-actions">
+											<a
+												href="MatchingService?challenger=<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
+												<button class="btn-accept" style="width:50px;height:30px;">수락</button>
+											</a> <a
+												href="MatchingService2?challenger=<%=challenger.getU_id()%>&f_index=<%=matching.get(i).getF_index()%>">
+												<button class="btn-reject" style="width:50px;height:30px;">거절</button>
+											</a>
+										</div>
+									</div>
+									<%
+									}
+									}
+									}
+									%>
 
 									<a class="dropdown-item text-center small text-gray-500"
 										href="#">Read More Messages</a>
@@ -353,391 +395,3 @@ height: 50px;
 
 					</nav>
 					<!-- 여기부터 복사해요 -->
-
-					<!-- End of Topbar -->
-					<section>
-						<div class="container button-container">
-							<!-- 고정시켜야됨 -->
-
-
-
-
-
-						</div>
-				</div>
-				</section>
-
-				<!-- Begin Page Content -->
-				<div class="container-fluid">
-
-					<!-- Page Heading -->
-
-					<!-- Content Row -->
-					<div class="row">
-
-
-
-
-
-						<!-- Earnings (Monthly) Card Example -->
-
-						<div class="row">
-
-
-							<!-- Area Chart -->
-
-							<div class="card shadow mb-4">
-								<!-- Card Header - Dropdown -->
-
-
-								<!-- End of Footer -->
-
-
-							</div>
-
-
-
-
-							<!-- Pie Chart -->
-							<div class="col-xl-4 col-lg-5"></div>
-
-
-							<!-- Content Row -->
-							<div class="row">
-								<table class="futsal-class">
-									<h1 class="h3 mb-4 text-gray-800">풋살 강좌</h1>
-									<!--caption : 표의 제목-->
-
-									<!--thead : Header에 들어가 Content를 모아놓은 태그-->
-									<thead>
-										<!--tr : table row 행을 의미하는 태그-->
-										<tr align="center">
-											<!--th : table header 행의 제목을 의미하는 태그-->
-
-
-
-											<%
-											Random random = new Random();
-											for (int i = 0; i < 3; i++) {
-												int j = random.nextInt(99);
-												String address = new IframeDAO().Load(j);
-											%>
-											<th width="300" height="400"><%=address%></th>
-
-											<%
-											}
-											%>
-
-
-										</tr>
-									</thead>
-								</table>
-
-								<!-- Content Column -->
-								<div class="col-lg-6 mb-4">
-
-									<!-- Project Card Example -->
-
-
-
-								</div>
-
-							</div>
-
-
-							<div class="row">
-								<div class="col-lg-20 mb-4">
-									<h1 class="h3 mb-4 text-gray-800">Main page</h1>
-
-									<!-- Illustrations -->
-									<%
-									List<Feed> feeds = new FeedDAO().totalFeed();
-									%>
-									<%
-									String ck = null; // 좋아요 여부 및 로그인 판별
-									%>
-									<%
-									String link = "RealLogin.jsp"; // 초기 설정
-									%>
-									<%
-									String hart = "♡"; // 초기 설정
-									%>
-									<%
-									FeedLike fl = null;
-									%>
-									<%
-									for (Feed i : feeds) {
-									%>
-									<%
-									if (vo != null) {
-									%>
-									<%
-									fl = new FeedLike(i.getFeed_index(), vo.getU_id());
-									%>
-
-									<%
-									System.out.println(fl.toString());
-									%>
-									<%
-									if (new FeedDAO().whetherlike(fl)) {
-									%>
-									<%
-									ck = "dislikeBtn";
-									%>
-									<%
-									hart = "♥";
-									%>
-									<%
-									link = "likeService?check=1&num=" + i.getFeed_index();
-									%>
-									<%
-									} else {
-									%>
-									<%
-									ck = "likeBtn";
-									%>
-									<%
-									hart = "♡";
-									%>
-									<%
-									link = "likeService?check=2&num=" + i.getFeed_index();
-									%>
-									<%
-									}
-									%>
-									<%
-									} else {
-									%>
-									<%
-									ck = "login";
-									%>
-									<%
-									}
-									%>
-									<div class="card shadow mb-4"
-										style="max-width: 1000px; max-height: 570px;">
-
-										<div class="card-header py-3">
-											<h6 class="m-0 font-weight-bold text-primary">
-												<%
-												String index = i.getF_user_index();
-												Member member = new MemberDAO().login(index);
-												%>
-												<%=member.getNick()%>
-												<% List<Friend> friends =  new FriendDAO().All(vo.getU_id()); 
-												boolean checkFriend=false;
-												for (Friend temp : friends){
-													if(member.getU_id().equals(temp.getApplicant())){
-														checkFriend=true;
-													}
-												}
-												
-							
-												if (checkFriend){%>
-												<a
-													href="MessageWrite.jsp">
-													<i class="fas fa-envelope fa-fw float-right"
-													style="color: #62ac2e"></i>
-												</a>
-												<%} else {%>	
-												<a
-													href="FriendService?id=<%=member.getU_id()%>">
-													<i class="fas fa-user fa-fw float-right"
-													style="color: #62ac2e"></i>
-												</a>
-												
-												
-												<%}%> 
-
-											</h6>
-										</div>
-										<div class="card-body">
-											<div class="container-fluid">
-												<div class="table-responsive">
-													<table class="table table-bordered" id="dataTable"
-														style="width: 100%;" cellspacing="0">
-														<thead>
-															<tr>
-																<th class="text-center">피드</th>
-																<th class="text-center" style="width: 413px">댓글</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td rowspan="2"><img alt=""
-																	src="img/<%=i.getFeed_file()%>" width="100%"
-																	height="300" object-fit: cover><br> <br><%=i.getFeed_content()%>
-																	<h4>
-																		<a class=<%=ck%> href=<%=link%>
-																			style="margin-right: 5px;"><%=hart%></a><%=i.getF_likecnt()%></h4>
-																</td>
-																<%
-																List<Comment> Comments = new CommentDAO().showComment(i.getFeed_index());
-																%>
-																<td>
-																	<div style="overflow-y: scroll; max-height: 350px;">
-																		<%
-																		for (int j = 0; j < Comments.size(); j++) {
-																		%>
-																		<ul class="comment-list">
-																			<li><strong><%=Comments.get(j).getC_NAME()%></strong>
-																				<br><%=Comments.get(j).getC_COMMENT()%></li>
-																		</ul>
-																		<%
-																		}
-																		%>
-																	</div>
-																</td>
-															</tr>
-															<tr>
-																<%
-																if (vo == null) {
-
-																} else {
-																%>
-
-																<td style="height: 55px">
-																	<div class="comment-form">
-																		<form id="commentForm" action="CommentService">
-																			<input type="hidden" name="F_INDEX"
-																				value="<%=i.getFeed_index()%>"> <input
-																				type="hidden" name="C_NAME"
-																				value="<%=vo.getNick()%>">
-																			<%
-																			if (vo != null) {
-																			%>
-
-
-																			<input type="text" name="C_COMMENT"
-																				style="width: 85%;" placeholder="댓글을 입력하세요">
-																			<input type="submit" value="전송" class="send">
-																			<%
-																			} else {
-																			%>
-																			<p>로그인 후에 이용할 수 있습니다.</p>
-																			<%
-																			}
-																			%>
-																		</form>
-																	</div>
-																</td>
-																<%
-																}
-																%>
-															</tr>
-														</tbody>
-													</table>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- //Illustrations -->
-
-									<%
-									}
-									%>
-
-								</div>
-							</div>
-
-
-
-
-						</div>
-					</div>
-
-				</div>
-				<!-- /.container-fluid -->
-
-			</div>
-			<!-- End of Main Content -->
-
-
-			<!-- End of Footer -->
-	</div>
-
-	<!-- End of Page Wrapper -->
-
-	<!-- Scroll to Top Button-->
-	<a class="scroll-to-top rounded" href="#page-top"> <i
-		class="fas fa-angle-up"></i>
-	</a>
-
-	<!-- Logout Modal-->
-	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">나가시겠습니까?</h5>
-					<button class="close" type="button" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">×</span>
-				</div>
-				<div class="modal-body">로그인 버튼을 누르시면 로그아웃 됩니다.</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" type="button"
-						data-dismiss="modal">취소</button>
-					<a class="btn btn-primary" href="LogoutService">로그아웃</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Bootstrap core JavaScript-->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Core plugin JavaScript-->
-	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-	<!-- Custom scripts for all pages-->
-	<script src="js/sb-admin-2.min.js"></script>
-
-	<!-- Page level plugins -->
-	<script src="vendor/chart.js/Chart.min.js"></script>
-
-	<!-- Page level custom scripts -->
-	<script src="js/demo/chart-area-demo.js"></script>
-	<script src="js/demo/chart-pie-demo.js"></script>
-
-	<!-- Kakao SDK -->
-	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-	<script>
-        Kakao.init('eefca775da363abc546f57a131ec1863'); //발급받은 키 중 javascript키를 사용해준다.
-        console.log(Kakao.isInitialized()); // sdk초기화여부판단
-
-        <
-        % --$(document).on('click', '.likeBtn', (e) => {
-            // console.log(e);
-            $(e.target).text('♥');
-            // $('.likeBtn+span').text('1');
-            <
-            % new FeedDAO().likeup(fl); % >
-            $(e.target).removeAttr('class'); /// 속성자체
-            $(e.target).attr('class', 'dislikeBtn');
-        });
-
-
-
-        // (2) 좋아요 취소 버튼 클릭 시
-        //     좋아요 취소 -> 좋아요
-        //      1 -> 0
-        //     class="dislikeBtn" -> class="likeBtn"
-        $(document).on('click', '.dislikeBtn', (e) => {
-            <
-            % new FeedDAO().likedown(fl); % >
-            $(e.target).text('♡');
-            // $('.dislikeBtn+span').text('0');
-            <
-            % System.out.println(fl.toString()); % >
-
-            $(e.target).removeClass('dislikeBtn'); /// 속성 값만
-            $(e.target).attr('class', 'likeBtn');
-        });
-        -- % >
-    </script>
-
-</body>
-
-</html>

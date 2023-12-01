@@ -211,7 +211,7 @@ height: 50px;
 									%>
 									<div class="friend-request" align="center">
 										<div class="friend-info">
-
+											
 											<%int num = info.getT_estnum(); %>
 											<div style="font-size: 16px"> <%=challenger.getNick()%>님이 시합 요청 <br>
 											<%=(info.getE_time()/num + info.getE_level()/num + info.getE_money()/num + info.getE_manner()/num+info.getE_respon()/num) / 5%>점
