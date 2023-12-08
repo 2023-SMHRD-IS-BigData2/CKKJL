@@ -11,3 +11,24 @@
 # 2. 프로젝트 개요
 ## 주제 : 2030을 위한 futsal sns서비스
 + 광주의 모든 풋살장 이용가능
++ 캘린더를 통한 가독성 향상
++ SNS로 지속적인 사용 유도
+
+# 3. 사용기술
+|개발환경|상세보기
+|--|--|
+|FRONT-END|![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white) ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white)|
+|DATABASE|![MicrosoftSQLServer](https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white) ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)|
+|IDE|![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white) ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white)|
+|COLLABORATION|<img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=Github&logoColor=white"/> ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)|
+|LANGUAGE|![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+|BACK-END|![Apache Tomcat](https://img.shields.io/badge/apache%20tomcat-%23F8DC75.svg?style=for-the-badge&logo=apache-tomcat&logoColor=black)
+
+</hr>
+
+# 4. ERD 설계
+  ![Alt text](image.png)
+
+# 5. 핵심 기능
+- sns로그인
+![Alt text](image-1.png)
