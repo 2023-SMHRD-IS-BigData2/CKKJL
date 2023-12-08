@@ -1,3 +1,4 @@
+(아직 작성중임다 완성 ㄴㄴ)
 # CKKJL
 ![image](https://github.com/2023-SMHRD-IS-BigData2/CKKJL/assets/128181071/6350aac5-55ee-4b1b-89ab-5b9ccc640c1b)
 <hr/>
