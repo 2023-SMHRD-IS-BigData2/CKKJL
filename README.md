@@ -28,8 +28,10 @@
 </hr>
 
 # 4. ERD 설계
-  ![Alt text](image.png)
+  ![image](https://github.com/2023-SMHRD-IS-BigData2/CKKJL/assets/128181071/94c43159-8bc5-482f-bb5f-d82def0d07ab)
+
 
 # 5. 핵심 기능
 - sns로그인
-![Alt text](image-1.png)
+![image](https://github.com/2023-SMHRD-IS-BigData2/CKKJL/assets/128181071/bdb827ec-02a6-4c07-a366-e323585245b7)
+
