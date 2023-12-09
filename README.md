@@ -80,7 +80,8 @@ SNS로그인으로 로그인을 하기 때문에 아이디를 마음대로 생�
 # 7. 트러블 슈팅
 ### 1. 소스코드 크롤링
 ![image](https://github.com/2023-SMHRD-IS-BigData2/CKKJL/assets/145407027/5d3d4f26-83dd-4833-987c-a51806a61461)
-![프레젠테이션1](https://github.com/2023-SMHRD-IS-BigData2/CKKJL/assets/128181071/959af6fb-db5e-4f1f-b85f-faeda169c293)
+![크롤링](https://github.com/2023-SMHRD-IS-BigData2/CKKJL/assets/128181071/c1730f89-238d-49b4-9cd1-8c68bad3378e)
+
 
 
 풋살 서비스이기 때문에 풋살 강좌를 영상으로 보여주고자 하였다. 영상 자체를 가지고 오려고 하였으나 외부 사이트에서 사용할 수 없게 막아두는 유튜브 영상 때문에 왼쪽 사진처럼 나왔다.
